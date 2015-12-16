@@ -18,7 +18,10 @@ enum CountyCellDisplayStyle {
     case Grid
 }
 
-private let StrokeWidth: CGFloat = 1.0;
+private struct BorderSettings {
+    static let width: CGFloat = 1.0 / UIScreen.mainScreen().scale
+    static let colour = UIColor(white: 0.9, alpha: 1.0)
+}
 
 /// The cell responsible for displaying County data.
 class CountyCell: UICollectionViewCell {
@@ -50,7 +53,7 @@ class CountyCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = UIColor.lightGrayColor()
+        selectedBackgroundView?.backgroundColor = BorderSettings.colour
     }
     
     override func layoutSubviews() {
@@ -65,13 +68,13 @@ class CountyCell: UICollectionViewCell {
         switch (displayStyle) {
         case .Table:
             path = UIBezierPath()
-            path.moveToPoint(CGPoint(x: layoutMargins.left, y: CGRectGetMaxY(rect) - StrokeWidth))
-            path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect) - StrokeWidth))
+            path.moveToPoint(CGPoint(x: layoutMargins.left, y: CGRectGetMaxY(rect) - BorderSettings.width))
+            path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect) - BorderSettings.width))
         case .Grid:
             path = UIBezierPath(rect: rect)
         }
         
-        path.lineWidth = StrokeWidth;
+        path.lineWidth = BorderSettings.width;
         UIColor.lightGrayColor().set()
         path.stroke()
     }
