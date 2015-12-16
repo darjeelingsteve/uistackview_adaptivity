@@ -40,30 +40,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        switch (styleForTraitCollection(traitCollection)) {
-        case .Table:
-            return CGSize(width: CGRectGetWidth(collectionView.bounds), height: 100)
-        case .Grid:
-            return CGSize(width: 150, height: 120)
-        }
+        return styleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        switch (styleForTraitCollection(traitCollection)) {
-        case .Table:
-            return UIEdgeInsetsZero
-        case .Grid:
-            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        }
+        return styleForTraitCollection(traitCollection).collectionViewEdgeInsets
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        switch (styleForTraitCollection(traitCollection)) {
-        case .Table:
-            return 0
-        case .Grid:
-            return 44
-        }
+        return styleForTraitCollection(traitCollection).collectionViewLineSpacing
     }
     
     //MARK: UICollectionViewDelegate
@@ -77,3 +62,32 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 }
 
+// MARK: - CountyCellDisplayStyle extension to provide collection view layout information based on a display style.
+extension CountyCellDisplayStyle {
+    func itemSizeInCollectionView(collectionView: UICollectionView) -> CGSize {
+        switch (self) {
+        case .Table:
+            return CGSize(width: CGRectGetWidth(collectionView.bounds), height: 100)
+        case .Grid:
+            return CGSize(width: 150, height: 120)
+        }
+    }
+    
+    var collectionViewEdgeInsets: UIEdgeInsets {
+        switch (self) {
+        case .Table:
+            return UIEdgeInsetsZero
+        case .Grid:
+            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        }
+    }
+    
+    var collectionViewLineSpacing: CGFloat {
+        switch (self) {
+        case .Table:
+            return 0
+        case .Grid:
+            return 44
+        }
+    }
+}
