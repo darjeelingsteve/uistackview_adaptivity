@@ -9,7 +9,7 @@
 import UIKit
 
 /// The view controller responsible for displaying the county collection view.
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
     private let counties = County.allCounties
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
@@ -23,6 +23,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         if styleForTraitCollection(traitCollection) == .Table {
             flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let navigationController = segue.destinationViewController as? UINavigationController,
+            countyViewController = navigationController.topViewController as? CountyViewController {
+                countyViewController.county = counties[collectionView.indexPathsForSelectedItems()!.first!.item]
+                countyViewController.delegate = self
         }
     }
     
@@ -54,6 +62,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+    }
+    
+    //MARK: CountyViewControllerDelegate
+    func countyViewControllerDidFinish(countyViewController: CountyViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: Private Methods

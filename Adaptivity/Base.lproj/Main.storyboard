@@ -47,8 +47,8 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ECK-6m-oQz">
-                                                            <rect key="frame" x="108" y="23" width="176" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="108" y="24" width="176" height="20"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -67,6 +67,7 @@
                                             <outlet property="flagImageView" destination="2RB-yg-bcY" id="ji3-Jb-2g7"/>
                                             <outlet property="nameLabel" destination="ECK-6m-oQz" id="8gH-vA-Khn"/>
                                             <outlet property="stackView" destination="G97-gp-3ka" id="IgG-0R-4mW"/>
+                                            <segue destination="Ktw-T5-iIh" kind="presentation" modalPresentationStyle="formSheet" id="6Kh-E1-VnA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -93,6 +94,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="1108"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rRU-vC-4az">
+            <objects>
+                <navigationController id="Ktw-T5-iIh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tm3-Xq-m5y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dcA-fF-HUS" kind="relationship" relationship="rootViewController" id="KMu-Hg-LNX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHb-nf-YKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="1108"/>
+        </scene>
+        <!--County View Controller-->
+        <scene sceneID="leK-dT-6gU">
+            <objects>
+                <viewController id="dcA-fF-HUS" customClass="CountyViewController" customModule="Adaptivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z3u-9P-uNk"/>
+                        <viewControllerLayoutGuide type="bottom" id="uvw-Z3-WPv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="edN-Og-UZA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
+                                <rect key="frame" x="150" y="87" width="300" height="269"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iuo-ze-4aJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Jw1-zu-dRy"/>
+                                            <constraint firstAttribute="height" constant="200" id="fN7-6d-i8z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYe-aW-JEZ">
+                                        <rect key="frame" x="0.0" y="208" width="300" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-hy-kGV">
+                                        <rect key="frame" x="0.0" y="249" width="300" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Idw-cr-iD5" firstAttribute="centerX" secondItem="edN-Og-UZA" secondAttribute="centerX" id="1ar-bR-Df0"/>
+                            <constraint firstItem="Idw-cr-iD5" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="43" id="dV5-A7-ZI9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LcB-0I-P3h">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="dlQ-88-WFi">
+                            <connections>
+                                <action selector="doneTapped:" destination="dcA-fF-HUS" id="Vab-2t-bUb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="flagImageView" destination="Iuo-ze-4aJ" id="kKa-51-kow"/>
+                        <outlet property="nameLabel" destination="UYe-aW-JEZ" id="pXG-Ya-U9r"/>
+                        <outlet property="populationLabel" destination="TCP-hy-kGV" id="UcQ-9J-78z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4n-3J-Ekx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456" y="1108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xMS-Cg-LSp">
