@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Bedfordshire</string>
+		<key>population</key>
+		<real>617000</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hampshire</string>
+		<key>population</key>
+		<real>1322300</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Surrey</string>
+		<key>population</key>
+		<integer>1135500</integer>
+	</dict>
+</array>
+</plist>
