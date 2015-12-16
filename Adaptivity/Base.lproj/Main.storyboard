@@ -36,18 +36,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G97-gp-3ka">
-                                                    <rect key="frame" x="8" y="8" width="208" height="134"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G97-gp-3ka">
+                                                    <rect key="frame" x="8" y="42" width="284" height="67"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2RB-yg-bcY">
-                                                            <rect key="frame" x="0.0" y="34" width="100" height="66"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2RB-yg-bcY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="67"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="0lF-Qn-a8J"/>
                                                                 <constraint firstAttribute="width" secondItem="2RB-yg-bcY" secondAttribute="height" multiplier="3:2" id="85G-IE-GF4"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-1g-JRD">
-                                                            <rect key="frame" x="108" y="57" width="100" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ECK-6m-oQz">
+                                                            <rect key="frame" x="108" y="23" width="176" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -58,15 +58,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="G97-gp-3ka" firstAttribute="centerX" secondItem="LEu-Uk-47o" secondAttribute="centerX" id="3wI-TZ-rbQ"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="G97-gp-3ka" secondAttribute="leading" id="9iM-2t-acP"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="G97-gp-3ka" secondAttribute="bottom" id="el0-Rk-zt4"/>
-                                            <constraint firstAttribute="topMargin" secondItem="G97-gp-3ka" secondAttribute="top" id="usu-dR-bPT"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="G97-gp-3ka" secondAttribute="trailing" priority="999" id="ut5-ye-TZ3"/>
+                                            <constraint firstItem="G97-gp-3ka" firstAttribute="centerY" secondItem="LEu-Uk-47o" secondAttribute="centerY" id="Fjr-4e-TfE"/>
                                         </constraints>
                                         <size key="customSize" width="300" height="150"/>
                                         <connections>
                                             <outlet property="flagImageView" destination="2RB-yg-bcY" id="ji3-Jb-2g7"/>
-                                            <outlet property="nameLabel" destination="p7H-1g-JRD" id="ASz-Tr-GX7"/>
+                                            <outlet property="nameLabel" destination="ECK-6m-oQz" id="8gH-vA-Khn"/>
                                             <outlet property="stackView" destination="G97-gp-3ka" id="IgG-0R-4mW"/>
                                         </connections>
                                     </collectionViewCell>

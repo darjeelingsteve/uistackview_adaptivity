@@ -31,10 +31,8 @@ class CountyCell: UICollectionViewCell {
             switch (displayStyle) {
             case .Table:
                 stackView.axis = .Horizontal
-                stackView.distribution = .FillEqually
             case .Grid:
                 stackView.axis = .Vertical
-                stackView.distribution = .EqualSpacing
             }
         }
     }
