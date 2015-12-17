@@ -26,12 +26,10 @@ struct County {
     }
     
     /// All of the counties available to the application.
-    static var allCounties: [County] {
-        get {
-            let countyDictionaries = NSArray.init(contentsOfURL: NSBundle.mainBundle().URLForResource("Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
-            return countyDictionaries.map { (countryDictionary) -> County in
-                return County.init(withName: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int)
-            }
+    static var allCounties: [County] = {
+        let countyDictionaries = NSArray.init(contentsOfURL: NSBundle.mainBundle().URLForResource("Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
+        return countyDictionaries.map { (countryDictionary) -> County in
+            return County.init(withName: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int)
         }
-    }
+    }()
 }

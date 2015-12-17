@@ -10,7 +10,6 @@ import UIKit
 
 /// The view controller responsible for displaying the county collection view.
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
-    private let counties = County.allCounties
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     
@@ -31,19 +30,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navigationController = segue.destinationViewController as? UINavigationController,
             countyViewController = navigationController.topViewController as? CountyViewController {
-                countyViewController.county = counties[collectionView.indexPathsForSelectedItems()!.first!.item]
+                countyViewController.county = County.allCounties[collectionView.indexPathsForSelectedItems()!.first!.item]
                 countyViewController.delegate = self
         }
     }
     
     //MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return counties.count
+        return County.allCounties.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let countyCell = collectionView.dequeueReusableCellWithReuseIdentifier("CountyCell", forIndexPath: indexPath) as! CountyCell
-        countyCell.county = counties[indexPath.row]
+        countyCell.county = County.allCounties[indexPath.row]
         countyCell.displayStyle = styleForTraitCollection(traitCollection)
         return countyCell
     }
