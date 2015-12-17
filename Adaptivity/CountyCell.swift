@@ -75,7 +75,7 @@ class CountyCell: UICollectionViewCell {
         }
         
         path.lineWidth = BorderSettings.width;
-        UIColor.lightGrayColor().set()
+        BorderSettings.colour.set()
         path.stroke()
     }
 }
