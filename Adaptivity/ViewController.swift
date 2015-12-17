@@ -15,12 +15,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
         if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
         }
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         if styleForTraitCollection(traitCollection) == .Table {
             flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
         }
