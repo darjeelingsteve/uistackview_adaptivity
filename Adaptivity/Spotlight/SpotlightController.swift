@@ -10,7 +10,7 @@ import UIKit
 import CoreSpotlight
 import MobileCoreServices
 
-let SpotlightControllerHasIndexedKey = "HasIndexed"
+private let SpotlightControllerHasIndexedKey = "HasIndexed"
 
 /// The class responsible for managing the Spotlight index for County objects
 class SpotlightController: NSObject {
