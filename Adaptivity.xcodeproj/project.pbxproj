@@ -16,6 +16,7 @@
 		48ABDFC21C206A0B0078391A /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC11C206A0B0078391A /* County.swift */; };
 		48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC31C209E2F0078391A /* CountyCell.swift */; };
 		48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */; };
+		48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		48ABDFC11C206A0B0078391A /* County.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = County.swift; path = Data/County.swift; sourceTree = "<group>"; };
 		48ABDFC31C209E2F0078391A /* CountyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
 		48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
+		48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightController.swift; path = Spotlight/SpotlightController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				48ABDFBE1C2069220078391A /* Data */,
+				48E8A9721C56AF7E004B1F2E /* Spotlight */,
 				48ABDFAC1C2063D70078391A /* AppDelegate.swift */,
 				48ABDFAE1C2063D70078391A /* ViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
@@ -82,6 +85,14 @@
 				48ABDFC11C206A0B0078391A /* County.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		48E8A9721C56AF7E004B1F2E /* Spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */,
+			);
+			name = Spotlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
 				48ABDFAF1C2063D70078391A /* ViewController.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
+				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
 				48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
