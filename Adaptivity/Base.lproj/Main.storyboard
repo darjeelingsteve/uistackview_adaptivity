@@ -67,7 +67,6 @@
                                             <outlet property="flagImageView" destination="2RB-yg-bcY" id="ji3-Jb-2g7"/>
                                             <outlet property="nameLabel" destination="ECK-6m-oQz" id="8gH-vA-Khn"/>
                                             <outlet property="stackView" destination="G97-gp-3ka" id="IgG-0R-4mW"/>
-                                            <segue destination="Ktw-T5-iIh" kind="presentation" modalPresentationStyle="formSheet" id="6Kh-E1-VnA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -89,6 +88,8 @@
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
+                        <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
+                        <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -188,4 +189,7 @@
             <point key="canvasLocation" x="270" y="1108"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SWH-pq-MAC"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,10 +8,20 @@
 
 import UIKit
 
+private let PresentCountyWithAnimationSegueIdentifier = "PresentCountyWithAnimation"
+private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAnimation"
+
 /// The view controller responsible for displaying the county collection view.
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
+    private var selectedCounty: County?
+    
+    func showCounty(county: County, animated: Bool) {
+        selectedCounty = county
+        let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
+        performSegueWithIdentifier(segueIdentifier, sender: self)
+    }
     
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
@@ -30,7 +40,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navigationController = segue.destinationViewController as? UINavigationController,
             countyViewController = navigationController.topViewController as? CountyViewController {
-                countyViewController.county = County.allCounties[collectionView.indexPathsForSelectedItems()!.first!.item]
+                countyViewController.county = selectedCounty
                 countyViewController.delegate = self
         }
     }
@@ -62,6 +72,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        showCounty(County.allCounties[collectionView.indexPathsForSelectedItems()!.first!.item], animated: true)
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
     }
     
