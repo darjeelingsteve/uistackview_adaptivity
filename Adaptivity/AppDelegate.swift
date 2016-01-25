@@ -17,5 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         spotlightController.indexCounties(County.allCounties)
         return true
     }
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        spotlightController.handleUserActivity(userActivity) { (county) -> Void in
+            if let county = county {
+                let navigationController = window?.rootViewController as! UINavigationController
+                navigationController.dismissViewControllerAnimated(false, completion: nil)
+                let viewController = navigationController.topViewController as! ViewController
+                viewController.showCounty(county, animated: false)
+            }
+        }
+        return true
+    }
 }
 
