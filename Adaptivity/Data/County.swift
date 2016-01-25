@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 
+func ==(lhs: County, rhs: County) -> Bool {
+    return lhs.name == rhs.name && lhs.population == rhs.population
+}
+
 /*!
 The struct used to represent an individual county.
 */
-struct County {
+struct County : Equatable {
     let name: String
     let population: Int
     
