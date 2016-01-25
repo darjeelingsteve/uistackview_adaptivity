@@ -20,11 +20,9 @@ class CountyViewController: UIViewController {
         super.viewDidLoad()
         
         if let county = county {
-            flagImageView.image = UIImage(named: county.name)
+            flagImageView.image = county.flagImage
             nameLabel.text = county.name
-            let numberFormatter = NSNumberFormatter()
-            numberFormatter.numberStyle = .DecimalStyle
-            populationLabel.text = "Population: " + numberFormatter.stringFromNumber(county.population)!
+            populationLabel.text = county.populationDescription
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /*!
 The struct used to represent an individual county.
@@ -32,4 +33,20 @@ struct County {
             return County.init(withName: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int)
         }
     }()
+}
+
+extension County {
+    var populationDescription: String {
+        get {
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.numberStyle = .DecimalStyle
+            return "Population: " + numberFormatter.stringFromNumber(self.population)!
+        }
+    }
+    
+    var flagImage: UIImage? {
+        get {
+            return UIImage(named: self.name)
+        }
+    }
 }
