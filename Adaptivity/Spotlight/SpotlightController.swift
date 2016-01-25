@@ -43,7 +43,7 @@ class SpotlightController: NSObject {
         }
     }
     
-    func handleUserActivity(userActivity: NSUserActivity, completionHandler: (County?) -> Void) {
+    func handleUserActivity(userActivity: NSUserActivity, @noescape completionHandler: (County?) -> Void) {
         var selectedCounty: County? = nil
         if userActivity.activityType == CSSearchableItemActionType {
             selectedCounty = County.allCounties.filter({$0.name == userActivity.title}).first
