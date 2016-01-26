@@ -28,7 +28,7 @@ class SpotlightController: NSObject {
                 // Scale image as recommended by https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/SearchUserExperience.html#//apple_ref/doc/uid/TP40016308-CH11-SW1
                 attributeSet.thumbnailData = UIImagePNGRepresentation(countyFlag.scaledImageWithWidth(270))
             }
-            let searchableItem = CSSearchableItem(uniqueIdentifier: county.name, domainIdentifier: "ID", attributeSet: attributeSet)
+            let searchableItem = CSSearchableItem(uniqueIdentifier: county.name, domainIdentifier: nil, attributeSet: attributeSet)
             return searchableItem
         }
         
