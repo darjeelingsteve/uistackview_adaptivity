@@ -24,6 +24,9 @@ class SpotlightController: NSObject {
             let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
             attributeSet.title = county.name
             attributeSet.contentDescription = county.populationDescription
+            attributeSet.latitude = county.latitude
+            attributeSet.longitude = county.longitude
+            attributeSet.supportsNavigation = 1
             if let countyFlag = county.flagImage {
                 // Scale image as recommended by https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/SearchUserExperience.html#//apple_ref/doc/uid/TP40016308-CH11-SW1
                 attributeSet.thumbnailData = UIImagePNGRepresentation(countyFlag.scaledImageWithWidth(270))
