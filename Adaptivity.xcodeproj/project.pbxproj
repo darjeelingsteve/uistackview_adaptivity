@@ -28,6 +28,10 @@
 		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
 		B63121221C60D8450063E975 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFBF1C2069370078391A /* Counties.plist */; };
 		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
+		B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
+		B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
+		B631212A1C60F0190063E975 /* HandoffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121291C60F0190063E975 /* HandoffController.swift */; };
+		B631212C1C60F51B0063E975 /* CountyUserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631212B1C60F51B0063E975 /* CountyUserActivityHandling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,9 @@
 		B63121121C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63121201C60D6D80063E975 /* CountyRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyRowController.swift; sourceTree = "<group>"; };
 		B63121231C60DC870063E975 /* CountyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyInterfaceController.swift; sourceTree = "<group>"; };
+		B63121261C60ED980063E975 /* HandoffConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffConstants.swift; path = Handoff/HandoffConstants.swift; sourceTree = "<group>"; };
+		B63121291C60F0190063E975 /* HandoffController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffController.swift; path = Handoff/HandoffController.swift; sourceTree = "<group>"; };
+		B631212B1C60F51B0063E975 /* CountyUserActivityHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyUserActivityHandling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +148,12 @@
 			children = (
 				48ABDFBE1C2069220078391A /* Data */,
 				48E8A9721C56AF7E004B1F2E /* Spotlight */,
+				B63121251C60ED6C0063E975 /* Handoff */,
 				48ABDFAC1C2063D70078391A /* AppDelegate.swift */,
 				48ABDFAE1C2063D70078391A /* ViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
+				B631212B1C60F51B0063E975 /* CountyUserActivityHandling.swift */,
 				48ABDFB01C2063D70078391A /* Main.storyboard */,
 				48ABDFB31C2063D70078391A /* Assets.xcassets */,
 				48ABDFB51C2063D70078391A /* LaunchScreen.storyboard */,
@@ -191,6 +200,15 @@
 				B63121121C60D69F0063E975 /* Info.plist */,
 			);
 			path = "Counties Extension";
+			sourceTree = "<group>";
+		};
+		B63121251C60ED6C0063E975 /* Handoff */ = {
+			isa = PBXGroup;
+			children = (
+				B63121261C60ED980063E975 /* HandoffConstants.swift */,
+				B63121291C60F0190063E975 /* HandoffController.swift */,
+			);
+			name = Handoff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +349,10 @@
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
 				48ABDFAF1C2063D70078391A /* ViewController.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
+				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
+				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
+				B631212C1C60F51B0063E975 /* CountyUserActivityHandling.swift in Sources */,
 				48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
 				B631211F1C60D6B70063E975 /* County.swift in Sources */,
 				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,

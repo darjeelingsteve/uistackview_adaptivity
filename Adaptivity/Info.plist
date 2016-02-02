@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.darjeeling.counties.handoff.countydetails</string>
+	</array>
 </dict>
 </plist>

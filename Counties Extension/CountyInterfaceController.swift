@@ -14,6 +14,7 @@ class CountyInterfaceController: WKInterfaceController {
     @IBOutlet private weak var flagImage: WKInterfaceImage!
     @IBOutlet private weak var nameLabel: WKInterfaceLabel!
     @IBOutlet private weak var populationLabel: WKInterfaceLabel!
+    private var county: County?
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -22,7 +23,7 @@ class CountyInterfaceController: WKInterfaceController {
             return
         }
         
-        let county = County.allCounties.filter({$0.name == countyName}).first
+        self.county = County.allCounties.filter({$0.name == countyName}).first
         setTitle(county?.name)
         flagImage.setImage(county?.flagImage)
         nameLabel.setText(county?.name)
@@ -30,13 +31,16 @@ class CountyInterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        guard let county = county else {
+            return
+        }
+        updateUserActivity(HandoffActivity.CountyDetails, userInfo: [HandoffUserInfo.CountyName: county.name], webpageURL: nil)
+        
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
+        invalidateUserActivity()
         super.didDeactivate()
     }
-
 }

@@ -13,7 +13,7 @@ import MobileCoreServices
 private let SpotlightControllerHasIndexedKey = "HasIndexed"
 
 /// The class responsible for managing the Spotlight index for County objects
-class SpotlightController: NSObject {
+class SpotlightController: NSObject, CountyUserActivityHandling {
     func indexCounties(counties: [County]) {
         if CSSearchableIndex.isIndexingAvailable() == false || NSUserDefaults.standardUserDefaults().boolForKey(SpotlightControllerHasIndexedKey) == true {
             // We either can't index or don't need to
@@ -46,12 +46,15 @@ class SpotlightController: NSObject {
         }
     }
     
-    func handleUserActivity(userActivity: NSUserActivity, @noescape completionHandler: (County?) -> Void) {
-        var selectedCounty: County? = nil
-        if userActivity.activityType == CSSearchableItemActionType {
-            selectedCounty = County.allCounties.filter({$0.name == userActivity.title}).first
+    //MARK: CountyUserActivityHandling
+    var handledActivityType: String {
+        get {
+            return CSSearchableItemActionType
         }
-        completionHandler(selectedCounty)
+    }
+    
+    func countyFromUserActivity(userActivity: NSUserActivity) -> County? {
+        return County.allCounties.filter({$0.name == userActivity.title}).first
     }
 }
 

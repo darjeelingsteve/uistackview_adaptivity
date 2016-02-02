@@ -12,6 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let spotlightController = SpotlightController()
+    let userActivityHandlers: [CountyUserActivityHandling]
+    
+    override init() {
+        userActivityHandlers = [spotlightController, HandoffController()]
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         spotlightController.indexCounties(County.allCounties)
@@ -19,15 +24,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
-        spotlightController.handleUserActivity(userActivity) { (county) -> Void in
-            if let county = county {
-                let navigationController = window?.rootViewController as! UINavigationController
-                navigationController.dismissViewControllerAnimated(false, completion: nil)
-                let viewController = navigationController.topViewController as! ViewController
-                viewController.showCounty(county, animated: false)
+        var handled = false
+        // Loop over our user activity handlers to handle the activity
+        for userActivityHandler in userActivityHandlers {
+            handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (county) -> Void in
+                showCounty(county)
+            })
+            if handled {
+                // The user activity was handled so we don't need to query any more activity handlers
+                break
             }
         }
-        return true
+        
+        return handled
+    }
+    
+    private func showCounty(county: County) {
+        let navigationController = window?.rootViewController as! UINavigationController
+        // Dismiss any existing county that is being shown
+        navigationController.dismissViewControllerAnimated(false, completion: nil)
+        let viewController = navigationController.topViewController as! ViewController
+        viewController.showCounty(county, animated: false)
     }
 }
 
