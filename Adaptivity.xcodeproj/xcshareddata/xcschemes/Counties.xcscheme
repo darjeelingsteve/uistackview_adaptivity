@@ -14,37 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B63120FA1C60D69F0063E975"
+               BlueprintIdentifier = "48ABDFA81C2063D70078391A"
                BuildableName = "Counties.app"
                BlueprintName = "Counties"
-               ReferencedContainer = "container:Adaptivity.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48ABDFA81C2063D70078391A"
-               BuildableName = "Adaptivity.app"
-               BlueprintName = "Adaptivity"
-               ReferencedContainer = "container:Adaptivity.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B63121061C60D69F0063E975"
-               BuildableName = "Counties Extension.appex"
-               BlueprintName = "Counties Extension"
                ReferencedContainer = "container:Adaptivity.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B63120FA1C60D69F0063E975"
+            BlueprintIdentifier = "48ABDFA81C2063D70078391A"
             BuildableName = "Counties.app"
             BlueprintName = "Counties"
             ReferencedContainer = "container:Adaptivity.xcodeproj">
@@ -79,27 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.carousel"
-         RemotePath = "/Adaptivity">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B63120FA1C60D69F0063E975"
+            BlueprintIdentifier = "48ABDFA81C2063D70078391A"
             BuildableName = "Counties.app"
             BlueprintName = "Counties"
             ReferencedContainer = "container:Adaptivity.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B63120FA1C60D69F0063E975"
-            BuildableName = "Counties.app"
-            BlueprintName = "Counties"
-            ReferencedContainer = "container:Adaptivity.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -109,27 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.carousel"
-         RemotePath = "/Adaptivity">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B63120FA1C60D69F0063E975"
+            BlueprintIdentifier = "48ABDFA81C2063D70078391A"
             BuildableName = "Counties.app"
             BlueprintName = "Counties"
             ReferencedContainer = "container:Adaptivity.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B63120FA1C60D69F0063E975"
-            BuildableName = "Counties.app"
-            BlueprintName = "Counties"
-            ReferencedContainer = "container:Adaptivity.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

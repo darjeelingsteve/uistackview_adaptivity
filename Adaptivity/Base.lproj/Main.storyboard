@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Adaptivity-->
+        <!--Counties-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Adaptivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,7 +29,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountyCell" id="LEu-Uk-47o" customClass="CountyCell" customModule="Adaptivity" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountyCell" id="LEu-Uk-47o" customClass="CountyCell" customModule="Counties" customModuleProvider="target">
                                         <rect key="frame" x="150" y="64" width="300" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -84,7 +84,7 @@
                             <constraint firstAttribute="trailing" secondItem="tGu-bo-TVs" secondAttribute="trailing" id="gPC-kU-gUr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Adaptivity" id="gG2-dn-aPi"/>
+                    <navigationItem key="navigationItem" title="Counties" id="gG2-dn-aPi"/>
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
@@ -115,7 +115,7 @@
         <!--County View Controller-->
         <scene sceneID="leK-dT-6gU">
             <objects>
-                <viewController id="dcA-fF-HUS" customClass="CountyViewController" customModule="Adaptivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dcA-fF-HUS" customClass="CountyViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z3u-9P-uNk"/>
                         <viewControllerLayoutGuide type="bottom" id="uvw-Z3-WPv"/>

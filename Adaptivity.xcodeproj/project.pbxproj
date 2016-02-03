@@ -23,7 +23,7 @@
 		B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210C1C60D69F0063E975 /* InterfaceController.swift */; };
 		B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */; };
 		B63121111C60D69F0063E975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63121101C60D69F0063E975 /* Assets.xcassets */; };
-		B63121151C60D69F0063E975 /* Counties.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties.app */; };
+		B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */; };
 		B631211F1C60D6B70063E975 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC11C206A0B0078391A /* County.swift */; };
 		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
 		B63121221C60D8450063E975 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFBF1C2069370078391A /* Counties.plist */; };
@@ -69,7 +69,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				B63121151C60D69F0063E975 /* Counties.app in Embed Watch Content */,
+				B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48ABDFA91C2063D70078391A /* Adaptivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adaptivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48ABDFAE1C2063D70078391A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48ABDFB11C2063D70078391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		48ABDFC31C209E2F0078391A /* CountyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
 		48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
 		48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightController.swift; path = Spotlight/SpotlightController.swift; sourceTree = "<group>"; };
-		B63120FB1C60D69F0063E975 /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63120FB1C60D69F0063E975 /* Counties (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63120FE1C60D69F0063E975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B63121001C60D69F0063E975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B63121021C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				48ABDFAB1C2063D70078391A /* Adaptivity */,
-				B63120FC1C60D69F0063E975 /* Counties */,
+				B63120FC1C60D69F0063E975 /* Counties (watchOS) */,
 				B631210B1C60D69F0063E975 /* Counties Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
 			);
@@ -136,8 +136,8 @@
 		48ABDFAA1C2063D70078391A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48ABDFA91C2063D70078391A /* Adaptivity.app */,
-				B63120FB1C60D69F0063E975 /* Counties.app */,
+				48ABDFA91C2063D70078391A /* Counties.app */,
+				B63120FB1C60D69F0063E975 /* Counties (watchOS).app */,
 				B63121071C60D69F0063E975 /* Counties Extension.appex */,
 			);
 			name = Products;
@@ -179,13 +179,14 @@
 			name = Spotlight;
 			sourceTree = "<group>";
 		};
-		B63120FC1C60D69F0063E975 /* Counties */ = {
+		B63120FC1C60D69F0063E975 /* Counties (watchOS) */ = {
 			isa = PBXGroup;
 			children = (
 				B63120FD1C60D69F0063E975 /* Interface.storyboard */,
 				B63121001C60D69F0063E975 /* Assets.xcassets */,
 				B63121021C60D69F0063E975 /* Info.plist */,
 			);
+			name = "Counties (watchOS)";
 			path = Counties;
 			sourceTree = "<group>";
 		};
@@ -214,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48ABDFA81C2063D70078391A /* Adaptivity */ = {
+		48ABDFA81C2063D70078391A /* Counties */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Adaptivity" */;
+			buildConfigurationList = 48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Counties" */;
 			buildPhases = (
 				48ABDFA51C2063D70078391A /* Sources */,
 				48ABDFA61C2063D70078391A /* Frameworks */,
@@ -228,14 +229,14 @@
 			dependencies = (
 				B63121141C60D69F0063E975 /* PBXTargetDependency */,
 			);
-			name = Adaptivity;
+			name = Counties;
 			productName = Adaptivity;
-			productReference = 48ABDFA91C2063D70078391A /* Adaptivity.app */;
+			productReference = 48ABDFA91C2063D70078391A /* Counties.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B63120FA1C60D69F0063E975 /* Counties */ = {
+		B63120FA1C60D69F0063E975 /* Counties (watchOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties" */;
+			buildConfigurationList = B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */;
 			buildPhases = (
 				B63120F91C60D69F0063E975 /* Resources */,
 				B631211B1C60D69F0063E975 /* Embed App Extensions */,
@@ -245,9 +246,9 @@
 			dependencies = (
 				B631210A1C60D69F0063E975 /* PBXTargetDependency */,
 			);
-			name = Counties;
+			name = "Counties (watchOS)";
 			productName = Counties;
-			productReference = B63120FB1C60D69F0063E975 /* Counties.app */;
+			productReference = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		B63121061C60D69F0063E975 /* Counties Extension */ = {
@@ -301,8 +302,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48ABDFA81C2063D70078391A /* Adaptivity */,
-				B63120FA1C60D69F0063E975 /* Counties */,
+				48ABDFA81C2063D70078391A /* Counties */,
+				B63120FA1C60D69F0063E975 /* Counties (watchOS) */,
 				B63121061C60D69F0063E975 /* Counties Extension */,
 			);
 		};
@@ -380,7 +381,7 @@
 		};
 		B63121141C60D69F0063E975 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B63120FA1C60D69F0063E975 /* Counties */;
+			target = B63120FA1C60D69F0063E975 /* Counties (watchOS) */;
 			targetProxy = B63121131C60D69F0063E975 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -590,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Adaptivity" */ = {
+		48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Counties" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48ABDFBC1C2063D70078391A /* Debug */,
@@ -606,14 +607,16 @@
 				B63121191C60D69F0063E975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties" */ = {
+		B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B63121161C60D69F0063E975 /* Debug */,
 				B63121171C60D69F0063E975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
