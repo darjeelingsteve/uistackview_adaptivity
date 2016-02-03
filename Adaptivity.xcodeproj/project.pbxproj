@@ -126,7 +126,7 @@
 		48ABDFA01C2063D70078391A = {
 			isa = PBXGroup;
 			children = (
-				48ABDFAB1C2063D70078391A /* Adaptivity */,
+				48ABDFAB1C2063D70078391A /* Counties */,
 				B63120FC1C60D69F0063E975 /* Counties (watchOS) */,
 				B631210B1C60D69F0063E975 /* Counties Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
@@ -143,7 +143,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48ABDFAB1C2063D70078391A /* Adaptivity */ = {
+		48ABDFAB1C2063D70078391A /* Counties */ = {
 			isa = PBXGroup;
 			children = (
 				48ABDFBE1C2069220078391A /* Data */,
@@ -159,6 +159,7 @@
 				48ABDFB51C2063D70078391A /* LaunchScreen.storyboard */,
 				48ABDFB81C2063D70078391A /* Info.plist */,
 			);
+			name = Counties;
 			path = Adaptivity;
 			sourceTree = "<group>";
 		};
