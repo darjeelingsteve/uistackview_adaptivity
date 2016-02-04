@@ -36,11 +36,9 @@ extension CountyUserActivityHandling {
      not.
      */
     func handleUserActivity(userActivity: NSUserActivity, @noescape completionHandler: (County) -> Void) -> Bool {
-        if userActivity.activityType == handledActivityType {
-            if let selectedCounty = countyFromUserActivity(userActivity) {
-                completionHandler(selectedCounty)
-                return true
-            }
+        if let selectedCounty = countyFromUserActivity(userActivity) where userActivity.activityType == handledActivityType {
+            completionHandler(selectedCounty)
+            return true
         }
         
         return false
