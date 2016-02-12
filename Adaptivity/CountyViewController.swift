@@ -23,6 +23,9 @@ class CountyViewController: UIViewController {
             flagImageView.image = county.flagImage
             nameLabel.text = county.name
             populationLabel.text = county.populationDescription
+            
+            userActivity = NSUserActivity(activityType: HandoffActivity.CountyDetails)
+            userActivity?.userInfo = [HandoffUserInfo.CountyName: county.name]
         }
     }
     
