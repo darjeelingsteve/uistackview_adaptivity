@@ -44,3 +44,20 @@ extension CountyUserActivityHandling {
         return false
     }
 }
+
+// MARK: - CustomReflectable
+extension NSUserActivity : CustomReflectable {
+    public func customMirror() -> Mirror {
+        let children = DictionaryLiteral<String, Any>(dictionaryLiteral:
+            ("activityType", activityType),
+            ("title", title),
+            ("userInfo", userInfo.debugDescription),
+            ("requiredUserInfoKeys", requiredUserInfoKeys),
+            ("needsSave", needsSave),
+            ("webpageURL", webpageURL),
+            ("expirationDate", expirationDate.debugDescription),
+            ("keywords", keywords),
+            ("supportsContinuationStreams", supportsContinuationStreams))
+        return Mirror.init(NSUserActivity.self, children: children, displayStyle: Mirror.DisplayStyle.Struct, ancestorRepresentation:.Suppressed)
+    }
+}
