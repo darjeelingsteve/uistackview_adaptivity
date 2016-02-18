@@ -58,6 +58,6 @@ extension NSUserActivity : CustomReflectable {
             ("expirationDate", expirationDate.debugDescription),
             ("keywords", keywords),
             ("supportsContinuationStreams", supportsContinuationStreams))
-        return Mirror.init(NSUserActivity.self, children: children, displayStyle: Mirror.DisplayStyle.Struct, ancestorRepresentation:.Suppressed)
+        return Mirror(NSUserActivity.self, children: children, displayStyle: .Struct, ancestorRepresentation: .Suppressed)
     }
 }
