@@ -12,7 +12,7 @@ private let PresentCountyWithAnimationSegueIdentifier = "PresentCountyWithAnimat
 private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAnimation"
 
 /// The view controller responsible for displaying the county collection view.
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
+class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var selectedCounty: County?
