@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483523AD1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFAF1C2063D70078391A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAE1C2063D70078391A /* MasterViewController.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48ABDFAE1C2063D70078391A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				B63121251C60ED6C0063E975 /* Handoff */,
 				48ABDFAC1C2063D70078391A /* AppDelegate.swift */,
 				48ABDFAE1C2063D70078391A /* MasterViewController.swift */,
+				483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
 				B631212B1C60F51B0063E975 /* CountyUserActivityHandling.swift */,
@@ -350,6 +353,7 @@
 				48ABDFC21C206A0B0078391A /* County.swift in Sources */,
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
 				48ABDFAF1C2063D70078391A /* MasterViewController.swift in Sources */,
+				483523AD1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
 				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
 				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,

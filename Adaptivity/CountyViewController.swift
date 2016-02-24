@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 /// The view controller responsible for displaying information aboout a county.
 class CountyViewController: UIViewController {
@@ -32,6 +33,25 @@ class CountyViewController: UIViewController {
     @IBAction func doneTapped(sender: AnyObject) {
         self.delegate?.countyViewControllerDidFinish(self)
     }
+    
+    //MARK: UIPreviewActionItem
+    lazy var previewActions: [UIPreviewActionItem] = {
+        let safariAction = UIPreviewAction(title: NSLocalizedString("Show in Safari", comment: ""), style: .Default, handler: { (previewAction, viewController) -> Void in
+            guard let countyViewController = viewController as? CountyViewController, county = countyViewController.county else { return }
+            UIApplication.sharedApplication().openURL(county.url)
+        })
+        
+        let mapsAction = UIPreviewAction(title: NSLocalizedString("Show in Maps", comment: ""), style: .Default, handler: { (previewAction, viewController) -> Void in
+            guard let countyViewController = viewController as? CountyViewController, county = countyViewController.county else { return }
+            let coordinate = CLLocationCoordinate2D(latitude: county.latitude, longitude: county.longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+            let regionDistance: CLLocationDistance = 100000
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate, regionDistance, regionDistance)
+            mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsMapSpanKey : NSValue(MKCoordinateSpan: regionSpan.span)])
+        })
+        
+        return [safariAction, mapsAction]
+    }()
 }
 
 /*!

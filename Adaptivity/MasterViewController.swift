@@ -13,9 +13,16 @@ private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAn
 
 /// The view controller responsible for displaying the county collection view.
 class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
-    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet internal var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var selectedCounty: County?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
+    }
     
     func showCounty(county: County, animated: Bool) {
         selectedCounty = county
