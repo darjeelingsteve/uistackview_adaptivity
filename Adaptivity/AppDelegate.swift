@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = window?.rootViewController as! UINavigationController
         // Dismiss any existing county that is being shown
         navigationController.dismissViewControllerAnimated(false, completion: nil)
-        let viewController = navigationController.topViewController as! ViewController
+        let viewController = navigationController.topViewController as! MasterViewController
         viewController.showCounty(county, animated: false)
     }
 }

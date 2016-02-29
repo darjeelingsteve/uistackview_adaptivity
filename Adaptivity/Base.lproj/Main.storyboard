@@ -10,7 +10,7 @@
         <!--Counties-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -115,7 +115,7 @@
         <!--County View Controller-->
         <scene sceneID="leK-dT-6gU">
             <objects>
-                <viewController id="dcA-fF-HUS" customClass="CountyViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountyViewController" id="dcA-fF-HUS" customClass="CountyViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z3u-9P-uNk"/>
                         <viewControllerLayoutGuide type="bottom" id="uvw-Z3-WPv"/>

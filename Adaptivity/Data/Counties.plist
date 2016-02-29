@@ -11,6 +11,8 @@
 		<real>52.083333</real>
 		<key>longitude</key>
 		<real>-0.416667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Bedfordshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -20,7 +22,9 @@
 		<key>latitude</key>
 		<real>51.416667</real>
 		<key>longitude</key>
-		<real>-1.0</real>
+		<real>-1</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Berkshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -31,6 +35,8 @@
 		<real>51.833333</real>
 		<key>longitude</key>
 		<real>-0.833333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Buckinghamshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -40,7 +46,9 @@
 		<key>latitude</key>
 		<real>52.333333</real>
 		<key>longitude</key>
-		<real>0.0</real>
+		<real>0</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Cambridgeshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -51,6 +59,8 @@
 		<real>53.166667</real>
 		<key>longitude</key>
 		<real>-2.583333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Cheshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -61,6 +71,8 @@
 		<real>50.3</real>
 		<key>longitude</key>
 		<real>-4.9</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Cornwall</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -70,7 +82,9 @@
 		<key>latitude</key>
 		<real>54.75</real>
 		<key>longitude</key>
-		<real>-3.0</real>
+		<real>-3</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Cumberland</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -81,6 +95,8 @@
 		<real>53.133333</real>
 		<key>longitude</key>
 		<real>-1.6</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Derbyshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -91,6 +107,8 @@
 		<real>50.7</real>
 		<key>longitude</key>
 		<real>-3.8</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Devon</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -101,6 +119,8 @@
 		<real>50.833333</real>
 		<key>longitude</key>
 		<real>-2.333333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Dorset</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -111,6 +131,8 @@
 		<real>54.666667</real>
 		<key>longitude</key>
 		<real>-1.833333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/County_Durham</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -121,6 +143,8 @@
 		<real>50.916667</real>
 		<key>longitude</key>
 		<real>0.333333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/East_Sussex</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -131,6 +155,8 @@
 		<real>51.75</real>
 		<key>longitude</key>
 		<real>0.583333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Essex</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -141,6 +167,8 @@
 		<real>51.833333</real>
 		<key>longitude</key>
 		<real>-2.166667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Gloucestershire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -151,6 +179,8 @@
 		<real>51.083333</real>
 		<key>longitude</key>
 		<real>-1.25</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Hampshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -161,6 +191,8 @@
 		<real>52.083333</real>
 		<key>longitude</key>
 		<real>-2.75</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Herefordshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -171,6 +203,8 @@
 		<real>51.9</real>
 		<key>longitude</key>
 		<real>-0.2</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Hertfordshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -181,6 +215,8 @@
 		<real>51.19</real>
 		<key>longitude</key>
 		<real>0.73</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Kent</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -191,6 +227,8 @@
 		<real>53.8</real>
 		<key>longitude</key>
 		<real>-2.6</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Lancashire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -201,6 +239,8 @@
 		<real>52.716667</real>
 		<key>longitude</key>
 		<real>-1.183333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Leicestershire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -211,6 +251,8 @@
 		<real>53.066667</real>
 		<key>longitude</key>
 		<real>-0.183333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Lincolnshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -220,7 +262,9 @@
 		<key>latitude</key>
 		<real>52.666667</real>
 		<key>longitude</key>
-		<real>1.0</real>
+		<real>1</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Norfolk</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -231,6 +275,8 @@
 		<real>52.283333</real>
 		<key>longitude</key>
 		<real>-0.833333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Northamptonshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -240,7 +286,9 @@
 		<key>latitude</key>
 		<real>55.166667</real>
 		<key>longitude</key>
-		<real>-2.0</real>
+		<real>-2</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Northumberland</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -250,7 +298,9 @@
 		<key>latitude</key>
 		<real>53.166667</real>
 		<key>longitude</key>
-		<real>-1.0</real>
+		<real>-1</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Nottinghamshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -261,6 +311,8 @@
 		<real>51.75</real>
 		<key>longitude</key>
 		<real>-1.28</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Oxfordshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -271,6 +323,8 @@
 		<real>52.65</real>
 		<key>longitude</key>
 		<real>-0.633333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Rutland</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -281,6 +335,8 @@
 		<real>52.616667</real>
 		<key>longitude</key>
 		<real>-2.716667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Shropshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -290,7 +346,9 @@
 		<key>latitude</key>
 		<real>51.18</real>
 		<key>longitude</key>
-		<real>-3.0</real>
+		<real>-3</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Somerset</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -300,7 +358,9 @@
 		<key>latitude</key>
 		<real>52.833333</real>
 		<key>longitude</key>
-		<real>-2.0</real>
+		<real>-2</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Staffordshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -310,7 +370,9 @@
 		<key>latitude</key>
 		<real>52.166667</real>
 		<key>longitude</key>
-		<real>-1.0</real>
+		<real>-1</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Suffolk</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -321,6 +383,8 @@
 		<real>51.25</real>
 		<key>longitude</key>
 		<real>-0.416667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Surrey</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -331,6 +395,8 @@
 		<real>52.333333</real>
 		<key>longitude</key>
 		<real>-1.583333</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Warwickshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -341,6 +407,8 @@
 		<real>50.916667</real>
 		<key>longitude</key>
 		<real>-0.5</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/West_Sussex</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -351,6 +419,8 @@
 		<real>51.333333</real>
 		<key>longitude</key>
 		<real>-1.916667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Wiltshire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -361,6 +431,8 @@
 		<real>52.2</real>
 		<key>longitude</key>
 		<real>-2.166667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Worcestershire</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -368,9 +440,11 @@
 		<key>population</key>
 		<real>5288200</real>
 		<key>latitude</key>
-		<real>54.0</real>
+		<real>54</real>
 		<key>longitude</key>
-		<real>-2.0</real>
+		<real>-2</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Yorkshire</string>
 	</dict>
 </array>
 </plist>

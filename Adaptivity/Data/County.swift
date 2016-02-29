@@ -21,12 +21,13 @@ struct County : Equatable {
     let population: Int
     let latitude: Double
     let longitude: Double
+    let url: NSURL
     
     /// All of the counties available to the application.
     static var allCounties: [County] = {
         let countyDictionaries = NSArray.init(contentsOfURL: NSBundle.mainBundle().URLForResource("Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
         return countyDictionaries.map { (countryDictionary) -> County in
-            return County.init(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double)
+            return County.init(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: NSURL.init(string: countryDictionary["url"] as! String)!)
         }
     }()
 }
