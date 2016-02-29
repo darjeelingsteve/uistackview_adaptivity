@@ -8,18 +8,26 @@
 
 import UIKit
 
+private let CountyItemShortcutType = "CountyItem"
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     var window: UIWindow?
     let spotlightController = SpotlightController()
     let userActivityHandlers: [CountyUserActivityHandling]
+    private let history = CountyHistory()
     
     override init() {
         userActivityHandlers = [spotlightController, HandoffController()]
+        super.init()
+        history.delegate = self
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         spotlightController.indexCounties(County.allCounties)
+        if let navigationController = window?.rootViewController as? UINavigationController, masterViewController = navigationController.topViewController as? MasterViewController {
+            masterViewController.history = history
+        }
         return true
     }
     
@@ -39,12 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return handled
     }
     
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        showCounty(County.allCounties.filter({$0.name == shortcutItem.localizedTitle}).first!)
+    }
+    
     private func showCounty(county: County) {
         let navigationController = window?.rootViewController as! UINavigationController
         // Dismiss any existing county that is being shown
         navigationController.dismissViewControllerAnimated(false, completion: nil)
         let viewController = navigationController.topViewController as! MasterViewController
         viewController.showCounty(county, animated: false)
+    }
+    
+    //MARK: CountyHistoryDelegate
+    func countyHistoryDidUpdate(countyHistory: CountyHistory) {
+        UIApplication.sharedApplication().shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
+            return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
+        })
     }
 }
 

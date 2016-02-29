@@ -16,6 +16,7 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet internal var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var selectedCounty: County?
+    var history: CountyHistory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func showCounty(county: County, animated: Bool) {
         selectedCounty = county
+        history?.viewed(county)
         let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
         performSegueWithIdentifier(segueIdentifier, sender: self)
     }
