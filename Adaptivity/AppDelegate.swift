@@ -48,7 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     }
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-        showCounty(County.allCounties.filter({$0.name == shortcutItem.localizedTitle}).first!)
+        if shortcutItem.type == "Search" {
+            if let navigationController = window?.rootViewController as? UINavigationController, masterViewController = navigationController.topViewController as? MasterViewController {
+                // Dismiss any existing county that is being shown
+                navigationController.dismissViewControllerAnimated(false, completion: nil)
+                masterViewController.beginSearch()
+            }
+        }
+        else {
+            showCounty(County.allCounties.filter({$0.name == shortcutItem.localizedTitle}).first!)
+        }
     }
     
     private func showCounty(county: County) {

@@ -39,6 +39,10 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
         performSegueWithIdentifier(segueIdentifier, sender: self)
     }
     
+    func beginSearch() {
+        searchBar.becomeFirstResponder()
+    }
+    
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
         if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
