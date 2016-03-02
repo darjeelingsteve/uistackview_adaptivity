@@ -15,7 +15,7 @@ extension MasterViewController : UIViewControllerPreviewingDelegate {
         }
         
         let countyViewController = storyboard?.instantiateViewControllerWithIdentifier("CountyViewController") as! CountyViewController
-        countyViewController.county = County.allCounties[indexPath.item]
+        countyViewController.county = countiesToDisplay[indexPath.item]
         countyViewController.delegate = self
         countyViewController.preferredContentSize = CGSize(width: 0, height: 360)
         previewingContext.sourceRect = collectionView.convertRect(cell.frame, toView: collectionView.superview!)
