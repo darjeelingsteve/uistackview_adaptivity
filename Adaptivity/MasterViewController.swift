@@ -92,7 +92,7 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     //MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        showCounty(County.allCounties[collectionView.indexPathsForSelectedItems()!.first!.item], animated: true)
+        showCounty(countiesToDisplay[collectionView.indexPathsForSelectedItems()!.first!.item], animated: true)
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
     }
     
