@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     let spotlightController = SpotlightController()
     let userActivityHandlers: [CountyUserActivityHandling]
     private let history = CountyHistory()
+    private var applicationShortcutHandler: ApplicationShortcutHandler?
     
     override init() {
         userActivityHandlers = [spotlightController, HandoffController()]
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
         spotlightController.indexCounties(County.allCounties)
         if let navigationController = window?.rootViewController as? UINavigationController, masterViewController = navigationController.topViewController as? MasterViewController {
             masterViewController.history = history
+            applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
         }
         return true
     }
@@ -36,7 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
         // Loop over our user activity handlers to handle the activity
         for userActivityHandler in userActivityHandlers {
             handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (county) -> Void in
-                showCounty(county)
+                dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
+                    masterViewController.showCounty(county, animated: true)
+                })
             })
             if handled {
                 // The user activity was handled so we don't need to query any more activity handlers
@@ -48,24 +52,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     }
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-        if shortcutItem.type == "Search" {
-            if let navigationController = window?.rootViewController as? UINavigationController, masterViewController = navigationController.topViewController as? MasterViewController {
-                // Dismiss any existing county that is being shown
-                navigationController.dismissViewControllerAnimated(false, completion: nil)
-                masterViewController.beginSearch()
-            }
-        }
-        else {
-            showCounty(County.allCounties.filter({$0.name == shortcutItem.localizedTitle}).first!)
+        dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
+            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem)
         }
     }
     
-    private func showCounty(county: County) {
+    private func dismissExistingCountyViewIfRequired(completion: (MasterViewController) -> (Void)) {
         let navigationController = window?.rootViewController as! UINavigationController
         // Dismiss any existing county that is being shown
         navigationController.dismissViewControllerAnimated(false, completion: nil)
         let viewController = navigationController.topViewController as! MasterViewController
-        viewController.showCounty(county, animated: false)
+        completion(viewController)
     }
     
     //MARK: CountyHistoryDelegate

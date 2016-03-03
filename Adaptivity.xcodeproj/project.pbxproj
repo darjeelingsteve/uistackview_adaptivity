@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483523AD1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */; };
+		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFAF1C2063D70078391A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAE1C2063D70078391A /* MasterViewController.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
+		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48ABDFAE1C2063D70078391A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				48E8A9721C56AF7E004B1F2E /* Spotlight */,
 				B63121251C60ED6C0063E975 /* Handoff */,
 				48ABDFAC1C2063D70078391A /* AppDelegate.swift */,
+				483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */,
 				48ABDFAE1C2063D70078391A /* MasterViewController.swift */,
 				483523AC1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
@@ -355,6 +358,7 @@
 			files = (
 				48ABDFC21C206A0B0078391A /* County.swift in Sources */,
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
+				483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */,
 				B684588D1C84818B00EE6096 /* CountyHistory.swift in Sources */,
 				48ABDFAF1C2063D70078391A /* MasterViewController.swift in Sources */,
 				483523AD1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */,
