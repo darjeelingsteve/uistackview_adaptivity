@@ -30,6 +30,10 @@ struct County : Equatable {
             return County.init(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: NSURL.init(string: countryDictionary["url"] as! String)!)
         }
     }()
+    
+    static func countyForName(name: String) -> County? {
+        return allCounties.filter({$0.name == name}).first
+    }
 }
 
 extension County {

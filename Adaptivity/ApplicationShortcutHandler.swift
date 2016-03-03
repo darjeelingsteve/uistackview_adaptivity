@@ -20,7 +20,7 @@ class ApplicationShortcutHandler: NSObject {
             masterViewController.beginSearch()
         }
         else {
-            masterViewController.showCounty(County.allCounties.filter({$0.name == applicationShortcutItem.localizedTitle}).first!, animated: true)
+            masterViewController.showCounty(County.countyForName(applicationShortcutItem.localizedTitle)!, animated: true)
         }
     }
 }

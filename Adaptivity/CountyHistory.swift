@@ -16,7 +16,7 @@ class CountyHistory: NSObject {
             let countyNames = NSArray(contentsOfURL: urlToArchivedData) as? [String]
             if let countyNames = countyNames {
                 return countyNames.map({ (countyName) -> County in
-                    County.allCounties.filter({$0.name == countyName}).first!
+                    County.countyForName(countyName)!
                 })
             }
             else {
@@ -40,7 +40,7 @@ class CountyHistory: NSObject {
      - parameter county: The county viewed by the user.
      */
     func viewed(county: County) {
-        if let countyIndex = recentlyViewedCounties.indexOf(County.allCounties.filter({$0.name == county.name}).first!) {
+        if let countyIndex = recentlyViewedCounties.indexOf(county) {
             recentlyViewedCounties.removeAtIndex(countyIndex)
         }
         recentlyViewedCounties.insert(county, atIndex: 0)

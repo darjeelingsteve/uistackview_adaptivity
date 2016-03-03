@@ -54,7 +54,7 @@ class SpotlightController: NSObject, CountyUserActivityHandling {
     }
     
     func countyFromUserActivity(userActivity: NSUserActivity) -> County? {
-        return County.allCounties.filter({$0.name == userActivity.title}).first
+        return County.countyForName(userActivity.title ?? "")
     }
 }
 
