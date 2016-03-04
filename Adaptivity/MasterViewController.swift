@@ -16,7 +16,7 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet internal var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet private var searchBar: UISearchBar!
-    private var selectedCounty: County?
+    internal var selectedCounty: County?
     private var searchResults: [County]?
     internal var countiesToDisplay: [County] {
         get {
