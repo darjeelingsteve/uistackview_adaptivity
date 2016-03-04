@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let CountyItemShortcutType = "CountyItem"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     var window: UIWindow?
@@ -53,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
-            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem)
+            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem, completionHandler: completionHandler)
         }
     }
     

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/// The shortcut item type for county history shortcut items.
+let CountyItemShortcutType = "CountyItem"
+
+/// The class responsible for handling the response to application shortcuts.
 class ApplicationShortcutHandler: NSObject {
     private let masterViewController: MasterViewController
     
@@ -15,12 +19,16 @@ class ApplicationShortcutHandler: NSObject {
         self.masterViewController = masterViewController
     }
     
-    func handleApplicationShortcutItem(applicationShortcutItem: UIApplicationShortcutItem) {
+    func handleApplicationShortcutItem(applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        var handled = false
         if applicationShortcutItem.type == "Search" {
             masterViewController.beginSearch()
+            handled = true
         }
-        else {
+        else if applicationShortcutItem.type == CountyItemShortcutType {
             masterViewController.showCounty(County.countyForName(applicationShortcutItem.localizedTitle)!, animated: true)
+            handled = true
         }
+        completionHandler(handled)
     }
 }
