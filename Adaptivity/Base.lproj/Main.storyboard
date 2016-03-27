@@ -10,7 +10,7 @@
         <!--Counties-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MasterViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGu-bo-TVs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGu-bo-TVs">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mjn-Za-ADn">
                                     <size key="itemSize" width="160" height="50"/>
@@ -30,7 +30,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountyCell" id="LEu-Uk-47o" customClass="CountyCell" customModule="Counties" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="64" width="300" height="150"/>
+                                        <rect key="frame" x="150" y="0.0" width="300" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
@@ -75,19 +75,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="MI9-yT-Qye"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-zH-abe">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hsb-dc-ejd"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tGu-bo-TVs" firstAttribute="top" secondItem="HTi-zH-abe" secondAttribute="bottom" id="0JZ-Az-GaM"/>
                             <constraint firstItem="tGu-bo-TVs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="47T-VP-CAr"/>
-                            <constraint firstItem="tGu-bo-TVs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Fb-EQ-DYT"/>
+                            <constraint firstItem="HTi-zH-abe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9NO-ok-5Dp"/>
+                            <constraint firstAttribute="trailing" secondItem="HTi-zH-abe" secondAttribute="trailing" id="LFd-Pc-eRt"/>
                             <constraint firstItem="tGu-bo-TVs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zeu-R9-aCY"/>
                             <constraint firstAttribute="trailing" secondItem="tGu-bo-TVs" secondAttribute="trailing" id="gPC-kU-gUr"/>
+                            <constraint firstItem="HTi-zH-abe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jXF-6x-dHL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Counties" id="gG2-dn-aPi"/>
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
+                        <outlet property="searchBar" destination="HTi-zH-abe" id="CNo-Ka-0Bd"/>
                         <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
                         <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
                     </connections>
@@ -124,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
                                 <rect key="frame" x="150" y="87" width="300" height="269"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iuo-ze-4aJ">
@@ -140,7 +151,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-hy-kGV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-hy-kGV">
                                         <rect key="frame" x="0.0" y="249" width="300" height="20"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>

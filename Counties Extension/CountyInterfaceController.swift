@@ -23,7 +23,7 @@ class CountyInterfaceController: WKInterfaceController {
             return
         }
         
-        self.county = County.allCounties.filter({$0.name == countyName}).first
+        self.county = County.countyForName(countyName)
         setTitle(county?.name)
         flagImage.setImage(county?.flagImage)
         nameLabel.setText(county?.name)

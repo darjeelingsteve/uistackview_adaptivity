@@ -15,7 +15,8 @@ extension MasterViewController : UIViewControllerPreviewingDelegate {
         }
         
         let countyViewController = storyboard?.instantiateViewControllerWithIdentifier("CountyViewController") as! CountyViewController
-        countyViewController.county = County.allCounties[indexPath.item]
+        selectedCounty = countiesToDisplay[indexPath.item]
+        countyViewController.county = selectedCounty
         countyViewController.delegate = self
         countyViewController.preferredContentSize = CGSize(width: 0, height: 360)
         previewingContext.sourceRect = collectionView.convertRect(cell.frame, toView: collectionView.superview!)
@@ -25,5 +26,6 @@ extension MasterViewController : UIViewControllerPreviewingDelegate {
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
         let navigationController = UINavigationController(rootViewController: viewControllerToCommit)
         showViewController(navigationController, sender: self)
+        history?.viewed(selectedCounty!)
     }
 }

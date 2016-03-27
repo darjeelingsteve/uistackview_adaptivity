@@ -12,10 +12,18 @@ private let PresentCountyWithAnimationSegueIdentifier = "PresentCountyWithAnimat
 private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAnimation"
 
 /// The view controller responsible for displaying the county collection view.
-class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate {
+class MasterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountyViewControllerDelegate, UISearchBarDelegate {
     @IBOutlet internal var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
-    private var selectedCounty: County?
+    @IBOutlet private var searchBar: UISearchBar!
+    internal var selectedCounty: County?
+    private var searchResults: [County]?
+    internal var countiesToDisplay: [County] {
+        get {
+            return searchResults ?? County.allCounties
+        }
+    }
+    var history: CountyHistory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +34,13 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func showCounty(county: County, animated: Bool) {
         selectedCounty = county
+        history?.viewed(county)
         let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
         performSegueWithIdentifier(segueIdentifier, sender: self)
+    }
+    
+    func beginSearch() {
+        searchBar.becomeFirstResponder()
     }
     
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -54,12 +67,12 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     //MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return County.allCounties.count
+        return countiesToDisplay.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let countyCell = collectionView.dequeueReusableCellWithReuseIdentifier("CountyCell", forIndexPath: indexPath) as! CountyCell
-        countyCell.county = County.allCounties[indexPath.row]
+        countyCell.county = countiesToDisplay[indexPath.row]
         countyCell.displayStyle = styleForTraitCollection(traitCollection)
         return countyCell
     }
@@ -79,8 +92,33 @@ class MasterViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     //MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        showCounty(County.allCounties[collectionView.indexPathsForSelectedItems()!.first!.item], animated: true)
+        showCounty(countiesToDisplay[collectionView.indexPathsForSelectedItems()!.first!.item], animated: true)
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+    }
+    
+    //MARK: UISearchBarDelegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResults = County.allCounties.filter({$0.name.hasPrefix(searchBar.text ?? "")})
+        collectionView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        searchResults = nil
+        collectionView.reloadData()
     }
     
     //MARK: CountyViewControllerDelegate

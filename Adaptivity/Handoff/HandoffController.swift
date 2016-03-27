@@ -17,7 +17,7 @@ class HandoffController: NSObject, CountyUserActivityHandling {
     }
     
     func countyFromUserActivity(userActivity: NSUserActivity) -> County? {
-        if let userInfo = userActivity.userInfo, countyName = userInfo[HandoffUserInfo.CountyName] as? String, selectedCounty = County.allCounties.filter({$0.name == countyName}).first {
+        if let userInfo = userActivity.userInfo, countyName = userInfo[HandoffUserInfo.CountyName] as? String, selectedCounty = County.countyForName(countyName) {
             return selectedCounty
         }
         return nil
