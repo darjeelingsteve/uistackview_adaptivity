@@ -30,24 +30,24 @@ class CountyViewController: UIViewController {
         }
     }
     
-    @IBAction func doneTapped(sender: AnyObject) {
-        self.delegate?.countyViewControllerDidFinish(self)
+    @IBAction func doneTapped(_ sender: AnyObject) {
+        delegate?.countyViewControllerDidFinish(self)
     }
     
-    //MARK: UIPreviewActionItem
+    // MARK: UIPreviewActionItem
     lazy var previewActions: [UIPreviewActionItem] = {
-        let safariAction = UIPreviewAction(title: NSLocalizedString("Show in Safari", comment: ""), style: .Default, handler: { (previewAction, viewController) -> Void in
-            guard let countyViewController = viewController as? CountyViewController, county = countyViewController.county else { return }
-            UIApplication.sharedApplication().openURL(county.url)
+        let safariAction = UIPreviewAction(title: NSLocalizedString("Show in Safari", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
+            guard let countyViewController = viewController as? CountyViewController, let county = countyViewController.county else { return }
+            UIApplication.shared.openURL(county.url as URL)
         })
         
-        let mapsAction = UIPreviewAction(title: NSLocalizedString("Show in Maps", comment: ""), style: .Default, handler: { (previewAction, viewController) -> Void in
-            guard let countyViewController = viewController as? CountyViewController, county = countyViewController.county else { return }
+        let mapsAction = UIPreviewAction(title: NSLocalizedString("Show in Maps", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
+            guard let countyViewController = viewController as? CountyViewController, let county = countyViewController.county else { return }
             let coordinate = CLLocationCoordinate2D(latitude: county.latitude, longitude: county.longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
             let regionDistance: CLLocationDistance = 100000
             let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate, regionDistance, regionDistance)
-            mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsMapSpanKey : NSValue(MKCoordinateSpan: regionSpan.span)])
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapSpanKey : NSValue(mkCoordinateSpan: regionSpan.span)])
         })
         
         return [safariAction, mapsAction]
@@ -62,5 +62,5 @@ protocol CountyViewControllerDelegate: NSObjectProtocol {
     The function called when the county view controller wants to dismiss.
     - parameter countyViewController: The county view controller sending the message.
     */
-    func countyViewControllerDidFinish(countyViewController: CountyViewController);
+    func countyViewControllerDidFinish(_ countyViewController: CountyViewController);
 }

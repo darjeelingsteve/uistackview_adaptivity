@@ -23,7 +23,7 @@ protocol CountyUserActivityHandling: class {
      - returns: The county contained in the user activity if one was found, nil
      otherwise.
      */
-    func countyFromUserActivity(userActivity: NSUserActivity) -> County?
+    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County?
 }
 
 extension CountyUserActivityHandling {
@@ -35,8 +35,8 @@ extension CountyUserActivityHandling {
      - returns: A boolean indicating whether the user activity was handled or
      not.
      */
-    func handleUserActivity(userActivity: NSUserActivity, @noescape completionHandler: (County) -> Void) -> Bool {
-        if let selectedCounty = countyFromUserActivity(userActivity) where userActivity.activityType == handledActivityType {
+    func handleUserActivity(_ userActivity: NSUserActivity, completionHandler: (County) -> Void) -> Bool {
+        if let selectedCounty = countyFromUserActivity(userActivity), userActivity.activityType == handledActivityType {
             completionHandler(selectedCounty)
             return true
         }
@@ -47,17 +47,17 @@ extension CountyUserActivityHandling {
 
 // MARK: - CustomReflectable
 extension NSUserActivity : CustomReflectable {
-    public func customMirror() -> Mirror {
+    public var customMirror: Mirror {
         let children = DictionaryLiteral<String, Any>(dictionaryLiteral:
             ("activityType", activityType),
-            ("title", title),
-            ("userInfo", userInfo.debugDescription),
-            ("requiredUserInfoKeys", requiredUserInfoKeys),
-            ("needsSave", needsSave),
-            ("webpageURL", webpageURL),
-            ("expirationDate", expirationDate.debugDescription),
-            ("keywords", keywords),
-            ("supportsContinuationStreams", supportsContinuationStreams))
-        return Mirror(NSUserActivity.self, children: children, displayStyle: .Class, ancestorRepresentation: .Suppressed)
+                                                      ("title", title ?? "None"),
+                                                      ("userInfo", userInfo.debugDescription),
+                                                      ("requiredUserInfoKeys", requiredUserInfoKeys),
+                                                      ("needsSave", needsSave),
+                                                      ("webpageURL", webpageURL ?? "None"),
+                                                      ("expirationDate", expirationDate.debugDescription),
+                                                      ("keywords", keywords),
+                                                      ("supportsContinuationStreams", supportsContinuationStreams))
+        return Mirror(NSUserActivity.self, children: children, displayStyle: .class, ancestorRepresentation: .suppressed)
     }
 }

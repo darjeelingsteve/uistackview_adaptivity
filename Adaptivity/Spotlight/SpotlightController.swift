@@ -14,8 +14,8 @@ private let SpotlightControllerHasIndexedKey = "HasIndexed"
 
 /// The class responsible for managing the Spotlight index for County objects
 class SpotlightController: NSObject, CountyUserActivityHandling {
-    func indexCounties(counties: [County]) {
-        if CSSearchableIndex.isIndexingAvailable() == false || NSUserDefaults.standardUserDefaults().boolForKey(SpotlightControllerHasIndexedKey) == true {
+    func indexCounties(_ counties: [County]) {
+        if CSSearchableIndex.isIndexingAvailable() == false || UserDefaults.standard.bool(forKey: SpotlightControllerHasIndexedKey) == true {
             // We either can't index or don't need to
             return
         }
@@ -24,8 +24,8 @@ class SpotlightController: NSObject, CountyUserActivityHandling {
             let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
             attributeSet.title = county.name
             attributeSet.contentDescription = county.populationDescription
-            attributeSet.latitude = county.latitude
-            attributeSet.longitude = county.longitude
+            attributeSet.latitude = county.latitude as NSNumber?
+            attributeSet.longitude = county.longitude as NSNumber?
             attributeSet.supportsNavigation = 1
             if let countyFlag = county.flagImage {
                 // Scale image as recommended by https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/SearchUserExperience.html#//apple_ref/doc/uid/TP40016308-CH11-SW1
@@ -35,39 +35,39 @@ class SpotlightController: NSObject, CountyUserActivityHandling {
             return searchableItem
         }
         
-        let searchableIndex = CSSearchableIndex.defaultSearchableIndex()
+        let searchableIndex = CSSearchableIndex.default()
         searchableIndex.indexSearchableItems(searchableItems) { (error) -> Void in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
             else {
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: SpotlightControllerHasIndexedKey)
+                UserDefaults.standard.set(true, forKey: SpotlightControllerHasIndexedKey)
             }
         }
     }
     
-    //MARK: CountyUserActivityHandling
+    // MARK: CountyUserActivityHandling
     var handledActivityType: String {
         get {
             return CSSearchableItemActionType
         }
     }
     
-    func countyFromUserActivity(userActivity: NSUserActivity) -> County? {
+    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County? {
         return County.countyForName(userActivity.title ?? "")
     }
 }
 
 extension UIImage {
-    func scaledImageWithWidth(width: CGFloat) -> UIImage {
-        let imageScale = width / self.size.width
-        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(imageScale, imageScale))
+    func scaledImageWithWidth(_ width: CGFloat) -> UIImage {
+        let imageScale = width / size.width
+        let newSize = size.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
         
         UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
-        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        draw(in: CGRect(origin: CGPoint.zero, size: newSize))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return scaledImage
+        return scaledImage!
     }
 }

@@ -14,12 +14,12 @@ The styles that the cell can display itself in.
 - Grid:  Display the cell in a grid style.
 */
 enum CountyCellDisplayStyle {
-    case Table
-    case Grid
+    case table
+    case grid
 }
 
 private struct BorderSettings {
-    static let width: CGFloat = 1.0 / UIScreen.mainScreen().scale
+    static let width: CGFloat = 1.0 / UIScreen.main.scale
     static let colour = UIColor(white: 0.9, alpha: 1.0)
 }
 
@@ -29,13 +29,14 @@ class CountyCell: UICollectionViewCell {
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     
-    var displayStyle: CountyCellDisplayStyle = .Table {
+    /// The display style of the receiver.
+    var displayStyle: CountyCellDisplayStyle = .table {
         didSet {
             switch (displayStyle) {
-            case .Table:
-                stackView.axis = .Horizontal
-            case .Grid:
-                stackView.axis = .Vertical
+            case .table:
+                stackView.axis = .horizontal
+            case .grid:
+                stackView.axis = .vertical
             }
         }
     }
@@ -61,16 +62,16 @@ class CountyCell: UICollectionViewCell {
         setNeedsDisplay() // Redraw the border
     }
     
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         
         let path: UIBezierPath
         switch (displayStyle) {
-        case .Table:
+        case .table:
             path = UIBezierPath()
-            path.moveToPoint(CGPoint(x: layoutMargins.left, y: CGRectGetMaxY(rect) - BorderSettings.width))
-            path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect) - BorderSettings.width))
-        case .Grid:
+            path.move(to: CGPoint(x: layoutMargins.left, y: rect.maxY - BorderSettings.width))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - BorderSettings.width))
+        case .grid:
             path = UIBezierPath(rect: rect)
         }
         

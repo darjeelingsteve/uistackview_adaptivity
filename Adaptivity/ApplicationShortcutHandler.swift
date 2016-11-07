@@ -19,7 +19,7 @@ class ApplicationShortcutHandler: NSObject {
         self.masterViewController = masterViewController
     }
     
-    func handleApplicationShortcutItem(applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+    func handle(_ applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         var handled = false
         if applicationShortcutItem.type == "Search" {
             masterViewController.beginSearch()

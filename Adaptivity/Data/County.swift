@@ -21,17 +21,17 @@ struct County : Equatable {
     let population: Int
     let latitude: Double
     let longitude: Double
-    let url: NSURL
+    let url: URL
     
     /// All of the counties available to the application.
     static var allCounties: [County] = {
-        let countyDictionaries = NSArray.init(contentsOfURL: NSBundle.mainBundle().URLForResource("Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
+        let countyDictionaries = NSArray.init(contentsOf: Bundle.main.url(forResource: "Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
         return countyDictionaries.map { (countryDictionary) -> County in
-            return County.init(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: NSURL.init(string: countryDictionary["url"] as! String)!)
+            return County.init(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
         }
     }()
     
-    static func countyForName(name: String) -> County? {
+    static func countyForName(_ name: String) -> County? {
         return allCounties.filter({$0.name == name}).first
     }
 }
@@ -39,15 +39,15 @@ struct County : Equatable {
 extension County {
     var populationDescription: String {
         get {
-            let numberFormatter = NSNumberFormatter()
-            numberFormatter.numberStyle = .DecimalStyle
-            return "Population: " + numberFormatter.stringFromNumber(self.population)!
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            return "Population: " + numberFormatter.string(from: NSNumber(value: population))!
         }
     }
     
     var flagImage: UIImage? {
         get {
-            return UIImage(named: self.name)
+            return UIImage(named: name)
         }
     }
 }

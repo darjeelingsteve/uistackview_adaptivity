@@ -10,18 +10,18 @@ import WatchKit
 import Foundation
 
 class InterfaceController: WKInterfaceController {
-    @IBOutlet private weak var table: WKInterfaceTable!
+    @IBOutlet fileprivate weak var table: WKInterfaceTable!
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
-        table.setNumberOfRows(County.allCounties.count, withRowType: String(CountyRowController))
-        for (index, county) in County.allCounties.enumerate() {
-            (table.rowControllerAtIndex(index) as! CountyRowController).county = county
+        table.setNumberOfRows(County.allCounties.count, withRowType: String(describing: CountyRowController.self))
+        for (index, county) in County.allCounties.enumerated() {
+            (table.rowController(at: index) as! CountyRowController).county = county
         }
     }
     
-    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         return County.allCounties[rowIndex].name
     }
 }

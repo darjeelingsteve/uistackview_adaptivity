@@ -9,23 +9,23 @@
 import UIKit
 
 extension MasterViewController : UIViewControllerPreviewingDelegate {
-    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = collectionView.indexPathForItemAtPoint(collectionView.convertPoint(location, fromView: view)), let cell = collectionView.cellForItemAtIndexPath(indexPath) else {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView.indexPathForItem(at: collectionView.convert(location, from: view)), let cell = collectionView.cellForItem(at: indexPath) else {
             return nil
         }
         
-        let countyViewController = storyboard?.instantiateViewControllerWithIdentifier("CountyViewController") as! CountyViewController
+        let countyViewController = storyboard?.instantiateViewController(withIdentifier: "CountyViewController") as! CountyViewController
         selectedCounty = countiesToDisplay[indexPath.item]
         countyViewController.county = selectedCounty
         countyViewController.delegate = self
         countyViewController.preferredContentSize = CGSize(width: 0, height: 360)
-        previewingContext.sourceRect = collectionView.convertRect(cell.frame, toView: collectionView.superview!)
+        previewingContext.sourceRect = collectionView.convert(cell.frame, to: collectionView.superview!)
         return countyViewController
     }
     
-    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         let navigationController = UINavigationController(rootViewController: viewControllerToCommit)
-        showViewController(navigationController, sender: self)
+        show(navigationController, sender: self)
         history?.viewed(selectedCounty!)
     }
 }

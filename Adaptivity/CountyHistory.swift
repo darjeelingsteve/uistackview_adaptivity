@@ -13,7 +13,7 @@ class CountyHistory: NSObject {
     var delegate: CountyHistoryDelegate?
     private(set) var recentlyViewedCounties: [County] {
         get {
-            let countyNames = NSArray(contentsOfURL: urlToArchivedData) as? [String]
+            let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
             if let countyNames = countyNames {
                 return countyNames.map({ (countyName) -> County in
                     County.countyForName(countyName)!
@@ -25,25 +25,23 @@ class CountyHistory: NSObject {
         }
         set {
             let countyNames = newValue.map({$0.name}) as NSArray
-            countyNames.writeToURL(urlToArchivedData, atomically: true)
+            countyNames.write(to: urlToArchivedData, atomically: true)
         }
     }
-    private var urlToArchivedData: NSURL {
-        get {
-            let documentsURL = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!)
-            return documentsURL.URLByAppendingPathComponent("CountyHistory")
-        }
+    private var urlToArchivedData: URL {
+        let documentsURL = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)
+        return documentsURL.appendingPathComponent("CountyHistory")
     }
     
     /**
      Call this function when the user views a county.
      - parameter county: The county viewed by the user.
      */
-    func viewed(county: County) {
-        if let countyIndex = recentlyViewedCounties.indexOf(county) {
-            recentlyViewedCounties.removeAtIndex(countyIndex)
+    func viewed(_ county: County) {
+        if let countyIndex = recentlyViewedCounties.index(of: county) {
+            recentlyViewedCounties.remove(at: countyIndex)
         }
-        recentlyViewedCounties.insert(county, atIndex: 0)
+        recentlyViewedCounties.insert(county, at: 0)
         recentlyViewedCounties = Array(recentlyViewedCounties.prefix(3))
         delegate?.countyHistoryDidUpdate(self)
     }
@@ -57,5 +55,5 @@ protocol CountyHistoryDelegate: NSObjectProtocol {
      The message sent when the county history was updated.
      - parameter countyHistory: The county history that was updated.
      */
-    func countyHistoryDidUpdate(countyHistory: CountyHistory)
+    func countyHistoryDidUpdate(_ countyHistory: CountyHistory)
 }

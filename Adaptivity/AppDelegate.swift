@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let spotlightController = SpotlightController()
     let userActivityHandlers: [CountyUserActivityHandling]
@@ -22,16 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
         history.delegate = self
     }
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         spotlightController.indexCounties(County.allCounties)
-        if let navigationController = window?.rootViewController as? UINavigationController, masterViewController = navigationController.topViewController as? MasterViewController {
+        if let navigationController = window?.rootViewController as? UINavigationController, let masterViewController = navigationController.topViewController as? MasterViewController {
             masterViewController.history = history
             applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
         }
         return true
     }
     
-    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         var handled = false
         // Loop over our user activity handlers to handle the activity
         for userActivityHandler in userActivityHandlers {
@@ -49,23 +49,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CountyHistoryDelegate {
         return handled
     }
     
-    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
-            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem, completionHandler: completionHandler)
+            self.applicationShortcutHandler?.handle(shortcutItem, completionHandler: completionHandler)
         }
     }
     
-    private func dismissExistingCountyViewIfRequired(completion: (MasterViewController) -> (Void)) {
+    private func dismissExistingCountyViewIfRequired(_ completion: (MasterViewController) -> (Void)) {
         let navigationController = window?.rootViewController as! UINavigationController
         // Dismiss any existing county that is being shown
-        navigationController.dismissViewControllerAnimated(false, completion: nil)
+        navigationController.dismiss(animated: false, completion: nil)
         let viewController = navigationController.topViewController as! MasterViewController
         completion(viewController)
     }
-    
-    //MARK: CountyHistoryDelegate
-    func countyHistoryDidUpdate(countyHistory: CountyHistory) {
-        UIApplication.sharedApplication().shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
+}
+
+// MARK: CountyHistoryDelegate
+extension AppDelegate: CountyHistoryDelegate {
+    func countyHistoryDidUpdate(_ countyHistory: CountyHistory) {
+        UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
             return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
         })
     }

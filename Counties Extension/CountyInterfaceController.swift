@@ -11,19 +11,19 @@ import Foundation
 
 /// The interface controller responsible for displaying county details in an interface controller
 class CountyInterfaceController: WKInterfaceController {
-    @IBOutlet private weak var flagImage: WKInterfaceImage!
-    @IBOutlet private weak var nameLabel: WKInterfaceLabel!
-    @IBOutlet private weak var populationLabel: WKInterfaceLabel!
-    private var county: County?
+    @IBOutlet fileprivate weak var flagImage: WKInterfaceImage!
+    @IBOutlet fileprivate weak var nameLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var populationLabel: WKInterfaceLabel!
+    fileprivate var county: County?
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         guard let countyName = context as? String else {
             return
         }
         
-        self.county = County.countyForName(countyName)
+        county = County.countyForName(countyName)
         setTitle(county?.name)
         flagImage.setImage(county?.flagImage)
         nameLabel.setText(county?.name)

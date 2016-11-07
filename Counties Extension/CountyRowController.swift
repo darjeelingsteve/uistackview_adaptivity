@@ -10,8 +10,8 @@ import WatchKit
 
 /// The row controller responsible for showing county information in a table row
 class CountyRowController: NSObject {
-    @IBOutlet private weak var nameLabel: WKInterfaceLabel!
-    @IBOutlet private weak var flagImage: WKInterfaceImage!
+    @IBOutlet fileprivate weak var nameLabel: WKInterfaceLabel!
+    @IBOutlet fileprivate weak var flagImage: WKInterfaceImage!
     
     var county: County? {
         didSet {

@@ -9,15 +9,15 @@
 import WatchKit
 
 class HandoffController: NSObject, CountyUserActivityHandling {
-    //MARK: CountyUserActivityHandling
+    // MARK: CountyUserActivityHandling
     var handledActivityType: String {
         get {
             return HandoffActivity.CountyDetails
         }
     }
     
-    func countyFromUserActivity(userActivity: NSUserActivity) -> County? {
-        if let userInfo = userActivity.userInfo, countyName = userInfo[HandoffUserInfo.CountyName] as? String, selectedCounty = County.countyForName(countyName) {
+    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County? {
+        if let userInfo = userActivity.userInfo, let countyName = userInfo[HandoffUserInfo.CountyName] as? String, let selectedCounty = County.countyForName(countyName) {
             return selectedCounty
         }
         return nil
