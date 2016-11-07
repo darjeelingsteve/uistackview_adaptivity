@@ -38,7 +38,7 @@ class CountyViewController: UIViewController {
     lazy var previewActions: [UIPreviewActionItem] = {
         let safariAction = UIPreviewAction(title: NSLocalizedString("Show in Safari", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
             guard let countyViewController = viewController as? CountyViewController, let county = countyViewController.county else { return }
-            UIApplication.shared.openURL(county.url as URL)
+            UIApplication.shared.open(county.url)
         })
         
         let mapsAction = UIPreviewAction(title: NSLocalizedString("Show in Maps", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
