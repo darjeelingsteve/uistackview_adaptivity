@@ -13,9 +13,9 @@ import MobileCoreServices
 private let SpotlightControllerHasIndexedKey = "HasIndexed"
 
 /// The class responsible for managing the Spotlight index for County objects
-class SpotlightController: NSObject, CountyUserActivityHandling {
+class SpotlightController {
     func indexCounties(_ counties: [County]) {
-        if CSSearchableIndex.isIndexingAvailable() == false || UserDefaults.standard.bool(forKey: SpotlightControllerHasIndexedKey) == true {
+        guard CSSearchableIndex.isIndexingAvailable() == true && UserDefaults.standard.bool(forKey: SpotlightControllerHasIndexedKey) == false else {
             // We either can't index or don't need to
             return
         }
@@ -45,12 +45,12 @@ class SpotlightController: NSObject, CountyUserActivityHandling {
             }
         }
     }
-    
-    // MARK: CountyUserActivityHandling
+}
+
+// MARK: CountyUserActivityHandling
+extension SpotlightController: CountyUserActivityHandling {
     var handledActivityType: String {
-        get {
-            return CSSearchableItemActionType
-        }
+        return CSSearchableItemActionType
     }
     
     func countyFromUserActivity(_ userActivity: NSUserActivity) -> County? {
