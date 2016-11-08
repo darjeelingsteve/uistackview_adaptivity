@@ -53,8 +53,11 @@ extension SpotlightController: UserActivityHandling {
         return CSSearchableItemActionType
     }
     
-    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County? {
-        return County.countyForName(userActivity.title ?? "")
+    func resultFromUserActivity(_ userActivity: NSUserActivity) -> UserActivityHandlingResult? {
+        guard let county = County.countyForName(userActivity.title ?? "") else {
+            return nil
+        }
+        return .county(county: county)
     }
 }
 

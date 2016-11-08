@@ -35,9 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var handled = false
         // Loop over our user activity handlers to handle the activity
         for userActivityHandler in userActivityHandlers {
-            handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (county) -> Void in
+            handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (result) -> Void in
                 dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
-                    masterViewController.showCounty(county, animated: true)
+                    switch result {
+                    case .county(let county):
+                        masterViewController.showCounty(county, animated: true)
+                    case .searchText(_):
+                        break
+                    }
                 })
             })
             if handled {

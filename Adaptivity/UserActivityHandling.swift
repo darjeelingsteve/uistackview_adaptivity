@@ -8,6 +8,15 @@
 
 import Foundation
 
+/// The result type given by `UserActivityHandling` instances when a user activity can be handled.
+///
+/// - county: The county that was found to match the user activity.
+/// - searchText: The search text that was found inside the user activity.
+enum UserActivityHandlingResult {
+    case county(county: County)
+    case searchText(searchText: String)
+}
+
 /**
  The protocol to conform to for classes that handle user activities.
  */
@@ -15,33 +24,26 @@ protocol UserActivityHandling: class {
     /// The activity type handled by the activity handler.
     var handledActivityType: String {get}
     
-    /**
-     Called when the receiver is to handle a user activity. Will only be called
-     with user activities whose `activityType` matches the type returned by
-     the reveiver's `handledActivityType` property.
-     - parameter userActivity: The user activity to handle.
-     - returns: The county contained in the user activity if one was found, nil
-     otherwise.
-     */
-    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County?
+    /// Called when the receiver is to handle a user activity. Must return `nil` if the user activity cannot be handled.
+    ///
+    /// - Parameter userActivity: The user activity to handle.
+    /// - Returns: The result contained in the user activity if one was found, nil otherwise.
+    func resultFromUserActivity(_ userActivity: NSUserActivity) -> UserActivityHandlingResult?
 }
 
 extension UserActivityHandling {
     /**
-     Called when the receiver is to handle a user activity involving a county.
+     Called when the receiver is to handle a user activity.
      - parameter userActivity:      The user activity to handle.
-     - parameter completionHandler: Supplies the county specified by the user
-     activity if it could be handled.
-     - returns: A boolean indicating whether the user activity was handled or
-     not.
+     - parameter completionHandler: Supplies the result specified by the user activity if it could be handled.
+     - returns: A boolean indicating whether the user activity was handled or not.
      */
-    func handleUserActivity(_ userActivity: NSUserActivity, completionHandler: (County) -> Void) -> Bool {
-        if let selectedCounty = countyFromUserActivity(userActivity), userActivity.activityType == handledActivityType {
-            completionHandler(selectedCounty)
-            return true
+    func handleUserActivity(_ userActivity: NSUserActivity, completionHandler: (UserActivityHandlingResult) -> Void) -> Bool {
+        guard userActivity.activityType == handledActivityType, let result = resultFromUserActivity(userActivity) else {
+            return false
         }
-        
-        return false
+        completionHandler(result)
+        return true
     }
 }
 

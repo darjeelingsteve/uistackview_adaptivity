@@ -8,6 +8,7 @@
 
 import WatchKit
 
+/// The class rsponsible for handling user activities provided during Handoff.
 class HandoffController: UserActivityHandling {
     // MARK: CountyUserActivityHandling
     var handledActivityType: String {
@@ -16,10 +17,10 @@ class HandoffController: UserActivityHandling {
         }
     }
     
-    func countyFromUserActivity(_ userActivity: NSUserActivity) -> County? {
-        if let userInfo = userActivity.userInfo, let countyName = userInfo[HandoffUserInfo.CountyName] as? String, let selectedCounty = County.countyForName(countyName) {
-            return selectedCounty
+    func resultFromUserActivity(_ userActivity: NSUserActivity) -> UserActivityHandlingResult? {
+        guard let userInfo = userActivity.userInfo, let countyName = userInfo[HandoffUserInfo.CountyName] as? String, let selectedCounty = County.countyForName(countyName) else {
+            return nil
         }
-        return nil
+        return .county(county: selectedCounty)
     }
 }
