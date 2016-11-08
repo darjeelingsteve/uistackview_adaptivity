@@ -34,12 +34,11 @@ class SpotlightSearchController {
             self.searchResults.append(contentsOf: items.flatMap { County.countyForName($0.uniqueIdentifier) })
         }
         
-        query?.completionHandler = { [unowned self]  (error) in
+        query?.completionHandler = { (error) in
             guard error == nil else {
                 print("Error: \(error?.localizedDescription)")
                 return
             }
-            self.searchResults.sort(by: { $0.name < $1.name })
             DispatchQueue.main.async {
                 completionHandler()
             }
