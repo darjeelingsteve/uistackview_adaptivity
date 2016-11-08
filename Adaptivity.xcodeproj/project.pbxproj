@@ -19,6 +19,7 @@
 		48ABDFC21C206A0B0078391A /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC11C206A0B0078391A /* County.swift */; };
 		48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC31C209E2F0078391A /* CountyCell.swift */; };
 		48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */; };
+		48D4723C1DD212AA00AFCBBC /* SpotlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4723B1DD212AA00AFCBBC /* SpotlightSearchController.swift */; };
 		48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */; };
 		B63120FF1C60D69F0063E975 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63120FD1C60D69F0063E975 /* Interface.storyboard */; };
 		B63121011C60D69F0063E975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63121001C60D69F0063E975 /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		48ABDFC11C206A0B0078391A /* County.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = County.swift; path = Data/County.swift; sourceTree = "<group>"; };
 		48ABDFC31C209E2F0078391A /* CountyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
 		48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
+		48D4723B1DD212AA00AFCBBC /* SpotlightSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightSearchController.swift; sourceTree = "<group>"; };
 		48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightController.swift; path = Spotlight/SpotlightController.swift; sourceTree = "<group>"; };
 		B63120FB1C60D69F0063E975 /* Counties (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63120FE1C60D69F0063E975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */,
 				482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */,
+				48D4723B1DD212AA00AFCBBC /* SpotlightSearchController.swift */,
 			);
 			name = Spotlight;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */,
 				483523AD1C7BB2FB003DA4D7 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
+				48D4723C1DD212AA00AFCBBC /* SpotlightSearchController.swift in Sources */,
 				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
 				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
