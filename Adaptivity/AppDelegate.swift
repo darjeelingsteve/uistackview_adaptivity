@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let spotlightController = SpotlightController()
-    let userActivityHandlers: [CountyUserActivityHandling]
+    let userActivityHandlers: [UserActivityHandling]
     private let history = CountyHistory()
     private var applicationShortcutHandler: ApplicationShortcutHandler?
     

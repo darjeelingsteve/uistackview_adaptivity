@@ -8,7 +8,7 @@
 
 import WatchKit
 
-class HandoffController: NSObject, CountyUserActivityHandling {
+class HandoffController: UserActivityHandling {
     // MARK: CountyUserActivityHandling
     var handledActivityType: String {
         get {

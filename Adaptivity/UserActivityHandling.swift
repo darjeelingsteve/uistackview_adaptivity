@@ -1,5 +1,5 @@
 //
-//  CountyUserActivityHandling.swift
+//  UserActivityHandling.swift
 //  Adaptivity
 //
 //  Created by Stephen Anthony on 02/02/2016.
@@ -11,7 +11,7 @@ import Foundation
 /**
  The protocol to conform to for classes that handle user activities.
  */
-protocol CountyUserActivityHandling: class {
+protocol UserActivityHandling: class {
     /// The activity type handled by the activity handler.
     var handledActivityType: String {get}
     
@@ -26,7 +26,7 @@ protocol CountyUserActivityHandling: class {
     func countyFromUserActivity(_ userActivity: NSUserActivity) -> County?
 }
 
-extension CountyUserActivityHandling {
+extension UserActivityHandling {
     /**
      Called when the receiver is to handle a user activity involving a county.
      - parameter userActivity:      The user activity to handle.

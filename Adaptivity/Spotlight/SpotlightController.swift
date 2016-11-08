@@ -47,8 +47,8 @@ class SpotlightController {
     }
 }
 
-// MARK: CountyUserActivityHandling
-extension SpotlightController: CountyUserActivityHandling {
+// MARK: UserActivityHandling
+extension SpotlightController: UserActivityHandling {
     var handledActivityType: String {
         return CSSearchableItemActionType
     }
