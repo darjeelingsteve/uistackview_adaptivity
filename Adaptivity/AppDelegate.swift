@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var applicationShortcutHandler: ApplicationShortcutHandler?
     
     override init() {
-        userActivityHandlers = [spotlightController, HandoffController()]
+        userActivityHandlers = [spotlightController, HandoffController(), SpotlightQueryContinuationHandler()]
         super.init()
         history.delegate = self
     }
@@ -40,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     switch result {
                     case .county(let county):
                         masterViewController.showCounty(county, animated: true)
-                    case .searchText(_):
-                        break
+                    case .searchText(let searchText):
+                        masterViewController.beginSearch(withText: searchText)
                     }
                 })
             })

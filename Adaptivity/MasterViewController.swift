@@ -39,8 +39,12 @@ class MasterViewController: UIViewController {
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
-    func beginSearch() {
+    func beginSearch(withText searchText: String? = nil) {
         searchBar.becomeFirstResponder()
+        if let searchText = searchText {
+            searchBar.text = searchText
+            updateSearchResults(forSearchText: searchText)
+        }
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -111,7 +115,11 @@ extension MasterViewController: UICollectionViewDelegate {
 // MARK: UISearchBarDelegate
 extension MasterViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchResults = County.allCounties.filter({$0.name.hasPrefix(searchBar.text ?? "")})
+        updateSearchResults(forSearchText: searchText)
+    }
+    
+    fileprivate func updateSearchResults(forSearchText searchText: String?) {
+        searchResults = County.allCounties.filter({$0.name.hasPrefix(searchText ?? "")})
         collectionView.reloadData()
     }
     
