@@ -17,11 +17,12 @@ class MasterViewController: UIViewController {
     @IBOutlet fileprivate var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet fileprivate var searchBar: UISearchBar!
     internal var selectedCounty: County?
-    fileprivate var searchResults: [County]?
+    fileprivate var spotlightSearchController = SpotlightSearchController()
     internal var countiesToDisplay: [County] {
-        get {
-            return searchResults ?? County.allCounties
+        guard let searchText = searchBar.text, searchText.characters.count > 0 else {
+            return County.allCounties
         }
+        return spotlightSearchController.searchResults
     }
     var history: CountyHistory?
     
@@ -119,8 +120,9 @@ extension MasterViewController: UISearchBarDelegate {
     }
     
     fileprivate func updateSearchResults(forSearchText searchText: String?) {
-        searchResults = County.allCounties.filter({$0.name.hasPrefix(searchText ?? "")})
-        collectionView.reloadData()
+        spotlightSearchController.search(withQueryString: searchText ?? "") { [unowned self] in
+            self.collectionView.reloadData()
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -138,7 +140,6 @@ extension MasterViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        searchResults = nil
         collectionView.reloadData()
     }
 }
