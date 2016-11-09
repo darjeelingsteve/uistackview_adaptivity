@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
                     switch result {
                     case .county(let county):
-                        masterViewController.showCounty(county, animated: true)
+                        masterViewController.showCounty(county, animated: false)
                     case .searchText(let searchText):
                         masterViewController.beginSearch(withText: searchText)
                     }
