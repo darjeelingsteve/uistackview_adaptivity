@@ -28,13 +28,10 @@ class SpotlightSearchController {
     ///   - completionHandler: The handler to call when the search is completed.
     func search(withQueryString queryString: String, completionHandler: @escaping () -> Void) {
         query?.cancel()
-        
         query = CSSearchQuery(queryString: spotlightQueryString(fromQueryString: queryString), attributes: [])
-        
         query?.foundItemsHandler = { [unowned self] (items) in
             self.searchResults.append(contentsOf: items.flatMap { County.countyForName($0.uniqueIdentifier) })
         }
-        
         query?.completionHandler = { (error) in
             guard error == nil else {
                 print("Error: \(error?.localizedDescription)")
@@ -44,7 +41,6 @@ class SpotlightSearchController {
                 completionHandler()
             }
         }
-        
         query?.start()
     }
     
