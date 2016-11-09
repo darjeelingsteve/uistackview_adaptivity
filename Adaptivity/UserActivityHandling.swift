@@ -33,17 +33,15 @@ protocol UserActivityHandling: class {
 
 extension UserActivityHandling {
     /**
-     Called when the receiver is to handle a user activity.
+     Called when the receiver is to attempt to handle a user activity.
      - parameter userActivity:      The user activity to handle.
      - parameter completionHandler: Supplies the result specified by the user activity if it could be handled.
-     - returns: A boolean indicating whether the user activity was handled or not.
      */
-    func handleUserActivity(_ userActivity: NSUserActivity, completionHandler: (UserActivityHandlingResult) -> Void) -> Bool {
+    func handleUserActivity(_ userActivity: NSUserActivity, completionHandler: (UserActivityHandlingResult) -> Void) {
         guard userActivity.activityType == handledActivityType, let result = resultFromUserActivity(userActivity) else {
-            return false
+            return
         }
         completionHandler(result)
-        return true
     }
 }
 
