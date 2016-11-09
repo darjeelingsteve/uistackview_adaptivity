@@ -18,6 +18,7 @@ class SpotlightSearchController {
         }
     }
     
+    /// The results returned by the most recent search.
     private(set) var searchResults = [County]()
     
     /// Performs a search on the Spotlight database with the given query string.
