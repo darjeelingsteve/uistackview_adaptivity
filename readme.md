@@ -1,5 +1,7 @@
 # Counties Sample App
 
+<img src="readme_images/devices.png" max-width="515" max-height="500" />
+
 The Counties sample app is the host for iOS and Apple Watch tutorials hosted on [medium.com/@darjeelingsteve](http://medium.com/@darjeelingsteve). The areas of development covered are as follows:
 
 ## [Adaptive User Interfaces with UIStackView and UICollectionView](https://medium.com/@darjeelingsteve/adaptive-user-interfaces-with-uistackview-and-uicollectionview-c02d471be872#.7mcndb9ky)
