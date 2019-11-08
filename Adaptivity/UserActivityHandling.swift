@@ -48,16 +48,15 @@ extension UserActivityHandling {
 // MARK: - CustomReflectable
 extension NSUserActivity : CustomReflectable {
     public var customMirror: Mirror {
-        let children = DictionaryLiteral<String, Any>(dictionaryLiteral:
-            ("activityType", activityType),
-                                                      ("title", title ?? "None"),
-                                                      ("userInfo", userInfo.debugDescription),
-                                                      ("requiredUserInfoKeys", requiredUserInfoKeys ?? Set<String>()),
-                                                      ("needsSave", needsSave),
-                                                      ("webpageURL", webpageURL ?? "None"),
-                                                      ("expirationDate", expirationDate.debugDescription),
-                                                      ("keywords", keywords),
-                                                      ("supportsContinuationStreams", supportsContinuationStreams))
+        let children = KeyValuePairs<String, Any>(dictionaryLiteral: ("activityType", activityType),
+                                                  ("title", title ?? "None"),
+                                                  ("userInfo", userInfo.debugDescription),
+                                                  ("requiredUserInfoKeys", requiredUserInfoKeys ?? Set<String>()),
+                                                  ("needsSave", needsSave),
+                                                  ("webpageURL", webpageURL ?? "None"),
+                                                  ("expirationDate", expirationDate.debugDescription),
+                                                  ("keywords", keywords),
+                                                  ("supportsContinuationStreams", supportsContinuationStreams))
         return Mirror(NSUserActivity.self, children: children, displayStyle: .class, ancestorRepresentation: .suppressed)
     }
 }

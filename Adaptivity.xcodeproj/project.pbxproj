@@ -297,7 +297,7 @@
 					48ABDFA81C2063D70078391A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = TMU9Z4F4V5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1110;
 					};
 					B63120FA1C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
@@ -307,7 +307,7 @@
 					B63121061C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = TMU9Z4F4V5;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -558,7 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -573,7 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -624,7 +624,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
@@ -641,7 +641,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};

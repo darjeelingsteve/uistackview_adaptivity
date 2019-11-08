@@ -38,7 +38,7 @@ class CountyHistory: NSObject {
      - parameter county: The county viewed by the user.
      */
     func viewed(_ county: County) {
-        if let countyIndex = recentlyViewedCounties.index(of: county) {
+        if let countyIndex = recentlyViewedCounties.firstIndex(of: county) {
             recentlyViewedCounties.remove(at: countyIndex)
         }
         recentlyViewedCounties.insert(county, at: 0)

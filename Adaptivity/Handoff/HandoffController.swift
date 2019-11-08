@@ -6,7 +6,7 @@
 //  Copyright © 2016 Darjeeling Apps. All rights reserved.
 //
 
-import WatchKit
+import Foundation
 
 /// The class rsponsible for handling user activities provided during Handoff.
 class HandoffController: UserActivityHandling {
