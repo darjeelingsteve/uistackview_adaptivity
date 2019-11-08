@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGu-bo-TVs">
-                                <rect key="frame" x="0.0" y="144" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mjn-Za-ADn">
                                     <size key="itemSize" width="160" height="50"/>
@@ -47,7 +47,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ECK-6m-oQz">
-                                                            <rect key="frame" x="108" y="23.333333333333336" width="176" height="20.333333333333336"/>
+                                                            <rect key="frame" x="108" y="23.333333333333336" width="36" height="20.333333333333336"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -74,30 +74,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="MI9-yT-Qye"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-zH-abe">
-                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hsb-dc-ejd"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tGu-bo-TVs" firstAttribute="top" secondItem="HTi-zH-abe" secondAttribute="bottom" id="0JZ-Az-GaM"/>
                             <constraint firstItem="tGu-bo-TVs" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="47T-VP-CAr"/>
-                            <constraint firstItem="HTi-zH-abe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9NO-ok-5Dp"/>
-                            <constraint firstAttribute="trailing" secondItem="HTi-zH-abe" secondAttribute="trailing" id="LFd-Pc-eRt"/>
                             <constraint firstItem="tGu-bo-TVs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zeu-R9-aCY"/>
                             <constraint firstAttribute="trailing" secondItem="tGu-bo-TVs" secondAttribute="trailing" id="gPC-kU-gUr"/>
-                            <constraint firstItem="HTi-zH-abe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jXF-6x-dHL"/>
+                            <constraint firstItem="tGu-bo-TVs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mAK-3n-y1d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Counties" id="gG2-dn-aPi"/>
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
-                        <outlet property="searchBar" destination="HTi-zH-abe" id="CNo-Ka-0Bd"/>
                         <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
                         <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
                     </connections>

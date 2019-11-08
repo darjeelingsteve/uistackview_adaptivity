@@ -13,24 +13,31 @@ private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAn
 
 /// The view controller responsible for displaying the county collection view.
 class MasterViewController: UIViewController {
-    @IBOutlet internal var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet fileprivate var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet fileprivate var searchBar: UISearchBar!
-    internal var selectedCounty: County?
+    var selectedCounty: County?
     fileprivate var spotlightSearchController = SpotlightSearchController()
     internal var countiesToDisplay: [County] {
-        guard let searchText = searchBar.text, searchText.count > 0 else {
+        guard let searchText = searchController.searchBar.text, searchText.count > 0 else {
             return County.allCounties
         }
         return spotlightSearchController.searchResults
     }
     var history: CountyHistory?
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchResultsUpdater = self
+        return searchController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: view)
         }
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     func showCounty(_ county: County, animated: Bool) {
@@ -41,9 +48,9 @@ class MasterViewController: UIViewController {
     }
     
     func beginSearch(withText searchText: String? = nil) {
-        searchBar.becomeFirstResponder()
+        searchController.searchBar.becomeFirstResponder()
         if let searchText = searchText {
-            searchBar.text = searchText
+            searchController.searchBar.text = searchText
             updateSearchResults(forSearchText: searchText)
         }
     }
@@ -113,10 +120,10 @@ extension MasterViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: UISearchBarDelegate
-extension MasterViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        updateSearchResults(forSearchText: searchText)
+// MARK: UISearchResultsUpdating
+extension MasterViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        updateSearchResults(forSearchText: searchController.searchBar.text)
     }
     
     fileprivate func updateSearchResults(forSearchText searchText: String?) {
@@ -124,30 +131,12 @@ extension MasterViewController: UISearchBarDelegate {
             self.collectionView.reloadData()
         }
     }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(true, animated: true)
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(false, animated: true)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-        collectionView.reloadData()
-    }
 }
 
 // MARK: CountyViewControllerDelegate
 extension MasterViewController: CountyViewControllerDelegate {
     func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
-        dismiss(animated: true, completion: nil)
+        parent?.dismiss(animated: true)
     }
 }
 
