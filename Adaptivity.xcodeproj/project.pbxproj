@@ -297,7 +297,7 @@
 					48ABDFA81C2063D70078391A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = TMU9Z4F4V5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1010;
 					};
 					B63120FA1C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
@@ -307,7 +307,7 @@
 					B63121061C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = TMU9Z4F4V5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -555,7 +555,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -569,7 +570,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -619,7 +621,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
@@ -635,7 +638,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};

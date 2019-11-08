@@ -30,11 +30,11 @@ class SpotlightSearchController {
         query?.cancel()
         query = CSSearchQuery(queryString: spotlightQueryString(fromQueryString: queryString), attributes: [])
         query?.foundItemsHandler = { [unowned self] (items) in
-            self.searchResults.append(contentsOf: items.flatMap { County.countyForName($0.uniqueIdentifier) })
+            self.searchResults.append(contentsOf: items.compactMap { County.countyForName($0.uniqueIdentifier) })
         }
         query?.completionHandler = { (error) in
             guard error == nil else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "nil")")
                 return
             }
             DispatchQueue.main.async {

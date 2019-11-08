@@ -19,7 +19,7 @@ class MasterViewController: UIViewController {
     internal var selectedCounty: County?
     fileprivate var spotlightSearchController = SpotlightSearchController()
     internal var countiesToDisplay: [County] {
-        guard let searchText = searchBar.text, searchText.characters.count > 0 else {
+        guard let searchText = searchBar.text, searchText.count > 0 else {
             return County.allCounties
         }
         return spotlightSearchController.searchResults

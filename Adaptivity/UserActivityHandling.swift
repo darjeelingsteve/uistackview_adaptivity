@@ -52,7 +52,7 @@ extension NSUserActivity : CustomReflectable {
             ("activityType", activityType),
                                                       ("title", title ?? "None"),
                                                       ("userInfo", userInfo.debugDescription),
-                                                      ("requiredUserInfoKeys", requiredUserInfoKeys),
+                                                      ("requiredUserInfoKeys", requiredUserInfoKeys ?? Set<String>()),
                                                       ("needsSave", needsSave),
                                                       ("webpageURL", webpageURL ?? "None"),
                                                       ("expirationDate", expirationDate.debugDescription),

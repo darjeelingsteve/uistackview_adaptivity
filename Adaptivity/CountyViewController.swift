@@ -46,7 +46,7 @@ class CountyViewController: UIViewController {
             let coordinate = CLLocationCoordinate2D(latitude: county.latitude, longitude: county.longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
             let regionDistance: CLLocationDistance = 100000
-            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate, regionDistance, regionDistance)
+            let regionSpan = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapSpanKey : NSValue(mkCoordinateSpan: regionSpan.span)])
         })
         
