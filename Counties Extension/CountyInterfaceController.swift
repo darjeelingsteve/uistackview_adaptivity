@@ -34,7 +34,9 @@ class CountyInterfaceController: WKInterfaceController {
         guard let county = county else {
             return
         }
-        updateUserActivity(HandoffActivity.CountyDetails, userInfo: [HandoffUserInfo.CountyName: county.name], webpageURL: nil)
+        let activity = NSUserActivity(activityType: HandoffActivity.CountyDetails)
+        activity.userInfo = [HandoffUserInfo.CountyName: county.name]
+        update(activity)
         
         super.willActivate()
     }
