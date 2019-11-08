@@ -14,9 +14,9 @@ private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAn
 /// The view controller responsible for displaying the county collection view.
 class MasterViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet fileprivate var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     var selectedCounty: County?
-    fileprivate var spotlightSearchController = SpotlightSearchController()
+    private var spotlightSearchController = SpotlightSearchController()
     internal var countiesToDisplay: [County] {
         guard let searchText = searchController.searchBar.text, searchText.count > 0 else {
             return County.allCounties
@@ -38,21 +38,6 @@ class MasterViewController: UIViewController {
         }
         navigationItem.searchController = searchController
         definesPresentationContext = true
-    }
-    
-    func showCounty(_ county: County, animated: Bool) {
-        selectedCounty = county
-        history?.viewed(county)
-        let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
-        performSegue(withIdentifier: segueIdentifier, sender: self)
-    }
-    
-    func beginSearch(withText searchText: String? = nil) {
-        searchController.searchBar.becomeFirstResponder()
-        if let searchText = searchText {
-            searchController.searchBar.text = searchText
-            updateSearchResults(forSearchText: searchText)
-        }
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -77,8 +62,22 @@ class MasterViewController: UIViewController {
         }
     }
     
-    // MARK: Private Methods
-    fileprivate func styleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
+    func showCounty(_ county: County, animated: Bool) {
+        selectedCounty = county
+        history?.viewed(county)
+        let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
+        performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
+    func beginSearch(withText searchText: String? = nil) {
+        searchController.searchBar.becomeFirstResponder()
+        if let searchText = searchText {
+            searchController.searchBar.text = searchText
+            updateSearchResults(forSearchText: searchText)
+        }
+    }
+    
+    private func styleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
         return traitCollection.horizontalSizeClass == .regular ? .grid : .table
     }
 }
@@ -126,7 +125,7 @@ extension MasterViewController: UISearchResultsUpdating {
         updateSearchResults(forSearchText: searchController.searchBar.text)
     }
     
-    fileprivate func updateSearchResults(forSearchText searchText: String?) {
+    private func updateSearchResults(forSearchText searchText: String?) {
         spotlightSearchController.search(withQueryString: searchText ?? "") { [unowned self] in
             self.collectionView.reloadData()
         }
