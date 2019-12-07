@@ -33,9 +33,6 @@ class MasterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
