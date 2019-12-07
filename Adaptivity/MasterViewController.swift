@@ -15,15 +15,10 @@ private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAn
 class MasterViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
+    private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
     var selectedCounty: County?
-    private var spotlightSearchController = SpotlightSearchController()
-    internal var countiesToDisplay: [County] {
-        guard let searchText = searchController.searchBar.text, searchText.count > 0 else {
-            return County.allCounties
-        }
-        return spotlightSearchController.searchResults
-    }
     var history: CountyHistory?
+    private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
@@ -35,6 +30,23 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.searchController = searchController
         definesPresentationContext = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard dataSource == nil else { return }
+        
+        /// If we configure the data source in `viewDidLoad` then the search bar
+        /// is hidden on first appearance. We do it here to ensure that the
+        /// search bar is shown.
+        dataSource = UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
+            guard let self = self else { return nil }
+            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
+            countyCell.county = county
+            countyCell.displayStyle = self.styleForTraitCollection(self.traitCollection)
+            return countyCell
+        }
+        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -74,22 +86,19 @@ class MasterViewController: UIViewController {
         }
     }
     
-    private func styleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
-        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
-    }
-}
-
-// MARK: UICollectionViewDataSource
-extension MasterViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return countiesToDisplay.count
+    private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<CollectionSection, County> {
+        var snapshot = NSDiffableDataSourceSnapshot<CollectionSection, County>()
+        snapshot.appendSections([.counties])
+        if let searchText = searchController.searchBar.text, searchText.count > 0 {
+            snapshot.appendItems(spotlightSearchController.searchResults)
+        } else {
+            snapshot.appendItems(County.allCounties)
+        }
+        return snapshot
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
-        countyCell.county = countiesToDisplay[indexPath.row]
-        countyCell.displayStyle = styleForTraitCollection(traitCollection)
-        return countyCell
+    private func styleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
+        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
     }
 }
 
@@ -111,7 +120,7 @@ extension MasterViewController: UICollectionViewDelegateFlowLayout {
 // MARK: UICollectionViewDelegate
 extension MasterViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showCounty(countiesToDisplay[collectionView.indexPathsForSelectedItems!.first!.item], animated: true)
+        showCounty(dataSource.itemIdentifier(for: indexPath)!, animated: true)
         collectionView.deselectItem(at: indexPath, animated: false)
     }
 }
@@ -124,7 +133,7 @@ extension MasterViewController: UISearchResultsUpdating {
     
     private func updateSearchResults(forSearchText searchText: String?) {
         spotlightSearchController.search(withQueryString: searchText ?? "") { [unowned self] in
-            self.collectionView.reloadData()
+            self.dataSource.apply(self.snapshotForCurrentState(), animatingDifferences: false)
         }
     }
 }
@@ -163,5 +172,13 @@ extension CountyCellDisplayStyle {
         case .grid:
             return 44
         }
+    }
+}
+
+private extension MasterViewController {
+    
+    /// The sections displayed in the collection view.
+    private enum CollectionSection: Hashable {
+        case counties
     }
 }
