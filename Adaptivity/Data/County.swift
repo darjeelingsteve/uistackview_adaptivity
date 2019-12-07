@@ -16,7 +16,7 @@ func ==(lhs: County, rhs: County) -> Bool {
 /*!
 The struct used to represent an individual county.
 */
-struct County : Equatable {
+struct County: Hashable {
     let name: String
     let population: Int
     let latitude: Double
