@@ -9,11 +9,6 @@ The Counties sample app is the host for iOS and Apple Watch tutorials hosted on 
 
 This tutorial demontrates how to create user interfaces that adapt between different user interface environments using modern APIs.
 
-## [Indexing App Content with Core Spotlight](https://darjeelingsteve.com/articles/Indexing-App-Content-with-Core-Spotlight.html)
-![Adaptive UI](readme_images/spotlight_search.gif)
-
-Here we detail how to add an application's data set to the on-device Spotlight Search index to allow the user to search the app's content from the iOS system search UI.
-
 ## [Continuity for Apple Watch and iPhone with Handoff](https://darjeelingsteve.com/articles/Continuity-for-Apple-Watch-and-iPhone-with-Handoff.html)
 
 <img src="readme_images/iphone_handoff.png" height="460" />
@@ -26,6 +21,22 @@ Allowing Handoff of tasks from Apple Watch to iPhone is detailed in this post.
 
 Adding Handoff from iPhone to iPad, and vica versa. This is very simple once Handoff from Aple Watch to iPhone has been implemented.
 
+## [Indexing App Content with Core Spotlight](https://darjeelingsteve.com/articles/Indexing-App-Content-with-Core-Spotlight.html)
+
+![Adaptive UI](readme_images/spotlight_search.gif)
+
+Here we detail how to add an application's data set to the on-device Spotlight Search index to allow the user to search the app's content from the iOS system search UI.
+
+## [Simplifying UICollectionView Usage With UICollectionViewDiffableDataSource](https://darjeelingsteve.com/articles/Simplifying-UICollectionView-Usage-With-UICollectionViewDiffableDataSource.html)
+
+Both `UICollectionView` and `UITableView` received significant updates at WWDC 2019, one of which was a new way to supply said views with the data that they display. This article goes in to the detail of refactoring a view controller conforming to `UICollectionViewDataSource` to using a `UICollectionViewDiffableDataSource` instead.
+
+## [Spotlight Search Enhancements in iOS 10](https://darjeelingsteve.com/articles/Spotlight-Search-Enhancements-in-iOS-10.html)
+
+![Adaptive UI](readme_images/spotlight_search_continuation.gif)
+
+This tutorial details the process of allowing your app to continue Spotlight searches that the user initiates in the system search UI. This involves directly querying the Spotlight index, something which only became possible in iOS 10.
+
 ## [Supporting 3D Touch “Peek and Pop”](https://darjeelingsteve.com/articles/Supporting-3D-Touch-%22Peek-and-Pop%22.html)
 
 <img src="readme_images/peek_and_pop.png" height="460" />
@@ -37,9 +48,3 @@ Here we learn how to add 3D Touch Peek and Pop navigation to the app. As well as
 <img src="readme_images/3d_touch_shortcuts.png" height="460" />
 
 Adding 3D Touch Application Shortcuts is easy, as we see in this tutorial.
-
-## [Spotlight Search Enhancements in iOS 10](https://darjeelingsteve.com/articles/Spotlight-Search-Enhancements-in-iOS-10.html)
-
-![Adaptive UI](readme_images/spotlight_search_continuation.gif)
-
-This tutorial details the process of allowing your app to continue Spotlight searches that the user initiates in the system search UI. This involves directly querying the Spotlight index, something which only became possible in iOS 10.
