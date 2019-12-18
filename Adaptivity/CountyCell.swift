@@ -19,8 +19,15 @@ enum CountyCellDisplayStyle {
 }
 
 private struct BorderSettings {
-    static let width: CGFloat = 1.0 / UIScreen.main.scale
-    static let colour = UIColor(white: 0.9, alpha: 1.0)
+    static func width(forStyle style: CountyCellDisplayStyle) -> CGFloat {
+        switch style {
+        case .table:
+            return 1.0 / UIScreen.main.scale
+        case .grid:
+            return 3.0
+        }
+    }
+    static let colour = UIColor.secondarySystemBackground
 }
 
 /// The cell responsible for displaying County data.
@@ -66,16 +73,17 @@ class CountyCell: UICollectionViewCell {
         super.draw(rect)
         
         let path: UIBezierPath
+        let lineWidth = BorderSettings.width(forStyle: displayStyle)
         switch (displayStyle) {
         case .table:
             path = UIBezierPath()
-            path.move(to: CGPoint(x: layoutMargins.left, y: rect.maxY - BorderSettings.width))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - BorderSettings.width))
+            path.move(to: CGPoint(x: layoutMargins.left, y: rect.maxY - lineWidth))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - lineWidth))
         case .grid:
             path = UIBezierPath(rect: rect)
         }
         
-        path.lineWidth = BorderSettings.width;
+        path.lineWidth = lineWidth
         BorderSettings.colour.set()
         path.stroke()
     }
