@@ -49,9 +49,10 @@ class MasterViewController: UIViewController {
         dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
     }
     
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-        if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard let previousTraitCollection = previousTraitCollection else { return }
+        if styleForTraitCollection(traitCollection) != styleForTraitCollection(previousTraitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
         }
     }
