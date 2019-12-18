@@ -38,7 +38,7 @@
 			<array>
 				<dict>
 					<key>UISceneDelegateClassName</key>
-					<string>Counties.MasterSceneDelegate</string>
+					<string>$(PRODUCT_MODULE_NAME).MasterSceneDelegate</string>
 					<key>UISceneConfigurationName</key>
 					<string>Master Configuration</string>
 					<key>UISceneStoryboardFile</key>
