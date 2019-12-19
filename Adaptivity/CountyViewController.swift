@@ -32,8 +32,14 @@ class CountyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        view.window?.windowScene?.userActivity = userActivity
         guard let county = county else { return }
         CountyHistory.shared.viewed(county)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.window?.windowScene?.userActivity = nil
     }
     
     @IBAction func doneTapped(_ sender: AnyObject) {
