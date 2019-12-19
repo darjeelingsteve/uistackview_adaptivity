@@ -73,7 +73,6 @@ class MasterViewController: UIViewController {
     
     func showCounty(_ county: County, animated: Bool) {
         selectedCounty = county
-        CountyHistory.shared.viewed(county)
         let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
