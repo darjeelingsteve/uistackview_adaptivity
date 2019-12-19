@@ -42,6 +42,8 @@
 			<string>Search</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>Search</string>
+			<key>UIApplicationShortcutItemTargetContentIdentifier</key>
+			<string>Search</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -33,7 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: CountyHistoryDelegate {
     func countyHistoryDidUpdate(_ countyHistory: CountyHistory) {
         UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
-            return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
+            return CountyApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
         })
+    }
+}
+
+/// A shortcut item type that provides the county name as the
+/// `targetContentIdentifier`.
+private class CountyApplicationShortcutItem: UIApplicationShortcutItem {
+    override var targetContentIdentifier: Any? {
+        return localizedTitle
     }
 }
