@@ -16,6 +16,7 @@ class CountySceneDelegate: UIResponder {
 // MARK: UIWindowSceneDelegate
 extension CountySceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        scene.activationConditions.canActivateForTargetContentIdentifierPredicate = NSPredicate(value: false)
         guard let county = County.from(userActivity: session.stateRestorationActivity ?? connectionOptions.userActivities.first),
             let countyViewController = window?.rootViewController as? CountyViewController else { return }
         countyViewController.county = county
