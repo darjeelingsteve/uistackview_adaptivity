@@ -29,6 +29,7 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +122,24 @@ extension MasterViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showCounty(dataSource.itemIdentifier(for: indexPath)!, animated: true)
         collectionView.deselectItem(at: indexPath, animated: false)
+    }
+}
+
+// MARK: UICollectionViewDragDelegate
+extension MasterViewController: UICollectionViewDragDelegate {
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard let county = dataSource.itemIdentifier(for: indexPath) else { return [] }
+        let itemProvider = NSItemProvider()
+        itemProvider.registerObject(county.userActivity, visibility: .all)
+        return [UIDragItem(itemProvider: itemProvider)]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
+        collectionView.allowsSelection = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
+        collectionView.allowsSelection = true
     }
 }
 
