@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-Wo-Bae">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uq-Ln-T3Y" customClass="CountyMapOverlayView" customModule="Counties" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="381.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
-                                <rect key="frame" x="57" y="124" width="300" height="270"/>
+                                <rect key="frame" x="57" y="104" width="300" height="277.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iuo-ze-4aJ">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
@@ -29,12 +36,12 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYe-aW-JEZ">
-                                        <rect key="frame" x="0.0" y="208" width="300" height="33.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <rect key="frame" x="0.0" y="208" width="300" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-hy-kGV">
-                                        <rect key="frame" x="0.0" y="249.5" width="300" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="257" width="300" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +52,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Idw-cr-iD5" firstAttribute="centerX" secondItem="edN-Og-UZA" secondAttribute="centerX" id="1ar-bR-Df0"/>
-                            <constraint firstItem="Idw-cr-iD5" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="80" id="dV5-A7-ZI9"/>
+                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="top" secondItem="edN-Og-UZA" secondAttribute="top" id="2Om-cd-mFm"/>
+                            <constraint firstAttribute="trailing" secondItem="4uq-Ln-T3Y" secondAttribute="trailing" id="6d5-L3-tj2"/>
+                            <constraint firstAttribute="bottom" secondItem="KFe-Wo-Bae" secondAttribute="bottom" id="CWS-98-A0p"/>
+                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="leading" secondItem="edN-Og-UZA" secondAttribute="leading" id="FA4-fc-Sh0"/>
+                            <constraint firstItem="KFe-Wo-Bae" firstAttribute="top" secondItem="edN-Og-UZA" secondAttribute="top" id="LGE-iC-4rE"/>
+                            <constraint firstItem="Idw-cr-iD5" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="60" id="dV5-A7-ZI9"/>
+                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="bottom" secondItem="Idw-cr-iD5" secondAttribute="bottom" id="hNU-sn-d2s"/>
+                            <constraint firstItem="KFe-Wo-Bae" firstAttribute="leading" secondItem="edN-Og-UZA" secondAttribute="leading" id="tx3-wR-DgM"/>
+                            <constraint firstAttribute="trailing" secondItem="KFe-Wo-Bae" secondAttribute="trailing" id="xx2-iP-KLG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LcB-0I-P3h">
@@ -57,13 +72,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="flagImageView" destination="Iuo-ze-4aJ" id="kKa-51-kow"/>
+                        <outlet property="mapView" destination="KFe-Wo-Bae" id="Qmg-1x-HMn"/>
                         <outlet property="nameLabel" destination="UYe-aW-JEZ" id="pXG-Ya-U9r"/>
                         <outlet property="populationLabel" destination="TCP-hy-kGV" id="UcQ-9J-78z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4n-3J-Ekx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456" y="1108"/>
+            <point key="canvasLocation" x="2455.072463768116" y="1106.9196428571429"/>
         </scene>
     </scenes>
 </document>

@@ -17,6 +17,7 @@ class CountyViewController: UIViewController {
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var populationLabel: UILabel!
+    @IBOutlet private weak var mapView: MKMapView!
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton(type: .close)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -52,28 +53,15 @@ class CountyViewController: UIViewController {
         view.window?.windowScene?.userActivity = nil
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let county = county else { return }
+        mapView.region = county.mapRegion
+    }
+    
     @objc private func closeTapped(_ sender: AnyObject) {
         delegate?.countyViewControllerDidFinish(self)
     }
-    
-    // MARK: UIPreviewActionItem
-    lazy var previewActions: [UIPreviewActionItem] = {
-        let safariAction = UIPreviewAction(title: NSLocalizedString("Show in Safari", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
-            guard let countyViewController = viewController as? CountyViewController, let county = countyViewController.county else { return }
-            UIApplication.shared.open(county.url)
-        })
-        
-        let mapsAction = UIPreviewAction(title: NSLocalizedString("Show in Maps", comment: ""), style: .default, handler: { (previewAction, viewController) -> Void in
-            guard let countyViewController = viewController as? CountyViewController, let county = countyViewController.county else { return }
-            let coordinate = CLLocationCoordinate2D(latitude: county.latitude, longitude: county.longitude)
-            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
-            let regionDistance: CLLocationDistance = 100000
-            let regionSpan = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-            mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapSpanKey : NSValue(mkCoordinateSpan: regionSpan.span)])
-        })
-        
-        return [safariAction, mapsAction]
-    }()
 }
 
 /*!
@@ -85,4 +73,60 @@ protocol CountyViewControllerDelegate: NSObjectProtocol {
     - parameter countyViewController: The county view controller sending the message.
     */
     func countyViewControllerDidFinish(_ countyViewController: CountyViewController);
+}
+
+private extension County {
+    
+    /// The region required to show the receiver on a map.
+    var mapRegion: MKCoordinateRegion {
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let regionDistance: CLLocationDistance = 100000
+        return MKCoordinateRegion(center: coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+    }
+}
+
+/// The view used to draw an overlay over the county map view so that the county
+/// details are legible.
+@IBDesignable class CountyMapOverlayView: UIView {
+    private let gradientLayer = CAGradientLayer()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonSetup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonSetup()
+    }
+    
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        // Draw a gradient below our bounds
+        gradientLayer.frame = CGRect(x: bounds.minX, y: bounds.maxY, width: bounds.width, height: 200)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            configureGradientColours()
+        }
+    }
+    
+    private func commonSetup() {
+        layer.addSublayer(gradientLayer)
+        backgroundColor = UIColor(dynamicProvider: { (traitCollection) -> UIColor in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return UIColor.black.withAlphaComponent(0.4)
+            default:
+                return UIColor.black.withAlphaComponent(0.2)
+            }
+        })
+    }
+    
+    private func configureGradientColours() {
+        guard let backgroundColor = backgroundColor else { return }
+        gradientLayer.colors = [backgroundColor.cgColor, backgroundColor.withAlphaComponent(0).cgColor]
+    }
 }
