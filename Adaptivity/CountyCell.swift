@@ -19,15 +19,9 @@ enum CountyCellDisplayStyle {
 }
 
 private struct BorderSettings {
-    static func width(forStyle style: CountyCellDisplayStyle) -> CGFloat {
-        switch style {
-        case .table:
-            return 1.0 / UIScreen.main.scale
-        case .grid:
-            return 3.0
-        }
-    }
-    static let colour = UIColor.secondarySystemBackground
+    let width: CGFloat
+    let cornerRadius: CGFloat
+    let colour = UIColor.secondarySystemBackground
 }
 
 /// The cell responsible for displaying County data.
@@ -45,6 +39,16 @@ class CountyCell: UICollectionViewCell {
             case .grid:
                 stackView.axis = .vertical
             }
+            selectedBackgroundView?.layer.cornerRadius = borderSettings.cornerRadius
+        }
+    }
+    
+    private var borderSettings: BorderSettings {
+        switch (displayStyle) {
+        case .table:
+            return BorderSettings(width: 1.0 / UIScreen.main.scale, cornerRadius: 0)
+        case .grid:
+            return BorderSettings(width: 3.0, cornerRadius: 10)
         }
     }
     
@@ -61,7 +65,8 @@ class CountyCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = BorderSettings.colour
+        selectedBackgroundView?.backgroundColor = borderSettings.colour
+        selectedBackgroundView?.layer.cornerCurve = .continuous
     }
     
     override func layoutSubviews() {
@@ -73,18 +78,18 @@ class CountyCell: UICollectionViewCell {
         super.draw(rect)
         
         let path: UIBezierPath
-        let lineWidth = BorderSettings.width(forStyle: displayStyle)
+        let lineWidth = borderSettings.width
         switch (displayStyle) {
         case .table:
             path = UIBezierPath()
             path.move(to: CGPoint(x: layoutMargins.left, y: rect.maxY - lineWidth))
             path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - lineWidth))
         case .grid:
-            path = UIBezierPath(rect: rect)
+            path = UIBezierPath(roundedRect: rect.insetBy(dx: lineWidth / 2, dy: lineWidth / 2), cornerRadius: borderSettings.cornerRadius)
         }
         
         path.lineWidth = lineWidth
-        BorderSettings.colour.set()
+        borderSettings.colour.set()
         path.stroke()
     }
 }
