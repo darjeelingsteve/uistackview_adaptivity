@@ -14,6 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CountyHistory.shared.delegate = self
         return true
     }
+    
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        if County.from(userActivity: options.userActivities.first) != nil {
+            let countyConfiguration = UISceneConfiguration(name: "County Configuration", sessionRole: .windowApplication)
+            countyConfiguration.delegateClass = CountySceneDelegate.self
+            countyConfiguration.storyboard = UIStoryboard(name: "CountyViewController", bundle: nil)
+            return countyConfiguration
+        }
+        let masterConfiguration = UISceneConfiguration(name: "Master Configuration", sessionRole: .windowApplication)
+        masterConfiguration.delegateClass = MasterSceneDelegate.self
+        masterConfiguration.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return masterConfiguration
+    }
 }
 
 // MARK: CountyHistoryDelegate
