@@ -16,12 +16,10 @@ class CountySceneDelegate: UIResponder {
 // MARK: UIWindowSceneDelegate
 extension CountySceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let userActivity = session.stateRestorationActivity ?? connectionOptions.userActivities.first,
-            let countyViewController = window?.rootViewController as? CountyViewController,
-            let countyName = userActivity.userInfo?[HandoffUserInfo.CountyName] as? String,
-            let county = County.countyForName(countyName) else { return }
+        guard let county = County.from(userActivity: session.stateRestorationActivity ?? connectionOptions.userActivities.first),
+            let countyViewController = window?.rootViewController as? CountyViewController else { return }
         countyViewController.county = county
-        scene.title = countyName
+        scene.title = county.name
     }
     
     func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
