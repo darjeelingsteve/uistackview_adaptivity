@@ -17,7 +17,6 @@ class MasterViewController: UIViewController {
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
     var selectedCounty: County?
-    var history: CountyHistory?
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -74,7 +73,7 @@ class MasterViewController: UIViewController {
     
     func showCounty(_ county: County, animated: Bool) {
         selectedCounty = county
-        history?.viewed(county)
+        CountyHistory.shared.viewed(county)
         let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }

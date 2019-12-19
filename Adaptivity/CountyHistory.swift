@@ -10,7 +10,10 @@ import Foundation
 
 /// The object responsible for recording which counties the user has viewed.
 class CountyHistory: NSObject {
+    static let shared = CountyHistory()
+    
     var delegate: CountyHistoryDelegate?
+    
     private(set) var recentlyViewedCounties: [County] {
         get {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
@@ -28,6 +31,7 @@ class CountyHistory: NSObject {
             countyNames.write(to: urlToArchivedData, atomically: true)
         }
     }
+    
     private var urlToArchivedData: URL {
         let documentsURL = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)
         return documentsURL.appendingPathComponent("CountyHistory")

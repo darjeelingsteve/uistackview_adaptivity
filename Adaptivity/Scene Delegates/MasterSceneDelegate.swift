@@ -11,7 +11,6 @@ import UIKit
 /// The delegate of the application's master scene.
 class MasterSceneDelegate: UIResponder {
     var window: UIWindow?
-    private let history = CountyHistory()
     private let spotlightController = SpotlightController()
     private var applicationShortcutHandler: ApplicationShortcutHandler?
     private let userActivityHandlers: [UserActivityHandling]
@@ -19,7 +18,6 @@ class MasterSceneDelegate: UIResponder {
     override init() {
         userActivityHandlers = [spotlightController, HandoffController(), SpotlightQueryContinuationHandler()]
         super.init()
-        history.delegate = self
     }
 }
 
@@ -27,7 +25,6 @@ class MasterSceneDelegate: UIResponder {
 extension MasterSceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let navigationController = window?.rootViewController as? UINavigationController, let masterViewController = navigationController.topViewController as? MasterViewController {
-            masterViewController.history = history
             applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
         }
     }
@@ -66,14 +63,5 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         navigationController.dismiss(animated: false, completion: nil)
         let viewController = navigationController.topViewController as! MasterViewController
         completion(viewController)
-    }
-}
-
-// MARK: CountyHistoryDelegate
-extension MasterSceneDelegate: CountyHistoryDelegate {
-    func countyHistoryDidUpdate(_ countyHistory: CountyHistory) {
-        UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
-            return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
-        })
     }
 }
