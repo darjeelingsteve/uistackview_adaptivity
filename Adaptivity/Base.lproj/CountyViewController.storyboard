@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
-                                <rect key="frame" x="57" y="87" width="300" height="270"/>
+                                <rect key="frame" x="57" y="124" width="300" height="270"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iuo-ze-4aJ">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
@@ -45,7 +45,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Idw-cr-iD5" firstAttribute="centerX" secondItem="edN-Og-UZA" secondAttribute="centerX" id="1ar-bR-Df0"/>
-                            <constraint firstItem="Idw-cr-iD5" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="43" id="dV5-A7-ZI9"/>
+                            <constraint firstItem="Idw-cr-iD5" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="80" id="dV5-A7-ZI9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LcB-0I-P3h">

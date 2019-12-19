@@ -85,29 +85,13 @@
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
-                        <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
-                        <segue destination="Ktw-T5-iIh" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
+                        <segue destination="xdD-vW-J83" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
+                        <segue destination="xdD-vW-J83" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="1108"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rRU-vC-4az">
-            <objects>
-                <navigationController id="Ktw-T5-iIh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tm3-Xq-m5y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xdD-vW-J83" kind="relationship" relationship="rootViewController" id="KMu-Hg-LNX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qHb-nf-YKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1726" y="1108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xMS-Cg-LSp">
@@ -133,7 +117,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgh-lf-A34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456" y="1108"/>
+            <point key="canvasLocation" x="1782" y="1108"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

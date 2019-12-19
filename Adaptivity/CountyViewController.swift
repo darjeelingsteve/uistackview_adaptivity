@@ -9,16 +9,28 @@
 import UIKit
 import MapKit
 
-/// The view controller responsible for displaying information aboout a county.
+/// The view controller responsible for displaying information about a county.
 class CountyViewController: UIViewController {
+    var county: County?
+    var delegate: CountyViewControllerDelegate?
+    
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var populationLabel: UILabel!
-    var county: County?
-    var delegate: CountyViewControllerDelegate?
+    private lazy var closeButton: UIButton = {
+        let closeButton = UIButton(type: .close)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.addTarget(self, action: #selector(closeTapped(_:)), for: .primaryActionTriggered)
+        return closeButton
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(closeButton)
+        NSLayoutConstraint.activate([
+            closeButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            closeButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16)
+        ])
         
         if let county = county {
             flagImageView.image = county.flagImage
@@ -40,7 +52,7 @@ class CountyViewController: UIViewController {
         view.window?.windowScene?.userActivity = nil
     }
     
-    @IBAction func doneTapped(_ sender: AnyObject) {
+    @objc private func closeTapped(_ sender: AnyObject) {
         delegate?.countyViewControllerDidFinish(self)
     }
     

@@ -65,8 +65,7 @@ class MasterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navigationController = segue.destination as? UINavigationController,
-            let countyViewController = navigationController.topViewController as? CountyViewController {
+        if let countyViewController = segue.destination as? CountyViewController {
                 countyViewController.county = selectedCounty
                 countyViewController.delegate = self
         }
