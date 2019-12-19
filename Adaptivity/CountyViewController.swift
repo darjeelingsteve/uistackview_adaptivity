@@ -17,6 +17,12 @@ class CountyViewController: UIViewController {
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var populationLabel: UILabel!
+    @IBOutlet private weak var detailsContainerView: UIView! {
+        didSet {
+            detailsContainerView.layer.cornerRadius = 16
+            detailsContainerView.layer.cornerCurve = .continuous
+        }
+    }
     @IBOutlet private weak var mapView: MKMapView!
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton(type: .close)
