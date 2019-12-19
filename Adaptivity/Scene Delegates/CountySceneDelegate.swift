@@ -19,10 +19,19 @@ extension CountySceneDelegate: UIWindowSceneDelegate {
         guard let county = County.from(userActivity: session.stateRestorationActivity ?? connectionOptions.userActivities.first),
             let countyViewController = window?.rootViewController as? CountyViewController else { return }
         countyViewController.county = county
+        countyViewController.delegate = self
         scene.title = county.name
     }
     
     func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
         return scene.userActivity
+    }
+}
+
+// MARK: CountyViewControllerDelegate
+extension CountySceneDelegate: CountyViewControllerDelegate {
+    func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
+        guard let sceneSession = countyViewController.view.window?.windowScene?.session else { return }
+        UIApplication.shared.requestSceneSessionDestruction(sceneSession, options: nil, errorHandler: nil)
     }
 }
