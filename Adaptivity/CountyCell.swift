@@ -46,7 +46,7 @@ class CountyCell: UICollectionViewCell {
     private var borderSettings: BorderSettings {
         switch (displayStyle) {
         case .table:
-            return BorderSettings(width: 1.0 / UIScreen.main.scale, cornerRadius: 0)
+            return BorderSettings(width: 1.0, cornerRadius: 0)
         case .grid:
             return BorderSettings(width: 3.0, cornerRadius: 10)
         }
