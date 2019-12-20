@@ -77,6 +77,7 @@ class CountyViewController: UIViewController {
         super.viewDidLayoutSubviews()
         guard let county = county else { return }
         mapView.region = county.mapRegion
+        mapView.setVisibleMapRect(mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: detailsContainerView.frame.maxY, left: 0, bottom: 0, right: 0), animated: false)
     }
     
     @objc private func closeTapped(_ sender: AnyObject) {
