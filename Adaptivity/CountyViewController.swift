@@ -11,7 +11,14 @@ import MapKit
 
 /// The view controller responsible for displaying information about a county.
 class CountyViewController: UIViewController {
-    var county: County?
+    var county: County? {
+        didSet {
+            loadViewIfNeeded()
+            flagImageView.image = county?.flagImage
+            nameLabel.text = county?.name
+            populationLabel.text = county?.populationDescription
+        }
+    }
     var delegate: CountyViewControllerDelegate?
     
     @IBOutlet private weak var flagImageView: UIImageView!
@@ -51,19 +58,13 @@ class CountyViewController: UIViewController {
             detailsContainerShadowView.topAnchor.constraint(equalTo: detailsContainerView.topAnchor),
             detailsContainerShadowView.bottomAnchor.constraint(equalTo: detailsContainerView.bottomAnchor)
         ])
-        
-        if let county = county {
-            flagImageView.image = county.flagImage
-            nameLabel.text = county.name
-            populationLabel.text = county.populationDescription
-            userActivity = county.userActivity
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.window?.windowScene?.userActivity = userActivity
         guard let county = county else { return }
+        userActivity = county.userActivity
+        view.window?.windowScene?.userActivity = userActivity
         CountyHistory.shared.viewed(county)
     }
     
