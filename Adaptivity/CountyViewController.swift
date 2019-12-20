@@ -36,20 +36,9 @@ class CountyViewController: UIViewController {
         return detailsContainerShadowView
     }()
     @IBOutlet private weak var mapView: MKMapView!
-    private lazy var closeButton: UIButton = {
-        let closeButton = UIButton(type: .close)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.addTarget(self, action: #selector(closeTapped(_:)), for: .primaryActionTriggered)
-        return closeButton
-    }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(closeButton)
-        NSLayoutConstraint.activate([
-            closeButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            closeButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16)
-        ])
         
         view.insertSubview(detailsContainerShadowView, belowSubview: detailsContainerView)
         NSLayoutConstraint.activate([
@@ -80,7 +69,7 @@ class CountyViewController: UIViewController {
         mapView.setVisibleMapRect(mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: detailsContainerView.frame.maxY, left: 0, bottom: 0, right: 0), animated: false)
     }
     
-    @objc private func closeTapped(_ sender: AnyObject) {
+    @IBAction private func doneTapped(_ sender: AnyObject) {
         delegate?.countyViewControllerDidFinish(self)
     }
 }

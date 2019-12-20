@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzz-vK-uPP">
-                                <rect key="frame" x="47" y="104" width="320" height="285.5"/>
+                                <rect key="frame" x="47" y="116" width="320" height="285.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="285.5"/>
@@ -79,15 +79,25 @@
                                     <constraint firstAttribute="bottom" secondItem="Idw-cr-iD5" secondAttribute="bottom" id="rJs-TJ-yyW"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEW-Mm-CBO" customClass="PillButton" customModule="Counties" customModuleProvider="target">
+                                <rect key="frame" x="330" y="60" width="64" height="32"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneTapped:" destination="dcA-fF-HUS" eventType="primaryActionTriggered" id="zJG-Ds-guG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gEW-Mm-CBO" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="16" id="50K-jN-fb7"/>
                             <constraint firstAttribute="bottom" secondItem="KFe-Wo-Bae" secondAttribute="bottom" id="CWS-98-A0p"/>
                             <constraint firstItem="KFe-Wo-Bae" firstAttribute="top" secondItem="edN-Og-UZA" secondAttribute="top" id="LGE-iC-4rE"/>
                             <constraint firstItem="Wzz-vK-uPP" firstAttribute="centerX" secondItem="edN-Og-UZA" secondAttribute="centerX" id="OiY-6G-bLu"/>
-                            <constraint firstItem="Wzz-vK-uPP" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="60" id="WZS-qb-BAf"/>
+                            <constraint firstItem="Wzz-vK-uPP" firstAttribute="top" secondItem="gEW-Mm-CBO" secondAttribute="bottom" constant="24" id="t5U-pP-Cmi"/>
                             <constraint firstItem="KFe-Wo-Bae" firstAttribute="leading" secondItem="edN-Og-UZA" secondAttribute="leading" id="tx3-wR-DgM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gEW-Mm-CBO" secondAttribute="trailing" id="vht-re-Aid"/>
                             <constraint firstAttribute="trailing" secondItem="KFe-Wo-Bae" secondAttribute="trailing" id="xx2-iP-KLG"/>
+                            <constraint firstItem="gEW-Mm-CBO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="edN-Og-UZA" secondAttribute="leadingMargin" id="zZZ-Ww-TJt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LcB-0I-P3h">
