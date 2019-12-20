@@ -23,6 +23,11 @@ class CountyViewController: UIViewController {
             detailsContainerView.layer.cornerCurve = .continuous
         }
     }
+    private lazy var detailsContainerShadowView: ShadowView = {
+        let detailsContainerShadowView = ShadowView()
+        detailsContainerShadowView.translatesAutoresizingMaskIntoConstraints = false
+        return detailsContainerShadowView
+    }()
     @IBOutlet private weak var mapView: MKMapView!
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton(type: .close)
@@ -37,6 +42,14 @@ class CountyViewController: UIViewController {
         NSLayoutConstraint.activate([
             closeButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             closeButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16)
+        ])
+        
+        view.insertSubview(detailsContainerShadowView, belowSubview: detailsContainerView)
+        NSLayoutConstraint.activate([
+            detailsContainerShadowView.leadingAnchor.constraint(equalTo: detailsContainerView.leadingAnchor),
+            detailsContainerShadowView.trailingAnchor.constraint(equalTo: detailsContainerView.trailingAnchor),
+            detailsContainerShadowView.topAnchor.constraint(equalTo: detailsContainerView.topAnchor),
+            detailsContainerShadowView.bottomAnchor.constraint(equalTo: detailsContainerView.bottomAnchor)
         ])
         
         if let county = county {
@@ -91,11 +104,8 @@ private extension County {
     }
 }
 
-/// The view used to draw an overlay over the county map view so that the county
-/// details are legible.
-@IBDesignable class CountyMapOverlayView: UIView {
-    private let gradientLayer = CAGradientLayer()
-    
+/// A view that draws a shadow behind it.
+private class ShadowView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonSetup()
@@ -106,33 +116,28 @@ private extension County {
         commonSetup()
     }
     
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        // Draw a gradient below our bounds
-        gradientLayer.frame = CGRect(x: bounds.minX, y: bounds.maxY, width: bounds.width, height: 200)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-            configureGradientColours()
-        }
+        configureShadowOpacity()
     }
     
     private func commonSetup() {
-        layer.addSublayer(gradientLayer)
-        backgroundColor = UIColor(dynamicProvider: { (traitCollection) -> UIColor in
-            switch traitCollection.userInterfaceStyle {
-            case .dark:
-                return UIColor.black.withAlphaComponent(0.4)
-            default:
-                return UIColor.black.withAlphaComponent(0.2)
-            }
-        })
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 80
+        layer.shadowOffset = CGSize(width: 0, height: 40)
+        configureShadowOpacity()
     }
     
-    private func configureGradientColours() {
-        guard let backgroundColor = backgroundColor else { return }
-        gradientLayer.colors = [backgroundColor.cgColor, backgroundColor.withAlphaComponent(0).cgColor]
+    private func configureShadowOpacity() {
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            layer.shadowOpacity = 0.9
+        default:
+            layer.shadowOpacity = 0.5
+        }
     }
 }

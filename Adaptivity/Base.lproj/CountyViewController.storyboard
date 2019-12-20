@@ -21,10 +21,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-Wo-Bae">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uq-Ln-T3Y" customClass="CountyMapOverlayView" customModule="Counties" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="389.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzz-vK-uPP">
                                 <rect key="frame" x="47" y="104" width="320" height="285.5"/>
                                 <subviews>
@@ -69,7 +65,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="Bua-xX-mWq" secondAttribute="bottom" id="s8w-BF-Z5s"/>
                                                     </constraints>
                                                 </view>
-                                                <blurEffect style="systemUltraThinMaterial"/>
+                                                <blurEffect style="systemThinMaterial"/>
                                             </visualEffectView>
                                         </subviews>
                                     </stackView>
@@ -86,15 +82,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="top" secondItem="edN-Og-UZA" secondAttribute="top" id="2Om-cd-mFm"/>
-                            <constraint firstAttribute="trailing" secondItem="4uq-Ln-T3Y" secondAttribute="trailing" id="6d5-L3-tj2"/>
                             <constraint firstAttribute="bottom" secondItem="KFe-Wo-Bae" secondAttribute="bottom" id="CWS-98-A0p"/>
-                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="leading" secondItem="edN-Og-UZA" secondAttribute="leading" id="FA4-fc-Sh0"/>
                             <constraint firstItem="KFe-Wo-Bae" firstAttribute="top" secondItem="edN-Og-UZA" secondAttribute="top" id="LGE-iC-4rE"/>
                             <constraint firstItem="Wzz-vK-uPP" firstAttribute="centerX" secondItem="edN-Og-UZA" secondAttribute="centerX" id="OiY-6G-bLu"/>
                             <constraint firstItem="Wzz-vK-uPP" firstAttribute="top" secondItem="Z3u-9P-uNk" secondAttribute="bottom" constant="60" id="WZS-qb-BAf"/>
                             <constraint firstItem="KFe-Wo-Bae" firstAttribute="leading" secondItem="edN-Og-UZA" secondAttribute="leading" id="tx3-wR-DgM"/>
-                            <constraint firstItem="4uq-Ln-T3Y" firstAttribute="bottom" secondItem="Wzz-vK-uPP" secondAttribute="bottom" id="wRN-97-tdq"/>
                             <constraint firstAttribute="trailing" secondItem="KFe-Wo-Bae" secondAttribute="trailing" id="xx2-iP-KLG"/>
                         </constraints>
                     </view>
