@@ -82,7 +82,7 @@ protocol CountyViewControllerDelegate: NSObjectProtocol {
     The function called when the county view controller wants to dismiss.
     - parameter countyViewController: The county view controller sending the message.
     */
-    func countyViewControllerDidFinish(_ countyViewController: CountyViewController);
+    func countyViewControllerDidFinish(_ countyViewController: CountyViewController)
 }
 
 private extension County {
