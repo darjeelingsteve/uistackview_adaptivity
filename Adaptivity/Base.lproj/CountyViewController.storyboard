@@ -100,13 +100,6 @@
                             <constraint firstItem="gEW-Mm-CBO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="edN-Og-UZA" secondAttribute="leadingMargin" id="zZZ-Ww-TJt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LcB-0I-P3h">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="dlQ-88-WFi">
-                            <connections>
-                                <action selector="doneTapped:" destination="dcA-fF-HUS" id="Vab-2t-bUb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="detailsContainerView" destination="Wzz-vK-uPP" id="Dpo-RD-K1L"/>
                         <outlet property="flagImageView" destination="Iuo-ze-4aJ" id="kKa-51-kow"/>
