@@ -10,7 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    private let spotlightController = SpotlightController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        spotlightController.indexCounties(County.allCounties)
         CountyHistory.shared.delegate = self
         return true
     }
