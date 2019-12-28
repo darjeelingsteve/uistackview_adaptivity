@@ -77,7 +77,7 @@ class CountyViewController: UIViewController {
 /*!
 The protocol for delegates of the county view controller to conform to.
 */
-protocol CountyViewControllerDelegate: NSObjectProtocol {
+protocol CountyViewControllerDelegate: AnyObject {
     /*!
     The function called when the county view controller wants to dismiss.
     - parameter countyViewController: The county view controller sending the message.
