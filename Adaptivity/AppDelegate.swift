@@ -20,12 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         if County.from(userActivity: options.userActivities.first) != nil {
-            let countyConfiguration = UISceneConfiguration(name: "County Configuration", sessionRole: .windowApplication)
+            let countyConfiguration = UISceneConfiguration(name: "County Configuration", sessionRole: connectingSceneSession.role)
             countyConfiguration.delegateClass = CountySceneDelegate.self
             countyConfiguration.storyboard = UIStoryboard(name: "CountyViewController", bundle: nil)
             return countyConfiguration
         }
-        let masterConfiguration = UISceneConfiguration(name: "Master Configuration", sessionRole: .windowApplication)
+        let masterConfiguration = UISceneConfiguration(name: "Master Configuration", sessionRole: connectingSceneSession.role)
         masterConfiguration.delegateClass = MasterSceneDelegate.self
         masterConfiguration.storyboard = UIStoryboard(name: "Main", bundle: nil)
         return masterConfiguration
