@@ -4,6 +4,12 @@
 
 The Counties sample app is the host for iOS and Apple Watch tutorials hosted on [darjeelingsteve.com](https://darjeelingsteve.com). The areas of development covered are as follows:
 
+## [Advanced Multi-window UIs on iPadOS with Drag & Drop and State Restoration](https://darjeelingsteve.com/articles/Advanced-Multi-window-UIs-on-iPadOS-with-Drag-and-Drop-and-State-Restoration.html)
+
+![Adaptive UI](readme_images/multi_window.gif)
+
+Support for advanced multi-window user interfaces on iPadOS.
+
 ## [Adaptive User Interfaces with UIStackView and UICollectionView](https://darjeelingsteve.com/articles/Adaptive-User-Interfaces-with-UIStackView-and-UICollectionView.html)
 ![Adaptive UI](readme_images/adaptivity.gif)
 
