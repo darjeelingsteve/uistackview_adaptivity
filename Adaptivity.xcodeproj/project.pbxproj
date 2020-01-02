@@ -325,17 +325,14 @@
 				TargetAttributes = {
 					48ABDFA81C2063D70078391A = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = TMU9Z4F4V5;
 						LastSwiftMigration = 1110;
 					};
 					B63120FA1C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = TMU9Z4F4V5;
 						LastSwiftMigration = 0810;
 					};
 					B63121061C60D69F0063E975 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = TMU9Z4F4V5;
 						LastSwiftMigration = 1110;
 					};
 				};
@@ -593,7 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Adaptivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -608,7 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Adaptivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -624,7 +621,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = Counties_Extension;
 				INFOPLIST_FILE = Counties/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp;
@@ -642,7 +639,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = Counties_Extension;
 				INFOPLIST_FILE = Counties/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp;
@@ -658,7 +655,7 @@
 		B63121181C60D69F0063E975 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Counties Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp.watchkitextension;
@@ -675,7 +672,7 @@
 		B63121191C60D69F0063E975 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = TMU9Z4F4V5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Counties Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp.watchkitextension;
