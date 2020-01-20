@@ -16,6 +16,10 @@ final class FavouritesController {
     /// individual instances.
     static let shared = FavouritesController()
     
+    /// The notification posted when the user adds or removes a favourite
+    /// county.
+    static let favouriteCountiesDidChangeNotification = NSNotification.Name("FavouriteCountiesDidChange")
+    
     private static let favouriteCountiesKey = "FavouriteCounties"
     
     /// The counties that the user has chosen as their favourites.
@@ -38,6 +42,7 @@ final class FavouritesController {
     func add(county: County) {
         guard favouriteCounties.firstIndex(of: county) == nil else { return }
         ubiquitousKeyValueStore.set(favouriteCounties + [county], forKey: FavouritesController.favouriteCountiesKey)
+        NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
     
     /// Removes the given county from the user's favourites.
@@ -47,6 +52,7 @@ final class FavouritesController {
         var mutableFavourites = favouriteCounties
         mutableFavourites.remove(at: countyIndex)
         ubiquitousKeyValueStore.set(mutableFavourites, forKey: FavouritesController.favouriteCountiesKey)
+        NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
 }
 

@@ -74,6 +74,24 @@ final class FavouritesControllerTests: XCTestCase {
     }
 }
 
+// MARK: - Notifications
+extension FavouritesControllerTests {
+    func testItPostsANotifcationWhenTheUserAddsAFavourite() {
+        expectation(forNotification: FavouritesController.favouriteCountiesDidChangeNotification, object: favouritesController, handler: nil)
+        let kent = County.countyForName("Kent")!
+        favouritesController.add(county: kent)
+        waitForExpectations(timeout: 0, handler: nil)
+    }
+    
+    func testItPostsANotifcationWhenTheUserRemovesAFavourite() {
+        givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Includes Hampshire
+        expectation(forNotification: FavouritesController.favouriteCountiesDidChangeNotification, object: favouritesController, handler: nil)
+        let hampshire = County.countyForName("Hampshire")!
+        favouritesController.remove(county: hampshire)
+        waitForExpectations(timeout: 0, handler: nil)
+    }
+}
+
 private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStorageProviding {
     private(set) var receivedObject: Any?
     private(set) var receivedKey: String?
