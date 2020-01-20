@@ -106,4 +106,6 @@ private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStoragePr
         receivedKey = aKey
         return mockArrayForKey
     }
+    
+    func synchronize() -> Bool { return false }
 }
