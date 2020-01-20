@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         spotlightController.indexCounties(County.allCounties)
         CountyHistory.shared.delegate = self
+        FavouritesController.shared.synchronise()
         return true
     }
     

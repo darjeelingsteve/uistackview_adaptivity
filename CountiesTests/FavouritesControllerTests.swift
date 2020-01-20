@@ -92,10 +92,19 @@ extension FavouritesControllerTests {
     }
 }
 
+// MARK: - Synchronisation
+extension FavouritesControllerTests {
+    func testItSynchronisesItsUbiquitousKeyValueStorageWhenRequested() {
+        favouritesController.synchronise()
+        XCTAssertTrue(mockUbiquitousKeyValueStorageProvider.receivedSynchronizeMessage)
+    }
+}
+
 private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStorageProviding {
     private(set) var receivedObject: Any?
     private(set) var receivedKey: String?
     var mockArrayForKey: [Any]?
+    private(set) var receivedSynchronizeMessage = false
     
     func set(_ anObject: Any?, forKey aKey: String) {
         receivedObject = anObject
@@ -107,5 +116,8 @@ private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStoragePr
         return mockArrayForKey
     }
     
-    func synchronize() -> Bool { return false }
+    func synchronize() -> Bool {
+        receivedSynchronizeMessage = true
+        return false
+    }
 }

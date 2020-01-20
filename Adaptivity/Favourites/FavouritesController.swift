@@ -54,6 +54,11 @@ final class FavouritesController {
         ubiquitousKeyValueStore.set(mutableFavourites, forKey: FavouritesController.favouriteCountiesKey)
         NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
+    
+    /// Synchronises the receiver's ubiquitous key-value store.
+    func synchronise() {
+        _ = ubiquitousKeyValueStore.synchronize()
+    }
 }
 
 protocol UbiquitousKeyValueStorageProviding {
