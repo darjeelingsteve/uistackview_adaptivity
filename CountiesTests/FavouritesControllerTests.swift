@@ -12,7 +12,7 @@ import XCTest
 final class FavouritesControllerTests: XCTestCase {
     private var favouritesController: FavouritesController!
     private var mockUbiquitousKeyValueStorageProvider: MockUbiquitousKeyValueStorageProvider!
-    private let defaultFavouriteCounties: [County] = [County.countyForName("Hampshire")!, County.countyForName("Devon")!]
+    private let defaultFavouriteCountyNames = ["Hampshire", "Devon"]
     
     override func setUp() {
         super.setUp()
@@ -29,7 +29,7 @@ final class FavouritesControllerTests: XCTestCase {
     func testItCanSetACountyAsAFavourite() {
         let surrey = County.countyForName("Surrey")!
         favouritesController.add(county: surrey)
-        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [County], [surrey])
+        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], [surrey.name])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
     }
     
@@ -37,7 +37,7 @@ final class FavouritesControllerTests: XCTestCase {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
         let kent = County.countyForName("Kent")!
         favouritesController.add(county: kent)
-        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [County], defaultFavouriteCounties + [kent])
+        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], defaultFavouriteCountyNames + [kent.name])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
     }
     
@@ -45,7 +45,7 @@ final class FavouritesControllerTests: XCTestCase {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
         let Hampshire = County.countyForName("Hampshire")!
         favouritesController.remove(county: Hampshire)
-        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [County], [County.countyForName("Devon")!])
+        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], ["Devon"])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
     }
     
@@ -65,12 +65,12 @@ final class FavouritesControllerTests: XCTestCase {
     
     func testItReportsTheUsersFavouriteCountiesCorrectly() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
-        XCTAssertEqual(favouritesController.favouriteCounties, defaultFavouriteCounties)
+        XCTAssertEqual(favouritesController.favouriteCounties, defaultFavouriteCountyNames.compactMap { County.countyForName($0) })
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
     }
     
     private func givenADefaultSetOfFavouriteCountiesHaveBeenSet() {
-        mockUbiquitousKeyValueStorageProvider.mockArrayForKey = defaultFavouriteCounties
+        mockUbiquitousKeyValueStorageProvider.mockArrayForKey = defaultFavouriteCountyNames
     }
 }
 

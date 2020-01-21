@@ -24,7 +24,8 @@ final class FavouritesController {
     
     /// The counties that the user has chosen as their favourites.
     var favouriteCounties: [County] {
-        return ubiquitousKeyValueStore.array(forKey: FavouritesController.favouriteCountiesKey) as? [County] ?? []
+        let counties = (ubiquitousKeyValueStore.array(forKey: FavouritesController.favouriteCountiesKey) as? [String])?.compactMap({ County.countyForName($0) })
+        return counties ?? []
     }
     
     private let ubiquitousKeyValueStore: UbiquitousKeyValueStorageProviding
@@ -41,7 +42,7 @@ final class FavouritesController {
     /// - Parameter county: The county to add to the user's favourites.
     func add(county: County) {
         guard favouriteCounties.firstIndex(of: county) == nil else { return }
-        ubiquitousKeyValueStore.set(favouriteCounties + [county], forKey: FavouritesController.favouriteCountiesKey)
+        ubiquitousKeyValueStore.set((favouriteCounties + [county]).countyNames, forKey: FavouritesController.favouriteCountiesKey)
         NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
     
@@ -51,7 +52,7 @@ final class FavouritesController {
         guard let countyIndex = favouriteCounties.firstIndex(of: county) else { return }
         var mutableFavourites = favouriteCounties
         mutableFavourites.remove(at: countyIndex)
-        ubiquitousKeyValueStore.set(mutableFavourites, forKey: FavouritesController.favouriteCountiesKey)
+        ubiquitousKeyValueStore.set(mutableFavourites.countyNames, forKey: FavouritesController.favouriteCountiesKey)
         NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
     
@@ -68,3 +69,9 @@ protocol UbiquitousKeyValueStorageProviding {
 }
 
 extension NSUbiquitousKeyValueStore: UbiquitousKeyValueStorageProviding {}
+
+private extension Array where Element == County {
+    var countyNames: [String] {
+        return map { $0.name }
+    }
+}
