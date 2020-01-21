@@ -40,29 +40,39 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bua-xX-mWq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1B-Ff-mvw">
-                                                                    <rect key="frame" x="8" y="8" width="304" height="41"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1B-Ff-mvw">
+                                                            <rect key="frame" x="42" y="8" width="236" height="41"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGZ-lm-XnJ">
+                                                            <rect key="frame" x="8" y="52.5" width="304" height="25"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76R-Os-aNI">
+                                                            <rect key="frame" x="286" y="17.5" width="26" height="22.5"/>
+                                                            <state key="normal" image="heart" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="bold">
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGZ-lm-XnJ">
-                                                                    <rect key="frame" x="8" y="57" width="304" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
-                                                        </stackView>
+                                                                </preferredSymbolConfiguration>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="toggleFavourite:" destination="dcA-fF-HUS" eventType="primaryActionTriggered" id="Gut-6X-0Ls"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Bua-xX-mWq" firstAttribute="leading" secondItem="l8b-mQ-0u6" secondAttribute="leading" id="1EY-sv-2CP"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Bua-xX-mWq" secondAttribute="trailing" id="D0u-Mj-Dum"/>
-                                                        <constraint firstItem="Bua-xX-mWq" firstAttribute="top" secondItem="l8b-mQ-0u6" secondAttribute="top" id="lNW-PU-epm"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Bua-xX-mWq" secondAttribute="bottom" id="s8w-BF-Z5s"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="ZGZ-lm-XnJ" secondAttribute="bottom" id="2TY-02-cEF"/>
+                                                        <constraint firstAttribute="leadingMargin" secondItem="ZGZ-lm-XnJ" secondAttribute="leading" id="I8x-p7-AdY"/>
+                                                        <constraint firstItem="ZGZ-lm-XnJ" firstAttribute="firstBaseline" secondItem="W1B-Ff-mvw" secondAttribute="baseline" constant="28" symbolType="layoutAnchor" id="fEs-El-fuZ"/>
+                                                        <constraint firstItem="76R-Os-aNI" firstAttribute="centerY" secondItem="W1B-Ff-mvw" secondAttribute="centerY" id="hNQ-gf-Alt"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="ZGZ-lm-XnJ" secondAttribute="trailing" id="kHc-G0-Dir"/>
+                                                        <constraint firstItem="W1B-Ff-mvw" firstAttribute="centerX" secondItem="l8b-mQ-0u6" secondAttribute="centerX" id="rIW-Ag-xCX"/>
+                                                        <constraint firstItem="W1B-Ff-mvw" firstAttribute="top" secondItem="l8b-mQ-0u6" secondAttribute="topMargin" id="sGu-G8-aAU"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="76R-Os-aNI" secondAttribute="trailing" id="vjN-0s-u32"/>
+                                                        <constraint firstItem="76R-Os-aNI" firstAttribute="leading" secondItem="W1B-Ff-mvw" secondAttribute="trailing" constant="8" id="xkw-kC-ykx"/>
                                                     </constraints>
                                                 </view>
                                                 <blurEffect style="systemThinMaterial"/>
@@ -102,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="detailsContainerView" destination="Wzz-vK-uPP" id="Dpo-RD-K1L"/>
+                        <outlet property="favouriteButton" destination="76R-Os-aNI" id="xEh-Px-aFe"/>
                         <outlet property="flagImageView" destination="Iuo-ze-4aJ" id="kKa-51-kow"/>
                         <outlet property="mapView" destination="KFe-Wo-Bae" id="Qmg-1x-HMn"/>
                         <outlet property="nameLabel" destination="W1B-Ff-mvw" id="fry-bH-y2j"/>
@@ -113,4 +124,7 @@
             <point key="canvasLocation" x="2455.072463768116" y="1106.9196428571429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+    </resources>
 </document>

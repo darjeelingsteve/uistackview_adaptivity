@@ -30,6 +30,11 @@ class CountyViewController: UIViewController {
             detailsContainerView.layer.cornerCurve = .continuous
         }
     }
+    @IBOutlet private weak var favouriteButton: UIButton! {
+        didSet {
+            configureFavouriteButton()
+        }
+    }
     private lazy var detailsContainerShadowView: ShadowView = {
         let detailsContainerShadowView = ShadowView()
         detailsContainerShadowView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +52,11 @@ class CountyViewController: UIViewController {
             detailsContainerShadowView.topAnchor.constraint(equalTo: detailsContainerView.topAnchor),
             detailsContainerShadowView.bottomAnchor.constraint(equalTo: detailsContainerView.bottomAnchor)
         ])
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(configureFavouriteButton),
+                                               name: FavouritesController.favouriteCountiesDidChangeNotification,
+                                               object: FavouritesController.shared)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +81,21 @@ class CountyViewController: UIViewController {
     
     @IBAction private func doneTapped(_ sender: AnyObject) {
         delegate?.countyViewControllerDidFinish(self)
+    }
+    
+    @IBAction private func toggleFavourite(_ sender: AnyObject) {
+        guard let county = county else { return }
+        if FavouritesController.shared.favouriteCounties.contains(county) {
+            FavouritesController.shared.remove(county: county)
+        } else {
+            FavouritesController.shared.add(county: county)
+        }
+    }
+    
+    @objc private func configureFavouriteButton() {
+        guard let county = county else { return }
+        let isFavourite = FavouritesController.shared.favouriteCounties.contains(county)
+        favouriteButton.setImage(UIImage(systemName: isFavourite ? "heart.fill" : "heart", withConfiguration: favouriteButton.image(for: .normal)?.symbolConfiguration), for: .normal)
     }
 }
 
