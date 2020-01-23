@@ -29,6 +29,7 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
     }
     
@@ -169,7 +170,7 @@ extension CountyCellDisplayStyle {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: 100)
         case .grid:
-            return CGSize(width: 150, height: 120)
+            return CGSize(width: 250, height: 250)
         }
     }
     
@@ -178,7 +179,7 @@ extension CountyCellDisplayStyle {
         case .table:
             return UIEdgeInsets.zero
         case .grid:
-            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            return UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
         }
     }
     
@@ -187,7 +188,7 @@ extension CountyCellDisplayStyle {
         case .table:
             return 0
         case .grid:
-            return 44
+            return 48
         }
     }
 }

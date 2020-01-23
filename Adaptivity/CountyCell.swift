@@ -26,31 +26,52 @@ private struct BorderSettings {
 
 /// The cell responsible for displaying County data.
 class CountyCell: UICollectionViewCell {
-    @IBOutlet private weak var stackView: UIStackView!
-    @IBOutlet private weak var flagImageView: UIImageView!
-    @IBOutlet private weak var nameLabel: UILabel!
+    private let flagImageView: UIImageView = {
+        let flagImageView = UIImageView()
+        flagImageView.translatesAutoresizingMaskIntoConstraints = false
+        flagImageView.clipsToBounds = true
+        flagImageView.layer.cornerCurve = .continuous
+        return flagImageView
+    }()
     
-    /// The display style of the receiver.
-    var displayStyle: CountyCellDisplayStyle = .table {
-        didSet {
-            switch (displayStyle) {
-            case .table:
-                stackView.axis = .horizontal
-            case .grid:
-                stackView.axis = .vertical
-            }
-            selectedBackgroundView?.layer.cornerRadius = borderSettings.cornerRadius
-        }
-    }
+    private let nameLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = .preferredFont(forTextStyle: .body)
+        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.5
+        nameLabel.setContentHuggingPriority(.required, for: .vertical)
+        return nameLabel
+    }()
     
-    private var borderSettings: BorderSettings {
-        switch (displayStyle) {
-        case .table:
-            return BorderSettings(width: 1.0, cornerRadius: 0)
-        case .grid:
-            return BorderSettings(width: 3.0, cornerRadius: 10)
-        }
-    }
+    private let selectionFlagOverlayView: UIView = {
+        let selectionFlagOverlayView = UIView()
+        selectionFlagOverlayView.translatesAutoresizingMaskIntoConstraints = false
+        selectionFlagOverlayView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        selectionFlagOverlayView.isHidden = true
+        return selectionFlagOverlayView
+    }()
+    
+    private lazy var tableStyleConstraits: [NSLayoutConstraint] = [
+        flagImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+        flagImageView.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor),
+        flagImageView.widthAnchor.constraint(equalToConstant: 100),
+        flagImageView.heightAnchor.constraint(equalTo: flagImageView.widthAnchor, multiplier: 2 / 3, constant: 0),
+        nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: flagImageView.trailingAnchor, multiplier: 1),
+        nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+        nameLabel.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor)
+    ]
+    
+    private lazy var gridStyleConstraits: [NSLayoutConstraint] = [
+        flagImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+        flagImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+        flagImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+        nameLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+        nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: flagImageView.bottomAnchor, multiplier: 1),
+        nameLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+    ]
     
     /// The county to be displayed by the cell.
     var county: County? {
@@ -62,16 +83,71 @@ class CountyCell: UICollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    /// The display style of the receiver.
+    var displayStyle: CountyCellDisplayStyle = .table {
+        didSet {
+            flagImageView.contentMode = displayStyle.flagImageViewContentMode
+            flagImageView.layer.cornerRadius = borderSettings.cornerRadius
+            nameLabel.textAlignment = displayStyle.nameLabelTextAlignment
+            selectedBackgroundView?.layer.cornerRadius = borderSettings.cornerRadius
+            setNeedsUpdateConstraints()
+        }
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            // Only show the flag overlay if we are highlighted and in grid style.
+            selectionFlagOverlayView.isHidden = !isHighlighted || displayStyle == .table
+        }
+    }
+    
+    private var borderSettings: BorderSettings {
+        switch (displayStyle) {
+        case .table:
+            return BorderSettings(width: 1.0, cornerRadius: 0)
+        case .grid:
+            return BorderSettings(width: 0.0, cornerRadius: 10)
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .systemBackground
+        contentView.addSubview(flagImageView)
+        contentView.addSubview(nameLabel)
+        flagImageView.addSubview(selectionFlagOverlayView)
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = borderSettings.colour
         selectedBackgroundView?.layer.cornerCurve = .continuous
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         setNeedsDisplay() // Redraw the border
+    }
+    
+    override func updateConstraints() {
+        NSLayoutConstraint.activate([
+            selectionFlagOverlayView.leadingAnchor.constraint(equalTo: flagImageView.leadingAnchor),
+            selectionFlagOverlayView.trailingAnchor.constraint(equalTo: flagImageView.trailingAnchor),
+            selectionFlagOverlayView.topAnchor.constraint(equalTo: flagImageView.topAnchor),
+            selectionFlagOverlayView.bottomAnchor.constraint(equalTo: flagImageView.bottomAnchor)
+        ])
+        
+        switch (displayStyle) {
+        case .table:
+            NSLayoutConstraint.activate(tableStyleConstraits)
+            NSLayoutConstraint.deactivate(gridStyleConstraits)
+        case .grid:
+            NSLayoutConstraint.activate(gridStyleConstraits)
+            NSLayoutConstraint.deactivate(tableStyleConstraits)
+        }
+        
+        super.updateConstraints()
     }
     
     override func draw(_ rect: CGRect) {
@@ -91,5 +167,25 @@ class CountyCell: UICollectionViewCell {
         path.lineWidth = lineWidth
         borderSettings.colour.set()
         path.stroke()
+    }
+}
+
+private extension CountyCellDisplayStyle {
+    var flagImageViewContentMode: UIView.ContentMode {
+        switch self {
+        case .table:
+            return .scaleAspectFit
+        case .grid:
+            return .scaleAspectFill
+        }
+    }
+    
+    var nameLabelTextAlignment: NSTextAlignment {
+        switch self {
+        case .table:
+            return .left
+        case .grid:
+            return .center
+        }
     }
 }
