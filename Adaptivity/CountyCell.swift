@@ -42,6 +42,7 @@ class CountyCell: UICollectionViewCell {
         nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.minimumScaleFactor = 0.5
         nameLabel.setContentHuggingPriority(.required, for: .vertical)
+        nameLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         return nameLabel
     }()
     
