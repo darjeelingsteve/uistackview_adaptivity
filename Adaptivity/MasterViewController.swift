@@ -60,9 +60,7 @@ class MasterViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        if styleForTraitCollection(traitCollection) == .table {
-            flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
-        }
+        flowLayout.invalidateLayout()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,7 +168,14 @@ extension CountyCellDisplayStyle {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: 100)
         case .grid:
-            return CGSize(width: 250, height: 250)
+            let availableWidth = collectionView.bounds.width - collectionViewEdgeInsets.left - collectionViewEdgeInsets.right
+            let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
+            let estimatedCellWidth: CGFloat = 220
+            let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
+            let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
+            
+            let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / numberOfItemsPerRow)
+            return CGSize(width: itemWidth, height: itemWidth)
         }
     }
     
