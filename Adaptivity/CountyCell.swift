@@ -37,7 +37,6 @@ class CountyCell: UICollectionViewCell {
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = .preferredFont(forTextStyle: .body)
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.minimumScaleFactor = 0.5
@@ -89,6 +88,7 @@ class CountyCell: UICollectionViewCell {
         didSet {
             flagImageView.contentMode = displayStyle.flagImageViewContentMode
             flagImageView.layer.cornerRadius = borderSettings.cornerRadius
+            nameLabel.font = .preferredFont(forTextStyle: displayStyle.nameLabelTextStyle)
             nameLabel.textAlignment = displayStyle.nameLabelTextAlignment
             selectedBackgroundView?.layer.cornerRadius = borderSettings.cornerRadius
             setNeedsUpdateConstraints()
@@ -178,6 +178,15 @@ private extension CountyCellDisplayStyle {
             return .scaleAspectFit
         case .grid:
             return .scaleAspectFill
+        }
+    }
+    
+    var nameLabelTextStyle: UIFont.TextStyle {
+        switch self {
+        case .table:
+            return .body
+        case .grid:
+            return .headline
         }
     }
     
