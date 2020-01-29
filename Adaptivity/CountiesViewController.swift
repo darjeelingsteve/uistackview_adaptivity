@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CountiesViewController.swift
 //  Adaptivity
 //
 //  Created by Stephen Anthony on 15/12/2015.
@@ -11,8 +11,8 @@ import UIKit
 private let PresentCountyWithAnimationSegueIdentifier = "PresentCountyWithAnimation"
 private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAnimation"
 
-/// The view controller responsible for displaying the county collection view.
-class MasterViewController: UIViewController {
+/// The view controller responsible for displaying the counties collection view.
+class CountiesViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
@@ -101,7 +101,7 @@ class MasterViewController: UIViewController {
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension MasterViewController: UICollectionViewDelegateFlowLayout {
+extension CountiesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return styleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
     }
@@ -116,7 +116,7 @@ extension MasterViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: UICollectionViewDelegate
-extension MasterViewController: UICollectionViewDelegate {
+extension CountiesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showCounty(dataSource.itemIdentifier(for: indexPath)!, animated: true)
         collectionView.deselectItem(at: indexPath, animated: false)
@@ -124,7 +124,7 @@ extension MasterViewController: UICollectionViewDelegate {
 }
 
 // MARK: UICollectionViewDragDelegate
-extension MasterViewController: UICollectionViewDragDelegate {
+extension CountiesViewController: UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         guard let county = dataSource.itemIdentifier(for: indexPath) else { return [] }
         let itemProvider = NSItemProvider()
@@ -142,7 +142,7 @@ extension MasterViewController: UICollectionViewDragDelegate {
 }
 
 // MARK: UISearchResultsUpdating
-extension MasterViewController: UISearchResultsUpdating {
+extension CountiesViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         updateSearchResults(forSearchText: searchController.searchBar.text)
     }
@@ -155,7 +155,7 @@ extension MasterViewController: UISearchResultsUpdating {
 }
 
 // MARK: CountyViewControllerDelegate
-extension MasterViewController: CountyViewControllerDelegate {
+extension CountiesViewController: CountyViewControllerDelegate {
     func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
         parent?.dismiss(animated: true)
     }
@@ -198,7 +198,7 @@ extension CountyCellDisplayStyle {
     }
 }
 
-private extension MasterViewController {
+private extension CountiesViewController {
     
     /// The sections displayed in the collection view.
     private enum CollectionSection: Hashable {

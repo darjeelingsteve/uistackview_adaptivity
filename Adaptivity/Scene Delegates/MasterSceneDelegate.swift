@@ -24,8 +24,8 @@ class MasterSceneDelegate: UIResponder {
 // MARK: UIWindowSceneDelegate
 extension MasterSceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let navigationController = window?.rootViewController as? UINavigationController, let masterViewController = navigationController.topViewController as? MasterViewController {
-            applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
+        if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.children.first as? UINavigationController, let countiesViewController = navigationController.topViewController as? CountiesViewController {
+            applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: countiesViewController)
         }
     }
     
@@ -35,12 +35,12 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         for userActivityHandler in userActivityHandlers {
             userActivityHandler.handleUserActivity(userActivity, completionHandler: { (result) -> Void in
                 handled = true
-                dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
+                dismissExistingCountyViewIfRequired({ (countiesViewController) -> (Void) in
                     switch result {
                     case .county(let county):
-                        masterViewController.showCounty(county, animated: false)
+                        countiesViewController.showCounty(county, animated: false)
                     case .searchText(let searchText):
-                        masterViewController.beginSearch(withText: searchText)
+                        countiesViewController.beginSearch(withText: searchText)
                     }
                 })
             })
@@ -52,16 +52,16 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
     }
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
+        dismissExistingCountyViewIfRequired { [unowned self] (_) -> (Void) in
             self.applicationShortcutHandler?.handle(shortcutItem, completionHandler: completionHandler)
         }
     }
     
-    private func dismissExistingCountyViewIfRequired(_ completion: (MasterViewController) -> (Void)) {
-        let navigationController = window?.rootViewController as! UINavigationController
+    private func dismissExistingCountyViewIfRequired(_ completion: (CountiesViewController) -> (Void)) {
+        let navigationController = (window?.rootViewController as! UITabBarController).children.first as! UINavigationController
         // Dismiss any existing county that is being shown
         navigationController.dismiss(animated: false, completion: nil)
-        let viewController = navigationController.topViewController as! MasterViewController
+        let viewController = navigationController.topViewController as! CountiesViewController
         completion(viewController)
     }
 }

@@ -13,20 +13,20 @@ let CountyItemShortcutType = "CountyItem"
 
 /// The class responsible for handling the response to application shortcuts.
 class ApplicationShortcutHandler: NSObject {
-    private let masterViewController: MasterViewController
+    private let countiesViewController: CountiesViewController
     
-    init(masterViewController: MasterViewController) {
-        self.masterViewController = masterViewController
+    init(countiesViewController: CountiesViewController) {
+        self.countiesViewController = countiesViewController
     }
     
     func handle(_ applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         var handled = false
         if applicationShortcutItem.type == "Search" {
-            masterViewController.beginSearch()
+            countiesViewController.beginSearch()
             handled = true
         }
         else if applicationShortcutItem.type == CountyItemShortcutType {
-            masterViewController.showCounty(County.countyForName(applicationShortcutItem.localizedTitle)!, animated: true)
+            countiesViewController.showCounty(County.countyForName(applicationShortcutItem.localizedTitle)!, animated: true)
             handled = true
         }
         completionHandler(handled)
