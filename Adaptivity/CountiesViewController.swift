@@ -8,15 +8,11 @@
 
 import UIKit
 
-private let PresentCountyWithAnimationSegueIdentifier = "PresentCountyWithAnimation"
-private let PresentCountyWithNoAnimationSegueIdentifier = "PresentCountyWithNoAnimation"
-
 /// The view controller responsible for displaying the counties collection view.
 class CountiesViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
-    var selectedCounty: County?
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -63,17 +59,14 @@ class CountiesViewController: UIViewController {
         flowLayout.invalidateLayout()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let countyViewController = segue.destination as? CountyViewController {
-            countyViewController.county = selectedCounty
-            countyViewController.delegate = self
-        }
-    }
-    
     func showCounty(_ county: County, animated: Bool) {
-        selectedCounty = county
-        let segueIdentifier = animated ? PresentCountyWithAnimationSegueIdentifier : PresentCountyWithNoAnimationSegueIdentifier
-        performSegue(withIdentifier: segueIdentifier, sender: self)
+        guard let countyViewController = UIStoryboard(name: "CountyViewController", bundle: nil).instantiateInitialViewController() as? CountyViewController else {
+            fatalError("Could not instantiate county view controller")
+        }
+        countyViewController.modalPresentationStyle = .formSheet
+        countyViewController.county = county
+        countyViewController.delegate = self
+        present(countyViewController, animated: animated)
     }
     
     func beginSearch(withText searchText: String? = nil) {

@@ -46,8 +46,6 @@
                     <connections>
                         <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
                         <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
-                        <segue destination="xdD-vW-J83" kind="presentation" identifier="PresentCountyWithNoAnimation" animates="NO" modalPresentationStyle="formSheet" id="lAd-DJ-EBc"/>
-                        <segue destination="xdD-vW-J83" kind="presentation" identifier="PresentCountyWithAnimation" modalPresentationStyle="formSheet" id="SWH-pq-MAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,9 +71,6 @@
         <!--CountyViewController-->
         <scene sceneID="RDh-q4-ORl">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CountyViewController" storyboardName="CountyViewController" referencedIdentifier="CountyViewController" id="xdD-vW-J83" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="OaF-2l-Mag"/>
-                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgh-lf-A34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1782" y="1108"/>
