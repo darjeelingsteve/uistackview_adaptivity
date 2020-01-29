@@ -148,7 +148,7 @@ extension MasterViewController: UISearchResultsUpdating {
     }
     
     private func updateSearchResults(forSearchText searchText: String?) {
-        spotlightSearchController.search(withQueryString: searchText ?? "") { [unowned self] in
+        spotlightSearchController.search(withQuery: SpotlightSearchController.Query(queryString: searchText ?? "", filter: .allCounties)) { [unowned self] in
             self.dataSource.apply(self.snapshotForCurrentState(), animatingDifferences: false)
         }
     }
