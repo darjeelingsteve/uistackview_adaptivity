@@ -42,7 +42,7 @@ final class FavouritesController {
     /// - Parameter county: The county to add to the user's favourites.
     func add(county: County) {
         guard favouriteCounties.firstIndex(of: county) == nil else { return }
-        ubiquitousKeyValueStore.set((favouriteCounties + [county]).countyNames, forKey: FavouritesController.favouriteCountiesKey)
+        ubiquitousKeyValueStore.set((favouriteCounties + [county]).sorted().countyNames, forKey: FavouritesController.favouriteCountiesKey)
         NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
     }
     

@@ -12,7 +12,7 @@ import XCTest
 final class FavouritesControllerTests: XCTestCase {
     private var favouritesController: FavouritesController!
     private var mockUbiquitousKeyValueStorageProvider: MockUbiquitousKeyValueStorageProvider!
-    private let defaultFavouriteCountyNames = ["Hampshire", "Devon"]
+    private let defaultFavouriteCountyNames = ["Devon", "Hampshire"]
     
     override func setUp() {
         super.setUp()
@@ -61,6 +61,13 @@ final class FavouritesControllerTests: XCTestCase {
         let essex = County.countyForName("Essex")!
         favouritesController.remove(county: essex)
         XCTAssertNil(mockUbiquitousKeyValueStorageProvider.receivedObject)
+    }
+    
+    func testItStoresCountiesInAlphabeticalOrder() {
+        givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Does not include Essex
+        let essex = County.countyForName("Essex")!
+        favouritesController.add(county: essex)
+        XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], [defaultFavouriteCountyNames[0], essex.name, defaultFavouriteCountyNames[1]])
     }
     
     func testItReportsTheUsersFavouriteCountiesCorrectly() {
