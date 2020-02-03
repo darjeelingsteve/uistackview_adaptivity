@@ -28,6 +28,7 @@ class CountiesViewController: UIViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
+        collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
         return collectionView
     }()
     private let flowLayout: UICollectionViewFlowLayout = {
@@ -35,7 +36,15 @@ class CountiesViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = 32
         return flowLayout
     }()
-    private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
+    private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
+        return UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
+            guard let self = self else { return nil }
+            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
+            countyCell.county = county
+            countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
+            return countyCell
+        }
+    }()
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -47,6 +56,8 @@ class CountiesViewController: UIViewController {
     init(style: Style) {
         self.style = style
         super.init(nibName: nil, bundle: nil)
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     required init?(coder: NSCoder) {
@@ -56,6 +67,7 @@ class CountiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = style.navigationItemTitle
+        
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -64,24 +76,14 @@ class CountiesViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
-        
-        dataSource = UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
-            guard let self = self else { return nil }
-            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
-            countyCell.county = county
-            countyCell.displayStyle = self.styleForTraitCollection(self.traitCollection)
-            return countyCell
-        }
         dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard let previousTraitCollection = previousTraitCollection else { return }
-        if styleForTraitCollection(traitCollection) != styleForTraitCollection(previousTraitCollection) {
+        if cellStyleForTraitCollection(traitCollection) != cellStyleForTraitCollection(previousTraitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
         }
     }
@@ -120,23 +122,27 @@ class CountiesViewController: UIViewController {
         return snapshot
     }
     
-    private func styleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
+    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
         return traitCollection.horizontalSizeClass == .regular ? .grid : .table
+    }
+    
+    @objc private func reloadData() {
+        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension CountiesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return styleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
+        return cellStyleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return styleForTraitCollection(traitCollection).collectionViewEdgeInsets
+        return cellStyleForTraitCollection(traitCollection).collectionViewEdgeInsets
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return styleForTraitCollection(traitCollection).collectionViewLineSpacing
+        return cellStyleForTraitCollection(traitCollection).collectionViewLineSpacing
     }
 }
 
