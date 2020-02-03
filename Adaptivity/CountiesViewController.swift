@@ -45,6 +45,7 @@ class CountiesViewController: UIViewController {
             return countyCell
         }
     }()
+    private let emptyCountiesNoticeView = EmptyCountiesNoticeView()
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -66,6 +67,7 @@ class CountiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         navigationItem.title = style.navigationItemTitle
         
         view.addSubview(collectionView)
@@ -76,7 +78,15 @@ class CountiesViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
+        view.addSubview(emptyCountiesNoticeView)
+        emptyCountiesNoticeView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            emptyCountiesNoticeView.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+            emptyCountiesNoticeView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
+            emptyCountiesNoticeView.centerYAnchor.constraint(equalTo: view.readableContentGuide.centerYAnchor)
+        ])
+        
+        reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
     }
     
@@ -111,6 +121,17 @@ class CountiesViewController: UIViewController {
         }
     }
     
+    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
+        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
+    }
+    
+    @objc private func reloadData() {
+        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
+        collectionView.isHidden = dataSource.snapshot().numberOfItems(inSection: .counties) == 0
+        emptyCountiesNoticeView.configuration = EmptyCountiesNoticeView.Configuration(style: style, searchQuery: searchController.searchBar.text)
+        emptyCountiesNoticeView.isHidden = !collectionView.isHidden
+    }
+    
     private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<CollectionSection, County> {
         var snapshot = NSDiffableDataSourceSnapshot<CollectionSection, County>()
         snapshot.appendSections([.counties])
@@ -120,14 +141,6 @@ class CountiesViewController: UIViewController {
             snapshot.appendItems(style.countyList)
         }
         return snapshot
-    }
-    
-    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
-        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
-    }
-    
-    @objc private func reloadData() {
-        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
     }
 }
 
@@ -180,7 +193,7 @@ extension CountiesViewController: UISearchResultsUpdating {
     
     private func updateSearchResults(forSearchText searchText: String?) {
         spotlightSearchController.search(withQuery: SpotlightSearchController.Query(queryString: searchText ?? "", filter: style.searchQueryFilter)) { [unowned self] in
-            self.dataSource.apply(self.snapshotForCurrentState(), animatingDifferences: false)
+            self.reloadData()
         }
     }
 }
