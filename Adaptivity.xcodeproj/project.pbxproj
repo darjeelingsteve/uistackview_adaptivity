@@ -12,6 +12,7 @@
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
 		4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893662423D5FD1B00BD781D /* FavouritesController.swift */; };
 		4893663523D609CB00BD781D /* FavouritesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663423D609CB00BD781D /* FavouritesControllerTests.swift */; };
+		4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFAF1C2063D70078391A /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAE1C2063D70078391A /* CountiesViewController.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
@@ -104,6 +105,7 @@
 		4893662E23D609B100BD781D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4893663423D609CB00BD781D /* FavouritesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesControllerTests.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
+		4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCountiesNoticeView.swift; sourceTree = "<group>"; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48ABDFAE1C2063D70078391A /* CountiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				48ABDFAE1C2063D70078391A /* CountiesViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
+				4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */,
 				B631212B1C60F51B0063E975 /* UserActivityHandling.swift */,
 				B684588C1C84818B00EE6096 /* CountyHistory.swift */,
 				48ABDFB01C2063D70078391A /* Main.storyboard */,
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */,
 				48C7177C23AB7E3A005D80C6 /* County+NSUserActivity.swift in Sources */,
 				48ABDFC21C206A0B0078391A /* County.swift in Sources */,
 				48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */,
