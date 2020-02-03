@@ -1,82 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UBV-v4-IEh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QsC-np-m0W">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Counties-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="e2i-3r-bix">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CountiesViewController" customModule="Counties" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGu-bo-TVs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="32" id="Mjn-Za-ADn">
-                                    <size key="itemSize" width="160" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CSe-9z-Ysz"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MI9-yT-Qye"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="tGu-bo-TVs" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="47T-VP-CAr"/>
-                            <constraint firstItem="tGu-bo-TVs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zeu-R9-aCY"/>
-                            <constraint firstAttribute="trailing" secondItem="tGu-bo-TVs" secondAttribute="trailing" id="gPC-kU-gUr"/>
-                            <constraint firstItem="tGu-bo-TVs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mAK-3n-y1d"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Counties" id="gG2-dn-aPi"/>
-                    <connections>
-                        <outlet property="collectionView" destination="tGu-bo-TVs" id="1eu-G3-Bn6"/>
-                        <outlet property="flowLayout" destination="Mjn-Za-ADn" id="L6M-Qb-bvq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1022" y="1108"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xMS-Cg-LSp">
-            <objects>
-                <navigationController id="UBV-v4-IEh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZxG-te-WwN">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QsC-np-m0W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zcr-Ko-R2U">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QY4-uV-QEw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8N-ni-k3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8s5-T4-Qiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="1108"/>
-        </scene>
-        <!--CountyViewController-->
-        <scene sceneID="RDh-q4-ORl">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bgh-lf-A34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1782" y="1108"/>
+            <point key="canvasLocation" x="269.60000000000002" y="1107.6354679802955"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="SWH-pq-MAC"/>
-    </inferredMetricsTieBreakers>
 </document>

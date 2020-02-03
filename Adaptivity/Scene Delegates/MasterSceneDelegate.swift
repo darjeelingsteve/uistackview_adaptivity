@@ -24,7 +24,11 @@ class MasterSceneDelegate: UIResponder {
 // MARK: UIWindowSceneDelegate
 extension MasterSceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let tabBarController = window?.rootViewController as? UITabBarController, let navigationController = tabBarController.children.first as? UINavigationController, let countiesViewController = navigationController.topViewController as? CountiesViewController {
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            let countiesViewController = CountiesViewController()
+            let navigationController = UINavigationController(rootViewController: countiesViewController)
+            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("All Counties", comment: "All counties tab bar item title"), image: UIImage(systemName: "list.bullet"), selectedImage: nil)
+            tabBarController.addChild(navigationController)
             applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: countiesViewController)
         }
     }

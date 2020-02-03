@@ -10,8 +10,19 @@ import UIKit
 
 /// The view controller responsible for displaying the counties collection view.
 class CountiesViewController: UIViewController {
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
+        collectionView.backgroundColor = .systemBackground
+        collectionView.delegate = self
+        return collectionView
+    }()
+    private let flowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 32
+        return flowLayout
+    }()
     private var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County>!
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
@@ -23,14 +34,21 @@ class CountiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("Counties", comment: "Counties view navigation title")
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         guard dataSource == nil else { return }
         
         /// If we configure the data source in `viewDidLoad` then the search bar
