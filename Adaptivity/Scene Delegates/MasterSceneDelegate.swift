@@ -40,6 +40,7 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         for userActivityHandler in userActivityHandlers {
             userActivityHandler.handleUserActivity(userActivity, completionHandler: { (result) -> Void in
                 handled = true
+                switchToAllCountiesTab()
                 dismissExistingCountyViewIfRequired({ (countiesViewController) -> (Void) in
                     switch result {
                     case .county(let county):
@@ -57,6 +58,7 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
     }
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        switchToAllCountiesTab()
         dismissExistingCountyViewIfRequired { [unowned self] (_) -> (Void) in
             self.applicationShortcutHandler?.handle(shortcutItem, completionHandler: completionHandler)
         }
@@ -66,6 +68,11 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         let navigationController = UINavigationController(rootViewController: countiesViewController)
         navigationController.tabBarItem = UITabBarItem(title: tabBarItemTitle, image: tabBarItemImage, selectedImage: nil)
         return navigationController
+    }
+    
+    private func switchToAllCountiesTab() {
+        guard let tabBarController = window?.rootViewController as? UITabBarController else { return }
+        tabBarController.selectedIndex = 0
     }
     
     private func dismissExistingCountyViewIfRequired(_ completion: (CountiesViewController) -> (Void)) {
