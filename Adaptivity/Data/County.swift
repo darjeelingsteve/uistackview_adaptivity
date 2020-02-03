@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-func ==(lhs: County, rhs: County) -> Bool {
-    return lhs.name == rhs.name && lhs.population == rhs.population
-}
-
 /*!
 The struct used to represent an individual county.
 */
@@ -33,6 +29,12 @@ struct County: Hashable {
     
     static func countyForName(_ name: String) -> County? {
         return allCounties.filter({$0.name == name}).first
+    }
+}
+
+extension County: Comparable {
+    static func < (lhs: County, rhs: County) -> Bool {
+        return lhs.name < rhs.name
     }
 }
 
