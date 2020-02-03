@@ -14,6 +14,7 @@ class CountiesViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
+        collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         return collectionView
