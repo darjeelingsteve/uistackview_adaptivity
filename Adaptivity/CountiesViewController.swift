@@ -8,7 +8,8 @@
 
 import UIKit
 
-/// The view controller responsible for displaying the counties collection view.
+/// The view controller responsible for showing a searchable user interface of
+/// counties.
 class CountiesViewController: UIViewController {
     
     /// The different styles that `CountiesViewController` can display as.
@@ -21,30 +22,7 @@ class CountiesViewController: UIViewController {
     }
     
     private let style: Style
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
-        collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .systemBackground
-        collectionView.delegate = self
-        collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
-        return collectionView
-    }()
-    private let flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 32
-        return flowLayout
-    }()
-    private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
-        return UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
-            guard let self = self else { return nil }
-            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
-            countyCell.county = county
-            countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
-            return countyCell
-        }
-    }()
+    private let collectionViewController = CountiesCollectionViewController()
     private let emptyCountiesNoticeView = EmptyCountiesNoticeView()
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
@@ -53,12 +31,20 @@ class CountiesViewController: UIViewController {
         searchController.searchResultsUpdater = self
         return searchController
     }()
+    private var countiesForCurrentState: [County] {
+        if let searchText = searchController.searchBar.text, searchText.count > 0 {
+            return spotlightSearchController.searchResults
+        } else {
+            return style.countyList
+        }
+    }
     
     init(style: Style) {
         self.style = style
         super.init(nibName: nil, bundle: nil)
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        collectionViewController.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -70,12 +56,16 @@ class CountiesViewController: UIViewController {
         view.backgroundColor = .systemBackground
         navigationItem.title = style.navigationItemTitle
         
-        view.addSubview(collectionView)
+        addChild(collectionViewController)
+        collectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionViewController.view)
+        collectionViewController.didMove(toParent: self)
+        
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         view.addSubview(emptyCountiesNoticeView)
@@ -88,19 +78,6 @@ class CountiesViewController: UIViewController {
         
         reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard let previousTraitCollection = previousTraitCollection else { return }
-        if cellStyleForTraitCollection(traitCollection) != cellStyleForTraitCollection(previousTraitCollection) {
-            collectionView.reloadData() // Reload cells to adopt the new style
-        }
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        flowLayout.invalidateLayout()
     }
     
     func showCounty(_ county: County, animated: Bool) {
@@ -121,67 +98,11 @@ class CountiesViewController: UIViewController {
         }
     }
     
-    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
-        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
-    }
-    
     @objc private func reloadData() {
-        dataSource.apply(snapshotForCurrentState(), animatingDifferences: false)
-        collectionView.isHidden = dataSource.snapshot().numberOfItems(inSection: .counties) == 0
+        collectionViewController.counties = countiesForCurrentState
+        collectionViewController.view.isHidden = collectionViewController.counties.isEmpty
         emptyCountiesNoticeView.configuration = EmptyCountiesNoticeView.Configuration(style: style, searchQuery: searchController.searchBar.text)
-        emptyCountiesNoticeView.isHidden = !collectionView.isHidden
-    }
-    
-    private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<CollectionSection, County> {
-        var snapshot = NSDiffableDataSourceSnapshot<CollectionSection, County>()
-        snapshot.appendSections([.counties])
-        if let searchText = searchController.searchBar.text, searchText.count > 0 {
-            snapshot.appendItems(spotlightSearchController.searchResults)
-        } else {
-            snapshot.appendItems(style.countyList)
-        }
-        return snapshot
-    }
-}
-
-// MARK: UICollectionViewDelegateFlowLayout
-extension CountiesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return cellStyleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return cellStyleForTraitCollection(traitCollection).collectionViewEdgeInsets
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellStyleForTraitCollection(traitCollection).collectionViewLineSpacing
-    }
-}
-
-// MARK: UICollectionViewDelegate
-extension CountiesViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showCounty(dataSource.itemIdentifier(for: indexPath)!, animated: true)
-        collectionView.deselectItem(at: indexPath, animated: false)
-    }
-}
-
-// MARK: UICollectionViewDragDelegate
-extension CountiesViewController: UICollectionViewDragDelegate {
-    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        guard let county = dataSource.itemIdentifier(for: indexPath) else { return [] }
-        let itemProvider = NSItemProvider()
-        itemProvider.registerObject(county.userActivity, visibility: .all)
-        return [UIDragItem(itemProvider: itemProvider)]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, dragSessionWillBegin session: UIDragSession) {
-        collectionView.allowsSelection = false
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, dragSessionDidEnd session: UIDragSession) {
-        collectionView.allowsSelection = true
+        emptyCountiesNoticeView.isHidden = !collectionViewController.view.isHidden
     }
 }
 
@@ -198,47 +119,17 @@ extension CountiesViewController: UISearchResultsUpdating {
     }
 }
 
+// MARK: CountiesCollectionViewControllerDelegate
+extension CountiesViewController: CountiesCollectionViewControllerDelegate {
+    func countiesCollectionViewController(_ countiesCollectionViewController: CountiesCollectionViewController, didSelect county: County) {
+        showCounty(county, animated: true)
+    }
+}
+
 // MARK: CountyViewControllerDelegate
 extension CountiesViewController: CountyViewControllerDelegate {
     func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
         parent?.dismiss(animated: true)
-    }
-}
-
-// MARK: - CountyCellDisplayStyle extension to provide collection view layout information based on a display style.
-extension CountyCellDisplayStyle {
-    func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
-        switch (self) {
-        case .table:
-            return CGSize(width: collectionView.bounds.width, height: 100)
-        case .grid:
-            let availableWidth = collectionView.bounds.width - collectionViewEdgeInsets.left - collectionViewEdgeInsets.right
-            let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
-            let estimatedCellWidth: CGFloat = 220
-            let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
-            let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
-            
-            let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / numberOfItemsPerRow)
-            return CGSize(width: itemWidth, height: itemWidth)
-        }
-    }
-    
-    var collectionViewEdgeInsets: UIEdgeInsets {
-        switch (self) {
-        case .table:
-            return UIEdgeInsets.zero
-        case .grid:
-            return UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
-        }
-    }
-    
-    var collectionViewLineSpacing: CGFloat {
-        switch (self) {
-        case .table:
-            return 0
-        case .grid:
-            return 48
-        }
     }
 }
 

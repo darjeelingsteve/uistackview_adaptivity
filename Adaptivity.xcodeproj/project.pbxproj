@@ -13,6 +13,7 @@
 		4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893662423D5FD1B00BD781D /* FavouritesController.swift */; };
 		4893663523D609CB00BD781D /* FavouritesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663423D609CB00BD781D /* FavouritesControllerTests.swift */; };
 		4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */; };
+		4893663A23E8A10A00BD781D /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663923E8A10A00BD781D /* CountiesCollectionViewController.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFAF1C2063D70078391A /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAE1C2063D70078391A /* CountiesViewController.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
@@ -106,6 +107,7 @@
 		4893663423D609CB00BD781D /* FavouritesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesControllerTests.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCountiesNoticeView.swift; sourceTree = "<group>"; };
+		4893663923E8A10A00BD781D /* CountiesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewController.swift; sourceTree = "<group>"; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48ABDFAE1C2063D70078391A /* CountiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				48E8A9721C56AF7E004B1F2E /* Spotlight */,
 				48ABDFAC1C2063D70078391A /* AppDelegate.swift */,
 				483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */,
+				4893663923E8A10A00BD781D /* CountiesCollectionViewController.swift */,
 				48ABDFAE1C2063D70078391A /* CountiesViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
@@ -497,6 +500,7 @@
 				48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */,
 				4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */,
 				B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */,
+				4893663A23E8A10A00BD781D /* CountiesCollectionViewController.swift in Sources */,
 				48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
