@@ -10,6 +10,17 @@ import UIKit
 
 /// The view controller responsible for displaying the counties collection view.
 class CountiesViewController: UIViewController {
+    
+    /// The different styles that `CountiesViewController` can display as.
+    ///
+    /// * `allCounties` - Shows all counties.
+    /// * `favourites` - Shows only the user's favourite counties.
+    enum Style {
+        case allCounties
+        case favourites
+    }
+    
+    private let style: Style
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,9 +44,18 @@ class CountiesViewController: UIViewController {
         return searchController
     }()
     
+    init(style: Style) {
+        self.style = style
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = NSLocalizedString("Counties", comment: "Counties view navigation title")
+        navigationItem.title = style.navigationItemTitle
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -43,18 +63,11 @@ class CountiesViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
         navigationItem.searchController = searchController
         definesPresentationContext = true
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        guard dataSource == nil else { return }
         
-        /// If we configure the data source in `viewDidLoad` then the search bar
-        /// is hidden on first appearance. We do it here to ensure that the
-        /// search bar is shown.
         dataSource = UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
             guard let self = self else { return nil }
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
@@ -102,7 +115,7 @@ class CountiesViewController: UIViewController {
         if let searchText = searchController.searchBar.text, searchText.count > 0 {
             snapshot.appendItems(spotlightSearchController.searchResults)
         } else {
-            snapshot.appendItems(County.allCounties)
+            snapshot.appendItems(style.countyList)
         }
         return snapshot
     }
@@ -160,7 +173,7 @@ extension CountiesViewController: UISearchResultsUpdating {
     }
     
     private func updateSearchResults(forSearchText searchText: String?) {
-        spotlightSearchController.search(withQuery: SpotlightSearchController.Query(queryString: searchText ?? "", filter: .allCounties)) { [unowned self] in
+        spotlightSearchController.search(withQuery: SpotlightSearchController.Query(queryString: searchText ?? "", filter: style.searchQueryFilter)) { [unowned self] in
             self.dataSource.apply(self.snapshotForCurrentState(), animatingDifferences: false)
         }
     }
@@ -206,6 +219,35 @@ extension CountyCellDisplayStyle {
             return 0
         case .grid:
             return 48
+        }
+    }
+}
+
+private extension CountiesViewController.Style {
+    var navigationItemTitle: String {
+        switch self {
+        case .allCounties:
+            return NSLocalizedString("Counties", comment: "Counties view \"All Counties\" navigation title")
+        case .favourites:
+            return NSLocalizedString("Favourites", comment: "Counties view \"Favourites\" navigation title")
+        }
+    }
+    
+    var countyList: [County] {
+        switch self {
+        case .allCounties:
+            return County.allCounties
+        case .favourites:
+            return FavouritesController.shared.favouriteCounties
+        }
+    }
+    
+    var searchQueryFilter: SpotlightSearchController.Query.Filter {
+        switch self {
+        case .allCounties:
+            return .allCounties
+        case .favourites:
+            return .favouritesOnly
         }
     }
 }

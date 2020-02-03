@@ -25,11 +25,12 @@ class MasterSceneDelegate: UIResponder {
 extension MasterSceneDelegate: UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let tabBarController = window?.rootViewController as? UITabBarController {
-            let countiesViewController = CountiesViewController()
-            let navigationController = UINavigationController(rootViewController: countiesViewController)
-            navigationController.tabBarItem = UITabBarItem(title: NSLocalizedString("All Counties", comment: "All counties tab bar item title"), image: UIImage(systemName: "list.bullet"), selectedImage: nil)
-            tabBarController.addChild(navigationController)
-            applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: countiesViewController)
+            let allCountiesViewController = CountiesViewController(style: .allCounties)
+            let favouriteCountiesViewController = CountiesViewController(style: .favourites)
+            tabBarController.setViewControllers([
+                navigationController(containing: allCountiesViewController, tabBarItemTitle: NSLocalizedString("All Counties", comment: "All counties tab bar item title"), tabBarItemImage: UIImage(systemName: "list.bullet")),
+                navigationController(containing: favouriteCountiesViewController, tabBarItemTitle: NSLocalizedString("Favourites", comment: "Favourites tab bar item title"), tabBarItemImage: UIImage(systemName: "heart.fill"))], animated: false)
+            applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: allCountiesViewController)
         }
     }
     
@@ -59,6 +60,12 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         dismissExistingCountyViewIfRequired { [unowned self] (_) -> (Void) in
             self.applicationShortcutHandler?.handle(shortcutItem, completionHandler: completionHandler)
         }
+    }
+    
+    private func navigationController(containing countiesViewController: CountiesViewController, tabBarItemTitle: String, tabBarItemImage: UIImage?) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: countiesViewController)
+        navigationController.tabBarItem = UITabBarItem(title: tabBarItemTitle, image: tabBarItemImage, selectedImage: nil)
+        return navigationController
     }
     
     private func dismissExistingCountyViewIfRequired(_ completion: (CountiesViewController) -> (Void)) {
