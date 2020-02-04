@@ -73,7 +73,7 @@ class CountiesViewController: UIViewController {
         NSLayoutConstraint.activate([
             emptyCountiesNoticeView.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
             emptyCountiesNoticeView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
-            emptyCountiesNoticeView.centerYAnchor.constraint(equalTo: view.readableContentGuide.centerYAnchor)
+            emptyCountiesNoticeView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -64)
         ])
         
         reloadData()
