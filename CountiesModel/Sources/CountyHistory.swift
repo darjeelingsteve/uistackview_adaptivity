@@ -19,7 +19,7 @@ public class CountyHistory: NSObject {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
             if let countyNames = countyNames {
                 return countyNames.map({ (countyName) -> County in
-                    County.countyForName(countyName)!
+                    County.forName(countyName)!
                 })
             }
             else {

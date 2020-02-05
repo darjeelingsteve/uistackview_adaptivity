@@ -25,7 +25,7 @@ class CountyInterfaceController: WKInterfaceController {
             return
         }
         
-        county = County.countyForName(countyName)
+        county = County.forName(countyName)
         setTitle(county?.name)
         flagImage.setImage(county?.flagImage)
         nameLabel.setText(county?.name)

@@ -19,6 +19,6 @@ extension County {
         guard let userInfo = userActivity?.userInfo, let countyName = userInfo[HandoffUserInfo.CountyName] as? String else {
             return nil
         }
-        return County.countyForName(countyName)
+        return County.forName(countyName)
     }
 }

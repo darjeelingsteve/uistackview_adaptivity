@@ -24,7 +24,7 @@ public final class FavouritesController {
     
     /// The counties that the user has chosen as their favourites.
     public var favouriteCounties: [County] {
-        let counties = (ubiquitousKeyValueStore.array(forKey: FavouritesController.favouriteCountiesKey) as? [String])?.compactMap({ County.countyForName($0) })
+        let counties = (ubiquitousKeyValueStore.array(forKey: FavouritesController.favouriteCountiesKey) as? [String])?.compactMap({ County.forName($0) })
         return counties ?? []
     }
     

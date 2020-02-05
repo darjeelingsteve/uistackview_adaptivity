@@ -27,7 +27,7 @@ public struct County: Hashable {
         }
     }()
     
-    public static func countyForName(_ name: String) -> County? {
+    public static func forName(_ name: String) -> County? {
         return allCounties.filter({$0.name == name}).first
     }
 }
