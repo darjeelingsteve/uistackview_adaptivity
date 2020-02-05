@@ -4,4 +4,7 @@
    <FileRef
       location = "container:Adaptivity.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:CountiesModel/CountiesModel.xcodeproj">
+   </FileRef>
 </Workspace>
