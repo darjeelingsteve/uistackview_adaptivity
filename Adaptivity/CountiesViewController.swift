@@ -83,7 +83,7 @@ class CountiesViewController: UIViewController {
     }
     
     func showCounty(_ county: County, animated: Bool) {
-        guard let countyViewController = UIStoryboard(name: "CountyViewController", bundle: Bundle(for: CountyViewController.self)).instantiateInitialViewController() as? CountyViewController else {
+        guard let countyViewController = UIStoryboard(name: "CountyViewController", bundle: Bundle.countiesUIBundle).instantiateInitialViewController() as? CountyViewController else {
             fatalError("Could not instantiate county view controller")
         }
         countyViewController.modalPresentationStyle = .formSheet

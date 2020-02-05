@@ -18,6 +18,7 @@
 		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; };
 		482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
 		482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BB23EB41C50053E6F6 /* PillButton.swift */; };
+		482BC9BF23EB427C0053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountyViewController.storyboard; sourceTree = "<group>"; };
 		482BC9B623EB40450053E6F6 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
 		482BC9BB23EB41C50053E6F6 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
+		482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				482BC9BA23EB41AD0053E6F6 /* Controls */,
 				482BC9B423EB402D0053E6F6 /* County Details */,
+				482BC9BD23EB42640053E6F6 /* Extensions */,
 				482BC98C23EB29230053E6F6 /* Media.xcassets */,
 				482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */,
 			);
@@ -140,6 +143,14 @@
 				482BC9BB23EB41C50053E6F6 /* PillButton.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		482BC9BD23EB42640053E6F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 			files = (
 				482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */,
 				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
+				482BC9BF23EB427C0053E6F6 /* Bundle+Extensions.swift in Sources */,
 				482BC99023EB29740053E6F6 /* County+UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
