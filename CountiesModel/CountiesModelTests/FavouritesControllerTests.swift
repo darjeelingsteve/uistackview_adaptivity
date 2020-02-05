@@ -1,13 +1,13 @@
 //
 //  FavouritesControllerTests.swift
-//  CountiesTests
+//  CountiesModelTests
 //
 //  Created by Stephen Anthony on 20/01/2020.
 //  Copyright © 2020 Darjeeling Apps. All rights reserved.
 //
 
 import XCTest
-@testable import Counties
+@testable import CountiesModel
 
 final class FavouritesControllerTests: XCTestCase {
     private var favouritesController: FavouritesController!
@@ -128,3 +128,4 @@ private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStoragePr
         return false
     }
 }
+

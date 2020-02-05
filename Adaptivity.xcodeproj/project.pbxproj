@@ -16,8 +16,6 @@
 		482BC94F23EB21B10053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC94423EB20680053E6F6 /* County+UIExtensions.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
-		4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893662423D5FD1B00BD781D /* FavouritesController.swift */; };
-		4893663523D609CB00BD781D /* FavouritesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663423D609CB00BD781D /* FavouritesControllerTests.swift */; };
 		4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */; };
 		4893663A23E8A10A00BD781D /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663923E8A10A00BD781D /* CountiesCollectionViewController.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
@@ -51,13 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4893662F23D609B100BD781D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48ABDFA81C2063D70078391A;
-			remoteInfo = Counties;
-		};
 		B63121091C60D69F0063E975 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
@@ -128,10 +119,6 @@
 		482BC94B23EB20C70053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
-		4893662423D5FD1B00BD781D /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouritesController.swift; path = Favourites/FavouritesController.swift; sourceTree = "<group>"; };
-		4893662A23D609B100BD781D /* CountiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4893662E23D609B100BD781D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4893663423D609CB00BD781D /* FavouritesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesControllerTests.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCountiesNoticeView.swift; sourceTree = "<group>"; };
 		4893663923E8A10A00BD781D /* CountiesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -168,13 +155,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4893662723D609B100BD781D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48ABDFA61C2063D70078391A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,28 +183,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4893662323D5FCDB00BD781D /* Favourites */ = {
-			isa = PBXGroup;
-			children = (
-				4893662423D5FD1B00BD781D /* FavouritesController.swift */,
-			);
-			name = Favourites;
-			sourceTree = "<group>";
-		};
-		4893662B23D609B100BD781D /* CountiesTests */ = {
-			isa = PBXGroup;
-			children = (
-				4893663423D609CB00BD781D /* FavouritesControllerTests.swift */,
-				4893662E23D609B100BD781D /* Info.plist */,
-			);
-			path = CountiesTests;
-			sourceTree = "<group>";
-		};
 		48ABDFA01C2063D70078391A = {
 			isa = PBXGroup;
 			children = (
 				48ABDFAB1C2063D70078391A /* Counties */,
-				4893662B23D609B100BD781D /* CountiesTests */,
 				B63120FC1C60D69F0063E975 /* Counties (watchOS) */,
 				B631210B1C60D69F0063E975 /* Counties Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
@@ -238,7 +200,6 @@
 				48ABDFA91C2063D70078391A /* Counties.app */,
 				B63120FB1C60D69F0063E975 /* Counties (watchOS).app */,
 				B63121071C60D69F0063E975 /* Counties Extension.appex */,
-				4893662A23D609B100BD781D /* CountiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,7 +209,6 @@
 			children = (
 				4893663623D7342900BD781D /* Counties.entitlements */,
 				48C7177E23ACDFA8005D80C6 /* Controls */,
-				4893662323D5FCDB00BD781D /* Favourites */,
 				B63121251C60ED6C0063E975 /* Handoff */,
 				48C7177023AA78D4005D80C6 /* Scene Delegates */,
 				48E8A9721C56AF7E004B1F2E /* Spotlight */,
@@ -336,24 +296,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4893662923D609B100BD781D /* CountiesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4893663123D609B100BD781D /* Build configuration list for PBXNativeTarget "CountiesTests" */;
-			buildPhases = (
-				4893662623D609B100BD781D /* Sources */,
-				4893662723D609B100BD781D /* Frameworks */,
-				4893662823D609B100BD781D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4893663023D609B100BD781D /* PBXTargetDependency */,
-			);
-			name = CountiesTests;
-			productName = CountiesTests;
-			productReference = 4893662A23D609B100BD781D /* CountiesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		48ABDFA81C2063D70078391A /* Counties */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Counties" */;
@@ -419,11 +361,6 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Darjeeling Apps";
 				TargetAttributes = {
-					4893662923D609B100BD781D = {
-						CreatedOnToolsVersion = 11.3;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 48ABDFA81C2063D70078391A;
-					};
 					48ABDFA81C2063D70078391A = {
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 1110;
@@ -454,19 +391,11 @@
 				48ABDFA81C2063D70078391A /* Counties */,
 				B63120FA1C60D69F0063E975 /* Counties (watchOS) */,
 				B63121061C60D69F0063E975 /* Counties Extension */,
-				4893662923D609B100BD781D /* CountiesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4893662823D609B100BD781D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48ABDFA71C2063D70078391A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,14 +427,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4893662623D609B100BD781D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4893663523D609CB00BD781D /* FavouritesControllerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48ABDFA51C2063D70078391A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,7 +447,6 @@
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
 				482BC94523EB20680053E6F6 /* County+UIExtensions.swift in Sources */,
 				48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */,
-				4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */,
 				B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */,
 				4893663A23E8A10A00BD781D /* CountiesCollectionViewController.swift in Sources */,
 				48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */,
@@ -550,11 +470,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4893663023D609B100BD781D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48ABDFA81C2063D70078391A /* Counties */;
-			targetProxy = 4893662F23D609B100BD781D /* PBXContainerItemProxy */;
-		};
 		B631210A1C60D69F0063E975 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B63121061C60D69F0063E975 /* Counties Extension */;
@@ -603,56 +518,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4893663223D609B100BD781D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CountiesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Counties.app/Counties";
-			};
-			name = Debug;
-		};
-		4893663323D609B100BD781D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CountiesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Counties.app/Counties";
-			};
-			name = Release;
-		};
 		48ABDFB91C2063D70078391A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -864,15 +729,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4893663123D609B100BD781D /* Build configuration list for PBXNativeTarget "CountiesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4893663223D609B100BD781D /* Debug */,
-				4893663323D609B100BD781D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		48ABDFA41C2063D70078391A /* Build configuration list for PBXProject "Adaptivity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
