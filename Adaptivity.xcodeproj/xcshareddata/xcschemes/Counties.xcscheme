@@ -41,10 +41,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4893662923D609B100BD781D"
-               BuildableName = "CountiesTests.xctest"
-               BlueprintName = "CountiesTests"
-               ReferencedContainer = "container:Adaptivity.xcodeproj">
+               BlueprintIdentifier = "482BC95623EB24D80053E6F6"
+               BuildableName = "CountiesModelTests.xctest"
+               BlueprintName = "CountiesModelTests"
+               ReferencedContainer = "container:CountiesModel/CountiesModel.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

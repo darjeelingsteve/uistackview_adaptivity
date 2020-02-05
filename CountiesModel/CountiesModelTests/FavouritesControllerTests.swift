@@ -27,7 +27,7 @@ final class FavouritesControllerTests: XCTestCase {
     }
     
     func testItCanSetACountyAsAFavourite() {
-        let surrey = County.countyForName("Surrey")!
+        let surrey = County.forName("Surrey")!
         favouritesController.add(county: surrey)
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], [surrey.name])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
@@ -35,7 +35,7 @@ final class FavouritesControllerTests: XCTestCase {
     
     func testItCanAddACountyToAnExistingListOfFavourites() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
-        let kent = County.countyForName("Kent")!
+        let kent = County.forName("Kent")!
         favouritesController.add(county: kent)
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], defaultFavouriteCountyNames + [kent.name])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
@@ -43,7 +43,7 @@ final class FavouritesControllerTests: XCTestCase {
     
     func testItCanRemoveACountyFromTheFavouritesList() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
-        let Hampshire = County.countyForName("Hampshire")!
+        let Hampshire = County.forName("Hampshire")!
         favouritesController.remove(county: Hampshire)
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], ["Devon"])
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
@@ -51,28 +51,28 @@ final class FavouritesControllerTests: XCTestCase {
     
     func testItDoesNotAllowAddingTheSameCountyTwice() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Includes Hampshire
-        let hampshire = County.countyForName("Hampshire")!
+        let hampshire = County.forName("Hampshire")!
         favouritesController.add(county: hampshire)
         XCTAssertNil(mockUbiquitousKeyValueStorageProvider.receivedObject)
     }
     
     func testItIgnoresCallsToRemoveCountiesThatAreNotFavourites() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Does not include Essex
-        let essex = County.countyForName("Essex")!
+        let essex = County.forName("Essex")!
         favouritesController.remove(county: essex)
         XCTAssertNil(mockUbiquitousKeyValueStorageProvider.receivedObject)
     }
     
     func testItStoresCountiesInAlphabeticalOrder() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Does not include Essex
-        let essex = County.countyForName("Essex")!
+        let essex = County.forName("Essex")!
         favouritesController.add(county: essex)
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedObject as? [String], [defaultFavouriteCountyNames[0], essex.name, defaultFavouriteCountyNames[1]])
     }
     
     func testItReportsTheUsersFavouriteCountiesCorrectly() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet()
-        XCTAssertEqual(favouritesController.favouriteCounties, defaultFavouriteCountyNames.compactMap { County.countyForName($0) })
+        XCTAssertEqual(favouritesController.favouriteCounties, defaultFavouriteCountyNames.compactMap { County.forName($0) })
         XCTAssertEqual(mockUbiquitousKeyValueStorageProvider.receivedKey, "FavouriteCounties")
     }
     
@@ -85,7 +85,7 @@ final class FavouritesControllerTests: XCTestCase {
 extension FavouritesControllerTests {
     func testItPostsANotifcationWhenTheUserAddsAFavourite() {
         expectation(forNotification: FavouritesController.favouriteCountiesDidChangeNotification, object: favouritesController, handler: nil)
-        let kent = County.countyForName("Kent")!
+        let kent = County.forName("Kent")!
         favouritesController.add(county: kent)
         waitForExpectations(timeout: 0, handler: nil)
     }
@@ -93,7 +93,7 @@ extension FavouritesControllerTests {
     func testItPostsANotifcationWhenTheUserRemovesAFavourite() {
         givenADefaultSetOfFavouriteCountiesHaveBeenSet() // Includes Hampshire
         expectation(forNotification: FavouritesController.favouriteCountiesDidChangeNotification, object: favouritesController, handler: nil)
-        let hampshire = County.countyForName("Hampshire")!
+        let hampshire = County.forName("Hampshire")!
         favouritesController.remove(county: hampshire)
         waitForExpectations(timeout: 0, handler: nil)
     }
