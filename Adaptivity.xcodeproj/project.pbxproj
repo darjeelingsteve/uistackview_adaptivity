@@ -30,8 +30,6 @@
 		48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */; };
 		48C7177823AA9689005D80C6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C7177623AA9689005D80C6 /* CountyViewController.storyboard */; };
 		48C7177A23AAAB8D005D80C6 /* CountySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177923AAAB8D005D80C6 /* CountySceneDelegate.swift */; };
-		48C7177C23AB7E3A005D80C6 /* County+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177B23AB7E3A005D80C6 /* County+NSUserActivity.swift */; };
-		48C7177D23AB7EF2005D80C6 /* County+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177B23AB7E3A005D80C6 /* County+NSUserActivity.swift */; };
 		48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177F23ACDFC2005D80C6 /* PillButton.swift */; };
 		48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */; };
 		B63120FF1C60D69F0063E975 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63120FD1C60D69F0063E975 /* Interface.storyboard */; };
@@ -43,8 +41,6 @@
 		B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */; };
 		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
 		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
-		B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
-		B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
 		B631212A1C60F0190063E975 /* HandoffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121291C60F0190063E975 /* HandoffController.swift */; };
 		B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631212B1C60F51B0063E975 /* UserActivityHandling.swift */; };
 		B684588D1C84818B00EE6096 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684588C1C84818B00EE6096 /* CountyHistory.swift */; };
@@ -139,7 +135,6 @@
 		48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterSceneDelegate.swift; path = "Scene Delegates/MasterSceneDelegate.swift"; sourceTree = "<group>"; };
 		48C7177723AA9689005D80C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CountyViewController.storyboard; sourceTree = "<group>"; };
 		48C7177923AAAB8D005D80C6 /* CountySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountySceneDelegate.swift; path = "Scene Delegates/CountySceneDelegate.swift"; sourceTree = "<group>"; };
-		48C7177B23AB7E3A005D80C6 /* County+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "County+NSUserActivity.swift"; path = "Handoff/County+NSUserActivity.swift"; sourceTree = "<group>"; };
 		48C7177F23ACDFC2005D80C6 /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PillButton.swift; path = Controls/PillButton.swift; sourceTree = "<group>"; };
 		48E8A9731C56AF9B004B1F2E /* SpotlightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightController.swift; path = Spotlight/SpotlightController.swift; sourceTree = "<group>"; };
 		B63120FB1C60D69F0063E975 /* Counties (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +148,6 @@
 		B63121121C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63121201C60D6D80063E975 /* CountyRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyRowController.swift; sourceTree = "<group>"; };
 		B63121231C60DC870063E975 /* CountyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyInterfaceController.swift; sourceTree = "<group>"; };
-		B63121261C60ED980063E975 /* HandoffConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffConstants.swift; path = Handoff/HandoffConstants.swift; sourceTree = "<group>"; };
 		B63121291C60F0190063E975 /* HandoffController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffController.swift; path = Handoff/HandoffController.swift; sourceTree = "<group>"; };
 		B631212B1C60F51B0063E975 /* UserActivityHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityHandling.swift; sourceTree = "<group>"; };
 		B684588C1C84818B00EE6096 /* CountyHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyHistory.swift; sourceTree = "<group>"; };
@@ -294,8 +288,6 @@
 		B63121251C60ED6C0063E975 /* Handoff */ = {
 			isa = PBXGroup;
 			children = (
-				48C7177B23AB7E3A005D80C6 /* County+NSUserActivity.swift */,
-				B63121261C60ED980063E975 /* HandoffConstants.swift */,
 				B63121291C60F0190063E975 /* HandoffController.swift */,
 			);
 			name = Handoff;
@@ -440,7 +432,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */,
-				48C7177C23AB7E3A005D80C6 /* County+NSUserActivity.swift in Sources */,
 				48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */,
 				48C7177A23AAAB8D005D80C6 /* CountySceneDelegate.swift in Sources */,
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
@@ -451,7 +442,6 @@
 				482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
 				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
-				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
 				48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */,
 				B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */,
@@ -464,8 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C7177D23AB7EF2005D80C6 /* County+NSUserActivity.swift in Sources */,
-				B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
 				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,
 				B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */,
