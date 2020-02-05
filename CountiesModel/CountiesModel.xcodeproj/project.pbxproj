@@ -21,6 +21,10 @@
 		482BC9B023EB2EC80053E6F6 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
 		482BC9B123EB2EC80053E6F6 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
 		482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B223EB3F540053E6F6 /* CountyHistory.swift */; };
+		482BC9CA23EB538F0053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9C923EB538E0053E6F6 /* Media.xcassets */; };
+		482BC9CB23EB538F0053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9C923EB538E0053E6F6 /* Media.xcassets */; };
+		482BC9CE23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
+		482BC9CF23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "County+NSUserActivity.swift"; sourceTree = "<group>"; };
 		482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffConstants.swift; sourceTree = "<group>"; };
 		482BC9B223EB3F540053E6F6 /* CountyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyHistory.swift; sourceTree = "<group>"; };
+		482BC9C923EB538E0053E6F6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +116,13 @@
 		482BC93023EB1EE30053E6F6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				482BC9CC23EB53AE0053E6F6 /* Extensions */,
 				482BC9AB23EB2EAF0053E6F6 /* Handoff Support */,
 				482BC93123EB1F360053E6F6 /* Counties.plist */,
 				482BC93223EB1F360053E6F6 /* County.swift */,
 				482BC9B223EB3F540053E6F6 /* CountyHistory.swift */,
 				482BC95023EB247B0053E6F6 /* FavouritesController.swift */,
+				482BC9C923EB538E0053E6F6 /* Media.xcassets */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -144,6 +152,14 @@
 				482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */,
 			);
 			path = "Handoff Support";
+			sourceTree = "<group>";
+		};
+		482BC9CC23EB53AE0053E6F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC9CA23EB538F0053E6F6 /* Media.xcassets in Resources */,
 				482BC93323EB1F360053E6F6 /* Counties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC9CB23EB538F0053E6F6 /* Media.xcassets in Resources */,
 				482BC94323EB1FCD0053E6F6 /* Counties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +316,7 @@
 				482BC9B023EB2EC80053E6F6 /* HandoffConstants.swift in Sources */,
 				482BC9AE23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */,
 				482BC93423EB1F360053E6F6 /* County.swift in Sources */,
+				482BC9CE23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */,
 				482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */,
 				482BC95123EB247B0053E6F6 /* FavouritesController.swift in Sources */,
 			);
@@ -310,6 +329,7 @@
 				482BC9B123EB2EC80053E6F6 /* HandoffConstants.swift in Sources */,
 				482BC9AF23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */,
 				482BC94223EB1FCB0053E6F6 /* County.swift in Sources */,
+				482BC9CF23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

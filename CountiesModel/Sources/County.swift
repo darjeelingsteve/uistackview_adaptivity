@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /*!
 The struct used to represent an individual county.
@@ -18,17 +19,9 @@ public struct County: Hashable {
     public let longitude: Double
     public let url: URL
     
-    private static var frameworkBundle: Bundle {
-        #if os(iOS)
-        return Bundle(identifier: "com.darjeeling.CountiesModel-iOS")!
-        #elseif os(watchOS)
-        return Bundle(identifier: "com.darjeeling.CountiesModel-watchOS")!
-        #endif
-    }
-    
     /// All of the counties available to the application.
     public static var allCounties: [County] = {
-        let countyDictionaries = NSArray(contentsOf: frameworkBundle.url(forResource: "Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
+        let countyDictionaries = NSArray(contentsOf: Bundle.countiesModelBundle.url(forResource: "Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
         return countyDictionaries.map { (countryDictionary) -> County in
             return County(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
         }
@@ -42,5 +35,21 @@ public struct County: Hashable {
 extension County: Comparable {
     public static func < (lhs: County, rhs: County) -> Bool {
         return lhs.name < rhs.name
+    }
+}
+
+extension County {
+    public var populationDescription: String {
+        get {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            return "Population: " + numberFormatter.string(from: NSNumber(value: population))!
+        }
+    }
+    
+    public var flagImage: UIImage? {
+        get {
+            return UIImage(named: name, in: Bundle.countiesModelBundle, with: nil)
+        }
     }
 }
