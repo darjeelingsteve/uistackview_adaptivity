@@ -5,6 +5,9 @@
       location = "container:Adaptivity.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:CountiesUI/CountiesUI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CountiesModel/CountiesModel.xcodeproj">
    </FileRef>
 </Workspace>
