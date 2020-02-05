@@ -61,6 +61,11 @@ final class CountiesCollectionViewController: UIViewController {
         ])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadData() // Reload in case the trait collection changed when we were not visible.
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         flowLayout.invalidateLayout()
