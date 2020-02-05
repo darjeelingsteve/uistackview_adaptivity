@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CountiesModel
 
 /// The result type given by `UserActivityHandling` instances when a user activity can be handled.
 ///

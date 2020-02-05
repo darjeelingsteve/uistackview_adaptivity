@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import CountiesModel
 
 /// The row controller responsible for showing county information in a table row
 class CountyRowController: NSObject {

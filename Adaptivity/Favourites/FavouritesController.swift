@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CountiesModel
 
 /// The object responsible for managing the list of the user's favourite
 /// counties.

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesModel
 
 /// The shortcut item type for county history shortcut items.
 let CountyItemShortcutType = "CountyItem"

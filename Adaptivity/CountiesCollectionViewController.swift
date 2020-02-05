@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesModel
 
 /// The view controller responsible for displaying a collection view populated
 /// by a list of counties.

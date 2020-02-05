@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CountiesModel
 
 /// The object responsible for recording which counties the user has viewed.
 class CountyHistory: NSObject {

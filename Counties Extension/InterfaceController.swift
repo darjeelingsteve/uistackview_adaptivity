@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import CountiesModel
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet fileprivate weak var table: WKInterfaceTable!

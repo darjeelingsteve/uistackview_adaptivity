@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CountiesModel
 
 extension County {
     var userActivity: NSUserActivity {

@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import CountiesModel
 
 /// The interface controller responsible for displaying county details in an interface controller
 class CountyInterfaceController: WKInterfaceController {

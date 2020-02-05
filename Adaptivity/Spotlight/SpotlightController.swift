@@ -9,6 +9,7 @@
 import UIKit
 import CoreSpotlight
 import MobileCoreServices
+import CountiesModel
 
 private let SpotlightControllerHasIndexedKey = "HasIndexed"
 

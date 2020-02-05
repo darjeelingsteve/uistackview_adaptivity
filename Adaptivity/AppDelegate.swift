@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesModel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

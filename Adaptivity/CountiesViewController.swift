@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesModel
 
 /// The view controller responsible for showing a searchable user interface of
 /// counties.

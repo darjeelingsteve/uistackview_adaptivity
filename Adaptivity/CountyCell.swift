@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesModel
 
 /*!
 The styles that the cell can display itself in.

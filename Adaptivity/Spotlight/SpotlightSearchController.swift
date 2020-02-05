@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreSpotlight
+import CountiesModel
 
 /// The class responsible for managing searches of the spotlight database.
 class SpotlightSearchController {

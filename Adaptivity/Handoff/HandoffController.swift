@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CountiesModel
 
 /// The class rsponsible for handling user activities provided during Handoff.
 class HandoffController: UserActivityHandling {

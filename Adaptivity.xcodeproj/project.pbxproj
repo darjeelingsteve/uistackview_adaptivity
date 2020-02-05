@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		480F4FEC1DD346CA00159C06 /* SpotlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F4FEB1DD346CA00159C06 /* SpotlightSearchController.swift */; };
+		482BC94523EB20680053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC94423EB20680053E6F6 /* County+UIExtensions.swift */; };
+		482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; };
+		482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; };
+		482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		482BC94F23EB21B10053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC94423EB20680053E6F6 /* County+UIExtensions.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
 		4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893662423D5FD1B00BD781D /* FavouritesController.swift */; };
@@ -19,8 +25,6 @@
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
 		48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB31C2063D70078391A /* Assets.xcassets */; };
 		48ABDFB71C2063D70078391A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB51C2063D70078391A /* LaunchScreen.storyboard */; };
-		48ABDFC01C2069370078391A /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFBF1C2069370078391A /* Counties.plist */; };
-		48ABDFC21C206A0B0078391A /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC11C206A0B0078391A /* County.swift */; };
 		48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC31C209E2F0078391A /* CountyCell.swift */; };
 		48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */; };
 		48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */; };
@@ -37,9 +41,7 @@
 		B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */; };
 		B63121111C60D69F0063E975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63121101C60D69F0063E975 /* Assets.xcassets */; };
 		B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */; };
-		B631211F1C60D6B70063E975 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFC11C206A0B0078391A /* County.swift */; };
 		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
-		B63121221C60D8450063E975 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFBF1C2069370078391A /* Counties.plist */; };
 		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
 		B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
 		B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121261C60ED980063E975 /* HandoffConstants.swift */; };
@@ -73,6 +75,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		482BC94A23EB20A40053E6F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		482BC94E23EB20C70053E6F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B631211B1C60D69F0063E975 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +123,9 @@
 
 /* Begin PBXFileReference section */
 		480F4FEB1DD346CA00159C06 /* SpotlightSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightSearchController.swift; path = Spotlight/SpotlightSearchController.swift; sourceTree = "<group>"; };
+		482BC94423EB20680053E6F6 /* County+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "County+UIExtensions.swift"; sourceTree = "<group>"; };
+		482BC94723EB20A40053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		482BC94B23EB20C70053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
 		4893662423D5FD1B00BD781D /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouritesController.swift; path = Favourites/FavouritesController.swift; sourceTree = "<group>"; };
@@ -115,8 +142,6 @@
 		48ABDFB31C2063D70078391A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48ABDFB61C2063D70078391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48ABDFB81C2063D70078391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48ABDFBF1C2069370078391A /* Counties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Counties.plist; path = Data/Counties.plist; sourceTree = "<group>"; };
-		48ABDFC11C206A0B0078391A /* County.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = County.swift; path = Data/County.swift; sourceTree = "<group>"; };
 		48ABDFC31C209E2F0078391A /* CountyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
 		48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
 		48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterSceneDelegate.swift; path = "Scene Delegates/MasterSceneDelegate.swift"; sourceTree = "<group>"; };
@@ -154,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,12 +187,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482BC94623EB20A40053E6F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				482BC94B23EB20C70053E6F6 /* CountiesModel.framework */,
+				482BC94723EB20A40053E6F6 /* CountiesModel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4893662323D5FCDB00BD781D /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +228,7 @@
 				B63120FC1C60D69F0063E975 /* Counties (watchOS) */,
 				B631210B1C60D69F0063E975 /* Counties Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
+				482BC94623EB20A40053E6F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,7 +248,6 @@
 			children = (
 				4893663623D7342900BD781D /* Counties.entitlements */,
 				48C7177E23ACDFA8005D80C6 /* Controls */,
-				48ABDFBE1C2069220078391A /* Data */,
 				4893662323D5FCDB00BD781D /* Favourites */,
 				B63121251C60ED6C0063E975 /* Handoff */,
 				48C7177023AA78D4005D80C6 /* Scene Delegates */,
@@ -222,6 +258,7 @@
 				48ABDFAE1C2063D70078391A /* CountiesViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
+				482BC94423EB20680053E6F6 /* County+UIExtensions.swift */,
 				4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */,
 				B631212B1C60F51B0063E975 /* UserActivityHandling.swift */,
 				B684588C1C84818B00EE6096 /* CountyHistory.swift */,
@@ -233,15 +270,6 @@
 			);
 			name = Counties;
 			path = Adaptivity;
-			sourceTree = "<group>";
-		};
-		48ABDFBE1C2069220078391A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				48ABDFBF1C2069370078391A /* Counties.plist */,
-				48ABDFC11C206A0B0078391A /* County.swift */,
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		48C7177023AA78D4005D80C6 /* Scene Delegates */ = {
@@ -334,6 +362,7 @@
 				48ABDFA61C2063D70078391A /* Frameworks */,
 				48ABDFA71C2063D70078391A /* Resources */,
 				B631211D1C60D69F0063E975 /* Embed Watch Content */,
+				482BC94A23EB20A40053E6F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +398,7 @@
 				B63121031C60D69F0063E975 /* Sources */,
 				B63121041C60D69F0063E975 /* Frameworks */,
 				B63121051C60D69F0063E975 /* Resources */,
+				482BC94E23EB20C70053E6F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -443,7 +473,6 @@
 			files = (
 				48ABDFB71C2063D70078391A /* LaunchScreen.storyboard in Resources */,
 				48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */,
-				48ABDFC01C2069370078391A /* Counties.plist in Resources */,
 				48C7177823AA9689005D80C6 /* CountyViewController.storyboard in Resources */,
 				48ABDFB21C2063D70078391A /* Main.storyboard in Resources */,
 			);
@@ -462,7 +491,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B63121221C60D8450063E975 /* Counties.plist in Resources */,
 				B63121111C60D69F0063E975 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +512,6 @@
 			files = (
 				4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */,
 				48C7177C23AB7E3A005D80C6 /* County+NSUserActivity.swift in Sources */,
-				48ABDFC21C206A0B0078391A /* County.swift in Sources */,
 				48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */,
 				48C7177A23AAAB8D005D80C6 /* CountySceneDelegate.swift in Sources */,
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
@@ -497,6 +524,7 @@
 				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
 				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
+				482BC94523EB20680053E6F6 /* County+UIExtensions.swift in Sources */,
 				48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */,
 				4893662523D5FD1B00BD781D /* FavouritesController.swift in Sources */,
 				B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */,
@@ -510,9 +538,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C7177D23AB7EF2005D80C6 /* County+NSUserActivity.swift in Sources */,
+				482BC94F23EB21B10053E6F6 /* County+UIExtensions.swift in Sources */,
 				B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
-				B631211F1C60D6B70063E975 /* County.swift in Sources */,
 				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,
 				B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */,
 				B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */,
