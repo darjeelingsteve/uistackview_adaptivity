@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreSpotlight
+import CountiesModel
 
 class SpotlightQueryContinuationHandler: UserActivityHandling {
     var handledActivityType: String {

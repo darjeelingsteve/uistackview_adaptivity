@@ -1,6 +1,6 @@
 //
 //  SpotlightController.swift
-//  Adaptivity
+//  CountiesModel
 //
 //  Created by Stephen Anthony on 25/01/2016.
 //  Copyright © 2016 Darjeeling Apps. All rights reserved.
@@ -9,13 +9,15 @@
 import UIKit
 import CoreSpotlight
 import MobileCoreServices
-import CountiesModel
 
 private let SpotlightControllerHasIndexedKey = "HasIndexed"
 
-/// The class responsible for managing the Spotlight index for County objects
-class SpotlightController {
-    func indexCounties(_ counties: [County]) {
+/// The class responsible for managing the Spotlight index for Counties.
+public class SpotlightController {
+    
+    public init() {}
+    
+    public func indexCounties(_ counties: [County]) {
         guard CSSearchableIndex.isIndexingAvailable() == true && UserDefaults.standard.bool(forKey: SpotlightControllerHasIndexedKey) == false else {
             // We either can't index or don't need to
             return
@@ -45,20 +47,6 @@ class SpotlightController {
                 UserDefaults.standard.set(true, forKey: SpotlightControllerHasIndexedKey)
             }
         }
-    }
-}
-
-// MARK: UserActivityHandling
-extension SpotlightController: UserActivityHandling {
-    var handledActivityType: String {
-        return CSSearchableItemActionType
-    }
-    
-    func resultFromUserActivity(_ userActivity: NSUserActivity) -> UserActivityHandlingResult? {
-        guard let countyName = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String, let county = County.countyForName(countyName) else {
-            return nil
-        }
-        return .county(county: county)
     }
 }
 

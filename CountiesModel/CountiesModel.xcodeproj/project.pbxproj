@@ -25,6 +25,8 @@
 		482BC9CB23EB538F0053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9C923EB538E0053E6F6 /* Media.xcassets */; };
 		482BC9CE23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
 		482BC9CF23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
+		482BC9D323EB54E90053E6F6 /* SpotlightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D123EB54E90053E6F6 /* SpotlightController.swift */; };
+		482BC9D423EB54E90053E6F6 /* SpotlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D223EB54E90053E6F6 /* SpotlightSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		482BC9B223EB3F540053E6F6 /* CountyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyHistory.swift; sourceTree = "<group>"; };
 		482BC9C923EB538E0053E6F6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		482BC9D123EB54E90053E6F6 /* SpotlightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightController.swift; sourceTree = "<group>"; };
+		482BC9D223EB54E90053E6F6 /* SpotlightSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 			children = (
 				482BC9CC23EB53AE0053E6F6 /* Extensions */,
 				482BC9AB23EB2EAF0053E6F6 /* Handoff Support */,
+				482BC9D023EB54D20053E6F6 /* Spotlight Support */,
 				482BC93123EB1F360053E6F6 /* Counties.plist */,
 				482BC93223EB1F360053E6F6 /* County.swift */,
 				482BC9B223EB3F540053E6F6 /* CountyHistory.swift */,
@@ -160,6 +165,15 @@
 				482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		482BC9D023EB54D20053E6F6 /* Spotlight Support */ = {
+			isa = PBXGroup;
+			children = (
+				482BC9D123EB54E90053E6F6 /* SpotlightController.swift */,
+				482BC9D223EB54E90053E6F6 /* SpotlightSearchController.swift */,
+			);
+			path = "Spotlight Support";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +329,8 @@
 			files = (
 				482BC9B023EB2EC80053E6F6 /* HandoffConstants.swift in Sources */,
 				482BC9AE23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */,
+				482BC9D423EB54E90053E6F6 /* SpotlightSearchController.swift in Sources */,
+				482BC9D323EB54E90053E6F6 /* SpotlightController.swift in Sources */,
 				482BC93423EB1F360053E6F6 /* County.swift in Sources */,
 				482BC9CE23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */,
 				482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */,

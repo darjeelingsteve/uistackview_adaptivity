@@ -1,6 +1,6 @@
 //
 //  SpotlightSearchController.swift
-//  Adaptivity
+//  CountiesModel
 //
 //  Created by Stephen Anthony on 08/11/2016.
 //  Copyright © 2016 Darjeeling Apps. All rights reserved.
@@ -8,14 +8,13 @@
 
 import Foundation
 import CoreSpotlight
-import CountiesModel
 
 /// The class responsible for managing searches of the spotlight database.
-class SpotlightSearchController {
+public class SpotlightSearchController {
     
     /// Represents an individual query request that can be made to
     /// `SpotlightSearchController`.
-    struct Query {
+    public struct Query {
         
         /// The different filter options available when querying the spotlight
         /// search results.
@@ -23,7 +22,7 @@ class SpotlightSearchController {
         /// * `allCounties` - Returns results from all of the counties.
         /// * `favouritesOnly` - Returns only counties that the user has
         /// favourited.
-        enum Filter {
+        public enum Filter {
             case allCounties
             case favouritesOnly
         }
@@ -33,6 +32,11 @@ class SpotlightSearchController {
         
         /// The filter to apply to counties that match for `queryString`.
         let filter: Filter
+        
+        public init(queryString: String, filter: Filter) {
+            self.queryString = queryString
+            self.filter = filter
+        }
     }
     
     private var query: CSSearchQuery? {
@@ -43,14 +47,16 @@ class SpotlightSearchController {
     }
     
     /// The results returned by the most recent search.
-    private(set) var searchResults = [County]()
+    private(set) public var searchResults = [County]()
+    
+    public init() {}
     
     /// Performs a search on the Spotlight database with the given query string.
     ///
     /// - Parameters:
     ///   - searchQuery: The query to search for.
     ///   - completionHandler: The handler to call when the search is completed.
-    func search(withQuery searchQuery: Query, completionHandler: @escaping () -> Void) {
+    public func search(withQuery searchQuery: Query, completionHandler: @escaping () -> Void) {
         query?.cancel()
         query = CSSearchQuery(queryString: spotlightQueryString(fromQueryString: searchQuery.queryString), attributes: [])
         let countiesMatchingFilter = counties(matchingFilter: searchQuery.filter)
