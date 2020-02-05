@@ -11,7 +11,7 @@ import Foundation
 extension Bundle {
     
     /// The `Bundle` of the `CountiesUI` framework.
-    public static var countiesUIBundle: Bundle {
+    static var countiesUIBundle: Bundle {
         return Bundle(for: CountyViewController.self)
     }
 }

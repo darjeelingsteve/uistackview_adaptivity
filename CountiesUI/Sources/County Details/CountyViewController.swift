@@ -43,6 +43,14 @@ public class CountyViewController: UIViewController {
     }()
     @IBOutlet private weak var mapView: MKMapView!
     
+    public static func viewController(for county: County) -> CountyViewController {
+        guard let countyViewController = UIStoryboard(name: "CountyViewController", bundle: Bundle.countiesUIBundle).instantiateInitialViewController() as? CountyViewController else {
+            fatalError("Could not instantiate county view controller")
+        }
+        countyViewController.county = county
+        return countyViewController
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
