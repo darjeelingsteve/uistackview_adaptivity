@@ -20,6 +20,7 @@
 		482BC9AF23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */; };
 		482BC9B023EB2EC80053E6F6 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
 		482BC9B123EB2EC80053E6F6 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
+		482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B223EB3F540053E6F6 /* CountyHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		482BC96223EB24F00053E6F6 /* FavouritesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesControllerTests.swift; sourceTree = "<group>"; };
 		482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "County+NSUserActivity.swift"; sourceTree = "<group>"; };
 		482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffConstants.swift; sourceTree = "<group>"; };
+		482BC9B223EB3F540053E6F6 /* CountyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				482BC9AB23EB2EAF0053E6F6 /* Handoff Support */,
 				482BC93123EB1F360053E6F6 /* Counties.plist */,
 				482BC93223EB1F360053E6F6 /* County.swift */,
+				482BC9B223EB3F540053E6F6 /* CountyHistory.swift */,
 				482BC95023EB247B0053E6F6 /* FavouritesController.swift */,
 			);
 			path = Sources;
@@ -295,6 +298,7 @@
 				482BC9B023EB2EC80053E6F6 /* HandoffConstants.swift in Sources */,
 				482BC9AE23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */,
 				482BC93423EB1F360053E6F6 /* County.swift in Sources */,
+				482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */,
 				482BC95123EB247B0053E6F6 /* FavouritesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

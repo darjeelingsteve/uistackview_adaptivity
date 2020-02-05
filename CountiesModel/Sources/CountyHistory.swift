@@ -1,21 +1,20 @@
 //
 //  CountyHistory.swift
-//  Adaptivity
+//  CountiesModel iOS
 //
 //  Created by Stephen Anthony on 29/02/2016.
 //  Copyright © 2016 Darjeeling Apps. All rights reserved.
 //
 
 import Foundation
-import CountiesModel
 
 /// The object responsible for recording which counties the user has viewed.
-class CountyHistory: NSObject {
-    static let shared = CountyHistory()
+public class CountyHistory: NSObject {
+    public static let shared = CountyHistory()
     
-    var delegate: CountyHistoryDelegate?
+    public var delegate: CountyHistoryDelegate?
     
-    private(set) var recentlyViewedCounties: [County] {
+    private(set) public var recentlyViewedCounties: [County] {
         get {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
             if let countyNames = countyNames {
@@ -42,7 +41,7 @@ class CountyHistory: NSObject {
      Call this function when the user views a county.
      - parameter county: The county viewed by the user.
      */
-    func viewed(_ county: County) {
+    public func viewed(_ county: County) {
         if let countyIndex = recentlyViewedCounties.firstIndex(of: county) {
             recentlyViewedCounties.remove(at: countyIndex)
         }
@@ -55,7 +54,7 @@ class CountyHistory: NSObject {
 /**
  The protocol for `CountyHistory` delegates to conform to.
  */
-protocol CountyHistoryDelegate: NSObjectProtocol {
+public protocol CountyHistoryDelegate: NSObjectProtocol {
     /**
      The message sent when the county history was updated.
      - parameter countyHistory: The county history that was updated.

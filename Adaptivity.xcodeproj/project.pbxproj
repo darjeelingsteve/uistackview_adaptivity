@@ -43,7 +43,6 @@
 		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
 		B631212A1C60F0190063E975 /* HandoffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121291C60F0190063E975 /* HandoffController.swift */; };
 		B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631212B1C60F51B0063E975 /* UserActivityHandling.swift */; };
-		B684588D1C84818B00EE6096 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684588C1C84818B00EE6096 /* CountyHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,7 +149,6 @@
 		B63121231C60DC870063E975 /* CountyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyInterfaceController.swift; sourceTree = "<group>"; };
 		B63121291C60F0190063E975 /* HandoffController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffController.swift; path = Handoff/HandoffController.swift; sourceTree = "<group>"; };
 		B631212B1C60F51B0063E975 /* UserActivityHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityHandling.swift; sourceTree = "<group>"; };
-		B684588C1C84818B00EE6096 /* CountyHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +221,6 @@
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
 				4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */,
 				B631212B1C60F51B0063E975 /* UserActivityHandling.swift */,
-				B684588C1C84818B00EE6096 /* CountyHistory.swift */,
 				48ABDFB01C2063D70078391A /* Main.storyboard */,
 				48ABDFB31C2063D70078391A /* Assets.xcassets */,
 				48C7177623AA9689005D80C6 /* CountyViewController.storyboard */,
@@ -437,7 +434,6 @@
 				48ABDFC41C209E2F0078391A /* CountyCell.swift in Sources */,
 				480F4FEC1DD346CA00159C06 /* SpotlightSearchController.swift in Sources */,
 				483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */,
-				B684588D1C84818B00EE6096 /* CountyHistory.swift in Sources */,
 				48ABDFAF1C2063D70078391A /* CountiesViewController.swift in Sources */,
 				482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */,
 				48B7F6F71C21ACA9009BFC45 /* CountyViewController.swift in Sources */,
