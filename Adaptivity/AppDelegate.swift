@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesUI
 import CountiesModel
 
 @UIApplicationMain
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if County.from(userActivity: options.userActivities.first) != nil {
             let countyConfiguration = UISceneConfiguration(name: "County Configuration", sessionRole: connectingSceneSession.role)
             countyConfiguration.delegateClass = CountySceneDelegate.self
-            countyConfiguration.storyboard = UIStoryboard(name: "CountyViewController", bundle: nil)
+            countyConfiguration.storyboard = UIStoryboard(name: "CountyViewController", bundle: Bundle(for: CountyViewController.self))
             return countyConfiguration
         }
         let masterConfiguration = UISceneConfiguration(name: "Master Configuration", sessionRole: connectingSceneSession.role)

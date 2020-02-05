@@ -15,6 +15,9 @@
 		482BC98E23EB29230053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC98C23EB29230053E6F6 /* Media.xcassets */; };
 		482BC99023EB29740053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */; };
 		482BC99123EB29740053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */; };
+		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; };
+		482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
+		482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BB23EB41C50053E6F6 /* PillButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +44,9 @@
 		482BC98623EB28630053E6F6 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		482BC98C23EB29230053E6F6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "County+UIExtensions.swift"; sourceTree = "<group>"; };
+		482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountyViewController.storyboard; sourceTree = "<group>"; };
+		482BC9B623EB40450053E6F6 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
+		482BC9BB23EB41C50053E6F6 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +117,29 @@
 		482BC98B23EB29070053E6F6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				482BC9BA23EB41AD0053E6F6 /* Controls */,
+				482BC9B423EB402D0053E6F6 /* County Details */,
 				482BC98C23EB29230053E6F6 /* Media.xcassets */,
 				482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		482BC9B423EB402D0053E6F6 /* County Details */ = {
+			isa = PBXGroup;
+			children = (
+				482BC9B623EB40450053E6F6 /* CountyViewController.swift */,
+				482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */,
+			);
+			path = "County Details";
+			sourceTree = "<group>";
+		};
+		482BC9BA23EB41AD0053E6F6 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				482BC9BB23EB41C50053E6F6 /* PillButton.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				482BC98D23EB29230053E6F6 /* Media.xcassets in Resources */,
+				482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */,
+				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
 				482BC99023EB29740053E6F6 /* County+UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

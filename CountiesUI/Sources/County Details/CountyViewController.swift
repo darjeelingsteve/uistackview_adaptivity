@@ -1,6 +1,6 @@
 //
 //  CountyViewController.swift
-//  Adaptivity
+//  CountiesUI
 //
 //  Created by Stephen Anthony on 16/12/2015.
 //  Copyright © 2015 Darjeeling Apps. All rights reserved.
@@ -8,12 +8,11 @@
 
 import UIKit
 import MapKit
-import CountiesUI
 import CountiesModel
 
 /// The view controller responsible for displaying information about a county.
-class CountyViewController: UIViewController {
-    var county: County? {
+public class CountyViewController: UIViewController {
+    public var county: County? {
         didSet {
             loadViewIfNeeded()
             flagImageView.image = county?.flagImage
@@ -21,7 +20,7 @@ class CountyViewController: UIViewController {
             populationLabel.text = county?.populationDescription
         }
     }
-    var delegate: CountyViewControllerDelegate?
+    public var delegate: CountyViewControllerDelegate?
     
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -44,7 +43,7 @@ class CountyViewController: UIViewController {
     }()
     @IBOutlet private weak var mapView: MKMapView!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         view.insertSubview(detailsContainerShadowView, belowSubview: detailsContainerView)
@@ -61,14 +60,14 @@ class CountyViewController: UIViewController {
                                                object: FavouritesController.shared)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let county = county else { return }
         mapView.region = county.mapRegion
         mapView.setVisibleMapRect(mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: detailsContainerView.frame.maxY, left: 0, bottom: 0, right: 0), animated: false)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let county = county else { return }
         userActivity = county.userActivity
@@ -76,7 +75,7 @@ class CountyViewController: UIViewController {
         CountyHistory.shared.viewed(county)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         view.window?.windowScene?.userActivity = nil
     }
@@ -104,7 +103,7 @@ class CountyViewController: UIViewController {
 /*!
 The protocol for delegates of the county view controller to conform to.
 */
-protocol CountyViewControllerDelegate: AnyObject {
+public protocol CountyViewControllerDelegate: AnyObject {
     /*!
     The function called when the county view controller wants to dismiss.
     - parameter countyViewController: The county view controller sending the message.

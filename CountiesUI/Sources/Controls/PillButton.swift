@@ -1,6 +1,6 @@
 //
 //  PillButton.swift
-//  Counties
+//  CountiesUI
 //
 //  Created by Stephen Anthony on 20/12/2019.
 //  Copyright © 2019 Darjeeling Apps. All rights reserved.
