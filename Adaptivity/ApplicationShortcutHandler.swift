@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesUI
 import CountiesModel
 
 /// The shortcut item type for county history shortcut items.

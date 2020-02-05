@@ -1,6 +1,6 @@
 //
 //  EmptyCountiesNoticeView.swift
-//  Counties
+//  CountiesUI
 //
 //  Created by Stephen Anthony on 03/02/2020.
 //  Copyright © 2020 Darjeeling Apps. All rights reserved.

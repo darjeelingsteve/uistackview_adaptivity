@@ -1,6 +1,6 @@
 //
 //  CountyCell.swift
-//  Adaptivity
+//  CountiesUI
 //
 //  Created by Stephen Anthony on 15/12/2015.
 //  Copyright © 2015 Darjeeling Apps. All rights reserved.

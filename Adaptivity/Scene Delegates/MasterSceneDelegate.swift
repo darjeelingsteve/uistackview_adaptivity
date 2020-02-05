@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountiesUI
 import CountiesModel
 
 /// The delegate of the application's master scene.

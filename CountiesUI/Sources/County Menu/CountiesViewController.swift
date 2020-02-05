@@ -1,24 +1,23 @@
 //
 //  CountiesViewController.swift
-//  Adaptivity
+//  CountiesUI
 //
 //  Created by Stephen Anthony on 15/12/2015.
 //  Copyright © 2015 Darjeeling Apps. All rights reserved.
 //
 
 import UIKit
-import CountiesUI
 import CountiesModel
 
 /// The view controller responsible for showing a searchable user interface of
 /// counties.
-class CountiesViewController: UIViewController {
+public final class CountiesViewController: UIViewController {
     
     /// The different styles that `CountiesViewController` can display as.
     ///
     /// * `allCounties` - Shows all counties.
     /// * `favourites` - Shows only the user's favourite counties.
-    enum Style {
+    public enum Style {
         case allCounties
         case favourites
     }
@@ -41,7 +40,7 @@ class CountiesViewController: UIViewController {
         }
     }
     
-    init(style: Style) {
+    public init(style: Style) {
         self.style = style
         super.init(nibName: nil, bundle: nil)
         navigationItem.searchController = searchController
@@ -53,7 +52,7 @@ class CountiesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = style.navigationItemTitle
@@ -82,14 +81,14 @@ class CountiesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
     }
     
-    func showCounty(_ county: County, animated: Bool) {
+    public func showCounty(_ county: County, animated: Bool) {
         let countyViewController = CountyViewController.viewController(for: county)
         countyViewController.modalPresentationStyle = .formSheet
         countyViewController.delegate = self
         present(countyViewController, animated: animated)
     }
     
-    func beginSearch(withText searchText: String? = nil) {
+    public func beginSearch(withText searchText: String? = nil) {
         searchController.searchBar.becomeFirstResponder()
         if let searchText = searchText {
             searchController.searchBar.text = searchText
@@ -107,7 +106,7 @@ class CountiesViewController: UIViewController {
 
 // MARK: UISearchResultsUpdating
 extension CountiesViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         updateSearchResults(forSearchText: searchController.searchBar.text)
     }
     
@@ -127,7 +126,7 @@ extension CountiesViewController: CountiesCollectionViewControllerDelegate {
 
 // MARK: CountyViewControllerDelegate
 extension CountiesViewController: CountyViewControllerDelegate {
-    func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
+    public func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {
         parent?.dismiss(animated: true)
     }
 }
