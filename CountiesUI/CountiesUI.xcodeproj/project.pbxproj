@@ -11,6 +11,10 @@
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
 		482BC97C23EB27F30053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC98723EB28630053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC98523EB28630053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		482BC98D23EB29230053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC98C23EB29230053E6F6 /* Media.xcassets */; };
+		482BC98E23EB29230053E6F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC98C23EB29230053E6F6 /* Media.xcassets */; };
+		482BC99023EB29740053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */; };
+		482BC99123EB29740053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +39,8 @@
 		482BC98323EB28630053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC98523EB28630053E6F6 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
 		482BC98623EB28630053E6F6 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		482BC98C23EB29230053E6F6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "County+UIExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		482BC96423EB27DB0053E6F6 = {
 			isa = PBXGroup;
 			children = (
+				482BC98B23EB29070053E6F6 /* Sources */,
 				482BC97023EB27DB0053E6F6 /* CountiesUI */,
 				482BC98423EB28630053E6F6 /* CountiesUI watchOS */,
 				482BC96F23EB27DB0053E6F6 /* Products */,
@@ -99,6 +106,15 @@
 				482BC98623EB28630053E6F6 /* Info-watchOS.plist */,
 			);
 			path = "CountiesUI watchOS";
+			sourceTree = "<group>";
+		};
+		482BC98B23EB29070053E6F6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				482BC98C23EB29230053E6F6 /* Media.xcassets */,
+				482BC98F23EB29740053E6F6 /* County+UIExtensions.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +187,11 @@
 				TargetAttributes = {
 					482BC96D23EB27DB0053E6F6 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					482BC98223EB28630053E6F6 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -201,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC98D23EB29230053E6F6 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC98E23EB29230053E6F6 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC99023EB29740053E6F6 /* County+UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC99123EB29740053E6F6 /* County+UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +376,7 @@
 		482BC97723EB27DB0053E6F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -371,6 +394,7 @@
 				PRODUCT_NAME = CountiesUI;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,6 +403,7 @@
 		482BC97823EB27DB0053E6F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -405,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -421,6 +447,7 @@
 				PRODUCT_NAME = CountiesUI;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.0;
@@ -431,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

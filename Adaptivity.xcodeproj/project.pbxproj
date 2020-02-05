@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		480F4FEC1DD346CA00159C06 /* SpotlightSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F4FEB1DD346CA00159C06 /* SpotlightSearchController.swift */; };
-		482BC94523EB20680053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC94423EB20680053E6F6 /* County+UIExtensions.swift */; };
 		482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; };
 		482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; };
 		482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		482BC94F23EB21B10053E6F6 /* County+UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC94423EB20680053E6F6 /* County+UIExtensions.swift */; };
+		482BC99323EB2A840053E6F6 /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; };
+		482BC99423EB2A840053E6F6 /* CountiesUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		482BC99623EB2A8A0053E6F6 /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */; };
+		482BC99723EB2A8A0053E6F6 /* CountiesUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
 		4893663823E88D7000BD781D /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */; };
@@ -72,6 +74,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				482BC99423EB2A840053E6F6 /* CountiesUI.framework in Embed Frameworks */,
 				482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -83,6 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				482BC99723EB2A8A0053E6F6 /* CountiesUI.framework in Embed Frameworks */,
 				482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -114,9 +118,10 @@
 
 /* Begin PBXFileReference section */
 		480F4FEB1DD346CA00159C06 /* SpotlightSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightSearchController.swift; path = Spotlight/SpotlightSearchController.swift; sourceTree = "<group>"; };
-		482BC94423EB20680053E6F6 /* County+UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "County+UIExtensions.swift"; sourceTree = "<group>"; };
 		482BC94723EB20A40053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC94B23EB20C70053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		482BC99223EB2A840053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
@@ -159,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC99323EB2A840053E6F6 /* CountiesUI.framework in Frameworks */,
 				482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482BC99623EB2A8A0053E6F6 /* CountiesUI.framework in Frameworks */,
 				482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +184,8 @@
 		482BC94623EB20A40053E6F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */,
+				482BC99223EB2A840053E6F6 /* CountiesUI.framework */,
 				482BC94B23EB20C70053E6F6 /* CountiesModel.framework */,
 				482BC94723EB20A40053E6F6 /* CountiesModel.framework */,
 			);
@@ -218,7 +227,6 @@
 				48ABDFAE1C2063D70078391A /* CountiesViewController.swift */,
 				48ABDFC31C209E2F0078391A /* CountyCell.swift */,
 				48B7F6F61C21ACA9009BFC45 /* CountyViewController.swift */,
-				482BC94423EB20680053E6F6 /* County+UIExtensions.swift */,
 				4893663723E88D7000BD781D /* EmptyCountiesNoticeView.swift */,
 				B631212B1C60F51B0063E975 /* UserActivityHandling.swift */,
 				B684588C1C84818B00EE6096 /* CountyHistory.swift */,
@@ -445,7 +453,6 @@
 				B631212A1C60F0190063E975 /* HandoffController.swift in Sources */,
 				B63121271C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				48E8A9741C56AF9B004B1F2E /* SpotlightController.swift in Sources */,
-				482BC94523EB20680053E6F6 /* County+UIExtensions.swift in Sources */,
 				48C7178023ACDFC2005D80C6 /* PillButton.swift in Sources */,
 				B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */,
 				4893663A23E8A10A00BD781D /* CountiesCollectionViewController.swift in Sources */,
@@ -458,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C7177D23AB7EF2005D80C6 /* County+NSUserActivity.swift in Sources */,
-				482BC94F23EB21B10053E6F6 /* County+UIExtensions.swift in Sources */,
 				B63121281C60ED980063E975 /* HandoffConstants.swift in Sources */,
 				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
 				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,

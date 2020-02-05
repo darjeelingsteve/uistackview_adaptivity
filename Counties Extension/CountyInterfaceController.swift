@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import CountiesUI
 import CountiesModel
 
 /// The interface controller responsible for displaying county details in an interface controller

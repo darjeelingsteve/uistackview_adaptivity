@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CountiesUI
 import CountiesModel
 
 /// The view controller responsible for displaying information about a county.
