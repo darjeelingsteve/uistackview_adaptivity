@@ -14,6 +14,8 @@ extension Bundle {
     static var countiesModelBundle: Bundle {
         #if os(iOS)
         return Bundle(identifier: "com.darjeeling.CountiesModel-iOS")!
+        #elseif os(tvOS)
+        return Bundle(identifier: "com.darjeeling.CountiesModel-tvOS")!
         #elseif os(watchOS)
         return Bundle(identifier: "com.darjeeling.CountiesModel-watchOS")!
         #endif

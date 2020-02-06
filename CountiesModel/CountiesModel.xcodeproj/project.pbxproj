@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4800E5C223EC119A0059ABA8 /* CountiesModel_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4800E5C023EC119A0059ABA8 /* CountiesModel_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4800E5C623EC11EA0059ABA8 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
+		4800E5C723EC11F20059ABA8 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
+		4800E5C823EC11F30059ABA8 /* County+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */; };
+		4800E5C923EC11FF0059ABA8 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 482BC93123EB1F360053E6F6 /* Counties.plist */; };
+		4800E5CA23EC12010059ABA8 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC93223EB1F360053E6F6 /* County.swift */; };
+		4800E5CB23EC120A0059ABA8 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC95023EB247B0053E6F6 /* FavouritesController.swift */; };
+		4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9C923EB538E0053E6F6 /* Media.xcassets */; };
+		4800E5CD23EC12480059ABA8 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B223EB3F540053E6F6 /* CountyHistory.swift */; };
 		482BC92A23EB1E7D0053E6F6 /* CountiesModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC92823EB1E7D0053E6F6 /* CountiesModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC93323EB1F360053E6F6 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 482BC93123EB1F360053E6F6 /* Counties.plist */; };
 		482BC93423EB1F360053E6F6 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC93223EB1F360053E6F6 /* County.swift */; };
@@ -40,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4800E5BE23EC119A0059ABA8 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4800E5C023EC119A0059ABA8 /* CountiesModel_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesModel_tvOS.h; sourceTree = "<group>"; };
+		4800E5C123EC119A0059ABA8 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		482BC92523EB1E7D0053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC92823EB1E7D0053E6F6 /* CountiesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesModel.h; sourceTree = "<group>"; };
 		482BC92923EB1E7D0053E6F6 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -62,6 +74,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4800E5BB23EC119A0059ABA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		482BC92223EB1E7D0053E6F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,11 +106,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4800E5BF23EC119A0059ABA8 /* CountiesModel tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				4800E5C023EC119A0059ABA8 /* CountiesModel_tvOS.h */,
+				4800E5C123EC119A0059ABA8 /* Info-tvOS.plist */,
+			);
+			path = "CountiesModel tvOS";
+			sourceTree = "<group>";
+		};
 		482BC91B23EB1E7D0053E6F6 = {
 			isa = PBXGroup;
 			children = (
 				482BC93023EB1EE30053E6F6 /* Sources */,
 				482BC92723EB1E7D0053E6F6 /* CountiesModel iOS */,
+				4800E5BF23EC119A0059ABA8 /* CountiesModel tvOS */,
 				482BC93B23EB1FAC0053E6F6 /* CountiesModel watchOS */,
 				482BC95823EB24D80053E6F6 /* CountiesModelTests */,
 				482BC92623EB1E7D0053E6F6 /* Products */,
@@ -104,6 +133,7 @@
 				482BC92523EB1E7D0053E6F6 /* CountiesModel.framework */,
 				482BC93A23EB1FAC0053E6F6 /* CountiesModel.framework */,
 				482BC95723EB24D80053E6F6 /* CountiesModelTests.xctest */,
+				4800E5BE23EC119A0059ABA8 /* CountiesModel.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +209,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4800E5B923EC119A0059ABA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4800E5C223EC119A0059ABA8 /* CountiesModel_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		482BC92023EB1E7D0053E6F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +236,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4800E5BD23EC119A0059ABA8 /* CountiesModel tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4800E5C523EC119A0059ABA8 /* Build configuration list for PBXNativeTarget "CountiesModel tvOS" */;
+			buildPhases = (
+				4800E5B923EC119A0059ABA8 /* Headers */,
+				4800E5BA23EC119A0059ABA8 /* Sources */,
+				4800E5BB23EC119A0059ABA8 /* Frameworks */,
+				4800E5BC23EC119A0059ABA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CountiesModel tvOS";
+			productName = "CountiesModel tvOS";
+			productReference = 4800E5BE23EC119A0059ABA8 /* CountiesModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		482BC92423EB1E7D0053E6F6 /* CountiesModel iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 482BC92D23EB1E7D0053E6F6 /* Build configuration list for PBXNativeTarget "CountiesModel iOS" */;
@@ -262,6 +318,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Darjeeling Apps";
 				TargetAttributes = {
+					4800E5BD23EC119A0059ABA8 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					482BC92423EB1E7D0053E6F6 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -288,6 +347,7 @@
 			projectRoot = "";
 			targets = (
 				482BC92423EB1E7D0053E6F6 /* CountiesModel iOS */,
+				4800E5BD23EC119A0059ABA8 /* CountiesModel tvOS */,
 				482BC93923EB1FAC0053E6F6 /* CountiesModel watchOS */,
 				482BC95623EB24D80053E6F6 /* CountiesModelTests */,
 			);
@@ -295,6 +355,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4800E5BC23EC119A0059ABA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */,
+				4800E5C923EC11FF0059ABA8 /* Counties.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		482BC92323EB1E7D0053E6F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +392,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4800E5BA23EC119A0059ABA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4800E5CB23EC120A0059ABA8 /* FavouritesController.swift in Sources */,
+				4800E5C823EC11F30059ABA8 /* County+NSUserActivity.swift in Sources */,
+				4800E5CA23EC12010059ABA8 /* County.swift in Sources */,
+				4800E5C723EC11F20059ABA8 /* HandoffConstants.swift in Sources */,
+				4800E5CD23EC12480059ABA8 /* CountyHistory.swift in Sources */,
+				4800E5C623EC11EA0059ABA8 /* Bundle+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		482BC92123EB1E7D0053E6F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,6 +450,56 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4800E5C323EC119A0059ABA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CountiesModel tvOS/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesModel-tvOS";
+				PRODUCT_NAME = CountiesModel;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		4800E5C423EC119A0059ABA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CountiesModel tvOS/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesModel-tvOS";
+				PRODUCT_NAME = CountiesModel;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
 		482BC92B23EB1E7D0053E6F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4800E5C523EC119A0059ABA8 /* Build configuration list for PBXNativeTarget "CountiesModel tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4800E5C323EC119A0059ABA8 /* Debug */,
+				4800E5C423EC119A0059ABA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		482BC91F23EB1E7D0053E6F6 /* Build configuration list for PBXProject "CountiesModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
