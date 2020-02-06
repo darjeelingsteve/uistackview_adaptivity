@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				482BC98B23EB29070053E6F6 /* Sources */,
-				482BC97023EB27DB0053E6F6 /* CountiesUI */,
+				482BC97023EB27DB0053E6F6 /* CountiesUI iOS */,
 				482BC98423EB28630053E6F6 /* CountiesUI watchOS */,
 				482BC96F23EB27DB0053E6F6 /* Products */,
 				482BC97923EB27F30053E6F6 /* Frameworks */,
@@ -94,13 +94,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		482BC97023EB27DB0053E6F6 /* CountiesUI */ = {
+		482BC97023EB27DB0053E6F6 /* CountiesUI iOS */ = {
 			isa = PBXGroup;
 			children = (
 				482BC97123EB27DB0053E6F6 /* CountiesUI.h */,
 				482BC97223EB27DB0053E6F6 /* Info-iOS.plist */,
 			);
-			path = CountiesUI;
+			path = "CountiesUI iOS";
 			sourceTree = "<group>";
 		};
 		482BC97923EB27F30053E6F6 /* Frameworks */ = {
@@ -438,7 +438,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI/Info-iOS.plist";
+				INFOPLIST_FILE = "CountiesUI iOS/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +465,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI/Info-iOS.plist";
+				INFOPLIST_FILE = "CountiesUI iOS/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

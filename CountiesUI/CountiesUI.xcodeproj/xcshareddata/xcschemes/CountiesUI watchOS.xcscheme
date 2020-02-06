@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "482BC98223EB28630053E6F6"
-               BuildableName = "CountiesUI_watchOS.framework"
+               BuildableName = "CountiesUI.framework"
                BlueprintName = "CountiesUI watchOS"
                ReferencedContainer = "container:CountiesUI.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "482BC98223EB28630053E6F6"
-            BuildableName = "CountiesUI_watchOS.framework"
+            BuildableName = "CountiesUI.framework"
             BlueprintName = "CountiesUI watchOS"
             ReferencedContainer = "container:CountiesUI.xcodeproj">
          </BuildableReference>
