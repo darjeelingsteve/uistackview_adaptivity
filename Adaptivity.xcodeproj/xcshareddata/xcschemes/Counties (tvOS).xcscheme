@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4800E59D23EC10200059ABA8"
-               BuildableName = "Counties (tvOS).app"
+               BuildableName = "Counties.app"
                BlueprintName = "Counties (tvOS)"
                ReferencedContainer = "container:Adaptivity.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4800E59D23EC10200059ABA8"
-            BuildableName = "Counties (tvOS).app"
+            BuildableName = "Counties.app"
             BlueprintName = "Counties (tvOS)"
             ReferencedContainer = "container:Adaptivity.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4800E59D23EC10200059ABA8"
-            BuildableName = "Counties (tvOS).app"
+            BuildableName = "Counties.app"
             BlueprintName = "Counties (tvOS)"
             ReferencedContainer = "container:Adaptivity.xcodeproj">
          </BuildableReference>
