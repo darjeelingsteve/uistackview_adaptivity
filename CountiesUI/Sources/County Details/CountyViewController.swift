@@ -9,6 +9,9 @@
 import UIKit
 import MapKit
 import CountiesModel
+#if os(tvOS)
+import TVUIKit
+#endif
 
 /// The view controller responsible for displaying information about a county.
 public class CountyViewController: UIViewController {
@@ -31,20 +34,28 @@ public class CountyViewController: UIViewController {
             detailsContainerView.layer.cornerCurve = .continuous
         }
     }
+    #if os(iOS)
     @IBOutlet private weak var favouriteButton: UIButton! {
         didSet {
             configureFavouriteButton()
         }
     }
+    #elseif os(tvOS)
+    @IBOutlet private weak var favouriteButton: TVCaptionButtonView! {
+        didSet {
+            configureFavouriteButton()
+        }
+    }
+    #endif
     private lazy var detailsContainerShadowView: ShadowView = {
         let detailsContainerShadowView = ShadowView()
         detailsContainerShadowView.translatesAutoresizingMaskIntoConstraints = false
         return detailsContainerShadowView
     }()
-    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView?
     
     public static func viewController(for county: County) -> CountyViewController {
-        guard let countyViewController = UIStoryboard(name: "CountyViewController", bundle: Bundle.countiesUIBundle).instantiateInitialViewController() as? CountyViewController else {
+        guard let countyViewController = UIStoryboard(name: platformValue(foriOS: "CountyViewController", tvOS: "CountyViewController-tvOS"), bundle: Bundle.countiesUIBundle).instantiateInitialViewController() as? CountyViewController else {
             fatalError("Could not instantiate county view controller")
         }
         countyViewController.county = county
@@ -70,7 +81,7 @@ public class CountyViewController: UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let county = county else { return }
+        guard let county = county, let mapView = mapView else { return }
         mapView.region = county.mapRegion
         mapView.setVisibleMapRect(mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: detailsContainerView.frame.maxY, left: 0, bottom: 0, right: 0), animated: false)
     }
@@ -104,7 +115,13 @@ public class CountyViewController: UIViewController {
     @objc private func configureFavouriteButton() {
         guard let county = county else { return }
         let isFavourite = FavouritesController.shared.favouriteCounties.contains(county)
-        favouriteButton.setImage(UIImage(systemName: isFavourite ? "heart.fill" : "heart", withConfiguration: favouriteButton.image(for: .normal)?.symbolConfiguration), for: .normal)
+        let systemImageName = isFavourite ? "heart.fill" : "heart"
+        #if os(tvOS)
+        favouriteButton.contentImage = UIImage(systemName: systemImageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .bold, scale: .large))
+        favouriteButton.title = isFavourite ? NSLocalizedString("Unfavourite", comment: "Favourite button remove favourite CTA") : NSLocalizedString("Favourite", comment: "Favourite button make favourite CTA")
+        #else
+        favouriteButton.setImage(UIImage(systemName: systemImageName, withConfiguration: favouriteButton.image(for: .normal)?.symbolConfiguration), for: .normal)
+        #endif
     }
 }
 

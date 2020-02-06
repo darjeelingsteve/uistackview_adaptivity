@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="15702" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Adt-3b-u6a">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="TVUIKit controls" minToolsVersion="10.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--County View Controller-->
+        <scene sceneID="ZZM-lh-HKf">
+            <objects>
+                <viewController id="Adt-3b-u6a" customClass="CountyViewController" customModule="CountiesUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="unG-0n-McU"/>
+                        <viewControllerLayoutGuide type="bottom" id="aJx-4q-yhO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5TB-bl-FKd">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28b-x7-JIJ">
+                                <rect key="frame" x="800" y="376" width="320" height="328"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uWB-SX-cXh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="328"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-Hq-cit">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="AGA-Ap-kYg"/>
+                                                    <constraint firstAttribute="height" constant="200" id="qUx-I1-uB6"/>
+                                                </constraints>
+                                            </imageView>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxS-pQ-3WD">
+                                                <rect key="frame" x="0.0" y="200" width="320" height="128"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cTa-Y6-1GJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-ry-v40">
+                                                            <rect key="frame" x="8" y="8" width="304" height="74"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-qi-YYa">
+                                                            <rect key="frame" x="8" y="85" width="304" height="35"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="leadingMargin" secondItem="IvL-ry-v40" secondAttribute="leading" id="50I-3C-qo1"/>
+                                                        <constraint firstItem="1uj-qi-YYa" firstAttribute="firstBaseline" secondItem="IvL-ry-v40" secondAttribute="baseline" constant="40" symbolType="layoutAnchor" id="99E-In-TYz"/>
+                                                        <constraint firstItem="IvL-ry-v40" firstAttribute="top" secondItem="cTa-Y6-1GJ" secondAttribute="topMargin" id="AWn-Ws-T8c"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="IvL-ry-v40" secondAttribute="trailing" id="Wft-ld-WNA"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="1uj-qi-YYa" secondAttribute="trailing" id="hdj-Hv-c5C"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="1uj-qi-YYa" secondAttribute="bottom" id="niG-Yt-Cc8"/>
+                                                        <constraint firstAttribute="leadingMargin" secondItem="1uj-qi-YYa" secondAttribute="leading" id="qde-TQ-C9w"/>
+                                                    </constraints>
+                                                </view>
+                                                <blurEffect style="regular"/>
+                                            </visualEffectView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uWB-SX-cXh" secondAttribute="trailing" id="2oU-Vy-1WS"/>
+                                    <constraint firstItem="uWB-SX-cXh" firstAttribute="top" secondItem="28b-x7-JIJ" secondAttribute="top" id="3Ad-Wv-ev2"/>
+                                    <constraint firstItem="uWB-SX-cXh" firstAttribute="centerX" secondItem="28b-x7-JIJ" secondAttribute="centerX" id="CMU-qu-TY5"/>
+                                    <constraint firstAttribute="bottom" secondItem="uWB-SX-cXh" secondAttribute="bottom" id="WJW-KZ-7nb"/>
+                                    <constraint firstItem="uWB-SX-cXh" firstAttribute="leading" secondItem="28b-x7-JIJ" secondAttribute="leading" id="uM2-wf-7T6"/>
+                                </constraints>
+                            </view>
+                            <tvCaptionButtonView contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" contentImage="heart" catalog="system" title="Favourite" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-nX-GJN">
+                                <rect key="frame" x="800" y="725" width="156" height="122"/>
+                                <connections>
+                                    <action selector="toggleFavourite:" destination="Adt-3b-u6a" eventType="primaryActionTriggered" id="bET-72-dKJ"/>
+                                </connections>
+                            </tvCaptionButtonView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Fmc-nX-GJN" firstAttribute="top" secondItem="28b-x7-JIJ" secondAttribute="bottom" constant="21" id="5y2-ga-3ch"/>
+                            <constraint firstItem="28b-x7-JIJ" firstAttribute="centerY" secondItem="3P9-7o-7Zn" secondAttribute="centerY" id="PHv-JN-PXI"/>
+                            <constraint firstItem="Fmc-nX-GJN" firstAttribute="leading" secondItem="28b-x7-JIJ" secondAttribute="leading" id="R9L-uy-ql3"/>
+                            <constraint firstItem="28b-x7-JIJ" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="oDe-sY-Q4g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3P9-7o-7Zn"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsContainerView" destination="28b-x7-JIJ" id="veA-xz-aqQ"/>
+                        <outlet property="favouriteButton" destination="Fmc-nX-GJN" id="xrg-lf-Vuy"/>
+                        <outlet property="flagImageView" destination="zyk-Hq-cit" id="lWq-O6-yyf"/>
+                        <outlet property="nameLabel" destination="IvL-ry-v40" id="vz1-6V-21q"/>
+                        <outlet property="populationLabel" destination="1uj-qi-YYa" id="tHX-Ay-bVO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jip-Kr-l8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173" y="203"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="32" height="27"/>
+    </resources>
+</document>

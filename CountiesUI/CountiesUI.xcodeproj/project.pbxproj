@@ -18,6 +18,7 @@
 		4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
 		4800E5CF23EC12A60059ABA8 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */; };
 		4800E5D023EC12A60059ABA8 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */; };
 		482BC97323EB27DB0053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC97123EB27DB0053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
 		482BC97C23EB27F30053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -64,6 +65,7 @@
 		4800E59423EC0E000059ABA8 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
 		4800E59523EC0E000059ABA8 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "CountyViewController-tvOS.storyboard"; sourceTree = "<group>"; };
 		482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC97123EB27DB0053E6F6 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
 		482BC97223EB27DB0053E6F6 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				482BC9B623EB40450053E6F6 /* CountyViewController.swift */,
 				482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */,
+				4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */,
 				482BC9C123EB50420053E6F6 /* UIStoryboard+CountyViewController.swift */,
 			);
 			path = "County Details";
@@ -349,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

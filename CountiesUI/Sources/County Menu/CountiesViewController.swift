@@ -51,8 +51,8 @@ public final class CountiesViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         #if os(iOS)
         navigationItem.searchController = searchController
-        collectionViewController.delegate = self
         #endif
+        collectionViewController.delegate = self
         definesPresentationContext = true
         tabBarItem = style.tabBarItem
     }
@@ -92,14 +92,18 @@ public final class CountiesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
     }
     
-    #if os(iOS)
     public func showCounty(_ county: County, animated: Bool) {
         let countyViewController = CountyViewController.viewController(for: county)
+        #if os(tvOS)
+        countyViewController.modalPresentationStyle = .blurOverFullScreen
+        #else
         countyViewController.modalPresentationStyle = .formSheet
         countyViewController.delegate = self
+        #endif
         present(countyViewController, animated: animated)
     }
     
+    #if os(iOS)
     public func beginSearch(withText searchText: String? = nil) {
         searchController.searchBar.becomeFirstResponder()
         if let searchText = searchText {
@@ -134,6 +138,7 @@ extension CountiesViewController: UISearchResultsUpdating {
         }
     }
 }
+#endif
 
 // MARK: CountiesCollectionViewControllerDelegate
 extension CountiesViewController: CountiesCollectionViewControllerDelegate {
@@ -142,6 +147,7 @@ extension CountiesViewController: CountiesCollectionViewControllerDelegate {
     }
 }
 
+#if os(iOS)
 // MARK: CountyViewControllerDelegate
 extension CountiesViewController: CountyViewControllerDelegate {
     public func countyViewControllerDidFinish(_ countyViewController: CountyViewController) {

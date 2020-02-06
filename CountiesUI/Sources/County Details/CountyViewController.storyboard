@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzz-vK-uPP">
-                                <rect key="frame" x="47" y="116" width="320" height="285.5"/>
+                                <rect key="frame" x="47" y="118" width="320" height="285.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-cr-iD5">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="285.5"/>
@@ -90,7 +90,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEW-Mm-CBO" customClass="PillButton" customModule="CountiesUI" customModuleProvider="target">
-                                <rect key="frame" x="330" y="60" width="64" height="32"/>
+                                <rect key="frame" x="351" y="60" width="43" height="34"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneTapped:" destination="dcA-fF-HUS" eventType="primaryActionTriggered" id="zJG-Ds-guG"/>
