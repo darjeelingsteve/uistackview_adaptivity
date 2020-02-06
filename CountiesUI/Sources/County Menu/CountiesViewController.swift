@@ -54,6 +54,7 @@ public final class CountiesViewController: UIViewController {
         collectionViewController.delegate = self
         #endif
         definesPresentationContext = true
+        tabBarItem = style.tabBarItem
     }
     
     required init?(coder: NSCoder) {
@@ -152,6 +153,15 @@ private extension CountiesViewController.Style {
             return NSLocalizedString("Counties", comment: "Counties view \"All Counties\" navigation title")
         case .favourites:
             return NSLocalizedString("Favourites", comment: "Counties view \"Favourites\" navigation title")
+        }
+    }
+    
+    var tabBarItem: UITabBarItem {
+        switch self {
+        case .allCounties:
+            return UITabBarItem(title: NSLocalizedString("All Counties", comment: "All counties tab bar item title"), image: UIImage(systemName: "list.bullet"), selectedImage: nil)
+        case .favourites:
+            return UITabBarItem(title: NSLocalizedString("Favourites", comment: "Favourites tab bar item title"), image: UIImage(systemName: "heart.fill"), selectedImage: nil)
         }
     }
     
