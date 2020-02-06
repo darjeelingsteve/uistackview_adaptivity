@@ -25,6 +25,7 @@ public final class CountiesViewController: UIViewController {
     private let style: Style
     private let collectionViewController = CountiesCollectionViewController()
     private let emptyCountiesNoticeView = EmptyCountiesNoticeView()
+    #if os(iOS)
     private var spotlightSearchController = SpotlightSearchController()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -32,20 +33,27 @@ public final class CountiesViewController: UIViewController {
         searchController.searchResultsUpdater = self
         return searchController
     }()
+    #endif
     private var countiesForCurrentState: [County] {
+        #if os(tvOS)
+        return style.countyList
+        #else
         if let searchText = searchController.searchBar.text, searchText.count > 0 {
             return spotlightSearchController.searchResults
         } else {
             return style.countyList
         }
+        #endif
     }
     
     public init(style: Style) {
         self.style = style
         super.init(nibName: nil, bundle: nil)
+        #if os(iOS)
         navigationItem.searchController = searchController
-        definesPresentationContext = true
         collectionViewController.delegate = self
+        #endif
+        definesPresentationContext = true
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +62,9 @@ public final class CountiesViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        #if os(iOS)
         view.backgroundColor = .systemBackground
+        #endif
         navigationItem.title = style.navigationItemTitle
         
         addChild(collectionViewController)
@@ -81,6 +91,7 @@ public final class CountiesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: FavouritesController.favouriteCountiesDidChangeNotification, object: FavouritesController.shared)
     }
     
+    #if os(iOS)
     public func showCounty(_ county: County, animated: Bool) {
         let countyViewController = CountyViewController.viewController(for: county)
         countyViewController.modalPresentationStyle = .formSheet
@@ -95,6 +106,7 @@ public final class CountiesViewController: UIViewController {
             updateSearchResults(forSearchText: searchText)
         }
     }
+    #endif
     
     @objc private func reloadData() {
         collectionViewController.counties = countiesForCurrentState
@@ -104,6 +116,7 @@ public final class CountiesViewController: UIViewController {
     }
 }
 
+#if os(iOS)
 // MARK: UISearchResultsUpdating
 extension CountiesViewController: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
@@ -130,6 +143,7 @@ extension CountiesViewController: CountyViewControllerDelegate {
         parent?.dismiss(animated: true)
     }
 }
+#endif
 
 private extension CountiesViewController.Style {
     var navigationItemTitle: String {
@@ -150,6 +164,7 @@ private extension CountiesViewController.Style {
         }
     }
     
+    #if os(iOS)
     var searchQueryFilter: SpotlightSearchController.Query.Filter {
         switch self {
         case .allCounties:
@@ -158,6 +173,7 @@ private extension CountiesViewController.Style {
             return .favouritesOnly
         }
     }
+    #endif
 }
 
 private extension CountiesViewController {

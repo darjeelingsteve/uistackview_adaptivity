@@ -28,16 +28,14 @@ final class CountiesCollectionViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
+        #if os(iOS)
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
+        collectionView.backgroundColor = .systemBackground
+        #endif
         return collectionView
     }()
-    private let flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 32
-        return flowLayout
-    }()
+    private let flowLayout = UICollectionViewFlowLayout()
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
         return UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
             guard let self = self else { return nil }
@@ -50,7 +48,9 @@ final class CountiesCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if os(iOS)
         view.backgroundColor = .systemBackground
+        #endif
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -108,6 +108,10 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return cellStyleForTraitCollection(traitCollection).collectionViewLineSpacing
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
+    }
 }
 
 // MARK: UICollectionViewDelegate
@@ -118,6 +122,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegate {
     }
 }
 
+#if os(iOS)
 // MARK: UICollectionViewDragDelegate
 extension CountiesCollectionViewController: UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
@@ -135,6 +140,7 @@ extension CountiesCollectionViewController: UICollectionViewDragDelegate {
         collectionView.allowsSelection = true
     }
 }
+#endif
 
 /// The protocol to conform to for delegates of
 /// `CountiesCollectionViewController`.
@@ -157,7 +163,6 @@ private extension CountyCellDisplayStyle {
         case .grid:
             let availableWidth = collectionView.bounds.width - collectionViewEdgeInsets.left - collectionViewEdgeInsets.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
-            let estimatedCellWidth: CGFloat = 220
             let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
             let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
             
@@ -171,7 +176,11 @@ private extension CountyCellDisplayStyle {
         case .table:
             return UIEdgeInsets.zero
         case .grid:
+            #if os(tvOS)
+            return UIEdgeInsets(top: 8, left: 64, bottom: 8, right: 64)
+            #else
             return UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
+            #endif
         }
     }
     
@@ -182,6 +191,22 @@ private extension CountyCellDisplayStyle {
         case .grid:
             return 48
         }
+    }
+    
+    var collectionViewInteritemSpacing: CGFloat {
+        #if os(tvOS)
+        return 48
+        #else
+        return 32
+        #endif
+    }
+    
+    private var estimatedCellWidth: CGFloat {
+        #if os(tvOS)
+        return 320
+        #else
+        return 220
+        #endif
     }
 }
 

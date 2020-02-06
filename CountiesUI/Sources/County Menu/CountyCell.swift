@@ -22,7 +22,7 @@ enum CountyCellDisplayStyle {
 private struct BorderSettings {
     let width: CGFloat
     let cornerRadius: CGFloat
-    let colour = UIColor.secondarySystemBackground
+    let colour: UIColor = platformValue(foriOS: .secondarySystemBackground, tvOS: .clear)
 }
 
 /// The cell responsible for displaying County data.
@@ -30,8 +30,12 @@ class CountyCell: UICollectionViewCell {
     private let flagImageView: UIImageView = {
         let flagImageView = UIImageView()
         flagImageView.translatesAutoresizingMaskIntoConstraints = false
-        flagImageView.clipsToBounds = true
         flagImageView.layer.cornerCurve = .continuous
+        #if os(tvOS)
+        flagImageView.adjustsImageWhenAncestorFocused = true
+        #elseif os(iOS)
+        flagImageView.clipsToBounds = true
+        #endif
         return flagImageView
     }()
     
@@ -70,9 +74,13 @@ class CountyCell: UICollectionViewCell {
         flagImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
         nameLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
         nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: flagImageView.bottomAnchor, multiplier: 1),
+        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: flagImageView.bottomAnchor, multiplier: gridStyleNameLabelSpacingMultiplier),
         nameLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
     ]
+    
+    private var gridStyleNameLabelSpacingMultiplier: CGFloat {
+        return platformValue(foriOS: 1, tvOS: 4)
+    }
     
     /// The county to be displayed by the cell.
     var county: County? {
@@ -114,13 +122,17 @@ class CountyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        #if os(iOS)
         backgroundColor = .systemBackground
-        contentView.addSubview(flagImageView)
+        #endif
         contentView.addSubview(nameLabel)
+        contentView.addSubview(flagImageView)
         flagImageView.addSubview(selectionFlagOverlayView)
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = borderSettings.colour
         selectedBackgroundView?.layer.cornerCurve = .continuous
+        clipsToBounds = false
+        contentView.clipsToBounds = false
     }
     
     required init?(coder: NSCoder) {
