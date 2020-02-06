@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		4800E58C23EC0A290059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
 		4800E59623EC0E000059ABA8 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4800E59423EC0E000059ABA8 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4800E5B223EC112C0059ABA8 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
+		4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */; };
+		4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
+		4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DA23EB57C30053E6F6 /* CountyCell.swift */; };
+		4800E5B623EC11420059ABA8 /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */; };
+		4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */; };
+		4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
 		482BC97323EB27DB0053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC97123EB27DB0053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
 		482BC97C23EB27F30053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -350,6 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */,
+				4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */,
+				4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */,
+				4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */,
+				4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */,
+				4800E5B223EC112C0059ABA8 /* CountyViewController.swift in Sources */,
+				4800E5B623EC11420059ABA8 /* EmptyCountiesNoticeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
