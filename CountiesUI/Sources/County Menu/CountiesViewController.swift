@@ -112,7 +112,11 @@ public final class CountiesViewController: UIViewController {
     @objc private func reloadData() {
         collectionViewController.counties = countiesForCurrentState
         collectionViewController.view.isHidden = collectionViewController.counties.isEmpty
+        #if os(iOS)
         emptyCountiesNoticeView.configuration = EmptyCountiesNoticeView.Configuration(style: style, searchQuery: searchController.searchBar.text)
+        #else
+        emptyCountiesNoticeView.configuration = EmptyCountiesNoticeView.Configuration(style: style, searchQuery: nil)
+        #endif
         emptyCountiesNoticeView.isHidden = !collectionViewController.view.isHidden
     }
 }

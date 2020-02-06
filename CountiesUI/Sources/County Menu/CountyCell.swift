@@ -22,7 +22,11 @@ enum CountyCellDisplayStyle {
 private struct BorderSettings {
     let width: CGFloat
     let cornerRadius: CGFloat
-    let colour: UIColor = platformValue(foriOS: .secondarySystemBackground, tvOS: .clear)
+    #if os(tvOS)
+    let colour = UIColor.clear
+    #else
+    let colour = UIColor.secondarySystemBackground
+    #endif
 }
 
 /// The cell responsible for displaying County data.
