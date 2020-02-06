@@ -125,7 +125,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4800E59E23EC10200059ABA8 /* Counties (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4800E59E23EC10200059ABA8 /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800E5A023EC10200059ABA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4800E5A723EC10200059ABA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4800E5A923EC10220059ABA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				48ABDFA91C2063D70078391A /* Counties.app */,
 				B63120FB1C60D69F0063E975 /* Counties (watchOS).app */,
 				B63121071C60D69F0063E975 /* Counties Extension.appex */,
-				4800E59E23EC10200059ABA8 /* Counties (tvOS).app */,
+				4800E59E23EC10200059ABA8 /* Counties.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			);
 			name = "Counties (tvOS)";
 			productName = "Counties (tvOS)";
-			productReference = 4800E59E23EC10200059ABA8 /* Counties (tvOS).app */;
+			productReference = 4800E59E23EC10200059ABA8 /* Counties.app */;
 			productType = "com.apple.product-type.application";
 		};
 		48ABDFA81C2063D70078391A /* Counties */ = {
@@ -591,7 +591,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--tvOS-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Counties;
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
@@ -616,7 +616,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--tvOS-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Counties;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
