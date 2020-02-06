@@ -43,7 +43,7 @@ extension County {
         get {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
-            return "Population: " + numberFormatter.string(from: NSNumber(value: population))!
+            return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population))!)
         }
     }
     
