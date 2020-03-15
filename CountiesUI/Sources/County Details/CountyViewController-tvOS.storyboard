@@ -20,43 +20,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-Hq-cit">
-                                <rect key="frame" x="800" y="60" width="320" height="200"/>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-Kb-v6W" userLabel="Content Container View">
+                                <rect key="frame" x="90" y="246" width="1740" height="588.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-Hq-cit">
+                                        <rect key="frame" x="710" y="0.0" width="320" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="AGA-Ap-kYg"/>
+                                            <constraint firstAttribute="height" constant="200" id="qUx-I1-uB6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-ry-v40">
+                                        <rect key="frame" x="780" y="244" width="180" height="91"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-qi-YYa">
+                                        <rect key="frame" x="801.5" y="337.5" width="137" height="69"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tvCaptionButtonView contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" contentImage="heart" catalog="system" title="Favourite" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-nX-GJN">
+                                        <rect key="frame" x="792" y="466.5" width="156" height="122"/>
+                                        <connections>
+                                            <action selector="toggleFavourite:" destination="Adt-3b-u6a" eventType="primaryActionTriggered" id="bET-72-dKJ"/>
+                                        </connections>
+                                    </tvCaptionButtonView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="AGA-Ap-kYg"/>
-                                    <constraint firstAttribute="height" constant="200" id="qUx-I1-uB6"/>
+                                    <constraint firstItem="IvL-ry-v40" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="0YZ-81-J2L"/>
+                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="2Pg-4I-YSz"/>
+                                    <constraint firstItem="zyk-Hq-cit" firstAttribute="top" secondItem="aGb-Kb-v6W" secondAttribute="top" id="75W-Qh-0SE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fmc-nX-GJN" secondAttribute="bottom" id="8nh-rP-xhb"/>
+                                    <constraint firstItem="zyk-Hq-cit" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="AdG-8V-Gfz"/>
+                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="Hh9-B1-B9a"/>
+                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="Pjk-cH-wsj"/>
+                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="top" secondItem="1uj-qi-YYa" secondAttribute="bottom" constant="60" id="hdH-eT-XvF"/>
+                                    <constraint firstItem="IvL-ry-v40" firstAttribute="top" secondItem="zyk-Hq-cit" secondAttribute="bottom" constant="44" id="jvA-cU-DV8"/>
+                                    <constraint firstItem="IvL-ry-v40" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="wUq-lR-i8a"/>
+                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="firstBaseline" secondItem="IvL-ry-v40" secondAttribute="baseline" constant="76" symbolType="layoutAnchor" id="zIh-pZ-nqc"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-ry-v40">
-                                <rect key="frame" x="870" y="304" width="180" height="91"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-qi-YYa">
-                                <rect key="frame" x="891.5" y="397.5" width="137" height="69"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tvCaptionButtonView contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" contentImage="heart" catalog="system" title="Favourite" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-nX-GJN">
-                                <rect key="frame" x="882" y="526.5" width="156" height="122"/>
-                                <connections>
-                                    <action selector="toggleFavourite:" destination="Adt-3b-u6a" eventType="primaryActionTriggered" id="bET-72-dKJ"/>
-                                </connections>
-                            </tvCaptionButtonView>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="zyk-Hq-cit" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="1WJ-P3-83o"/>
-                            <constraint firstItem="1uj-qi-YYa" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="HnB-FS-jbM"/>
-                            <constraint firstItem="IvL-ry-v40" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="JpE-vS-gQ0"/>
-                            <constraint firstItem="1uj-qi-YYa" firstAttribute="firstBaseline" secondItem="IvL-ry-v40" secondAttribute="baseline" constant="40" symbolType="layoutAnchor" id="XGp-Hb-pCc"/>
-                            <constraint firstItem="1uj-qi-YYa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3P9-7o-7Zn" secondAttribute="leading" id="bxh-Ie-pJw"/>
-                            <constraint firstItem="zyk-Hq-cit" firstAttribute="top" secondItem="3P9-7o-7Zn" secondAttribute="top" id="gLd-fB-3er"/>
-                            <constraint firstItem="Fmc-nX-GJN" firstAttribute="top" secondItem="1uj-qi-YYa" secondAttribute="bottom" constant="60" id="iAw-S9-i9M"/>
-                            <constraint firstItem="IvL-ry-v40" firstAttribute="top" secondItem="zyk-Hq-cit" secondAttribute="bottom" constant="44" id="nmm-ND-R9B"/>
-                            <constraint firstItem="Fmc-nX-GJN" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="uW8-E4-Jn8"/>
-                            <constraint firstItem="IvL-ry-v40" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3P9-7o-7Zn" secondAttribute="leading" id="ubT-0y-BUp"/>
+                            <constraint firstItem="aGb-Kb-v6W" firstAttribute="leading" secondItem="3P9-7o-7Zn" secondAttribute="leading" id="CFS-GZ-nS9"/>
+                            <constraint firstItem="aGb-Kb-v6W" firstAttribute="centerY" secondItem="3P9-7o-7Zn" secondAttribute="centerY" id="O7E-Pn-Sz1"/>
+                            <constraint firstItem="aGb-Kb-v6W" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="UNV-Xc-p9z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3P9-7o-7Zn"/>
                     </view>
