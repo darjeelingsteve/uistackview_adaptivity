@@ -28,10 +28,10 @@ public class CountyViewController: UIViewController {
     @IBOutlet private weak var flagImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var populationLabel: UILabel!
-    @IBOutlet private weak var detailsContainerView: UIView! {
+    @IBOutlet private weak var detailsContainerView: UIView? {
         didSet {
-            detailsContainerView.layer.cornerRadius = 16
-            detailsContainerView.layer.cornerCurve = .continuous
+            detailsContainerView?.layer.cornerRadius = 16
+            detailsContainerView?.layer.cornerCurve = .continuous
         }
     }
     #if os(iOS)
@@ -65,13 +65,15 @@ public class CountyViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        view.insertSubview(detailsContainerShadowView, belowSubview: detailsContainerView)
-        NSLayoutConstraint.activate([
-            detailsContainerShadowView.leadingAnchor.constraint(equalTo: detailsContainerView.leadingAnchor),
-            detailsContainerShadowView.trailingAnchor.constraint(equalTo: detailsContainerView.trailingAnchor),
-            detailsContainerShadowView.topAnchor.constraint(equalTo: detailsContainerView.topAnchor),
-            detailsContainerShadowView.bottomAnchor.constraint(equalTo: detailsContainerView.bottomAnchor)
-        ])
+        if let detailsContainerView = detailsContainerView {
+            view.insertSubview(detailsContainerShadowView, belowSubview: detailsContainerView)
+            NSLayoutConstraint.activate([
+                detailsContainerShadowView.leadingAnchor.constraint(equalTo: detailsContainerView.leadingAnchor),
+                detailsContainerShadowView.trailingAnchor.constraint(equalTo: detailsContainerView.trailingAnchor),
+                detailsContainerShadowView.topAnchor.constraint(equalTo: detailsContainerView.topAnchor),
+                detailsContainerShadowView.bottomAnchor.constraint(equalTo: detailsContainerView.bottomAnchor)
+            ])
+        }
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(configureFavouriteButton),
@@ -81,7 +83,7 @@ public class CountyViewController: UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let county = county, let mapView = mapView else { return }
+        guard let county = county, let mapView = mapView, let detailsContainerView = detailsContainerView else { return }
         mapView.region = county.mapRegion
         mapView.setVisibleMapRect(mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: detailsContainerView.frame.maxY, left: 0, bottom: 0, right: 0), animated: false)
     }
