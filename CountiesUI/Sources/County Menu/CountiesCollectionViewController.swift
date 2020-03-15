@@ -32,6 +32,8 @@ final class CountiesCollectionViewController: UIViewController {
         #if os(iOS)
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
         collectionView.backgroundColor = .systemBackground
+        #elseif os(tvOS)
+        collectionView.remembersLastFocusedIndexPath = true
         #endif
         return collectionView
     }()
@@ -50,6 +52,9 @@ final class CountiesCollectionViewController: UIViewController {
         super.viewDidLoad()
         #if os(iOS)
         view.backgroundColor = .systemBackground
+        #elseif os(tvOS)
+        // Allow the collection view to handle focus restoration.
+        restoresFocusAfterTransition = false
         #endif
         
         view.addSubview(collectionView)

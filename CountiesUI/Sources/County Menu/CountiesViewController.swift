@@ -94,9 +94,7 @@ public final class CountiesViewController: UIViewController {
     
     public func showCounty(_ county: County, animated: Bool) {
         let countyViewController = CountyViewController.viewController(for: county)
-        #if os(tvOS)
-        countyViewController.modalPresentationStyle = .blurOverFullScreen
-        #else
+        #if os(iOS)
         countyViewController.modalPresentationStyle = .formSheet
         countyViewController.delegate = self
         #endif
