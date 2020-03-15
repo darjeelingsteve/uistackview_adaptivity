@@ -12,8 +12,7 @@ import Foundation
 /// counties.
 public final class FavouritesController {
     
-    /// The shared instance of `FavouritesController`. Should be used over
-    /// individual instances.
+    /// The shared instance of `FavouritesController`.
     public static let shared = FavouritesController()
     
     /// The notification posted when the user adds or removes a favourite
