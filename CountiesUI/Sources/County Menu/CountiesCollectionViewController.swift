@@ -37,7 +37,11 @@ final class CountiesCollectionViewController: UIViewController {
         #endif
         return collectionView
     }()
-    private let flowLayout = UICollectionViewFlowLayout()
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
+        return flowLayout
+    }()
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
         return UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
             guard let self = self else { return nil }
