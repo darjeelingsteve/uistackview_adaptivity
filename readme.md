@@ -2,7 +2,9 @@
 
 <img src="readme_images/devices.png" max-width="515" max-height="500" />
 
-The Counties sample app is the host for iOS and Apple Watch tutorials hosted on [darjeelingsteve.com](https://darjeelingsteve.com). The areas of development covered are as follows:
+![Platform](https://img.shields.io/badge/platforms-iOS%2013.0%20%7C%20tvOS%2013.0%20%7C%20watchOS%206.0-F28D00.svg)
+
+The Counties sample app is the host for iOS, Apple Watch, and tvOS tutorials hosted on [darjeelingsteve.com](https://darjeelingsteve.com). The areas of development covered are as follows:
 
 ## [Advanced Multi-window UIs on iPadOS with Drag & Drop and State Restoration](https://darjeelingsteve.com/articles/Advanced-Multi-window-UIs-on-iPadOS-with-Drag-and-Drop-and-State-Restoration.html)
 
