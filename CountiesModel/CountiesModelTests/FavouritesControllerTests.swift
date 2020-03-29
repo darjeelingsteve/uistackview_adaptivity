@@ -97,6 +97,16 @@ extension FavouritesControllerTests {
         favouritesController.remove(county: hampshire)
         waitForExpectations(timeout: 0, handler: nil)
     }
+    
+    func testItPostsANotificationWhenTheFavouritesAreUpdateExternally() {
+        expectation(forNotification: FavouritesController.favouriteCountiesDidChangeNotification, object: favouritesController, handler: nil)
+        whenTheUbiquityContainerSignalsAnExternalUpdate()
+        waitForExpectations(timeout: 0, handler: nil)
+    }
+    
+    private func whenTheUbiquityContainerSignalsAnExternalUpdate() {
+        NotificationCenter.default.post(name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: mockUbiquitousKeyValueStorageProvider)
+    }
 }
 
 // MARK: - Synchronisation
@@ -128,4 +138,3 @@ private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStoragePr
         return false
     }
 }
-

@@ -35,6 +35,9 @@ public final class FavouritesController {
     /// to persist the user's favourite counties.
     init(ubiquitousKeyValueStore: UbiquitousKeyValueStorageProviding = NSUbiquitousKeyValueStore.default) {
         self.ubiquitousKeyValueStore = ubiquitousKeyValueStore
+        NotificationCenter.default.addObserver(self, selector: #selector(favouritesDidUpdateExternally(_:)),
+                                               name: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
+                                               object: ubiquitousKeyValueStore)
     }
     
     /// Adds the given county to the user's favourites.
@@ -59,9 +62,13 @@ public final class FavouritesController {
     public func synchronise() {
         _ = ubiquitousKeyValueStore.synchronize()
     }
+    
+    @objc private func favouritesDidUpdateExternally(_ notification: Notification) {
+        NotificationCenter.default.post(name: FavouritesController.favouriteCountiesDidChangeNotification, object: self)
+    }
 }
 
-public protocol UbiquitousKeyValueStorageProviding {
+public protocol UbiquitousKeyValueStorageProviding: AnyObject {
     func set(_ anObject: Any?, forKey aKey: String)
     func array(forKey aKey: String) -> [Any]?
     func synchronize() -> Bool
