@@ -53,8 +53,9 @@ public class CountyHistory: NSObject {
         if let countyIndex = recentlyViewedCounties.firstIndex(of: county) {
             recentlyViewedCounties.remove(at: countyIndex)
         }
+        var recentlyViewedCounties = self.recentlyViewedCounties
         recentlyViewedCounties.insert(county, at: 0)
-        recentlyViewedCounties = Array(recentlyViewedCounties.prefix(3))
+        self.recentlyViewedCounties = Array(recentlyViewedCounties.prefix(3))
         NotificationCenter.default.post(name: CountyHistory.countyHistoryDidUpdateNotification, object: self)
     }
 }
