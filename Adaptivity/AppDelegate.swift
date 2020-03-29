@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         spotlightController.indexCounties(County.allCounties)
-        CountyHistory.shared.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updateApplicationShortcutItems(_:)),
+                                               name: CountyHistory.countyHistoryDidUpdateNotification,
+                                               object: CountyHistory.shared)
         FavouritesController.shared.synchronise()
         return true
     }
@@ -33,12 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         masterConfiguration.storyboard = UIStoryboard(name: "Main", bundle: nil)
         return masterConfiguration
     }
-}
-
-// MARK: CountyHistoryDelegate
-extension AppDelegate: CountyHistoryDelegate {
-    func countyHistoryDidUpdate(_ countyHistory: CountyHistory) {
-        UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
+    
+    @objc private func updateApplicationShortcutItems(_ notification: Notification) {
+        UIApplication.shared.shortcutItems = (notification.object as! CountyHistory).recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
             let shortcutItem = UIMutableApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
             shortcutItem.targetContentIdentifier = county.name
             return shortcutItem
