@@ -37,6 +37,9 @@ public class CountyHistory: NSObject {
         return documentsURL.appendingPathComponent("CountyHistory")
     }
     
+    /// Prevent initialisation from outside of `CountiesModel`.
+    override init() {}
+    
     /**
      Call this function when the user views a county.
      - parameter county: The county viewed by the user.
