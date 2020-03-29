@@ -24,14 +24,48 @@ final class CountyHistoryTests: XCTestCase {
         countyHistory = nil
         super.tearDown()
     }
+    
+    @discardableResult private func whenTheUserViewsACounty(withName name: String) -> County {
+        let county = County.forName(name)!
+        countyHistory.viewed(county)
+        return county
+    }
+}
+
+// MARK: - Viewing Counties
+extension CountyHistoryTests {
+    func testItRecordsWhenACountyHasBeenViewed() {
+        let hampshire = whenTheUserViewsACounty(withName: "Hampshire")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [hampshire])
+        
+        let surrey = whenTheUserViewsACounty(withName: "Surrey")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [surrey, hampshire])
+    }
+    
+    func testItDoesNotDuplicateCountiesWhenViewedMoreThanOnce() {
+        let hampshire = whenTheUserViewsACounty(withName: "Hampshire")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [hampshire])
+        
+        whenTheUserViewsACounty(withName: "Hampshire")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [hampshire])
+    }
+    
+    func testItLimitsTheHistoryToTheThreeMostRecentlyViewedCounties() {
+        let hampshire = whenTheUserViewsACounty(withName: "Hampshire")
+        let surrey = whenTheUserViewsACounty(withName: "Surrey")
+        let cornwall = whenTheUserViewsACounty(withName: "Cornwall")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [cornwall, surrey, hampshire])
+        
+        let kent = whenTheUserViewsACounty(withName: "Kent")
+        XCTAssertEqual(countyHistory.recentlyViewedCounties, [kent, cornwall, surrey])
+    }
 }
 
 // MARK: - Notifications
 extension CountyHistoryTests {
     func testItPostsANotificationWhenTheUserViewsACounty() {
         expectation(forNotification: CountyHistory.countyHistoryDidUpdateNotification, object: countyHistory, handler: nil)
-        let kent = County.forName("Kent")!
-        countyHistory.viewed(kent)
+        whenTheUserViewsACounty(withName: "Kent")
         waitForExpectations(timeout: 0, handler: nil)
     }
 }
