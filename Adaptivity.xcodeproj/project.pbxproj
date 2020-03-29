@@ -590,7 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--tvOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = Counties;
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -615,7 +615,7 @@
 				INFOPLIST_FILE = "Counties (tvOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--tvOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity;
 				PRODUCT_NAME = Counties;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
