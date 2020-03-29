@@ -134,6 +134,7 @@
 		4800E5D723EC28C60059ABA8 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800E5D823EC28C60059ABA8 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800E5DE23EC32940059ABA8 /* TVUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVUIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS13.2.sdk/System/Library/Frameworks/TVUIKit.framework; sourceTree = DEVELOPER_DIR; };
+		481BAB292430EE9A009CC8A6 /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Counties.entitlements; sourceTree = "<group>"; };
 		482BC94723EB20A40053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC94B23EB20C70053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC99223EB2A840053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +201,7 @@
 		4800E59F23EC10200059ABA8 /* Counties (tvOS) */ = {
 			isa = PBXGroup;
 			children = (
+				481BAB292430EE9A009CC8A6 /* Counties.entitlements */,
 				4800E5A023EC10200059ABA8 /* AppDelegate.swift */,
 				4800E5A623EC10200059ABA8 /* Main.storyboard */,
 				4800E5A923EC10220059ABA8 /* Assets.xcassets */,
@@ -584,6 +586,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Counties (tvOS)/Counties.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Counties (tvOS)/Info.plist";
@@ -610,6 +613,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Counties (tvOS)/Counties.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Counties (tvOS)/Info.plist";
