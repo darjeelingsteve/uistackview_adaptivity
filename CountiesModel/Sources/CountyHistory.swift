@@ -20,8 +20,6 @@ public class CountyHistory: NSObject {
     /// The shared instance of `CountyHistory`.
     public static let shared = CountyHistory()
     
-    public var delegate: CountyHistoryDelegate?
-    
     private(set) public var recentlyViewedCounties: [County] {
         get {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
@@ -58,17 +56,5 @@ public class CountyHistory: NSObject {
         recentlyViewedCounties.insert(county, at: 0)
         recentlyViewedCounties = Array(recentlyViewedCounties.prefix(3))
         NotificationCenter.default.post(name: CountyHistory.countyHistoryDidUpdateNotification, object: self)
-        delegate?.countyHistoryDidUpdate(self)
     }
-}
-
-/**
- The protocol for `CountyHistory` delegates to conform to.
- */
-public protocol CountyHistoryDelegate: NSObjectProtocol {
-    /**
-     The message sent when the county history was updated.
-     - parameter countyHistory: The county history that was updated.
-     */
-    func countyHistoryDidUpdate(_ countyHistory: CountyHistory)
 }
