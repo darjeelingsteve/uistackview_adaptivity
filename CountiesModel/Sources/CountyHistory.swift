@@ -10,6 +10,14 @@ import Foundation
 
 /// The object responsible for recording which counties the user has viewed.
 public class CountyHistory: NSObject {
+    
+    /// The notification posted when the user's county viewing history is
+    /// updated.
+    public static let countyHistoryDidUpdateNotification = NSNotification.Name("CountyHistoryDidUpdate")
+    
+    private static let defaultArchivedDataURL = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!).appendingPathComponent("CountyHistory")
+    
+    /// The shared instance of `CountyHistory`.
     public static let shared = CountyHistory()
     
     public var delegate: CountyHistoryDelegate?
@@ -32,13 +40,12 @@ public class CountyHistory: NSObject {
         }
     }
     
-    private var urlToArchivedData: URL {
-        let documentsURL = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)
-        return documentsURL.appendingPathComponent("CountyHistory")
-    }
+    private let urlToArchivedData: URL
     
     /// Prevent initialisation from outside of `CountiesModel`.
-    override init() {}
+    init(urlToArchivedData: URL = CountyHistory.defaultArchivedDataURL) {
+        self.urlToArchivedData = urlToArchivedData
+    }
     
     /**
      Call this function when the user views a county.
@@ -50,6 +57,7 @@ public class CountyHistory: NSObject {
         }
         recentlyViewedCounties.insert(county, at: 0)
         recentlyViewedCounties = Array(recentlyViewedCounties.prefix(3))
+        NotificationCenter.default.post(name: CountyHistory.countyHistoryDidUpdateNotification, object: self)
         delegate?.countyHistoryDidUpdate(self)
     }
 }
