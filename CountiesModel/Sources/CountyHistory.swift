@@ -20,6 +20,7 @@ public class CountyHistory: NSObject {
     /// The shared instance of `CountyHistory`.
     public static let shared = CountyHistory()
     
+    /// The counties that the user has recently viewed.
     private(set) public var recentlyViewedCounties: [County] {
         get {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
