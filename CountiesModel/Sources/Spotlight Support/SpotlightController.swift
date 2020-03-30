@@ -10,16 +10,13 @@ import UIKit
 import CoreSpotlight
 import MobileCoreServices
 
-private let SpotlightControllerHasIndexedKey = "HasIndexed"
-
 /// The class responsible for managing the Spotlight index for Counties.
 public class SpotlightController {
     
     public init() {}
     
     public func indexCounties(_ counties: [County]) {
-        guard CSSearchableIndex.isIndexingAvailable() == true && UserDefaults.standard.bool(forKey: SpotlightControllerHasIndexedKey) == false else {
-            // We either can't index or don't need to
+        guard CSSearchableIndex.isIndexingAvailable() else {
             return
         }
         
@@ -43,14 +40,11 @@ public class SpotlightController {
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
-            else {
-                UserDefaults.standard.set(true, forKey: SpotlightControllerHasIndexedKey)
-            }
         }
     }
 }
 
-extension UIImage {
+private extension UIImage {
     func scaledImageWithWidth(_ width: CGFloat) -> UIImage {
         let imageScale = width / size.width
         let newSize = size.applying(CGAffineTransform(scaleX: imageScale, y: imageScale))
