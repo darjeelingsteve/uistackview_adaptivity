@@ -68,7 +68,7 @@ public final class FavouritesController {
     }
 }
 
-public protocol UbiquitousKeyValueStorageProviding: AnyObject {
+protocol UbiquitousKeyValueStorageProviding: AnyObject {
     func set(_ anObject: Any?, forKey aKey: String)
     func array(forKey aKey: String) -> [Any]?
     func synchronize() -> Bool
