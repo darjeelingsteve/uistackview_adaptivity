@@ -117,7 +117,7 @@ extension FavouritesControllerTests {
     }
 }
 
-private class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStorageProviding {
+private final class MockUbiquitousKeyValueStorageProvider: UbiquitousKeyValueStorageProviding {
     private(set) var receivedObject: Any?
     private(set) var receivedKey: String?
     var mockArrayForKey: [Any]?
