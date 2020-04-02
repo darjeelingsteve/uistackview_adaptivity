@@ -17,6 +17,10 @@ Support for advanced multi-window user interfaces on iPadOS.
 
 This tutorial demontrates how to create user interfaces that adapt between different user interface environments using modern APIs.
 
+## [Building a Unit Tested, iCloud-backed Persistent Data Model with NSUbiquitousKeyValueStore](https://darjeelingsteve.com/articles/Building-a-Unit-Tested,-iCloud-backed-Persistent-Data-Model-with-NSUbiquitousKeyValueStore.html)
+
+Describes how to build a data model backed by `NSUbiquitousKeyValueStore` to provide iCloud support for user data, as well as techniques for fully unit testing the implementation.
+
 ## [Continuity for Apple Watch and iPhone with Handoff](https://darjeelingsteve.com/articles/Continuity-for-Apple-Watch-and-iPhone-with-Handoff.html)
 
 <img src="readme_images/iphone_handoff.png" height="460" />
