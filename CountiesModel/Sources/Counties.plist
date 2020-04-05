@@ -136,18 +136,6 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>East Sussex</string>
-		<key>population</key>
-		<real>800200</real>
-		<key>latitude</key>
-		<real>50.916667</real>
-		<key>longitude</key>
-		<real>0.333333</real>
-		<key>url</key>
-		<string>https://en.wikipedia.org/wiki/East_Sussex</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>Essex</string>
 		<key>population</key>
 		<real>1729200</real>
@@ -208,6 +196,18 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>Huntingdonshire</string>
+		<key>population</key>
+		<real>169508</real>
+		<key>latitude</key>
+		<integer>52</integer>
+		<key>longitude</key>
+		<integer>0</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Huntingdonshire</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>Kent</string>
 		<key>population</key>
 		<real>1731400</real>
@@ -253,6 +253,18 @@
 		<real>-0.183333</real>
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Lincolnshire</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Middlesex</string>
+		<key>population</key>
+		<real>1042000</real>
+		<key>latitude</key>
+		<real>51.5</real>
+		<key>longitude</key>
+		<real>-0.416667</real>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Middlesex</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -388,6 +400,18 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>Sussex</string>
+		<key>population</key>
+		<real>1609600</real>
+		<key>latitude</key>
+		<integer>51</integer>
+		<key>longitude</key>
+		<integer>0</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Sussex</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>Warwickshire</string>
 		<key>population</key>
 		<real>546500</real>
@@ -400,15 +424,15 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>West Sussex</string>
+		<string>Westmorland</string>
 		<key>population</key>
-		<real>808900</real>
+		<real>67180</real>
 		<key>latitude</key>
-		<real>50.916667</real>
+		<real>54.527232</real>
 		<key>longitude</key>
-		<real>-0.5</real>
+		<real>-3.016054</real>
 		<key>url</key>
-		<string>https://en.wikipedia.org/wiki/West_Sussex</string>
+		<string>https://en.wikipedia.org/wiki/Westmorland</string>
 	</dict>
 	<dict>
 		<key>name</key>
