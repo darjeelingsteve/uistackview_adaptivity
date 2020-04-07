@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Region One",
+    "counties": [
+      {
+        "name": "Someshire",
+        "population": {
+          "total": 10,
+          "year": 2018,
+          "source": "https://darjeelingsteve.com/Someshire"
+        },
+        "latitude": 51.6,
+        "longitude": -1,
+        "url": "https://darjeelingsteve.com/Someshire"
+      }
+    ]
+  },
+  {
+    "title": "Regions Two",
+    "counties": [
+      {
+        "name": "Someothershire",
+        "population": {
+          "total": 20,
+          "year": 2019,
+          "source": "https://darjeelingsteve.com/Someothershire"
+        },
+        "latitude": 50.3,
+        "longitude": -4.9,
+        "url": "https://darjeelingsteve.com/Someothershire"
+      },
+      {
+        "name": "Anotherset",
+        "population": {
+          "total": 30,
+          "year": 2020,
+          "source": "https://darjeelingsteve.com/Anotherset"
+        },
+        "latitude": 50.7,
+        "longitude": -3.8,
+        "url": "https://darjeelingsteve.com/Anotherset"
+      }
+    ]
+  }
+]
