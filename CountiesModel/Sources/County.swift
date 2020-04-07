@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 /*!
 The struct used to represent an individual county.
@@ -15,8 +16,11 @@ The struct used to represent an individual county.
 public struct County: Codable, Hashable {
     public let name: String
     public let population: Population
-    public let latitude: Double
-    public let longitude: Double
+    private let latitude: Double
+    private let longitude: Double
+    public var location: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
     public let url: URL
     
     /// Models the population data for a county.

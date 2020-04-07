@@ -25,8 +25,8 @@ public class SpotlightController {
                 let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
                 attributeSet.title = county.name
                 attributeSet.contentDescription = county.populationDescription
-                attributeSet.latitude = county.latitude as NSNumber?
-                attributeSet.longitude = county.longitude as NSNumber?
+                attributeSet.latitude = county.location.latitude as NSNumber?
+                attributeSet.longitude = county.location.longitude as NSNumber?
                 attributeSet.supportsNavigation = 1
                 if let countyFlag = county.flagImage {
                     attributeSet.thumbnailData = countyFlag.pngData()

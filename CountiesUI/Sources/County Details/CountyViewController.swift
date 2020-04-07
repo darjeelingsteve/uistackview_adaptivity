@@ -142,9 +142,8 @@ private extension County {
     
     /// The region required to show the receiver on a map.
     var mapRegion: MKCoordinateRegion {
-        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let regionDistance: CLLocationDistance = 100000
-        return MKCoordinateRegion(center: coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        return MKCoordinateRegion(center: location, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
     }
 }
 

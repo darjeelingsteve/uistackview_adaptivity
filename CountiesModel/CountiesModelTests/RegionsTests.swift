@@ -36,8 +36,8 @@ final class RegionsTests: XCTestCase {
         let county = regions.regions.first?.counties.first
         XCTAssertEqual(county?.name, "Someshire")
         XCTAssertEqual(county?.population, County.Population(total: 10, year: 2018, source: URL(string: "https://darjeelingsteve.com/Someshire")!))
-        XCTAssertEqual(county?.latitude, 51.6)
-        XCTAssertEqual(county?.longitude, -1)
+        XCTAssertEqual(county?.location.latitude, 51.6)
+        XCTAssertEqual(county?.location.longitude, -1)
         XCTAssertEqual(county?.url, URL(string: "https://darjeelingsteve.com/Someshire")!)
     }
     
@@ -47,14 +47,14 @@ final class RegionsTests: XCTestCase {
         
         XCTAssertEqual(countyOne?.name, "Someothershire")
         XCTAssertEqual(countyOne?.population, County.Population(total: 20, year: 2019, source: URL(string: "https://darjeelingsteve.com/Someothershire")!))
-        XCTAssertEqual(countyOne?.latitude, 50.3)
-        XCTAssertEqual(countyOne?.longitude, -4.9)
+        XCTAssertEqual(countyOne?.location.latitude, 50.3)
+        XCTAssertEqual(countyOne?.location.longitude, -4.9)
         XCTAssertEqual(countyOne?.url, URL(string: "https://darjeelingsteve.com/Someothershire")!)
         
         XCTAssertEqual(countyTwo?.name, "Anotherset")
         XCTAssertEqual(countyTwo?.population, County.Population(total: 30, year: 2020, source: URL(string: "https://darjeelingsteve.com/Anotherset")!))
-        XCTAssertEqual(countyTwo?.latitude, 50.7)
-        XCTAssertEqual(countyTwo?.longitude, -3.8)
+        XCTAssertEqual(countyTwo?.location.latitude, 50.7)
+        XCTAssertEqual(countyTwo?.location.longitude, -3.8)
         XCTAssertEqual(countyTwo?.url, URL(string: "https://darjeelingsteve.com/Anotherset")!)
     }
 }
