@@ -12,18 +12,26 @@ import UIKit
 /*!
 The struct used to represent an individual county.
 */
-public struct County: Hashable {
+public struct County: Codable, Hashable {
     public let name: String
-    public let population: Int
+    public let population: Population
     public let latitude: Double
     public let longitude: Double
     public let url: URL
+    
+    /// Models the population data for a county.
+    public struct Population: Codable, Hashable {
+        public let total: Int
+        public let year: Int
+        public let source: URL
+    }
     
     /// All of the counties available to the application.
     public static var allCounties: [County] = {
         let countyDictionaries = NSArray(contentsOf: Bundle.countiesModelBundle.url(forResource: "Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
         return countyDictionaries.map { (countryDictionary) -> County in
-            return County(name: countryDictionary["name"] as! String, population: countryDictionary["population"] as! Int, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
+            let population = Population(total: countryDictionary["population"] as! Int, year: 2020, source: URL(string: "https://darjeelingsteve.com")!)
+            return County(name: countryDictionary["name"] as! String, population: population, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
         }
     }()
     
@@ -43,7 +51,7 @@ extension County {
         get {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
-            return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population))!)
+            return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population.total))!)
         }
     }
     
