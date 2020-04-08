@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "County Tyrone.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "County Tyrone.png",
+      "idiom" : "watch"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

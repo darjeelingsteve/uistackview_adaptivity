@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "County Armagh.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "County Armagh.png",
+      "idiom" : "watch"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

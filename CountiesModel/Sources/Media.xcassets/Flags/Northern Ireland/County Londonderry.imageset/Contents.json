@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "County Londonderry.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "County Londonderry.png",
+      "idiom" : "watch"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

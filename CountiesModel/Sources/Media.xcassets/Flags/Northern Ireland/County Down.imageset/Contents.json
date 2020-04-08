@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "County Down.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "County Down.png",
+      "idiom" : "watch"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
