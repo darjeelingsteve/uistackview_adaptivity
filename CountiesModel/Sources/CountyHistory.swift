@@ -26,7 +26,7 @@ public class CountyHistory: NSObject {
             let countyNames = NSArray(contentsOf: urlToArchivedData) as? [String]
             if let countyNames = countyNames {
                 return countyNames.map({ (countyName) -> County in
-                    County.forName(countyName)!
+                    Country.unitedKingdom.county(forName: countyName)!
                 })
             }
             else {

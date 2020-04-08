@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        if County.from(userActivity: options.userActivities.first) != nil {
+        if Country.unitedKingdom.countyFrom(userActivity: options.userActivities.first) != nil {
             let countyConfiguration = UISceneConfiguration(name: "County Configuration", sessionRole: connectingSceneSession.role)
             countyConfiguration.delegateClass = CountySceneDelegate.self
             countyConfiguration.storyboard = UIStoryboard.countyViewControllerStoryboard

@@ -26,7 +26,7 @@ final class CountyHistoryTests: XCTestCase {
     }
     
     @discardableResult private func whenTheUserViewsACounty(withName name: String) -> County {
-        let county = County.forName(name)!
+        let county = Country.unitedKingdom.county(forName: name)!
         countyHistory.viewed(county)
         return county
     }

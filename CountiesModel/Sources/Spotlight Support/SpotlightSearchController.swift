@@ -61,7 +61,7 @@ public class SpotlightSearchController {
         query = CSSearchQuery(queryString: spotlightQueryString(fromQueryString: searchQuery.queryString), attributes: [])
         let countiesMatchingFilter = counties(matchingFilter: searchQuery.filter)
         query?.foundItemsHandler = { [unowned self] (items) in
-            let matchingCounties = items.compactMap({ County.forName($0.uniqueIdentifier) }).filter({ countiesMatchingFilter.contains($0) })
+            let matchingCounties = items.compactMap({ Country.unitedKingdom.county(forName: $0.uniqueIdentifier) }).filter({ countiesMatchingFilter.contains($0) })
             self.searchResults.append(contentsOf: matchingCounties)
         }
         query?.completionHandler = { (error) in

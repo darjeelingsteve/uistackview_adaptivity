@@ -28,7 +28,7 @@ class ApplicationShortcutHandler: NSObject {
             handled = true
         }
         else if applicationShortcutItem.type == CountyItemShortcutType {
-            countiesViewController.showCounty(County.forName(applicationShortcutItem.localizedTitle)!, animated: true)
+            countiesViewController.showCounty(Country.unitedKingdom.county(forName: applicationShortcutItem.localizedTitle)!, animated: true)
             handled = true
         }
         completionHandler(handled)

@@ -38,10 +38,6 @@ public struct County: Codable, Hashable {
             return County(name: countryDictionary["name"] as! String, population: population, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
         }
     }()
-    
-    public static func forName(_ name: String) -> County? {
-        return allCounties.filter({$0.name == name}).first
-    }
 }
 
 extension County: Comparable {

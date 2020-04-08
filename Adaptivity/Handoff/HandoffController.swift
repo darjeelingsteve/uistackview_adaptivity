@@ -19,7 +19,7 @@ class HandoffController: UserActivityHandling {
     }
     
     func resultFromUserActivity(_ userActivity: NSUserActivity) -> UserActivityHandlingResult? {
-        guard let selectedCounty = County.from(userActivity: userActivity) else {
+        guard let selectedCounty = Country.unitedKingdom.countyFrom(userActivity: userActivity) else {
             return nil
         }
         return .county(county: selectedCounty)
