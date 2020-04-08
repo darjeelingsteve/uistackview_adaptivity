@@ -15,7 +15,7 @@ final class RegionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configurationURL = Bundle(for: RegionsTests.self).url(forResource: "TestRegions", withExtension: "json")!
-        regions = Regions(configurationURL: configurationURL)
+        regions = try! JSONDecoder().decode(Regions.self, from: Data(contentsOf: configurationURL))
     }
     
     override func tearDown() {

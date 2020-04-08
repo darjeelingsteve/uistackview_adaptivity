@@ -9,21 +9,16 @@
 import Foundation
 
 /// Represents a set of regions within a country.
-public struct Regions {
+public struct Regions: Codable {
     
     /// The regions of the United Kingdom.
-    public static let unitedKingdom = Regions(configurationURL: Bundle(for: FavouritesController.self).url(forResource: "United Kingdom", withExtension: "json")!)!
+    public static let unitedKingdom = try! JSONDecoder().decode(Regions.self, from: Data(contentsOf: Bundle(for: FavouritesController.self).url(forResource: "United Kingdom", withExtension: "json")!))
+    
+    /// The name of the Region.
+    public let name: String
     
     /// The regions of a country.
     public let regions: [Region]
-    
-    init?(configurationURL: URL) {
-        guard let data = try? Data(contentsOf: configurationURL),
-            let regions = try? JSONDecoder().decode([Region].self, from: data) else {
-            return nil
-        }
-        self.regions = regions
-    }
 }
 
 /// Represents an individual region within a country.

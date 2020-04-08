@@ -1,711 +1,714 @@
-[
-  {
-    "name": "South East",
-    "counties": [
-      {
-        "name": "Berkshire",
-        "population": {
-          "total": 911403,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Berkshire"
+{
+  "name": "United Kingdom",
+  "regions": [
+    {
+      "name": "South East",
+      "counties": [
+        {
+          "name": "Berkshire",
+          "population": {
+            "total": 911403,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Berkshire"
+          },
+          "latitude": 51.416667,
+          "longitude": -1,
+          "url": "https://en.wikipedia.org/wiki/Berkshire"
         },
-        "latitude": 51.416667,
-        "longitude": -1,
-        "url": "https://en.wikipedia.org/wiki/Berkshire"
-      },
-      {
-        "name": "Buckinghamshire",
-        "population": {
-          "total": 808666,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Buckinghamshire"
+        {
+          "name": "Buckinghamshire",
+          "population": {
+            "total": 808666,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Buckinghamshire"
+          },
+          "latitude": 51.833333,
+          "longitude": -0.833333,
+          "url": "https://en.wikipedia.org/wiki/Buckinghamshire"
         },
-        "latitude": 51.833333,
-        "longitude": -0.833333,
-        "url": "https://en.wikipedia.org/wiki/Buckinghamshire"
-      },
-      {
-        "name": "Hampshire",
-        "population": {
-          "total": 1844245,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Hampshire"
+        {
+          "name": "Hampshire",
+          "population": {
+            "total": 1844245,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Hampshire"
+          },
+          "latitude": 51.083333,
+          "longitude": -1.25,
+          "url": "https://en.wikipedia.org/wiki/Hampshire"
         },
-        "latitude": 51.083333,
-        "longitude": -1.25,
-        "url": "https://en.wikipedia.org/wiki/Hampshire"
-      },
-      {
-        "name": "Kent",
-        "population": {
-          "total": 1846478,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Kent"
+        {
+          "name": "Kent",
+          "population": {
+            "total": 1846478,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Kent"
+          },
+          "latitude": 51.19,
+          "longitude": 0.73,
+          "url": "https://en.wikipedia.org/wiki/Kent"
         },
-        "latitude": 51.19,
-        "longitude": 0.73,
-        "url": "https://en.wikipedia.org/wiki/Kent"
-      },
-      {
-        "name": "Leicestershire",
-        "population": {
-          "total": 1053486,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Leicestershire"
+        {
+          "name": "Leicestershire",
+          "population": {
+            "total": 1053486,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Leicestershire"
+          },
+          "latitude": 52.716667,
+          "longitude": -1.183333,
+          "url": "https://en.wikipedia.org/wiki/Leicestershire"
         },
-        "latitude": 52.716667,
-        "longitude": -1.183333,
-        "url": "https://en.wikipedia.org/wiki/Leicestershire"
-      },
-      {
-        "name": "Oxfordshire",
-        "population": {
-          "total": 687524,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Oxfordshire"
+        {
+          "name": "Oxfordshire",
+          "population": {
+            "total": 687524,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Oxfordshire"
+          },
+          "latitude": 51.75,
+          "longitude": -1.28,
+          "url": "https://en.wikipedia.org/wiki/Oxfordshire"
         },
-        "latitude": 51.75,
-        "longitude": -1.28,
-        "url": "https://en.wikipedia.org/wiki/Oxfordshire"
-      },
-      {
-        "name": "Surrey",
-        "population": {
-          "total": 1189934,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Surrey"
+        {
+          "name": "Surrey",
+          "population": {
+            "total": 1189934,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Surrey"
+          },
+          "latitude": 51.25,
+          "longitude": -0.416667,
+          "url": "https://en.wikipedia.org/wiki/Surrey"
         },
-        "latitude": 51.25,
-        "longitude": -0.416667,
-        "url": "https://en.wikipedia.org/wiki/Surrey"
-      },
-      {
-        "name": "Sussex",
-        "population": {
-          "total": 1609600,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/Sussex"
+        {
+          "name": "Sussex",
+          "population": {
+            "total": 1609600,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/Sussex"
+          },
+          "latitude": 51,
+          "longitude": 0,
+          "url": "https://en.wikipedia.org/wiki/Sussex"
+        }
+      ]
+    },
+    {
+      "name": "South West",
+      "counties": [
+        {
+          "name": "Cornwall",
+          "population": {
+            "total": 568210,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Cornwall"
+          },
+          "latitude": 50.3,
+          "longitude": -4.9,
+          "url": "https://en.wikipedia.org/wiki/Cornwall"
         },
-        "latitude": 51,
-        "longitude": 0,
-        "url": "https://en.wikipedia.org/wiki/Sussex"
-      }
-    ]
-  },
-  {
-    "name": "South West",
-    "counties": [
-      {
-        "name": "Cornwall",
-        "population": {
-          "total": 568210,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Cornwall"
+        {
+          "name": "Devon",
+          "population": {
+            "total": 1194166,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Devon"
+          },
+          "latitude": 50.7,
+          "longitude": -3.8,
+          "url": "https://en.wikipedia.org/wiki/Devon"
         },
-        "latitude": 50.3,
-        "longitude": -4.9,
-        "url": "https://en.wikipedia.org/wiki/Cornwall"
-      },
-      {
-        "name": "Devon",
-        "population": {
-          "total": 1194166,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Devon"
+        {
+          "name": "Dorset",
+          "population": {
+            "total": 772268,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Dorset"
+          },
+          "latitude": 50.833333,
+          "longitude": -2.333333,
+          "url": "https://en.wikipedia.org/wiki/Dorset"
         },
-        "latitude": 50.7,
-        "longitude": -3.8,
-        "url": "https://en.wikipedia.org/wiki/Devon"
-      },
-      {
-        "name": "Dorset",
-        "population": {
-          "total": 772268,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Dorset"
+        {
+          "name": "Somerset",
+          "population": {
+            "total": 965424,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Somerset"
+          },
+          "latitude": 51.18,
+          "longitude": -3,
+          "url": "https://en.wikipedia.org/wiki/Somerset"
         },
-        "latitude": 50.833333,
-        "longitude": -2.333333,
-        "url": "https://en.wikipedia.org/wiki/Dorset"
-      },
-      {
-        "name": "Somerset",
-        "population": {
-          "total": 965424,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Somerset"
+        {
+          "name": "Wiltshire",
+          "population": {
+            "total": 720060,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Wiltshire"
+          },
+          "latitude": 51.333333,
+          "longitude": -1.916667,
+          "url": "https://en.wikipedia.org/wiki/Wiltshire"
+        }
+      ]
+    },
+    {
+      "name": "Greater London",
+      "counties": [
+        {
+          "name": "Middlesex",
+          "population": {
+            "total": 2234543,
+            "year": 1961,
+            "source": "https://en.wikipedia.org/wiki/Middlesex#cite_note-vision_mddx-2"
+          },
+          "latitude": 51.5,
+          "longitude": -0.4166673,
+          "url": "https://en.wikipedia.org/wiki/Middlesex"
+        }
+      ]
+    },
+    {
+      "name": "East of England",
+      "counties": [
+        {
+          "name": "Bedfordshire",
+          "population": {
+            "total": 669338,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Bedfordshire"
+          },
+          "latitude": 52.083333,
+          "longitude": -0.416667,
+          "url": "https://en.wikipedia.org/wiki/Bedfordshire"
         },
-        "latitude": 51.18,
-        "longitude": -3,
-        "url": "https://en.wikipedia.org/wiki/Somerset"
-      },
-      {
-        "name": "Wiltshire",
-        "population": {
-          "total": 720060,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Wiltshire"
+        {
+          "name": "Cambridgeshire",
+          "population": {
+            "total": 852523,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Cambridgeshire"
+          },
+          "latitude": 52.333333,
+          "longitude": 0,
+          "url": "https://en.wikipedia.org/wiki/Cambridgeshire"
         },
-        "latitude": 51.333333,
-        "longitude": -1.916667,
-        "url": "https://en.wikipedia.org/wiki/Wiltshire"
-      }
-    ]
-  },
-  {
-    "name": "Greater London",
-    "counties": [
-      {
-        "name": "Middlesex",
-        "population": {
-          "total": 2234543,
-          "year": 1961,
-          "source": "https://en.wikipedia.org/wiki/Middlesex#cite_note-vision_mddx-2"
+        {
+          "name": "Essex",
+          "population": {
+            "total": 1832752,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Essex"
+          },
+          "latitude": 51.75,
+          "longitude": 0.583333,
+          "url": "https://en.wikipedia.org/wiki/Essex"
         },
-        "latitude": 51.5,
-        "longitude": -0.4166673,
-        "url": "https://en.wikipedia.org/wiki/Middlesex"
-      }
-    ]
-  },
-  {
-    "name": "East of England",
-    "counties": [
-      {
-        "name": "Bedfordshire",
-        "population": {
-          "total": 669338,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Bedfordshire"
+        {
+          "name": "Norfolk",
+          "population": {
+            "total": 903680,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Norfolk"
+          },
+          "latitude": 52.666667,
+          "longitude": 1,
+          "url": "https://en.wikipedia.org/wiki/Norfolk"
         },
-        "latitude": 52.083333,
-        "longitude": -0.416667,
-        "url": "https://en.wikipedia.org/wiki/Bedfordshire"
-      },
-      {
-        "name": "Cambridgeshire",
-        "population": {
-          "total": 852523,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Cambridgeshire"
+        {
+          "name": "Suffolk",
+          "population": {
+            "total": 758556,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Suffolk"
+          },
+          "latitude": 52.166667,
+          "longitude": -1,
+          "url": "https://en.wikipedia.org/wiki/Suffolk"
+        }
+      ]
+    },
+    {
+      "name": "East Midlands",
+      "counties": [
+        {
+          "name": "Derbyshire",
+          "population": {
+            "total": 1053316,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Derbyshire"
+          },
+          "latitude": 53.133333,
+          "longitude": -1.6,
+          "url": "https://en.wikipedia.org/wiki/Derbyshire"
         },
-        "latitude": 52.333333,
-        "longitude": 0,
-        "url": "https://en.wikipedia.org/wiki/Cambridgeshire"
-      },
-      {
-        "name": "Essex",
-        "population": {
-          "total": 1832752,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Essex"
+        {
+          "name": "Hertfordshire",
+          "population": {
+            "total": 1184365,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Hertfordshire"
+          },
+          "latitude": 51.9,
+          "longitude": -0.2,
+          "url": "https://en.wikipedia.org/wiki/Hertfordshire"
         },
-        "latitude": 51.75,
-        "longitude": 0.583333,
-        "url": "https://en.wikipedia.org/wiki/Essex"
-      },
-      {
-        "name": "Norfolk",
-        "population": {
-          "total": 903680,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Norfolk"
+        {
+          "name": "Huntingdonshire",
+          "population": {
+            "total": 177352,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Huntingdonshire"
+          },
+          "latitude": 52,
+          "longitude": 0,
+          "url": "https://en.wikipedia.org/wiki/Huntingdonshire"
         },
-        "latitude": 52.666667,
-        "longitude": 1,
-        "url": "https://en.wikipedia.org/wiki/Norfolk"
-      },
-      {
-        "name": "Suffolk",
-        "population": {
-          "total": 758556,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Suffolk"
+        {
+          "name": "Lincolnshire",
+          "population": {
+            "total": 1087659,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Lincolnshire"
+          },
+          "latitude": 53.066667,
+          "longitude": -0.183333,
+          "url": "https://en.wikipedia.org/wiki/Lincolnshire"
         },
-        "latitude": 52.166667,
-        "longitude": -1,
-        "url": "https://en.wikipedia.org/wiki/Suffolk"
-      }
-    ]
-  },
-  {
-    "name": "East Midlands",
-    "counties": [
-      {
-        "name": "Derbyshire",
-        "population": {
-          "total": 1053316,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Derbyshire"
+        {
+          "name": "Northamptonshire",
+          "population": {
+            "total": 747622,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Northamptonshire"
+          },
+          "latitude": 52.283333,
+          "longitude": -0.833333,
+          "url": "https://en.wikipedia.org/wiki/Northamptonshire"
         },
-        "latitude": 53.133333,
-        "longitude": -1.6,
-        "url": "https://en.wikipedia.org/wiki/Derbyshire"
-      },
-      {
-        "name": "Hertfordshire",
-        "population": {
-          "total": 1184365,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Hertfordshire"
+        {
+          "name": "Nottinghamshire",
+          "population": {
+            "total": 1154195,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Nottinghamshire"
+          },
+          "latitude": 53.166667,
+          "longitude": -1,
+          "url": "https://en.wikipedia.org/wiki/Nottinghamshire"
         },
-        "latitude": 51.9,
-        "longitude": -0.2,
-        "url": "https://en.wikipedia.org/wiki/Hertfordshire"
-      },
-      {
-        "name": "Huntingdonshire",
-        "population": {
-          "total": 177352,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Huntingdonshire"
+        {
+          "name": "Rutland",
+          "population": {
+            "total": 39697,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Rutland"
+          },
+          "latitude": 52.65,
+          "longitude": -0.633333,
+          "url": "https://en.wikipedia.org/wiki/Rutland"
+        }
+      ]
+    },
+    {
+      "name": "West Midlands",
+      "counties": [
+        {
+          "name": "Herefordshire",
+          "population": {
+            "total": 192107,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Herefordshire"
+          },
+          "latitude": 52.083333,
+          "longitude": -2.75,
+          "url": "https://en.wikipedia.org/wiki/Herefordshire"
         },
-        "latitude": 52,
-        "longitude": 0,
-        "url": "https://en.wikipedia.org/wiki/Huntingdonshire"
-      },
-      {
-        "name": "Lincolnshire",
-        "population": {
-          "total": 1087659,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Lincolnshire"
+        {
+          "name": "Shropshire",
+          "population": {
+            "total": 498073,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Shropshire"
+          },
+          "latitude": 52.616667,
+          "longitude": -2.716667,
+          "url": "https://en.wikipedia.org/wiki/Shropshire"
         },
-        "latitude": 53.066667,
-        "longitude": -0.183333,
-        "url": "https://en.wikipedia.org/wiki/Lincolnshire"
-      },
-      {
-        "name": "Northamptonshire",
-        "population": {
-          "total": 747622,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Northamptonshire"
+        {
+          "name": "Staffordshire",
+          "population": {
+            "total": 1131052,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Staffordshire"
+          },
+          "latitude": 52.833333,
+          "longitude": -2,
+          "url": "https://en.wikipedia.org/wiki/Staffordshire"
         },
-        "latitude": 52.283333,
-        "longitude": -0.833333,
-        "url": "https://en.wikipedia.org/wiki/Northamptonshire"
-      },
-      {
-        "name": "Nottinghamshire",
-        "population": {
-          "total": 1154195,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Nottinghamshire"
+        {
+          "name": "Warwickshire",
+          "population": {
+            "total": 571010,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Warwickshire"
+          },
+          "latitude": 52.333333,
+          "longitude": -1.583333,
+          "url": "https://en.wikipedia.org/wiki/Warwickshire"
         },
-        "latitude": 53.166667,
-        "longitude": -1,
-        "url": "https://en.wikipedia.org/wiki/Nottinghamshire"
-      },
-      {
-        "name": "Rutland",
-        "population": {
-          "total": 39697,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Rutland"
+        {
+          "name": "Worcestershire",
+          "population": {
+            "total": 592057,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Worcestershire"
+          },
+          "latitude": 52.2,
+          "longitude": -2.166667,
+          "url": "https://en.wikipedia.org/wiki/Worcestershire"
+        }
+      ]
+    },
+    {
+      "name": "Yorkshire and the Humber",
+      "counties": [
+        {
+          "name": "Yorkshire",
+          "population": {
+            "total": 5288200,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/Yorkshire#cite_note-2"
+          },
+          "latitude": 54,
+          "longitude": -2,
+          "url": "https://en.wikipedia.org/wiki/Yorkshire"
+        }
+      ]
+    },
+    {
+      "name": "North East",
+      "counties": [
+        {
+          "name": "Durham",
+          "population": {
+            "total": 866846,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/County_Durham"
+          },
+          "latitude": 54.666667,
+          "longitude": -1.833333,
+          "url": "https://en.wikipedia.org/wiki/County_Durham"
         },
-        "latitude": 52.65,
-        "longitude": -0.633333,
-        "url": "https://en.wikipedia.org/wiki/Rutland"
-      }
-    ]
-  },
-  {
-    "name": "West Midlands",
-    "counties": [
-      {
-        "name": "Herefordshire",
-        "population": {
-          "total": 192107,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Herefordshire"
+        {
+          "name": "Northumberland",
+          "population": {
+            "total": 320274,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Northumberland"
+          },
+          "latitude": 55.166667,
+          "longitude": -2,
+          "url": "https://en.wikipedia.org/wiki/Northumberland"
+        }
+      ]
+    },
+    {
+      "name": "North West",
+      "counties": [
+        {
+          "name": "Cheshire",
+          "population": {
+            "total": 1059271,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Cheshire"
+          },
+          "latitude": 53.166667,
+          "longitude": -2.583333,
+          "url": "https://en.wikipedia.org/wiki/Cheshire"
         },
-        "latitude": 52.083333,
-        "longitude": -2.75,
-        "url": "https://en.wikipedia.org/wiki/Herefordshire"
-      },
-      {
-        "name": "Shropshire",
-        "population": {
-          "total": 498073,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Shropshire"
+        {
+          "name": "Cumberland",
+          "population": {
+            "total": 294303,
+            "year": 1961,
+            "source": "https://www.visionofbritain.org.uk/unit/10134810/cube/TOT_POP"
+          },
+          "latitude": 54.75,
+          "longitude": -3,
+          "url": "https://en.wikipedia.org/wiki/Cumberland"
         },
-        "latitude": 52.616667,
-        "longitude": -2.716667,
-        "url": "https://en.wikipedia.org/wiki/Shropshire"
-      },
-      {
-        "name": "Staffordshire",
-        "population": {
-          "total": 1131052,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Staffordshire"
+        {
+          "name": "Lancashire",
+          "population": {
+            "total": 1498300,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/Lancashire"
+          },
+          "latitude": 53.8,
+          "longitude": -2.6,
+          "url": "https://en.wikipedia.org/wiki/Lancashire"
         },
-        "latitude": 52.833333,
-        "longitude": -2,
-        "url": "https://en.wikipedia.org/wiki/Staffordshire"
-      },
-      {
-        "name": "Warwickshire",
-        "population": {
-          "total": 571010,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Warwickshire"
+        {
+          "name": "Westmorland",
+          "population": {
+            "total": 67180,
+            "year": 1961,
+            "source": "https://en.wikipedia.org/wiki/Westmorland"
+          },
+          "latitude": 54.527232,
+          "longitude": -3.016054,
+          "url": "https://en.wikipedia.org/wiki/Westmorland"
+        }
+      ]
+    },
+    {
+      "name": "Scotland",
+      "counties": [
+        {
+          "name": "Berwickshire",
+          "population": {
+            "total": 20780,
+            "year": 1971,
+            "source": "https://www.visionofbritain.org.uk/unit/10105420/cube/TOT_POP"
+          },
+          "latitude": 55.5223571,
+          "longitude": -3.9074358,
+          "url": "https://en.wikipedia.org/wiki/Berwickshire"
         },
-        "latitude": 52.333333,
-        "longitude": -1.583333,
-        "url": "https://en.wikipedia.org/wiki/Warwickshire"
-      },
-      {
-        "name": "Worcestershire",
-        "population": {
-          "total": 592057,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Worcestershire"
+        {
+          "name": "Caithness",
+          "population": {
+            "total": 26486,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/Caithness"
+          },
+          "latitude": 58.0329469,
+          "longitude": -3.5920924,
+          "url": "https://en.wikipedia.org/wiki/Caithness"
         },
-        "latitude": 52.2,
-        "longitude": -2.166667,
-        "url": "https://en.wikipedia.org/wiki/Worcestershire"
-      }
-    ]
-  },
-  {
-    "name": "Yorkshire and the Humber",
-    "counties": [
-      {
-        "name": "Yorkshire",
-        "population": {
-          "total": 5288200,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/Yorkshire#cite_note-2"
+        {
+          "name": "East Lothian",
+          "population": {
+            "total": 105790,
+            "year": 2018,
+            "source": "https://en.wikipedia.org/wiki/East_Lothian"
+          },
+          "latitude": 55.916667,
+          "longitude": -2.75,
+          "url": "https://en.wikipedia.org/wiki/East_Lothian"
         },
-        "latitude": 54,
-        "longitude": -2,
-        "url": "https://en.wikipedia.org/wiki/Yorkshire"
-      }
-    ]
-  },
-  {
-    "name": "North East",
-    "counties": [
-      {
-        "name": "Durham",
-        "population": {
-          "total": 866846,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/County_Durham"
+        {
+          "name": "Kirkcudbrightshire",
+          "population": {
+            "total": 27635,
+            "year": 1971,
+            "source": "https://www.visionofbritain.org.uk/unit/10036057/cube/TOT_POP"
+          },
+          "latitude": 54.832,
+          "longitude": -4.048,
+          "url": "https://en.wikipedia.org/wiki/Kirkcudbrightshire"
         },
-        "latitude": 54.666667,
-        "longitude": -1.833333,
-        "url": "https://en.wikipedia.org/wiki/County_Durham"
-      },
-      {
-        "name": "Northumberland",
-        "population": {
-          "total": 320274,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Northumberland"
+        {
+          "name": "Orkney",
+          "population": {
+            "total": 22100,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Orkney"
+          },
+          "latitude": 59,
+          "longitude": -3.2,
+          "url": "https://en.wikipedia.org/wiki/Orkney"
         },
-        "latitude": 55.166667,
-        "longitude": -2,
-        "url": "https://en.wikipedia.org/wiki/Northumberland"
-      }
-    ]
-  },
-  {
-    "name": "North West",
-    "counties": [
-      {
-        "name": "Cheshire",
-        "population": {
-          "total": 1059271,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Cheshire"
+        {
+          "name": "Shetland",
+          "population": {
+            "total": 23210,
+            "year": 2012,
+            "source": "https://en.wikipedia.org/wiki/Shetland"
+          },
+          "latitude": 60.21,
+          "longitude": -1.13,
+          "url": "https://en.wikipedia.org/wiki/Shetland"
         },
-        "latitude": 53.166667,
-        "longitude": -2.583333,
-        "url": "https://en.wikipedia.org/wiki/Cheshire"
-      },
-      {
-        "name": "Cumberland",
-        "population": {
-          "total": 294303,
-          "year": 1961,
-          "source": "https://www.visionofbritain.org.uk/unit/10134810/cube/TOT_POP"
+        {
+          "name": "Sutherland",
+          "population": {
+            "total": 12650,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/Sutherland"
+          },
+          "latitude": 57.5478052,
+          "longitude": -5.8057521,
+          "url": "https://en.wikipedia.org/wiki/Sutherland"
+        }
+      ]
+    },
+    {
+      "name": "Wales",
+      "counties": [
+        {
+          "name": "Anglesey",
+          "population": {
+            "total": 69961,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Anglesey"
+          },
+          "latitude": 53.2780189,
+          "longitude": -4.595212,
+          "url": "https://en.wikipedia.org/wiki/Anglesey"
         },
-        "latitude": 54.75,
-        "longitude": -3,
-        "url": "https://en.wikipedia.org/wiki/Cumberland"
-      },
-      {
-        "name": "Lancashire",
-        "population": {
-          "total": 1498300,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/Lancashire"
+        {
+          "name": "Caernarfonshire",
+          "population": {
+            "total": 121767,
+            "year": 1961,
+            "source": "https://en.wikipedia.org/wiki/Caernarfonshire"
+          },
+          "latitude": 53.071782,
+          "longitude": -4.042705,
+          "url": "https://en.wikipedia.org/wiki/Caernarfonshire"
         },
-        "latitude": 53.8,
-        "longitude": -2.6,
-        "url": "https://en.wikipedia.org/wiki/Lancashire"
-      },
-      {
-        "name": "Westmorland",
-        "population": {
-          "total": 67180,
-          "year": 1961,
-          "source": "https://en.wikipedia.org/wiki/Westmorland"
+        {
+          "name": "Cardiganshire",
+          "population": {
+            "total": 72992,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Cardiganshire"
+          },
+          "latitude": 52.246332,
+          "longitude": -4.026094,
+          "url": "https://en.wikipedia.org/wiki/Cardiganshire"
         },
-        "latitude": 54.527232,
-        "longitude": -3.016054,
-        "url": "https://en.wikipedia.org/wiki/Westmorland"
-      }
-    ]
-  },
-  {
-    "name": "Scotland",
-    "counties": [
-      {
-        "name": "Berwickshire",
-        "population": {
-          "total": 20780,
-          "year": 1971,
-          "source": "https://www.visionofbritain.org.uk/unit/10105420/cube/TOT_POP"
+        {
+          "name": "Flintshire",
+          "population": {
+            "total": 155593,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Flintshire"
+          },
+          "latitude": 53.192662,
+          "longitude": -3.147528,
+          "url": "https://en.wikipedia.org/wiki/Flintshire"
         },
-        "latitude": 55.5223571,
-        "longitude": -3.9074358,
-        "url": "https://en.wikipedia.org/wiki/Berwickshire"
-      },
-      {
-        "name": "Caithness",
-        "population": {
-          "total": 26486,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/Caithness"
+        {
+          "name": "Glamorgan",
+          "population": {
+            "total": 1229728,
+            "year": 1961,
+            "source": "https://en.wikipedia.org/wiki/Glamorgan"
+          },
+          "latitude": 51.440549,
+          "longitude": -3.393571,
+          "url": "https://en.wikipedia.org/wiki/Glamorgan"
         },
-        "latitude": 58.0329469,
-        "longitude": -3.5920924,
-        "url": "https://en.wikipedia.org/wiki/Caithness"
-      },
-      {
-        "name": "East Lothian",
-        "population": {
-          "total": 105790,
-          "year": 2018,
-          "source": "https://en.wikipedia.org/wiki/East_Lothian"
+        {
+          "name": "Merionethshire",
+          "population": {
+            "total": 38310,
+            "year": 1961,
+            "source": "https://en.wikipedia.org/wiki/Merionethshire"
+          },
+          "latitude": 52.862726,
+          "longitude": -3.775351,
+          "url": "https://en.wikipedia.org/wiki/Merionethshire"
         },
-        "latitude": 55.916667,
-        "longitude": -2.75,
-        "url": "https://en.wikipedia.org/wiki/East_Lothian"
-      },
-      {
-        "name": "Kirkcudbrightshire",
-        "population": {
-          "total": 27635,
-          "year": 1971,
-          "source": "https://www.visionofbritain.org.uk/unit/10036057/cube/TOT_POP"
+        {
+          "name": "Monmouthshire",
+          "population": {
+            "total": 94142,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Monmouthshire"
+          },
+          "latitude": 51.783333,
+          "longitude": -2.866667,
+          "url": "https://en.wikipedia.org/wiki/Monmouthshire"
         },
-        "latitude": 54.832,
-        "longitude": -4.048,
-        "url": "https://en.wikipedia.org/wiki/Kirkcudbrightshire"
-      },
-      {
-        "name": "Orkney",
-        "population": {
-          "total": 22100,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Orkney"
+        {
+          "name": "Pembrokeshire",
+          "population": {
+            "total": 125055,
+            "year": 2017,
+            "source": "https://en.wikipedia.org/wiki/Pembrokeshire"
+          },
+          "latitude": 51.845424,
+          "longitude": -4.918109,
+          "url": "https://en.wikipedia.org/wiki/Pembrokeshire"
+        }
+      ]
+    },
+    {
+      "name": "Northern Ireland",
+      "counties": [
+        {
+          "name": "County Antrim",
+          "population": {
+            "total": 618108,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Antrim"
+          },
+          "latitude": 54.6857441,
+          "longitude": -6.3814324,
+          "url": "https://en.wikipedia.org/wiki/County_Antrim"
         },
-        "latitude": 59,
-        "longitude": -3.2,
-        "url": "https://en.wikipedia.org/wiki/Orkney"
-      },
-      {
-        "name": "Shetland",
-        "population": {
-          "total": 23210,
-          "year": 2012,
-          "source": "https://en.wikipedia.org/wiki/Shetland"
+        {
+          "name": "County Armagh",
+          "population": {
+            "total": 174792,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Armagh"
+          },
+          "latitude": 54.3432934,
+          "longitude": -6.7577875,
+          "url": "https://en.wikipedia.org/wiki/County_Armagh"
         },
-        "latitude": 60.21,
-        "longitude": -1.13,
-        "url": "https://en.wikipedia.org/wiki/Shetland"
-      },
-      {
-        "name": "Sutherland",
-        "population": {
-          "total": 12650,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/Sutherland"
+        {
+          "name": "County Down",
+          "population": {
+            "total": 531665,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Down"
+          },
+          "latitude": 54.3310089,
+          "longitude": -6.0801512,
+          "url": "https://en.wikipedia.org/wiki/County_Down"
         },
-        "latitude": 57.5478052,
-        "longitude": -5.8057521,
-        "url": "https://en.wikipedia.org/wiki/Sutherland"
-      }
-    ]
-  },
-  {
-    "name": "Wales",
-    "counties": [
-      {
-        "name": "Anglesey",
-        "population": {
-          "total": 69961,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Anglesey"
+        {
+          "name": "County Fermanagh",
+          "population": {
+            "total": 61805,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Fermanagh"
+          },
+          "latitude": 54.361399,
+          "longitude": -7.9407612,
+          "url": "https://en.wikipedia.org/wiki/County_Fermanagh"
         },
-        "latitude": 53.2780189,
-        "longitude": -4.595212,
-        "url": "https://en.wikipedia.org/wiki/Anglesey"
-      },
-      {
-        "name": "Caernarfonshire",
-        "population": {
-          "total": 121767,
-          "year": 1961,
-          "source": "https://en.wikipedia.org/wiki/Caernarfonshire"
+        {
+          "name": "County Londonderry",
+          "population": {
+            "total": 247132,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Londonderry"
+          },
+          "latitude": 54.9996728,
+          "longitude": -7.3429596,
+          "url": "https://en.wikipedia.org/wiki/County_Londonderry"
         },
-        "latitude": 53.071782,
-        "longitude": -4.042705,
-        "url": "https://en.wikipedia.org/wiki/Caernarfonshire"
-      },
-      {
-        "name": "Cardiganshire",
-        "population": {
-          "total": 72992,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Cardiganshire"
-        },
-        "latitude": 52.246332,
-        "longitude": -4.026094,
-        "url": "https://en.wikipedia.org/wiki/Cardiganshire"
-      },
-      {
-        "name": "Flintshire",
-        "population": {
-          "total": 155593,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Flintshire"
-        },
-        "latitude": 53.192662,
-        "longitude": -3.147528,
-        "url": "https://en.wikipedia.org/wiki/Flintshire"
-      },
-      {
-        "name": "Glamorgan",
-        "population": {
-          "total": 1229728,
-          "year": 1961,
-          "source": "https://en.wikipedia.org/wiki/Glamorgan"
-        },
-        "latitude": 51.440549,
-        "longitude": -3.393571,
-        "url": "https://en.wikipedia.org/wiki/Glamorgan"
-      },
-      {
-        "name": "Merionethshire",
-        "population": {
-          "total": 38310,
-          "year": 1961,
-          "source": "https://en.wikipedia.org/wiki/Merionethshire"
-        },
-        "latitude": 52.862726,
-        "longitude": -3.775351,
-        "url": "https://en.wikipedia.org/wiki/Merionethshire"
-      },
-      {
-        "name": "Monmouthshire",
-        "population": {
-          "total": 94142,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Monmouthshire"
-        },
-        "latitude": 51.783333,
-        "longitude": -2.866667,
-        "url": "https://en.wikipedia.org/wiki/Monmouthshire"
-      },
-      {
-        "name": "Pembrokeshire",
-        "population": {
-          "total": 125055,
-          "year": 2017,
-          "source": "https://en.wikipedia.org/wiki/Pembrokeshire"
-        },
-        "latitude": 51.845424,
-        "longitude": -4.918109,
-        "url": "https://en.wikipedia.org/wiki/Pembrokeshire"
-      }
-    ]
-  },
-  {
-    "name": "Northern Ireland",
-    "counties": [
-      {
-        "name": "County Antrim",
-        "population": {
-          "total": 618108,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Antrim"
-        },
-        "latitude": 54.6857441,
-        "longitude": -6.3814324,
-        "url": "https://en.wikipedia.org/wiki/County_Antrim"
-      },
-      {
-        "name": "County Armagh",
-        "population": {
-          "total": 174792,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Armagh"
-        },
-        "latitude": 54.3432934,
-        "longitude": -6.7577875,
-        "url": "https://en.wikipedia.org/wiki/County_Armagh"
-      },
-      {
-        "name": "County Down",
-        "population": {
-          "total": 531665,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Down"
-        },
-        "latitude": 54.3310089,
-        "longitude": -6.0801512,
-        "url": "https://en.wikipedia.org/wiki/County_Down"
-      },
-      {
-        "name": "County Fermanagh",
-        "population": {
-          "total": 61805,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Fermanagh"
-        },
-        "latitude": 54.361399,
-        "longitude": -7.9407612,
-        "url": "https://en.wikipedia.org/wiki/County_Fermanagh"
-      },
-      {
-        "name": "County Londonderry",
-        "population": {
-          "total": 247132,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Londonderry"
-        },
-        "latitude": 54.9996728,
-        "longitude": -7.3429596,
-        "url": "https://en.wikipedia.org/wiki/County_Londonderry"
-      },
-      {
-        "name": "County Tyrone",
-        "population": {
-          "total": 177986,
-          "year": 2011,
-          "source": "https://en.wikipedia.org/wiki/County_Tyrone"
-        },
-        "latitude": 54.595986,
-        "longitude": -7.321796,
-        "url": "https://en.wikipedia.org/wiki/County_Tyrone"
-      }
-    ]
-  }
-]
+        {
+          "name": "County Tyrone",
+          "population": {
+            "total": 177986,
+            "year": 2011,
+            "source": "https://en.wikipedia.org/wiki/County_Tyrone"
+          },
+          "latitude": 54.595986,
+          "longitude": -7.321796,
+          "url": "https://en.wikipedia.org/wiki/County_Tyrone"
+        }
+      ]
+    }
+  ]
+}
