@@ -29,7 +29,9 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
         if let tabBarController = window?.rootViewController as? UITabBarController {
             let allCountiesViewController = CountiesViewController(style: .allCounties)
             let favouriteCountiesViewController = CountiesViewController(style: .favourites)
-            tabBarController.viewControllers = [UINavigationController(rootViewController: allCountiesViewController), UINavigationController(rootViewController: favouriteCountiesViewController)]
+            let navigationControllers = [UINavigationController(rootViewController: allCountiesViewController), UINavigationController(rootViewController: favouriteCountiesViewController)]
+            navigationControllers.forEach { $0.navigationBar.prefersLargeTitles = true }
+            tabBarController.viewControllers = navigationControllers
             applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: allCountiesViewController)
         }
     }
