@@ -84,3 +84,15 @@ extension CountryTests {
         XCTAssertEqual(Country.unitedKingdom.regions[11].counties.count, 6)
     }
 }
+
+// MARK: - County Lookup
+extension CountryTests {
+    func testItReturnsTheCountyForTheGivenName() {
+        XCTAssertEqual(Country.unitedKingdom.county(forName: "Hampshire")?.name, "Hampshire")
+        XCTAssertEqual(Country.unitedKingdom.county(forName: "Glamorgan")?.name, "Glamorgan")
+    }
+    
+    func testItReturnsNilWhenNoCountyMatchesTheGivenName() {
+        XCTAssertNil(Country.unitedKingdom.county(forName: "Nowhere"))
+    }
+}

@@ -19,6 +19,14 @@ public struct Country: Codable {
     
     /// The regions of the country.
     public let regions: [Region]
+    
+    /// Allows for a `Country`'s counties to be looked up by name.
+    /// - Parameter name: The name of the county we wish to find.
+    /// - Returns: The county with the given name, if any.
+    public func county(forName name: String) -> County? {
+        let allCounties = regions.map({ $0.counties }).reduce([], +)
+        return allCounties.first(where: { $0.name == name })
+    }
 }
 
 /// Represents an individual region within a country.
