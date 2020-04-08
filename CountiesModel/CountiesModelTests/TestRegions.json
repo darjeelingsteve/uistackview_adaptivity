@@ -1,6 +1,6 @@
 [
   {
-    "title": "Region One",
+    "name": "Region One",
     "counties": [
       {
         "name": "Someshire",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Regions Two",
+    "name": "Region Two",
     "counties": [
       {
         "name": "Someothershire",

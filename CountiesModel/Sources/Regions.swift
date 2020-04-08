@@ -29,8 +29,8 @@ public struct Regions {
 /// Represents an individual region within a country.
 public struct Region: Codable {
     
-    /// The title of the regions.
-    public let title: String
+    /// The name of the regions.
+    public let name: String
     
     /// The counties within the region.
     public let counties: [County]

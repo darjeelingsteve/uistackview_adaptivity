@@ -36,6 +36,7 @@ extension RegionsTests {
     }
     
     func testItHasTheExpectedCountyDataInTheFirstRegion() {
+        XCTAssertEqual(regions.regions.first?.name, "Region One")
         let county = regions.regions.first?.counties.first
         XCTAssertEqual(county?.name, "Someshire")
         XCTAssertEqual(county?.population, County.Population(total: 10, year: 2018, source: URL(string: "https://darjeelingsteve.com/Someshire")!))
@@ -45,6 +46,8 @@ extension RegionsTests {
     }
     
     func testItHasTheExpectedCountyDataInTheSecondRegion() {
+        XCTAssertEqual(regions.regions.last?.name, "Region Two")
+        
         let countyOne = regions.regions.last?.counties.first
         let countyTwo = regions.regions.last?.counties.last
         
