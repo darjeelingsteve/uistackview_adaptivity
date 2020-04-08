@@ -176,7 +176,7 @@ private extension CountiesViewController.Style {
     var countyList: [County] {
         switch self {
         case .allCounties:
-            return County.allCounties
+            return Country.unitedKingdom.allCounties
         case .favourites:
             return FavouritesController.shared.favouriteCounties
         }

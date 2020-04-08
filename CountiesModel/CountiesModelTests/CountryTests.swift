@@ -106,3 +106,12 @@ extension CountryTests {
     }
 }
 
+// MARK: - All Counties
+extension CountryTests {
+    func testItReturnsAllCountiesInAlphabeticalOrder() {
+        XCTAssertEqual(country.allCounties.count, 3)
+        XCTAssertEqual(country.allCounties[0].name, "Anotherset")
+        XCTAssertEqual(country.allCounties[1].name, "Someothershire")
+        XCTAssertEqual(country.allCounties[2].name, "Someshire")
+    }
+}

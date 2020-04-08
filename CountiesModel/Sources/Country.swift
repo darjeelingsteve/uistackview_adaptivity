@@ -27,6 +27,11 @@ public struct Country: Codable {
         let allCounties = regions.map({ $0.counties }).reduce([], +)
         return allCounties.first(where: { $0.name == name })
     }
+    
+    /// All of the receiver's counties in alphabetical order.
+    public var allCounties: [County] {
+        return regions.map({ $0.counties }).reduce([], +).sorted()
+    }
 }
 
 /// Represents an individual region within a country.

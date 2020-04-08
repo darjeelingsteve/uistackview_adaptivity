@@ -16,13 +16,13 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        table.setNumberOfRows(County.allCounties.count, withRowType: String(describing: CountyRowController.self))
-        for (index, county) in County.allCounties.enumerated() {
+        table.setNumberOfRows(Country.unitedKingdom.allCounties.count, withRowType: String(describing: CountyRowController.self))
+        for (index, county) in Country.unitedKingdom.allCounties.enumerated() {
             (table.rowController(at: index) as! CountyRowController).county = county
         }
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-        return County.allCounties[rowIndex].name
+        return Country.unitedKingdom.allCounties[rowIndex].name
     }
 }

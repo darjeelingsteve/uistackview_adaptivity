@@ -84,7 +84,7 @@ public class SpotlightSearchController {
     private func counties(matchingFilter filter: Query.Filter) -> [County] {
         switch filter {
         case .allCounties:
-            return County.allCounties
+            return Country.unitedKingdom.allCounties
         case .favouritesOnly:
             return FavouritesController.shared.favouriteCounties
         }

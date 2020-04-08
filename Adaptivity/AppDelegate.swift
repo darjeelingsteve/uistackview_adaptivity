@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let spotlightController = SpotlightController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        spotlightController.indexCounties(County.allCounties)
+        spotlightController.indexCounties(Country.unitedKingdom.allCounties)
         NotificationCenter.default.addObserver(self, selector: #selector(updateApplicationShortcutItems(_:)),
                                                name: CountyHistory.countyHistoryDidUpdateNotification,
                                                object: CountyHistory.shared)
