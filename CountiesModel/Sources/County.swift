@@ -29,15 +29,6 @@ public struct County: Codable, Hashable {
         public let year: Int
         public let source: URL
     }
-    
-    /// All of the counties available to the application.
-    public static var allCounties: [County] = {
-        let countyDictionaries = NSArray(contentsOf: Bundle.countiesModelBundle.url(forResource: "Counties", withExtension: "plist")!) as! Array<Dictionary<String, AnyObject>>
-        return countyDictionaries.map { (countryDictionary) -> County in
-            let population = Population(total: countryDictionary["population"] as! Int, year: 2020, source: URL(string: "https://darjeelingsteve.com")!)
-            return County(name: countryDictionary["name"] as! String, population: population, latitude: countryDictionary["latitude"] as! Double, longitude: countryDictionary["longitude"] as! Double, url: URL.init(string: countryDictionary["url"] as! String)!)
-        }
-    }()
 }
 
 extension County: Comparable {
