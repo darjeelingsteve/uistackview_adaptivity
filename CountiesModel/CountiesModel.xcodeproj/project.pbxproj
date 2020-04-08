@@ -40,6 +40,9 @@
 		48779005243CE2ED008FFD48 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779004243CE2ED008FFD48 /* Regions.swift */; };
 		48779007243CE540008FFD48 /* RegionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779006243CE540008FFD48 /* RegionsTests.swift */; };
 		48779009243CE56B008FFD48 /* TestRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 48779008243CE56B008FFD48 /* TestRegions.json */; };
+		48DDF066243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
+		48DDF067243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
+		48DDF068243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,7 @@
 		48779004243CE2ED008FFD48 /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		48779006243CE540008FFD48 /* RegionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTests.swift; sourceTree = "<group>"; };
 		48779008243CE56B008FFD48 /* TestRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestRegions.json; sourceTree = "<group>"; };
+		48DDF065243DE4EE00B2E122 /* United Kingdom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "United Kingdom.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				482BC9B223EB3F540053E6F6 /* CountyHistory.swift */,
 				482BC95023EB247B0053E6F6 /* FavouritesController.swift */,
 				48779004243CE2ED008FFD48 /* Regions.swift */,
+				48DDF065243DE4EE00B2E122 /* United Kingdom.json */,
 				482BC9C923EB538E0053E6F6 /* Media.xcassets */,
 			);
 			path = Sources;
@@ -373,6 +378,7 @@
 			files = (
 				4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */,
 				4800E5C923EC11FF0059ABA8 /* Counties.plist in Resources */,
+				48DDF067243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +388,7 @@
 			files = (
 				482BC9CA23EB538F0053E6F6 /* Media.xcassets in Resources */,
 				482BC93323EB1F360053E6F6 /* Counties.plist in Resources */,
+				48DDF066243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +398,7 @@
 			files = (
 				482BC9CB23EB538F0053E6F6 /* Media.xcassets in Resources */,
 				482BC94323EB1FCD0053E6F6 /* Counties.plist in Resources */,
+				48DDF068243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

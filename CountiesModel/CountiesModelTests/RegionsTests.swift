@@ -22,7 +22,10 @@ final class RegionsTests: XCTestCase {
         regions = nil
         super.tearDown()
     }
-    
+}
+
+// MARK: - Deserialisation
+extension RegionsTests {
     func testItHasTheExpectedNumberOfRegions() {
         XCTAssertEqual(regions.regions.count, 2)
     }
@@ -56,5 +59,25 @@ final class RegionsTests: XCTestCase {
         XCTAssertEqual(countyTwo?.location.latitude, 50.7)
         XCTAssertEqual(countyTwo?.location.longitude, -3.8)
         XCTAssertEqual(countyTwo?.url, URL(string: "https://darjeelingsteve.com/Anotherset")!)
+    }
+}
+
+// MARK: - United Kingdom
+extension RegionsTests {
+    func testItLoadsTheUnitedKingdomRegionsAsExpected() {
+        XCTAssertEqual(Regions.unitedKingdom.regions.count, 12)
+        
+        XCTAssertEqual(Regions.unitedKingdom.regions[0].counties.count, 8)
+        XCTAssertEqual(Regions.unitedKingdom.regions[1].counties.count, 5)
+        XCTAssertEqual(Regions.unitedKingdom.regions[2].counties.count, 1)
+        XCTAssertEqual(Regions.unitedKingdom.regions[3].counties.count, 5)
+        XCTAssertEqual(Regions.unitedKingdom.regions[4].counties.count, 7)
+        XCTAssertEqual(Regions.unitedKingdom.regions[5].counties.count, 5)
+        XCTAssertEqual(Regions.unitedKingdom.regions[6].counties.count, 1)
+        XCTAssertEqual(Regions.unitedKingdom.regions[7].counties.count, 2)
+        XCTAssertEqual(Regions.unitedKingdom.regions[8].counties.count, 4)
+        XCTAssertEqual(Regions.unitedKingdom.regions[9].counties.count, 7)
+        XCTAssertEqual(Regions.unitedKingdom.regions[10].counties.count, 8)
+        XCTAssertEqual(Regions.unitedKingdom.regions[11].counties.count, 6)
     }
 }

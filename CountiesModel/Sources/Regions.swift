@@ -11,6 +11,9 @@ import Foundation
 /// Represents a set of regions within a country.
 public struct Regions {
     
+    /// The regions of the United Kingdom.
+    public static let unitedKingdom = Regions(configurationURL: Bundle(for: FavouritesController.self).url(forResource: "United Kingdom", withExtension: "json")!)!
+    
     /// The regions of a country.
     public let regions: [Region]
     
