@@ -43,6 +43,11 @@
 		48DDF066243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
 		48DDF067243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
 		48DDF068243DE4EE00B2E122 /* United Kingdom.json in Resources */ = {isa = PBXBuildFile; fileRef = 48DDF065243DE4EE00B2E122 /* United Kingdom.json */; };
+		48DDF06A243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */; };
+		48DDF06B243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */; };
+		48DDF06C243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */; };
+		48DDF06D243DF07900B2E122 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779004243CE2ED008FFD48 /* Country.swift */; };
+		48DDF06E243DF07A00B2E122 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779004243CE2ED008FFD48 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,7 @@
 		48779006243CE540008FFD48 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		48779008243CE56B008FFD48 /* TestRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestRegions.json; sourceTree = "<group>"; };
 		48DDF065243DE4EE00B2E122 /* United Kingdom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "United Kingdom.json"; sourceTree = "<group>"; };
+		48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+NSUserActivity.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		482BC9AB23EB2EAF0053E6F6 /* Handoff Support */ = {
 			isa = PBXGroup;
 			children = (
+				48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */,
 				482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */,
 				482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */,
 			);
@@ -419,7 +426,9 @@
 			files = (
 				4800E5CB23EC120A0059ABA8 /* FavouritesController.swift in Sources */,
 				4800E5C823EC11F30059ABA8 /* County+NSUserActivity.swift in Sources */,
+				48DDF06B243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */,
 				4800E5CA23EC12010059ABA8 /* County.swift in Sources */,
+				48DDF06D243DF07900B2E122 /* Country.swift in Sources */,
 				4800E5C723EC11F20059ABA8 /* HandoffConstants.swift in Sources */,
 				4800E5CD23EC12480059ABA8 /* CountyHistory.swift in Sources */,
 				4800E5C623EC11EA0059ABA8 /* Bundle+Extensions.swift in Sources */,
@@ -435,6 +444,7 @@
 				482BC9D423EB54E90053E6F6 /* SpotlightSearchController.swift in Sources */,
 				482BC9D323EB54E90053E6F6 /* SpotlightController.swift in Sources */,
 				48779005243CE2ED008FFD48 /* Country.swift in Sources */,
+				48DDF06A243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */,
 				482BC93423EB1F360053E6F6 /* County.swift in Sources */,
 				482BC9CE23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */,
 				482BC9B323EB3F540053E6F6 /* CountyHistory.swift in Sources */,
@@ -446,9 +456,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DDF06C243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */,
 				482BC9B123EB2EC80053E6F6 /* HandoffConstants.swift in Sources */,
 				482BC9AF23EB2EC80053E6F6 /* County+NSUserActivity.swift in Sources */,
 				482BC94223EB1FCB0053E6F6 /* County.swift in Sources */,
+				48DDF06E243DF07A00B2E122 /* Country.swift in Sources */,
 				482BC9CF23EB53C20053E6F6 /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

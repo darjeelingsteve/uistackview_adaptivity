@@ -96,3 +96,13 @@ extension CountryTests {
         XCTAssertNil(Country.unitedKingdom.county(forName: "Nowhere"))
     }
 }
+
+// MARK: - NSUserActivity
+extension CountryTests {
+    func testItReturnsTheCountyForTheUserActivity() {
+        let userActivity = NSUserActivity(activityType: HandoffActivity.CountyDetails)
+        userActivity.userInfo = [HandoffUserInfo.CountyName: "Surrey"]
+        XCTAssertEqual(Country.unitedKingdom.countyFrom(userActivity: userActivity)?.name, "Surrey")
+    }
+}
+

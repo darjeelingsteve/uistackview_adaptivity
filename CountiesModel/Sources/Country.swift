@@ -12,7 +12,7 @@ import Foundation
 public struct Country: Codable {
     
     /// `Country` representation of the United Kingdom.
-    public static let unitedKingdom = try! JSONDecoder().decode(Country.self, from: Data(contentsOf: Bundle(for: FavouritesController.self).url(forResource: "United Kingdom", withExtension: "json")!))
+    public static let unitedKingdom = try! JSONDecoder().decode(Country.self, from: Data(contentsOf: Bundle(for: BundleClass.self).url(forResource: "United Kingdom", withExtension: "json")!))
     
     /// The name of the country.
     public let name: String
@@ -38,3 +38,5 @@ public struct Region: Codable {
     /// The counties within the region.
     public let counties: [County]
 }
+
+private class BundleClass {}
