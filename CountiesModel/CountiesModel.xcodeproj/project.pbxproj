@@ -11,18 +11,15 @@
 		4800E5C623EC11EA0059ABA8 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9CD23EB53C20053E6F6 /* Bundle+Extensions.swift */; };
 		4800E5C723EC11F20059ABA8 /* HandoffConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AD23EB2EC80053E6F6 /* HandoffConstants.swift */; };
 		4800E5C823EC11F30059ABA8 /* County+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9AC23EB2EC80053E6F6 /* County+NSUserActivity.swift */; };
-		4800E5C923EC11FF0059ABA8 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 482BC93123EB1F360053E6F6 /* Counties.plist */; };
 		4800E5CA23EC12010059ABA8 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC93223EB1F360053E6F6 /* County.swift */; };
 		4800E5CB23EC120A0059ABA8 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC95023EB247B0053E6F6 /* FavouritesController.swift */; };
 		4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9C923EB538E0053E6F6 /* Media.xcassets */; };
 		4800E5CD23EC12480059ABA8 /* CountyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B223EB3F540053E6F6 /* CountyHistory.swift */; };
 		481BAB282430D727009CC8A6 /* CountyHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481BAB272430D727009CC8A6 /* CountyHistoryTests.swift */; };
 		482BC92A23EB1E7D0053E6F6 /* CountiesModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC92823EB1E7D0053E6F6 /* CountiesModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		482BC93323EB1F360053E6F6 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 482BC93123EB1F360053E6F6 /* Counties.plist */; };
 		482BC93423EB1F360053E6F6 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC93223EB1F360053E6F6 /* County.swift */; };
 		482BC93E23EB1FAC0053E6F6 /* CountiesModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC93C23EB1FAC0053E6F6 /* CountiesModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC94223EB1FCB0053E6F6 /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC93223EB1F360053E6F6 /* County.swift */; };
-		482BC94323EB1FCD0053E6F6 /* Counties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 482BC93123EB1F360053E6F6 /* Counties.plist */; };
 		482BC95123EB247B0053E6F6 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC95023EB247B0053E6F6 /* FavouritesController.swift */; };
 		482BC95C23EB24D80053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC92523EB1E7D0053E6F6 /* CountiesModel.framework */; };
 		482BC96323EB24F00053E6F6 /* FavouritesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC96223EB24F00053E6F6 /* FavouritesControllerTests.swift */; };
@@ -68,7 +65,6 @@
 		482BC92523EB1E7D0053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC92823EB1E7D0053E6F6 /* CountiesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesModel.h; sourceTree = "<group>"; };
 		482BC92923EB1E7D0053E6F6 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		482BC93123EB1F360053E6F6 /* Counties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Counties.plist; sourceTree = "<group>"; };
 		482BC93223EB1F360053E6F6 /* County.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = County.swift; sourceTree = "<group>"; };
 		482BC93A23EB1FAC0053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482BC93C23EB1FAC0053E6F6 /* CountiesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesModel.h; sourceTree = "<group>"; };
@@ -171,7 +167,6 @@
 				482BC9CC23EB53AE0053E6F6 /* Extensions */,
 				482BC9AB23EB2EAF0053E6F6 /* Handoff Support */,
 				482BC9D023EB54D20053E6F6 /* Spotlight Support */,
-				482BC93123EB1F360053E6F6 /* Counties.plist */,
 				48779004243CE2ED008FFD48 /* Country.swift */,
 				482BC93223EB1F360053E6F6 /* County.swift */,
 				482BC9B223EB3F540053E6F6 /* CountyHistory.swift */,
@@ -384,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */,
-				4800E5C923EC11FF0059ABA8 /* Counties.plist in Resources */,
 				48DDF067243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				482BC9CA23EB538F0053E6F6 /* Media.xcassets in Resources */,
-				482BC93323EB1F360053E6F6 /* Counties.plist in Resources */,
 				48DDF066243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				482BC9CB23EB538F0053E6F6 /* Media.xcassets in Resources */,
-				482BC94323EB1FCD0053E6F6 /* Counties.plist in Resources */,
 				48DDF068243DE4EE00B2E122 /* United Kingdom.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
