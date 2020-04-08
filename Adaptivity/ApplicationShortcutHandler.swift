@@ -21,7 +21,7 @@ class ApplicationShortcutHandler: NSObject {
         self.countiesViewController = countiesViewController
     }
     
-    func handle(_ applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+    func handle(_ applicationShortcutItem: UIApplicationShortcutItem, completionHandler: ((Bool) -> Void)? = nil) {
         var handled = false
         if applicationShortcutItem.type == "Search" {
             countiesViewController.beginSearch()
@@ -31,6 +31,6 @@ class ApplicationShortcutHandler: NSObject {
             countiesViewController.showCounty(Country.unitedKingdom.county(forName: applicationShortcutItem.localizedTitle)!, animated: true)
             handled = true
         }
-        completionHandler(handled)
+        completionHandler?(handled)
     }
 }

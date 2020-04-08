@@ -16,6 +16,7 @@ class MasterSceneDelegate: UIResponder {
     private let spotlightController = SpotlightController()
     private var applicationShortcutHandler: ApplicationShortcutHandler?
     private let userActivityHandlers: [UserActivityHandling]
+    private var sceneConnectionShortcutItem: UIApplicationShortcutItem?
     
     override init() {
         userActivityHandlers = [spotlightController, HandoffController(), SpotlightQueryContinuationHandler()]
@@ -33,7 +34,15 @@ extension MasterSceneDelegate: UIWindowSceneDelegate {
             navigationControllers.forEach { $0.navigationBar.prefersLargeTitles = true }
             tabBarController.viewControllers = navigationControllers
             applicationShortcutHandler = ApplicationShortcutHandler(countiesViewController: allCountiesViewController)
+            sceneConnectionShortcutItem = connectionOptions.shortcutItem
         }
+    }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        if let sceneConnectionShortcutItem = sceneConnectionShortcutItem {
+            applicationShortcutHandler?.handle(sceneConnectionShortcutItem)
+        }
+        sceneConnectionShortcutItem = nil
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
