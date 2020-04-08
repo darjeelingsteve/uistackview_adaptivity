@@ -88,12 +88,12 @@ extension CountryTests {
 // MARK: - County Lookup
 extension CountryTests {
     func testItReturnsTheCountyForTheGivenName() {
-        XCTAssertEqual(Country.unitedKingdom.county(forName: "Hampshire")?.name, "Hampshire")
-        XCTAssertEqual(Country.unitedKingdom.county(forName: "Glamorgan")?.name, "Glamorgan")
+        XCTAssertEqual(country.county(forName: "Anotherset")?.name, "Anotherset")
+        XCTAssertEqual(country.county(forName: "Someothershire")?.name, "Someothershire")
     }
     
     func testItReturnsNilWhenNoCountyMatchesTheGivenName() {
-        XCTAssertNil(Country.unitedKingdom.county(forName: "Nowhere"))
+        XCTAssertNil(country.county(forName: "Nowhere"))
     }
 }
 
@@ -101,8 +101,8 @@ extension CountryTests {
 extension CountryTests {
     func testItReturnsTheCountyForTheUserActivity() {
         let userActivity = NSUserActivity(activityType: HandoffActivity.CountyDetails)
-        userActivity.userInfo = [HandoffUserInfo.CountyName: "Surrey"]
-        XCTAssertEqual(Country.unitedKingdom.countyFrom(userActivity: userActivity)?.name, "Surrey")
+        userActivity.userInfo = [HandoffUserInfo.CountyName: "Someshire"]
+        XCTAssertEqual(country.countyFrom(userActivity: userActivity)?.name, "Someshire")
     }
 }
 
