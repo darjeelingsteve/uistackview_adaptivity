@@ -28,6 +28,16 @@ public struct Country: Codable {
         return allCounties.first(where: { $0.name == name })
     }
     
+    /// Allows the receiver to be filtered by a given list of counties.
+    /// - Parameter counties: The counties by which the receiver should be
+    /// filtered.
+    /// - Returns: A list of regions containing only those counties specified in
+    /// the given `counties` array. Regions with no counties in the `counties`
+    /// array are excluded.
+    public func filteredRegions(containing counties: [County]) -> [Region] {
+        return regions.map({ $0.filtered(by: counties) }).filter { $0.counties.isEmpty == false }
+    }
+    
     /// All of the receiver's counties in alphabetical order.
     public var allCounties: [County] {
         return regions.map({ $0.counties }).reduce([], +).sorted()
@@ -42,6 +52,18 @@ public struct Region: Codable {
     
     /// The counties within the region.
     public let counties: [County]
+    
+    /// Allows the receiver to be filtered by a given list of counties.
+    /// - Parameter counties: The counties by which the receiver should be
+    /// filtered.
+    /// - Returns: A copy of the receiver, with a `counties` array containing
+    /// only those present in the receiver's `counties` and the given `counties`
+    /// array.
+    fileprivate func filtered(by counties: [County]) -> Region {
+        let selfCountySet = Set(self.counties)
+        let filterCountySet = Set(counties)
+        return Region(name: name, counties: Array(selfCountySet.intersection(filterCountySet)).sorted())
+    }
 }
 
 private class BundleClass {}

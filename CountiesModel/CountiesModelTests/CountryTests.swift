@@ -115,3 +115,41 @@ extension CountryTests {
         XCTAssertEqual(country.allCounties[2].name, "Someshire")
     }
 }
+
+// MARK: - County Filtering
+extension CountryTests {
+    func testItFiltersRegionsCorrectlyByCountyWhenOnlyOneRegionMatches() {
+        let counties = [country.county(forName: "Someothershire")!]
+        let filteredRegions = country.filteredRegions(containing: counties)
+        XCTAssertEqual(filteredRegions.count, 1)
+        XCTAssertEqual(filteredRegions.first?.name, "Region Two")
+        XCTAssertEqual(filteredRegions.first?.counties.count, 1)
+        XCTAssertEqual(filteredRegions.first?.counties, counties)
+    }
+    
+    func testItFiltersRegionsCorrectlyByCountyWhenMultipleRegionsMatch() {
+        let counties = [country.county(forName: "Anotherset")!, country.county(forName: "Someshire")!]
+        let filteredRegions = country.filteredRegions(containing: counties)
+        XCTAssertEqual(filteredRegions.count, 2)
+        XCTAssertEqual(filteredRegions.first?.name, "Region One")
+        XCTAssertEqual(filteredRegions.first?.counties.count, 1)
+        XCTAssertEqual(filteredRegions.first?.counties, [country.county(forName: "Someshire")!])
+        XCTAssertEqual(filteredRegions.last?.name, "Region Two")
+        XCTAssertEqual(filteredRegions.last?.counties.count, 1)
+        XCTAssertEqual(filteredRegions.last?.counties, [country.county(forName: "Anotherset")!])
+    }
+    
+    func testItFiltersRegionsCorrectlyByCountyWhenNoRegionsMatch() {
+        let filteredRegions = country.filteredRegions(containing: [])
+        XCTAssertTrue(filteredRegions.isEmpty)
+    }
+    
+    func testItReturnsRegionsWithSortedCounties() {
+        let counties = [country.county(forName: "Someothershire")!, country.county(forName: "Anotherset")!]
+        let filteredRegions = country.filteredRegions(containing: counties)
+        XCTAssertEqual(filteredRegions.count, 1)
+        XCTAssertEqual(filteredRegions.first?.name, "Region Two")
+        XCTAssertEqual(filteredRegions.first?.counties.count, 2)
+        XCTAssertEqual(filteredRegions.first?.counties, [country.county(forName: "Anotherset")!, country.county(forName: "Someothershire")!])
+    }
+}
