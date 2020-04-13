@@ -120,7 +120,7 @@ extension CountryTests {
 extension CountryTests {
     func testItFiltersRegionsCorrectlyByCountyWhenOnlyOneRegionMatches() {
         let counties = [country.county(forName: "Someothershire")!]
-        let filteredRegions = country.filteredRegions(containing: counties)
+        let filteredRegions = country.regions.filtered(by: counties)
         XCTAssertEqual(filteredRegions.count, 1)
         XCTAssertEqual(filteredRegions.first?.name, "Region Two")
         XCTAssertEqual(filteredRegions.first?.counties.count, 1)
@@ -129,7 +129,7 @@ extension CountryTests {
     
     func testItFiltersRegionsCorrectlyByCountyWhenMultipleRegionsMatch() {
         let counties = [country.county(forName: "Anotherset")!, country.county(forName: "Someshire")!]
-        let filteredRegions = country.filteredRegions(containing: counties)
+        let filteredRegions = country.regions.filtered(by: counties)
         XCTAssertEqual(filteredRegions.count, 2)
         XCTAssertEqual(filteredRegions.first?.name, "Region One")
         XCTAssertEqual(filteredRegions.first?.counties.count, 1)
@@ -140,13 +140,13 @@ extension CountryTests {
     }
     
     func testItFiltersRegionsCorrectlyByCountyWhenNoRegionsMatch() {
-        let filteredRegions = country.filteredRegions(containing: [])
+        let filteredRegions = country.regions.filtered(by: [])
         XCTAssertTrue(filteredRegions.isEmpty)
     }
     
     func testItReturnsRegionsWithSortedCounties() {
         let counties = [country.county(forName: "Someothershire")!, country.county(forName: "Anotherset")!]
-        let filteredRegions = country.filteredRegions(containing: counties)
+        let filteredRegions = country.regions.filtered(by: counties)
         XCTAssertEqual(filteredRegions.count, 1)
         XCTAssertEqual(filteredRegions.first?.name, "Region Two")
         XCTAssertEqual(filteredRegions.first?.counties.count, 2)
