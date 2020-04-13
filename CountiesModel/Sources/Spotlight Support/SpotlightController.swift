@@ -15,13 +15,15 @@ public class SpotlightController {
     
     public init() {}
     
-    public func indexCounties(_ counties: [County]) {
+    /// Adds the counties of the given regions to the spotlight index.
+    /// - Parameter regions: The regions whose counties we wish to index.
+    public func indexRegions(_ regions: [Region]) {
         guard CSSearchableIndex.isIndexingAvailable() else {
             return
         }
         
         DispatchQueue.global(qos: .utility).async {
-            let searchableItems = counties.map { (county) -> CSSearchableItem in
+            let searchableItems = regions.map({ $0.counties }).reduce([], +).map { (county) -> CSSearchableItem in
                 let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
                 attributeSet.title = county.name
                 attributeSet.contentDescription = county.populationDescription
