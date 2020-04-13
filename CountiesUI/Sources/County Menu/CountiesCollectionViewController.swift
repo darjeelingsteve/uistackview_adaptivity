@@ -13,8 +13,8 @@ import CountiesModel
 /// by a list of counties.
 final class CountiesCollectionViewController: UIViewController {
     
-    /// The counties displayed by the receiver.
-    var counties = [County]() {
+    /// The regions displayed by the receiver.
+    var regions = [Region]() {
         didSet {
             reloadData()
         }
@@ -98,8 +98,10 @@ final class CountiesCollectionViewController: UIViewController {
     
     private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<CollectionSection, County> {
         var snapshot = NSDiffableDataSourceSnapshot<CollectionSection, County>()
-        snapshot.appendSections([.counties])
-        snapshot.appendItems(counties)
+        regions.forEach { (region) in
+            snapshot.appendSections([.region(name: region.name)])
+            snapshot.appendItems(region.counties)
+        }
         return snapshot
     }
 }
@@ -223,6 +225,6 @@ private extension CountiesCollectionViewController {
     
     /// The sections displayed in the collection view.
     private enum CollectionSection: Hashable {
-        case counties
+        case region(name: String)
     }
 }

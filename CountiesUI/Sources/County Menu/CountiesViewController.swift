@@ -34,14 +34,14 @@ public final class CountiesViewController: UIViewController {
         return searchController
     }()
     #endif
-    private var countiesForCurrentState: [County] {
+    private var regionsForCurrentState: [Region] {
         #if os(tvOS)
-        return style.countyList
+        return style.regionList
         #else
         if let searchText = searchController.searchBar.text, searchText.count > 0 {
-            return spotlightSearchController.searchResults
+            return style.regionList.filtered(by: spotlightSearchController.searchResults)
         } else {
-            return style.countyList
+            return style.regionList
         }
         #endif
     }
@@ -112,8 +112,8 @@ public final class CountiesViewController: UIViewController {
     #endif
     
     @objc private func reloadData() {
-        collectionViewController.counties = countiesForCurrentState
-        collectionViewController.view.isHidden = collectionViewController.counties.isEmpty
+        collectionViewController.regions = regionsForCurrentState
+        collectionViewController.view.isHidden = collectionViewController.regions.isEmpty
         #if os(iOS)
         emptyCountiesNoticeView.configuration = EmptyCountiesNoticeView.Configuration(style: style, searchQuery: searchController.searchBar.text)
         #else
@@ -173,12 +173,12 @@ private extension CountiesViewController.Style {
         }
     }
     
-    var countyList: [County] {
+    var regionList: [Region] {
         switch self {
         case .allCounties:
-            return Country.unitedKingdom.allCounties
+            return Country.unitedKingdom.regions
         case .favourites:
-            return FavouritesController.shared.favouriteCounties
+            return Country.unitedKingdom.regions.filtered(by: FavouritesController.shared.favouriteCounties)
         }
     }
     
