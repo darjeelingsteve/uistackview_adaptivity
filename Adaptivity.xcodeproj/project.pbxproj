@@ -27,6 +27,8 @@
 		482BC9D623EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
+		485F2E172444B06C00E67148 /* RegionNameRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E162444B06C00E67148 /* RegionNameRowController.swift */; };
+		485F2E192444BB9900E67148 /* CountiesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E182444BB9900E67148 /* CountiesTableSection.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
 		48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB31C2063D70078391A /* Assets.xcassets */; };
@@ -142,6 +144,8 @@
 		482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SpotlightController+UserActivityHandling.swift"; path = "Spotlight/SpotlightController+UserActivityHandling.swift"; sourceTree = "<group>"; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
+		485F2E162444B06C00E67148 /* RegionNameRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionNameRowController.swift; sourceTree = "<group>"; };
+		485F2E182444BB9900E67148 /* CountiesTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesTableSection.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,9 +304,11 @@
 			isa = PBXGroup;
 			children = (
 				B631210C1C60D69F0063E975 /* InterfaceController.swift */,
+				485F2E182444BB9900E67148 /* CountiesTableSection.swift */,
 				B63121201C60D6D80063E975 /* CountyRowController.swift */,
 				B63121231C60DC870063E975 /* CountyInterfaceController.swift */,
 				B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */,
+				485F2E162444B06C00E67148 /* RegionNameRowController.swift */,
 				B63121101C60D69F0063E975 /* Assets.xcassets */,
 				B63121121C60D69F0063E975 /* Info.plist */,
 			);
@@ -510,8 +516,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485F2E192444BB9900E67148 /* CountiesTableSection.swift in Sources */,
 				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
 				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,
+				485F2E172444B06C00E67148 /* RegionNameRowController.swift in Sources */,
 				B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */,
 				B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */,
 			);

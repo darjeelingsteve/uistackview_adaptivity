@@ -12,17 +12,30 @@ import CountiesModel
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet fileprivate weak var table: WKInterfaceTable!
+    private var tableSections: [CountiesTableSection]?
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        table.setNumberOfRows(Country.unitedKingdom.allCounties.count, withRowType: String(describing: CountyRowController.self))
-        for (index, county) in Country.unitedKingdom.allCounties.enumerated() {
-            (table.rowController(at: index) as! CountyRowController).county = county
+        tableSections = Country.unitedKingdom.regions.map({ (region) in
+            let tableSection = CountiesTableSection(region: region, rowsAlreadyRegisteredCount: table.numberOfRows)
+            tableSection.registerRows(in: table)
+            return tableSection
+        })
+        
+        (0..<table.numberOfRows).forEach { (tableRowIndex) in
+            let rowController = table.rowController(at: tableRowIndex)
+            let tableSection = tableSections?.section(forTableRowIndex: tableRowIndex)
+            if let regionNameRowController = rowController as? RegionNameRowController {
+                regionNameRowController.region = tableSection?.region
+            } else if let countyRowController = rowController as? CountyRowController {
+                countyRowController.county = tableSection?.county(forTableRowIndex: tableRowIndex)
+            }
         }
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-        return Country.unitedKingdom.allCounties[rowIndex].name
+        let tableSection = tableSections?.section(forTableRowIndex: rowIndex)
+        return tableSection?.county(forTableRowIndex: rowIndex).name
     }
 }
