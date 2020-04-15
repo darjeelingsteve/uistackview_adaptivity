@@ -27,6 +27,7 @@ final class CountiesCollectionViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
+        collectionView.register(SectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RegionName")
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         #if os(iOS)
@@ -40,16 +41,35 @@ final class CountiesCollectionViewController: UIViewController {
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
+        flowLayout.sectionHeadersPinToVisibleBounds = platformValue(foriOS: true, tvOS: false)
+        flowLayout.headerReferenceSize = CGSize(width: 20, height: platformValue(foriOS: 40, tvOS: 100))
         return flowLayout
     }()
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
-        return UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
+        let dataSource = UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
             guard let self = self else { return nil }
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
             countyCell.county = county
             countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
+            countyCell.layoutMargins = countyCell.displayStyle.collectionViewCellLayoutMargins
             return countyCell
         }
+        dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
+            guard let self = self, kind == UICollectionView.elementKindSectionHeader else {
+                return nil
+            }
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RegionName", for: indexPath) as! SectionHeaderSupplementaryView
+            switch self.dataSource.snapshot().sectionIdentifiers[indexPath.section] {
+            case .region(let name):
+                sectionHeader.title = name
+            }
+            #if os(iOS)
+            let displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
+            sectionHeader.layoutMargins.left = displayStyle.collectionViewEdgeInsets.left + displayStyle.collectionViewCellLayoutMargins.left
+            #endif
+            return sectionHeader
+        }
+        return dataSource
     }()
     
     override func viewDidLoad() {
@@ -113,7 +133,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return cellStyleForTraitCollection(traitCollection).collectionViewEdgeInsets
+        return cellStyleForTraitCollection(traitCollection).collectionSectionEdgeInsets
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -172,7 +192,7 @@ private extension CountyCellDisplayStyle {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: 100)
         case .grid:
-            let availableWidth = collectionView.bounds.width - collectionViewEdgeInsets.left - collectionViewEdgeInsets.right
+            let availableWidth = collectionView.bounds.width - collectionSectionEdgeInsets.left - collectionSectionEdgeInsets.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
             let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
             let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
@@ -182,16 +202,34 @@ private extension CountyCellDisplayStyle {
         }
     }
     
+    var collectionViewCellLayoutMargins: UIEdgeInsets {
+        switch (self) {
+        case .table:
+            return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 8)
+        case .grid:
+            return .zero
+        }
+    }
+    
     var collectionViewEdgeInsets: UIEdgeInsets {
         switch (self) {
         case .table:
             return UIEdgeInsets.zero
         case .grid:
             #if os(tvOS)
-            return UIEdgeInsets(top: 8, left: 64, bottom: 8, right: 64)
+            return UIEdgeInsets(top: 8, left: 90, bottom: 8, right: 90)
             #else
             return UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
             #endif
+        }
+    }
+    
+    var collectionSectionEdgeInsets: UIEdgeInsets {
+        switch (self) {
+        case .table:
+            return UIEdgeInsets.zero
+        case .grid:
+            return UIEdgeInsets(top: 8, left: collectionViewEdgeInsets.left, bottom: 24, right: collectionViewEdgeInsets.right)
         }
     }
     
@@ -200,7 +238,7 @@ private extension CountyCellDisplayStyle {
         case .table:
             return 0
         case .grid:
-            return 48
+            return platformValue(foriOS: 24, tvOS: 48)
         }
     }
     

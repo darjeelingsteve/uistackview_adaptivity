@@ -137,6 +137,7 @@ class CountyCell: UICollectionViewCell {
         selectedBackgroundView?.layer.cornerCurve = .continuous
         clipsToBounds = false
         contentView.clipsToBounds = false
+        contentView.preservesSuperviewLayoutMargins = true
     }
     
     required init?(coder: NSCoder) {
