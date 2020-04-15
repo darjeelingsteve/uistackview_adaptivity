@@ -32,6 +32,8 @@
 		482BC9DB23EB57C30053E6F6 /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DA23EB57C30053E6F6 /* CountyCell.swift */; };
 		482BC9DD23EB57FC0053E6F6 /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */; };
 		482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
+		485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
+		485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +84,7 @@
 		482BC9DA23EB57C30053E6F6 /* CountyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyCell.swift; sourceTree = "<group>"; };
 		482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewController.swift; sourceTree = "<group>"; };
 		482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesViewController.swift; sourceTree = "<group>"; };
+		485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,7 @@
 				482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */,
 				482BC9DA23EB57C30053E6F6 /* CountyCell.swift */,
 				482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */,
+				485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */,
 			);
 			path = "County Menu";
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */,
+				485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */,
 				4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */,
 				4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */,
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */,
+				485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				482BC9C223EB50420053E6F6 /* UIStoryboard+CountyViewController.swift in Sources */,
 				482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */,
 				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
