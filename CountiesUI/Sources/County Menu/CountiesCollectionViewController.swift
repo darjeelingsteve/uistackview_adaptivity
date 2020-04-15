@@ -197,10 +197,16 @@ private extension CountyCellDisplayStyle {
         case .grid:
             let availableWidth = collectionView.bounds.width - collectionView.layoutMargins.left - collectionView.layoutMargins.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
-            let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
-            let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
+            let numberOfItemsPerRow: Int
+            switch columnCountMetric {
+            case .fixed(let columnCount):
+                numberOfItemsPerRow = columnCount
+            case .calculated(let estimatedCellWidth):
+                numberOfItemsPerRow = Int(floor(availableWidth / estimatedCellWidth))
+            }
+            let totalSpacingBetweenAdjacentItems = (CGFloat(numberOfItemsPerRow - 1) * interitemSpacing)
             
-            let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / numberOfItemsPerRow)
+            let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / CGFloat(numberOfItemsPerRow))
             return CGSize(width: itemWidth, height: itemWidth)
         }
     }
@@ -216,18 +222,23 @@ private extension CountyCellDisplayStyle {
     
     var collectionViewInteritemSpacing: CGFloat {
         #if os(tvOS)
-        return 48
+        return 80
         #else
         return 32
         #endif
     }
     
-    private var estimatedCellWidth: CGFloat {
+    private var columnCountMetric: ColumnCountMetric {
         #if os(tvOS)
-        return 320
+        return .fixed(columnCount: 4)
         #else
-        return 220
+        return .calculated(estimatedCellWidth: 220)
         #endif
+    }
+    
+    private enum ColumnCountMetric {
+        case fixed(columnCount: Int)
+        case calculated(estimatedCellWidth: CGFloat)
     }
 }
 
