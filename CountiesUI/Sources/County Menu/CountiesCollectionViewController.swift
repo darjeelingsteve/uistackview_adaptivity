@@ -29,6 +29,7 @@ final class CountiesCollectionViewController: UIViewController {
         collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
         collectionView.register(SectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RegionName")
         collectionView.alwaysBounceVertical = true
+        collectionView.preservesSuperviewLayoutMargins = true
         collectionView.delegate = self
         #if os(iOS)
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
@@ -51,7 +52,6 @@ final class CountiesCollectionViewController: UIViewController {
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
             countyCell.county = county
             countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
-            countyCell.layoutMargins = countyCell.displayStyle.collectionViewCellLayoutMargins
             return countyCell
         }
         dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
@@ -63,10 +63,6 @@ final class CountiesCollectionViewController: UIViewController {
             case .region(let name):
                 sectionHeader.title = name
             }
-            #if os(iOS)
-            let displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
-            sectionHeader.layoutMargins.left = displayStyle.collectionViewEdgeInsets.left + displayStyle.collectionViewCellLayoutMargins.left
-            #endif
             return sectionHeader
         }
         return dataSource
@@ -133,7 +129,12 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return cellStyleForTraitCollection(traitCollection).collectionSectionEdgeInsets
+        switch cellStyleForTraitCollection(traitCollection) {
+        case .table:
+            return .zero
+        case .grid:
+            return UIEdgeInsets(top: 8, left: collectionView.layoutMargins.left, bottom: 24, right: collectionView.layoutMargins.right)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -192,44 +193,13 @@ private extension CountyCellDisplayStyle {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: 100)
         case .grid:
-            let availableWidth = collectionView.bounds.width - collectionSectionEdgeInsets.left - collectionSectionEdgeInsets.right
+            let availableWidth = collectionView.bounds.width - collectionView.layoutMargins.left - collectionView.layoutMargins.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
             let numberOfItemsPerRow = floor(availableWidth / estimatedCellWidth)
             let totalSpacingBetweenAdjacentItems = ((numberOfItemsPerRow - 1) * interitemSpacing)
             
             let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / numberOfItemsPerRow)
             return CGSize(width: itemWidth, height: itemWidth)
-        }
-    }
-    
-    var collectionViewCellLayoutMargins: UIEdgeInsets {
-        switch (self) {
-        case .table:
-            return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 8)
-        case .grid:
-            return .zero
-        }
-    }
-    
-    var collectionViewEdgeInsets: UIEdgeInsets {
-        switch (self) {
-        case .table:
-            return UIEdgeInsets.zero
-        case .grid:
-            #if os(tvOS)
-            return UIEdgeInsets(top: 8, left: 90, bottom: 8, right: 90)
-            #else
-            return UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
-            #endif
-        }
-    }
-    
-    var collectionSectionEdgeInsets: UIEdgeInsets {
-        switch (self) {
-        case .table:
-            return UIEdgeInsets.zero
-        case .grid:
-            return UIEdgeInsets(top: 8, left: collectionViewEdgeInsets.left, bottom: 24, right: collectionViewEdgeInsets.right)
         }
     }
     

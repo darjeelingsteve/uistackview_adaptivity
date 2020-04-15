@@ -38,8 +38,7 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         super.updateConstraints()
     }
@@ -49,5 +48,6 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         backgroundColor = .systemBackground
         #endif
         addSubview(titleLabel)
+        preservesSuperviewLayoutMargins = true
     }
 }

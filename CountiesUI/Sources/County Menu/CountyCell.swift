@@ -64,12 +64,12 @@ class CountyCell: UICollectionViewCell {
     
     private lazy var tableStyleConstraits: [NSLayoutConstraint] = [
         flagImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-        flagImageView.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor),
+        flagImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
         flagImageView.widthAnchor.constraint(equalToConstant: 100),
         flagImageView.heightAnchor.constraint(equalTo: flagImageView.widthAnchor, multiplier: 2 / 3, constant: 0),
         nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: flagImageView.trailingAnchor, multiplier: 1),
         nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-        nameLabel.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor)
+        nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
     ]
     
     private lazy var gridStyleConstraits: [NSLayoutConstraint] = [
@@ -79,7 +79,7 @@ class CountyCell: UICollectionViewCell {
         nameLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
         nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
         nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: flagImageView.bottomAnchor, multiplier: gridStyleNameLabelSpacingMultiplier),
-        nameLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+        nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
     ]
     
     private var gridStyleNameLabelSpacingMultiplier: CGFloat {
@@ -138,6 +138,7 @@ class CountyCell: UICollectionViewCell {
         clipsToBounds = false
         contentView.clipsToBounds = false
         contentView.preservesSuperviewLayoutMargins = true
+        preservesSuperviewLayoutMargins = true
     }
     
     required init?(coder: NSCoder) {
