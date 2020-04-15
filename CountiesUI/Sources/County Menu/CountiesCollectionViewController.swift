@@ -207,7 +207,7 @@ private extension CountyCellDisplayStyle {
             let totalSpacingBetweenAdjacentItems = (CGFloat(numberOfItemsPerRow - 1) * interitemSpacing)
             
             let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / CGFloat(numberOfItemsPerRow))
-            return CGSize(width: itemWidth, height: itemWidth)
+            return CGSize(width: itemWidth, height: floor(itemWidth / 1.3))
         }
     }
     
