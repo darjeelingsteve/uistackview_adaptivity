@@ -12,6 +12,8 @@ import CountiesModel
 /// The view controller responsible for displaying a collection view populated
 /// by a list of counties.
 final class CountiesCollectionViewController: UIViewController {
+    private static let countyCellIdentifier = "CountyCell"
+    private static let regionHeaderIdentifier = "RegionNameHeader"
     
     /// The regions displayed by the receiver.
     var regions = [Region]() {
@@ -26,8 +28,8 @@ final class CountiesCollectionViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: "CountyCell")
-        collectionView.register(SectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RegionName")
+        collectionView.register(CountyCell.self, forCellWithReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier)
+        collectionView.register(SectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CountiesCollectionViewController.regionHeaderIdentifier)
         collectionView.alwaysBounceVertical = true
         collectionView.preservesSuperviewLayoutMargins = true
         collectionView.delegate = self
@@ -49,7 +51,7 @@ final class CountiesCollectionViewController: UIViewController {
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
         let dataSource = UICollectionViewDiffableDataSource<CollectionSection, County>(collectionView: collectionView) { [weak self] (collectionView, indexPath, county) -> UICollectionViewCell? in
             guard let self = self else { return nil }
-            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountyCell", for: indexPath) as! CountyCell
+            let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier, for: indexPath) as! CountyCell
             countyCell.county = county
             countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
             return countyCell
@@ -58,7 +60,7 @@ final class CountiesCollectionViewController: UIViewController {
             guard let self = self, kind == UICollectionView.elementKindSectionHeader else {
                 return nil
             }
-            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RegionName", for: indexPath) as! SectionHeaderSupplementaryView
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CountiesCollectionViewController.regionHeaderIdentifier, for: indexPath) as! SectionHeaderSupplementaryView
             switch self.dataSource.snapshot().sectionIdentifiers[indexPath.section] {
             case .region(let name):
                 sectionHeader.title = name
