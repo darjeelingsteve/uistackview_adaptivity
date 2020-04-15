@@ -35,7 +35,7 @@ final class CountiesCollectionViewController: UIViewController {
         collectionView.delegate = self
         #if os(iOS)
         collectionView.dragDelegate = UIApplication.shared.supportsMultipleScenes ? self : nil
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemGroupedBackground
         #elseif os(tvOS)
         collectionView.remembersLastFocusedIndexPath = true
         #endif
@@ -44,8 +44,6 @@ final class CountiesCollectionViewController: UIViewController {
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
-        flowLayout.sectionHeadersPinToVisibleBounds = platformValue(foriOS: true, tvOS: false)
-        flowLayout.headerReferenceSize = CGSize(width: 20, height: platformValue(foriOS: 40, tvOS: 100))
         return flowLayout
     }()
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
@@ -86,6 +84,7 @@ final class CountiesCollectionViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        configureSectionHeaders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +99,7 @@ final class CountiesCollectionViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        configureSectionHeaders()
         guard let previousTraitCollection = previousTraitCollection else { return }
         if cellStyleForTraitCollection(traitCollection) != cellStyleForTraitCollection(previousTraitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
@@ -122,6 +122,17 @@ final class CountiesCollectionViewController: UIViewController {
         }
         return snapshot
     }
+    
+    private func configureSectionHeaders() {
+        #if os(iOS)
+        let isRegularWidth = traitCollection.horizontalSizeClass == .regular
+        flowLayout.headerReferenceSize = CGSize(width: 20, height: isRegularWidth ? 40 : 32)
+        flowLayout.sectionHeadersPinToVisibleBounds = isRegularWidth
+        #elseif os(tvOS)
+        flowLayout.headerReferenceSize = CGSize(width: 20, height: 100)
+        flowLayout.sectionHeadersPinToVisibleBounds = false
+        #endif
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -133,7 +144,8 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch cellStyleForTraitCollection(traitCollection) {
         case .table:
-            return .zero
+            let isLastSection = section == collectionView.numberOfSections - 1
+            return UIEdgeInsets(top: 0, left: 0, bottom: isLastSection ? 38 : 28, right: 0)
         case .grid:
             return UIEdgeInsets(top: 8, left: collectionView.layoutMargins.left, bottom: 24, right: collectionView.layoutMargins.right)
         }
@@ -193,7 +205,7 @@ private extension CountyCellDisplayStyle {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
         switch (self) {
         case .table:
-            return CGSize(width: collectionView.bounds.width, height: 100)
+            return CGSize(width: collectionView.bounds.width, height: 44)
         case .grid:
             let availableWidth = collectionView.bounds.width - collectionView.layoutMargins.left - collectionView.layoutMargins.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing

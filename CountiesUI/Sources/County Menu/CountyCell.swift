@@ -25,7 +25,7 @@ private struct BorderSettings {
     #if os(tvOS)
     let colour = UIColor.clear
     #else
-    let colour = UIColor.secondarySystemBackground
+    let colour = UIColor.tertiarySystemGroupedBackground
     #endif
 }
 
@@ -65,10 +65,10 @@ class CountyCell: UICollectionViewCell {
     
     private lazy var tableStyleConstraits: [NSLayoutConstraint] = [
         flagImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+        flagImageView.widthAnchor.constraint(equalToConstant: 29),
+        flagImageView.heightAnchor.constraint(equalTo: flagImageView.widthAnchor, multiplier: 1),
         flagImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        flagImageView.widthAnchor.constraint(equalToConstant: 100),
-        flagImageView.heightAnchor.constraint(equalTo: flagImageView.widthAnchor, multiplier: 2 / 3, constant: 0),
-        nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: flagImageView.trailingAnchor, multiplier: 1),
+        nameLabel.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor, constant: 12),
         nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
         nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
     ]
@@ -100,10 +100,11 @@ class CountyCell: UICollectionViewCell {
     /// The display style of the receiver.
     var displayStyle: CountyCellDisplayStyle = .table {
         didSet {
-            flagImageView.layer.cornerRadius = borderSettings.cornerRadius
+            flagImageView.layer.cornerRadius = displayStyle.flagCornerRadius
             nameLabel.font = .preferredFont(forTextStyle: displayStyle.nameLabelTextStyle)
             nameLabel.textAlignment = displayStyle.nameLabelTextAlignment
-            selectedBackgroundView?.layer.cornerRadius = borderSettings.cornerRadius
+            selectedBackgroundView?.layer.cornerRadius = displayStyle.borderSettings.cornerRadius
+            backgroundColor = displayStyle.backgroundColour
             setNeedsUpdateConstraints()
         }
     }
@@ -115,25 +116,13 @@ class CountyCell: UICollectionViewCell {
         }
     }
     
-    private var borderSettings: BorderSettings {
-        switch (displayStyle) {
-        case .table:
-            return BorderSettings(width: 1.0, cornerRadius: 0)
-        case .grid:
-            return BorderSettings(width: 0.0, cornerRadius: 10)
-        }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        #if os(iOS)
-        backgroundColor = .systemBackground
-        #endif
         contentView.addSubview(nameLabel)
         contentView.addSubview(flagImageView)
         flagImageView.addSubview(selectionFlagOverlayView)
         selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = borderSettings.colour
+        selectedBackgroundView?.backgroundColor = displayStyle.borderSettings.colour
         selectedBackgroundView?.layer.cornerCurve = .continuous
         clipsToBounds = false
         contentView.clipsToBounds = false
@@ -158,13 +147,14 @@ class CountyCell: UICollectionViewCell {
             selectionFlagOverlayView.bottomAnchor.constraint(equalTo: flagImageView.bottomAnchor)
         ])
         
-        switch (displayStyle) {
+        NSLayoutConstraint.deactivate(tableStyleConstraits)
+        NSLayoutConstraint.deactivate(gridStyleConstraits)
+        
+        switch displayStyle {
         case .table:
             NSLayoutConstraint.activate(tableStyleConstraits)
-            NSLayoutConstraint.deactivate(gridStyleConstraits)
         case .grid:
             NSLayoutConstraint.activate(gridStyleConstraits)
-            NSLayoutConstraint.deactivate(tableStyleConstraits)
         }
         
         super.updateConstraints()
@@ -174,18 +164,18 @@ class CountyCell: UICollectionViewCell {
         super.draw(rect)
         
         let path: UIBezierPath
-        let lineWidth = borderSettings.width
-        switch (displayStyle) {
+        let lineWidth = displayStyle.borderSettings.width
+        switch displayStyle {
         case .table:
             path = UIBezierPath()
-            path.move(to: CGPoint(x: layoutMargins.left, y: rect.maxY - lineWidth))
+            path.move(to: CGPoint(x: nameLabel.frame.origin.x, y: rect.maxY - lineWidth))
             path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - lineWidth))
         case .grid:
-            path = UIBezierPath(roundedRect: rect.insetBy(dx: lineWidth / 2, dy: lineWidth / 2), cornerRadius: borderSettings.cornerRadius)
+            path = UIBezierPath(roundedRect: rect.insetBy(dx: lineWidth / 2, dy: lineWidth / 2), cornerRadius: displayStyle.borderSettings.cornerRadius)
         }
         
         path.lineWidth = lineWidth
-        borderSettings.colour.set()
+        displayStyle.borderSettings.colour.set()
         path.stroke()
     }
 }
@@ -207,5 +197,36 @@ private extension CountyCellDisplayStyle {
         case .grid:
             return .center
         }
+    }
+    
+    var flagCornerRadius: CGFloat {
+        switch self {
+        case .table:
+            return 4
+        case .grid:
+            return borderSettings.cornerRadius
+        }
+    }
+    
+    var borderSettings: BorderSettings {
+        switch self {
+        case .table:
+            return BorderSettings(width: 1.0, cornerRadius: 0)
+        case .grid:
+            return BorderSettings(width: 0.0, cornerRadius: 10)
+        }
+    }
+    
+    var backgroundColour: UIColor {
+        #if os(iOS)
+        switch self {
+        case .table:
+            return .secondarySystemGroupedBackground
+        case .grid:
+            return .clear
+        }
+        #elseif os(tvOS)
+        return .clear
+        #endif
     }
 }

@@ -13,14 +13,14 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
     
     /// The title displayed by the receiver.
     var title: String? {
-        get { return titleLabel.text }
-        set { titleLabel.text = newValue }
+        didSet {
+            configureTitleLabel()
+        }
     }
     
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = .systemFont(ofSize: platformValue(foriOS: 22, tvOS: 40), weight: .bold)
         return titleLabel
     }()
     
@@ -34,6 +34,11 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         commonSetup()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        configureTitleLabel()
+    }
+    
     override func updateConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
@@ -45,9 +50,30 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
     
     private func commonSetup() {
         #if os(iOS)
-        backgroundColor = .systemBackground
+        backgroundColor = .systemGroupedBackground
         #endif
         addSubview(titleLabel)
+        configureTitleLabel()
         preservesSuperviewLayoutMargins = true
+    }
+    
+    private func configureTitleLabel() {
+        #if os(iOS)
+        let isRegularWidth = traitCollection.horizontalSizeClass == .regular
+        titleLabel.text = isRegularWidth ? title : title?.uppercased()
+        titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : .systemFont(ofSize: 13, weight: .regular)
+        titleLabel.textColor = UIColor(dynamicProvider: { (traitCollection) -> UIColor in
+            guard traitCollection.horizontalSizeClass == .compact else {
+                return .label
+            }
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(red: 0.43, green: 0.43, blue: 0.45, alpha: 1)
+            }
+            return UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1)
+        })
+        #elseif os(tvOS)
+        titleLabel.text = title
+        titleLabel.font = .systemFont(ofSize: 40, weight: .bold)
+        #endif
     }
 }
