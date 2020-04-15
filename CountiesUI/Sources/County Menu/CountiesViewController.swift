@@ -64,7 +64,7 @@ public final class CountiesViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         #if os(iOS)
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGroupedBackground
         #endif
         navigationItem.title = style.navigationItemTitle
         
