@@ -34,6 +34,7 @@ class CountyCell: UICollectionViewCell {
     private let flagImageView: UIImageView = {
         let flagImageView = UIImageView()
         flagImageView.translatesAutoresizingMaskIntoConstraints = false
+        flagImageView.contentMode = .scaleAspectFill
         flagImageView.layer.cornerCurve = .continuous
         #if os(tvOS)
         flagImageView.adjustsImageWhenAncestorFocused = true
@@ -99,7 +100,6 @@ class CountyCell: UICollectionViewCell {
     /// The display style of the receiver.
     var displayStyle: CountyCellDisplayStyle = .table {
         didSet {
-            flagImageView.contentMode = displayStyle.flagImageViewContentMode
             flagImageView.layer.cornerRadius = borderSettings.cornerRadius
             nameLabel.font = .preferredFont(forTextStyle: displayStyle.nameLabelTextStyle)
             nameLabel.textAlignment = displayStyle.nameLabelTextAlignment
@@ -191,15 +191,6 @@ class CountyCell: UICollectionViewCell {
 }
 
 private extension CountyCellDisplayStyle {
-    var flagImageViewContentMode: UIView.ContentMode {
-        switch self {
-        case .table:
-            return .scaleAspectFit
-        case .grid:
-            return .scaleAspectFill
-        }
-    }
-    
     var nameLabelTextStyle: UIFont.TextStyle {
         switch self {
         case .table:
