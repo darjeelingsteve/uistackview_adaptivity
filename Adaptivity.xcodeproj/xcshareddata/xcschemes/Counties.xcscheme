@@ -47,6 +47,16 @@
                ReferencedContainer = "container:CountiesModel/CountiesModel.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "48E36B352448681700913F4B"
+               BuildableName = "CountiesUITests.xctest"
+               BlueprintName = "CountiesUITests"
+               ReferencedContainer = "container:CountiesUI/CountiesUI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
