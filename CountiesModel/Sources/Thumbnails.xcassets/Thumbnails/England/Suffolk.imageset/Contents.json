@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Suffolk.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

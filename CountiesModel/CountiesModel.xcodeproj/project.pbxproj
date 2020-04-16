@@ -48,6 +48,8 @@
 		48E36B442448891700913F4B /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B432448891700913F4B /* UIImage+Resizing.swift */; };
 		48E36B452448891700913F4B /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B432448891700913F4B /* UIImage+Resizing.swift */; };
 		48E36B472448893700913F4B /* UIImage+ResizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B462448893700913F4B /* UIImage+ResizingTests.swift */; };
+		48E36B4924488AC600913F4B /* Thumbnails.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E36B4824488AC600913F4B /* Thumbnails.xcassets */; };
+		48E36B4A24488AC600913F4B /* Thumbnails.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E36B4824488AC600913F4B /* Thumbnails.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,7 @@
 		48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+NSUserActivity.swift"; sourceTree = "<group>"; };
 		48E36B432448891700913F4B /* UIImage+Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizing.swift"; sourceTree = "<group>"; };
 		48E36B462448893700913F4B /* UIImage+ResizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ResizingTests.swift"; sourceTree = "<group>"; };
+		48E36B4824488AC600913F4B /* Thumbnails.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Thumbnails.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,7 @@
 				482BC95023EB247B0053E6F6 /* FavouritesController.swift */,
 				48DDF065243DE4EE00B2E122 /* United Kingdom.json */,
 				482BC9C923EB538E0053E6F6 /* Media.xcassets */,
+				48E36B4824488AC600913F4B /* Thumbnails.xcassets */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -387,6 +391,7 @@
 			files = (
 				4800E5CC23EC120E0059ABA8 /* Media.xcassets in Resources */,
 				48DDF067243DE4EE00B2E122 /* United Kingdom.json in Resources */,
+				48E36B4A24488AC600913F4B /* Thumbnails.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +401,7 @@
 			files = (
 				482BC9CA23EB538F0053E6F6 /* Media.xcassets in Resources */,
 				48DDF066243DE4EE00B2E122 /* United Kingdom.json in Resources */,
+				48E36B4924488AC600913F4B /* Thumbnails.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

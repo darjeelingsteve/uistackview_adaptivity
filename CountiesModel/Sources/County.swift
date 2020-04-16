@@ -39,16 +39,18 @@ extension County: Comparable {
 
 extension County {
     public var populationDescription: String {
-        get {
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population.total))!)
-        }
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population.total))!)
     }
     
     public var flagImage: UIImage? {
-        get {
-            return UIImage(named: name, in: Bundle.countiesModelBundle, with: nil)
-        }
+        return UIImage(named: name, in: Bundle.countiesModelBundle, with: nil)
+    }
+    
+    @available(iOS 13.0, tvOS 13.0, *)
+    @available(watchOS, unavailable)
+    public var flagImageThumbnail: UIImage? {
+        return UIImage(named: "Thumbnails/\(name)", in: Bundle.countiesModelBundle, with: nil)
     }
 }
