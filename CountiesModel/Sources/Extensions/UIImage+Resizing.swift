@@ -1,6 +1,6 @@
 //
 //  UIImage+Resizing.swift
-//  CountiesUI iOS
+//  CountiesModel
 //
 //  Created by Stephen Anthony on 16/04/2020.
 //  Copyright © 2020 Darjeeling Apps. All rights reserved.

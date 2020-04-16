@@ -1,13 +1,13 @@
 //
 //  UIImage+ResizingTests.swift
-//  CountiesUITests
+//  CountiesModelTests
 //
 //  Created by Stephen Anthony on 16/04/2020.
 //  Copyright © 2020 Darjeeling Apps. All rights reserved.
 //
 
 import XCTest
-@testable import CountiesUI
+@testable import CountiesModel
 
 final class UIImageResizingTests: XCTestCase {
     private var sourceImage: UIImage!
