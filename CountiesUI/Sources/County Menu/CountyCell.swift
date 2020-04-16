@@ -9,16 +9,6 @@
 import UIKit
 import CountiesModel
 
-private struct BorderSettings {
-    let width: CGFloat
-    let cornerRadius: CGFloat
-    #if os(tvOS)
-    let colour = UIColor.clear
-    #else
-    let colour = UIColor.tertiarySystemGroupedBackground
-    #endif
-}
-
 /// The cell responsible for displaying County data.
 class CountyCell: UICollectionViewCell {
     
@@ -29,6 +19,20 @@ class CountyCell: UICollectionViewCell {
     enum DisplayStyle {
         case table
         case grid
+    }
+    
+    /// The position of the cell in its parent section.
+    ///
+    /// - first: The cell represents the first item in a multi-item section.
+    /// - middle: The cell represents an item in a multi-item section with more
+    /// than two items, and does not represent the first or last item.
+    /// - last: The cell represents the last item in a multi-item section.
+    /// - singleItem: The cell represents the only item in a section.
+    enum SectionPosition {
+        case first
+        case middle
+        case last
+        case singleItem
     }
     
     private let flagImageView: UIImageView = {
@@ -44,7 +48,7 @@ class CountyCell: UICollectionViewCell {
         return flagImageView
     }()
     
-    private let nameLabel: UILabel = {
+    fileprivate let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.adjustsFontForContentSizeCategory = true
@@ -109,6 +113,13 @@ class CountyCell: UICollectionViewCell {
         }
     }
     
+    /// The position of the cell in its parent section.
+    var sectionPosition: SectionPosition = .singleItem {
+        didSet {
+            setNeedsDisplay() // Redraw the border
+        }
+    }
+    
     override var isHighlighted: Bool {
         didSet {
             // Only show the flag overlay if we are highlighted and in grid style.
@@ -162,21 +173,9 @@ class CountyCell: UICollectionViewCell {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        let path: UIBezierPath
-        let lineWidth = displayStyle.borderSettings.width
-        switch displayStyle {
-        case .table:
-            path = UIBezierPath()
-            path.move(to: CGPoint(x: nameLabel.frame.origin.x, y: rect.maxY - lineWidth))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - lineWidth))
-        case .grid:
-            path = UIBezierPath(roundedRect: rect.insetBy(dx: lineWidth / 2, dy: lineWidth / 2), cornerRadius: displayStyle.borderSettings.cornerRadius)
-        }
-        
-        path.lineWidth = lineWidth
+        guard let borderPath = sectionPosition.borderPath(in: self) else { return }
         displayStyle.borderSettings.colour.set()
-        path.stroke()
+        borderPath.stroke()
     }
 }
 
@@ -229,4 +228,52 @@ private extension CountyCell.DisplayStyle {
         return .clear
         #endif
     }
+}
+
+private extension CountyCell.SectionPosition {
+    func borderPath(in cell: CountyCell) -> UIBezierPath? {
+        switch cell.displayStyle {
+        case .table:
+            let lineWidth = cell.displayStyle.borderSettings.width / cell.traitCollection.displayScale
+            let rect = cell.bounds.insetBy(dx: lineWidth / 2, dy: lineWidth / 2)
+            let path = UIBezierPath()
+            switch self {
+            case .first:
+                addCellTopBorder(to: path, in: rect)
+                addTableCellBottomBorder(to: path, in: rect, leftInset: cell.nameLabel.frame.origin.x)
+            case .middle:
+                addTableCellBottomBorder(to: path, in: rect, leftInset: cell.nameLabel.frame.origin.x)
+            case .last:
+                addTableCellBottomBorder(to: path, in: rect)
+            case .singleItem:
+                addCellTopBorder(to: path, in: rect)
+                addTableCellBottomBorder(to: path, in: rect)
+            }
+            path.lineWidth = lineWidth
+            path.lineCapStyle = .square
+            return path
+        case .grid:
+            return nil
+        }
+    }
+    
+    private func addCellTopBorder(to path: UIBezierPath, in rect: CGRect) {
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+    }
+    
+    private func addTableCellBottomBorder(to path: UIBezierPath, in rect: CGRect, leftInset: CGFloat = 0) {
+        path.move(to: CGPoint(x: rect.minX + leftInset, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+    }
+}
+
+private struct BorderSettings {
+    let width: CGFloat
+    let cornerRadius: CGFloat
+    #if os(tvOS)
+    let colour = UIColor.clear
+    #else
+    let colour = UIColor.separator
+    #endif
 }

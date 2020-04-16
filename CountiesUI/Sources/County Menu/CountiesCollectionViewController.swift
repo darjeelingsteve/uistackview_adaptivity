@@ -52,6 +52,7 @@ final class CountiesCollectionViewController: UIViewController {
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier, for: indexPath) as! CountyCell
             countyCell.county = county
             countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
+            countyCell.sectionPosition = self.sectionPosition(forCellAt: indexPath, in: collectionView)
             return countyCell
         }
         dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
@@ -108,6 +109,20 @@ final class CountiesCollectionViewController: UIViewController {
     
     private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCell.DisplayStyle {
         return traitCollection.horizontalSizeClass == .regular ? .grid : .table
+    }
+    
+    private func sectionPosition(forCellAt indexPath: IndexPath, in collectionView: UICollectionView) -> CountyCell.SectionPosition {
+        guard collectionView.numberOfItems(inSection: indexPath.section) != 1 else {
+            return .singleItem
+        }
+        switch indexPath.item {
+        case 0:
+            return .first
+        case collectionView.numberOfItems(inSection: indexPath.section) - 1:
+            return .last
+        default:
+            return .middle
+        }
     }
     
     @objc private func reloadData() {
