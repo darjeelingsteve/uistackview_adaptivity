@@ -201,7 +201,7 @@ private extension CountyCell.DisplayStyle {
     var flagCornerRadius: CGFloat {
         switch self {
         case .table:
-            return 4
+            return 7
         case .grid:
             return borderSettings.cornerRadius
         }
