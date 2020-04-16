@@ -67,14 +67,26 @@ class CountyCell: UICollectionViewCell {
         return selectionFlagOverlayView
     }()
     
+    private let chevronImageView: UIImageView = {
+        let chevronImage = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(textStyle: .headline, scale: .small))
+        let chevronImageView = UIImageView(image: chevronImage)
+        chevronImageView.translatesAutoresizingMaskIntoConstraints = false
+        chevronImageView.tintColor = .placeholderText
+        chevronImageView.tintAdjustmentMode = .normal
+        chevronImageView.setContentHuggingPriority(.required, for: .horizontal)
+        return chevronImageView
+    }()
+    
     private lazy var tableStyleConstraits: [NSLayoutConstraint] = [
         flagImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
         flagImageView.widthAnchor.constraint(equalToConstant: 29),
         flagImageView.heightAnchor.constraint(equalTo: flagImageView.widthAnchor, multiplier: 1),
         flagImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        nameLabel.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor, constant: 12),
-        nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-        nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        nameLabel.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor, constant: 15),
+        nameLabel.trailingAnchor.constraint(equalTo: chevronImageView.leadingAnchor, constant: -8),
+        nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+        chevronImageView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+        chevronImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
     ]
     
     private lazy var gridStyleConstraits: [NSLayoutConstraint] = [
@@ -109,6 +121,7 @@ class CountyCell: UICollectionViewCell {
             nameLabel.textAlignment = displayStyle.nameLabelTextAlignment
             selectedBackgroundView?.layer.cornerRadius = displayStyle.borderSettings.cornerRadius
             backgroundColor = displayStyle.backgroundColour
+            configureSubviewsForCurrentDisplayStyle()
             setNeedsUpdateConstraints()
         }
     }
@@ -132,6 +145,7 @@ class CountyCell: UICollectionViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(flagImageView)
         flagImageView.addSubview(selectionFlagOverlayView)
+        configureSubviewsForCurrentDisplayStyle()
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = displayStyle.borderSettings.colour
         selectedBackgroundView?.layer.cornerCurve = .continuous
@@ -176,6 +190,15 @@ class CountyCell: UICollectionViewCell {
         guard let borderPath = sectionPosition.borderPath(in: self) else { return }
         displayStyle.borderSettings.colour.set()
         borderPath.stroke()
+    }
+    
+    private func configureSubviewsForCurrentDisplayStyle() {
+        switch displayStyle {
+        case .table:
+            contentView.addSubview(chevronImageView)
+        case .grid:
+            chevronImageView.removeFromSuperview()
+        }
     }
 }
 
