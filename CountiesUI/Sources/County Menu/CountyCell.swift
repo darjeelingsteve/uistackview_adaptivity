@@ -9,16 +9,6 @@
 import UIKit
 import CountiesModel
 
-/*!
-The styles that the cell can display itself in.
-- Table: Display the cell in a table style.
-- Grid:  Display the cell in a grid style.
-*/
-enum CountyCellDisplayStyle {
-    case table
-    case grid
-}
-
 private struct BorderSettings {
     let width: CGFloat
     let cornerRadius: CGFloat
@@ -31,6 +21,16 @@ private struct BorderSettings {
 
 /// The cell responsible for displaying County data.
 class CountyCell: UICollectionViewCell {
+    
+    /// The styles that the cell can display itself in.
+    ///
+    /// - table: Display the cell in a table style.
+    /// - grid:  Display the cell in a grid style.
+    enum DisplayStyle {
+        case table
+        case grid
+    }
+    
     private let flagImageView: UIImageView = {
         let flagImageView = UIImageView()
         flagImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,7 @@ class CountyCell: UICollectionViewCell {
     }
     
     /// The display style of the receiver.
-    var displayStyle: CountyCellDisplayStyle = .table {
+    var displayStyle: DisplayStyle = .table {
         didSet {
             flagImageView.layer.cornerRadius = displayStyle.flagCornerRadius
             nameLabel.font = .preferredFont(forTextStyle: displayStyle.nameLabelTextStyle)
@@ -180,7 +180,7 @@ class CountyCell: UICollectionViewCell {
     }
 }
 
-private extension CountyCellDisplayStyle {
+private extension CountyCell.DisplayStyle {
     var nameLabelTextStyle: UIFont.TextStyle {
         switch self {
         case .table:

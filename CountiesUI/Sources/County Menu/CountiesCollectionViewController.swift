@@ -106,7 +106,7 @@ final class CountiesCollectionViewController: UIViewController {
         }
     }
     
-    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCellDisplayStyle {
+    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCell.DisplayStyle {
         return traitCollection.horizontalSizeClass == .regular ? .grid : .table
     }
     
@@ -200,8 +200,8 @@ protocol CountiesCollectionViewControllerDelegate: AnyObject {
     func countiesCollectionViewController(_ countiesCollectionViewController: CountiesCollectionViewController, didSelect county: County)
 }
 
-// MARK: - CountyCellDisplayStyle extension to provide collection view layout information based on a display style.
-private extension CountyCellDisplayStyle {
+// MARK: - CountyCell.DisplayStyle extension to provide collection view layout information based on a display style.
+private extension CountyCell.DisplayStyle {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
         switch (self) {
         case .table:
