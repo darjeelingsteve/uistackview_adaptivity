@@ -92,7 +92,7 @@ class CountyCell: UICollectionViewCell {
         didSet {
             if let county = county {
                 nameLabel.text = county.name
-                flagImageView.image = county.flagImage
+                flagImageView.image = county.flagImageThumbnail
             }
         }
     }
