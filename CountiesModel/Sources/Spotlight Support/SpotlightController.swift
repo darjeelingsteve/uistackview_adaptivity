@@ -30,7 +30,8 @@ public class SpotlightController {
                 attributeSet.latitude = county.location.latitude as NSNumber?
                 attributeSet.longitude = county.location.longitude as NSNumber?
                 attributeSet.supportsNavigation = 1
-                if let countyFlag = county.flagImage {
+                // Scale image as recommended by https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/SearchUserExperience.html#//apple_ref/doc/uid/TP40016308-CH11-SW1
+                if let countyFlag = county.flagImage?.resized(toFit: CGSize(width: 300, height: 300)) {
                     attributeSet.thumbnailData = countyFlag.pngData()
                 }
                 let searchableItem = CSSearchableItem(uniqueIdentifier: county.name, domainIdentifier: nil, attributeSet: attributeSet)
