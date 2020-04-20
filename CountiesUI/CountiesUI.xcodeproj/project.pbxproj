@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,7 +34,23 @@
 		482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
 		485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
 		485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
+		48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
+		48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
+		48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
+		48E36B50244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
+		48E36B5A244E1E7200913F4B /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */; platformFilter = ios; };
+		48E36B65244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B64244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48E36B5B244E1E7200913F4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482BC96523EB27DB0053E6F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 482BC96D23EB27DB0053E6F6;
+			remoteInfo = "CountiesUI iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4800E5D123EC12A60059ABA8 /* Embed Frameworks */ = {
@@ -85,6 +101,11 @@
 		482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewController.swift; sourceTree = "<group>"; };
 		482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesViewController.swift; sourceTree = "<group>"; };
 		485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderSupplementaryView.swift; sourceTree = "<group>"; };
+		48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewLayout.swift; sourceTree = "<group>"; };
+		48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellStyleSeparatorView.swift; sourceTree = "<group>"; };
+		48E36B55244E1E7200913F4B /* CountiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E36B60244E1EA900913F4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48E36B64244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewLayoutTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +132,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E36B52244E1E7200913F4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E36B5A244E1E7200913F4B /* CountiesUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,6 +159,7 @@
 				482BC97023EB27DB0053E6F6 /* CountiesUI iOS */,
 				4800E59323EC0E000059ABA8 /* CountiesUI tvOS */,
 				482BC98423EB28630053E6F6 /* CountiesUI watchOS */,
+				48E36B56244E1E7200913F4B /* CountiesUITests */,
 				482BC96F23EB27DB0053E6F6 /* Products */,
 				482BC97923EB27F30053E6F6 /* Frameworks */,
 			);
@@ -141,6 +171,7 @@
 				482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */,
 				482BC98323EB28630053E6F6 /* CountiesUI.framework */,
 				4800E59223EC0E000059ABA8 /* CountiesUI.framework */,
+				48E36B55244E1E7200913F4B /* CountiesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,12 +246,23 @@
 			isa = PBXGroup;
 			children = (
 				482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */,
+				48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */,
 				482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */,
 				482BC9DA23EB57C30053E6F6 /* CountyCell.swift */,
 				482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */,
 				485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */,
+				48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */,
 			);
 			path = "County Menu";
+			sourceTree = "<group>";
+		};
+		48E36B56244E1E7200913F4B /* CountiesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48E36B64244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift */,
+				48E36B60244E1EA900913F4B /* Info.plist */,
+			);
+			path = CountiesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +351,24 @@
 			productReference = 482BC98323EB28630053E6F6 /* CountiesUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		48E36B54244E1E7200913F4B /* CountiesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48E36B5D244E1E7200913F4B /* Build configuration list for PBXNativeTarget "CountiesUITests" */;
+			buildPhases = (
+				48E36B51244E1E7200913F4B /* Sources */,
+				48E36B52244E1E7200913F4B /* Frameworks */,
+				48E36B53244E1E7200913F4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48E36B5C244E1E7200913F4B /* PBXTargetDependency */,
+			);
+			name = CountiesUITests;
+			productName = CountiesUITests;
+			productReference = 48E36B55244E1E7200913F4B /* CountiesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -330,6 +390,9 @@
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
 					};
+					48E36B54244E1E7200913F4B = {
+						CreatedOnToolsVersion = 11.4;
+					};
 				};
 			};
 			buildConfigurationList = 482BC96823EB27DB0053E6F6 /* Build configuration list for PBXProject "CountiesUI" */;
@@ -348,6 +411,7 @@
 				482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */,
 				4800E59123EC0E000059ABA8 /* CountiesUI tvOS */,
 				482BC98223EB28630053E6F6 /* CountiesUI watchOS */,
+				48E36B54244E1E7200913F4B /* CountiesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -376,6 +440,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E36B53244E1E7200913F4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -383,10 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */,
 				4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */,
 				485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */,
 				4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */,
+				48E36B50244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */,
 				4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */,
 				4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */,
 				4800E5B223EC112C0059ABA8 /* CountyViewController.swift in Sources */,
@@ -401,7 +474,9 @@
 				482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */,
 				485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				482BC9C223EB50420053E6F6 /* UIStoryboard+CountyViewController.swift in Sources */,
+				48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */,
 				482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */,
+				48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */,
 				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
 				482BC9BF23EB427C0053E6F6 /* Bundle+Extensions.swift in Sources */,
 				4800E58C23EC0A290059ABA8 /* PlatformHelpers.swift in Sources */,
@@ -418,7 +493,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E36B51244E1E7200913F4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E36B65244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48E36B5C244E1E7200913F4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */;
+			targetProxy = 48E36B5B244E1E7200913F4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4800E59823EC0E000059ABA8 /* Debug */ = {
@@ -699,6 +791,42 @@
 			};
 			name = Release;
 		};
+		48E36B5E244E1E7200913F4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CountiesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48E36B5F244E1E7200913F4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CountiesUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -734,6 +862,15 @@
 			buildConfigurations = (
 				482BC98923EB28630053E6F6 /* Debug */,
 				482BC98A23EB28630053E6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48E36B5D244E1E7200913F4B /* Build configuration list for PBXNativeTarget "CountiesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48E36B5E244E1E7200913F4B /* Debug */,
+				48E36B5F244E1E7200913F4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
