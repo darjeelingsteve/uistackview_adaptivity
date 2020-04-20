@@ -218,7 +218,7 @@ protocol CountiesCollectionViewControllerDelegate: AnyObject {
 // MARK: - CountyCell.DisplayStyle extension to provide collection view layout information based on a display style.
 private extension CountyCell.DisplayStyle {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
-        switch (self) {
+        switch self {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: 44)
         case .grid:
@@ -239,7 +239,7 @@ private extension CountyCell.DisplayStyle {
     }
     
     var collectionViewLineSpacing: CGFloat {
-        switch (self) {
+        switch self {
         case .table:
             return 0
         case .grid:
