@@ -19,6 +19,21 @@ final class CountiesCollectionViewLayout: UICollectionViewFlowLayout {
         }
     }
     
+    /// Allows the receiver to track the index path of the highlighted item in
+    /// the collection view that it is the layout for. In `table` style the
+    /// rendering of cell separators is contingent upon the value of
+    /// `indexPathForHighlightedItem`.
+    var indexPathForHighlightedItem: IndexPath? {
+        didSet {
+            switch style {
+            case .table:
+                invalidateLayout()
+            case .grid:
+                break
+            }
+        }
+    }
+    
     private var separatorWeight: CGFloat {
         return 1.0 / scale
     }
@@ -50,7 +65,7 @@ final class CountiesCollectionViewLayout: UICollectionViewFlowLayout {
             return nil
         }
         let cellAttributes = attributes.filter { $0.representedElementCategory == .cell }
-        if let separatorAttributes = style.separatorAttributes(from: cellAttributes, in: collectionView, separatorWeight: separatorWeight) {
+        if let separatorAttributes = style.separatorAttributes(from: cellAttributes, in: collectionView, indexPathForHighlightedItem: indexPathForHighlightedItem, separatorWeight: separatorWeight) {
             attributes.append(contentsOf: separatorAttributes)
         }
         return attributes
@@ -69,21 +84,21 @@ final class CountiesCollectionViewLayout: UICollectionViewFlowLayout {
         case table(leadingSeparatorInset: CGFloat)
         case grid
         
-        fileprivate func separatorAttributes(from attributes: [UICollectionViewLayoutAttributes], in collectionView: UICollectionView, separatorWeight: CGFloat) -> [UICollectionViewLayoutAttributes]? {
+        fileprivate func separatorAttributes(from attributes: [UICollectionViewLayoutAttributes], in collectionView: UICollectionView, indexPathForHighlightedItem: IndexPath?, separatorWeight: CGFloat) -> [UICollectionViewLayoutAttributes]? {
             switch self {
             case let .table(leadingSeparatorInset):
-                return tableSeparators(for: attributes, in: collectionView, withLeadingSeparatorInset: leadingSeparatorInset, separatorWeight: separatorWeight)
+                return tableSeparators(for: attributes, in: collectionView, withIndexPathForHighlightedItem: indexPathForHighlightedItem, leadingSeparatorInset: leadingSeparatorInset, separatorWeight: separatorWeight)
             case .grid:
                 return nil
             }
         }
         
-        private func tableSeparators(for attributes: [UICollectionViewLayoutAttributes], in collectionView: UICollectionView, withLeadingSeparatorInset leadingSeparatorInset: CGFloat, separatorWeight: CGFloat) -> [UICollectionViewLayoutAttributes] {
+        private func tableSeparators(for attributes: [UICollectionViewLayoutAttributes], in collectionView: UICollectionView, withIndexPathForHighlightedItem indexPathForHighlightedItem: IndexPath?, leadingSeparatorInset: CGFloat, separatorWeight: CGFloat) -> [UICollectionViewLayoutAttributes] {
             return attributes.map {
                 let separatorAttributes = TableCellStyleSeparatorAttributes(forDecorationViewOfKind: TableCellStyleSeparatorView.kind, with: $0.indexPath)
                 separatorAttributes.frame = $0.frame
                 let sectionPosition = self.sectionPosition(forCellAt: $0.indexPath, in: collectionView)
-                separatorAttributes.drawingMetrics = TableCellStyleSeparatorView.DrawingMetrics(sectionPosition: sectionPosition, leadingSeparatorInset: leadingSeparatorInset, separatorWeight: separatorWeight)
+                separatorAttributes.drawingMetrics = TableCellStyleSeparatorView.DrawingMetrics(indexPath: $0.indexPath, indexPathForHighlightedItem: indexPathForHighlightedItem, sectionPosition: sectionPosition, leadingSeparatorInset: leadingSeparatorInset, separatorWeight: separatorWeight)
                 separatorAttributes.zIndex = 10000 // Make sure separators appear above cells
                 return separatorAttributes
             }

@@ -49,6 +49,8 @@ final class TableCellStyleSeparatorView: UICollectionReusableView {
     /// The attributes used to draw the separators for a particular separator
     /// view.
     struct DrawingMetrics: Equatable {
+        let indexPath: IndexPath
+        let indexPathForHighlightedItem: IndexPath?
         let sectionPosition: SectionPosition
         let leadingSeparatorInset: CGFloat
         let separatorWeight: CGFloat
@@ -110,7 +112,11 @@ private final class SeparatorsView: UIView {
         super.draw(rect)
         guard let drawingMetrics = drawingMetrics else { return }
         UIColor.separator.setStroke()
-        drawingMetrics.sectionPosition.borderPath(in: rect, leadingSeparatorInset: drawingMetrics.leadingSeparatorInset, separatorWeight: drawingMetrics.separatorWeight).stroke()
+        drawingMetrics.sectionPosition.borderPath(in: rect,
+                                                  cellIndexPath: drawingMetrics.indexPath,
+                                                  indexPathForHighlightedItem: drawingMetrics.indexPathForHighlightedItem,
+                                                  leadingSeparatorInset: drawingMetrics.leadingSeparatorInset,
+                                                  separatorWeight: drawingMetrics.separatorWeight)?.stroke()
     }
 
     private func commonSetup() {
@@ -120,15 +126,26 @@ private final class SeparatorsView: UIView {
 }
 
 private extension TableCellStyleSeparatorView.DrawingMetrics.SectionPosition {
-    func borderPath(in rect: CGRect, leadingSeparatorInset: CGFloat, separatorWeight: CGFloat) -> UIBezierPath {
+    func borderPath(in rect: CGRect, cellIndexPath: IndexPath, indexPathForHighlightedItem: IndexPath?, leadingSeparatorInset: CGFloat, separatorWeight: CGFloat) -> UIBezierPath? {
+        guard cellIndexPath != indexPathForHighlightedItem else {
+            // Don't draw any separators for highlighted cells
+            return nil
+        }
         let insetRect = rect.insetBy(dx: separatorWeight / 2, dy: separatorWeight / 2)
         let path = UIBezierPath()
         switch self {
         case .first:
             addTableCellTopBorder(to: path, in: insetRect)
-            addTableCellBottomBorder(to: path, in: insetRect, leftInset: leadingSeparatorInset)
+            fallthrough
         case .middle:
-            addTableCellBottomBorder(to: path, in: insetRect, leftInset: leadingSeparatorInset)
+            /*
+             Only draw the separator dividing this cell with the one below if
+             the one below is not highlighted.
+             */
+            let cellBelowIsHighlighted = cellIndexPath.representsItem(before: indexPathForHighlightedItem)
+            if cellBelowIsHighlighted == false {
+                addTableCellBottomBorder(to: path, in: insetRect, leftInset: leadingSeparatorInset)
+            }
         case .last:
             addTableCellBottomBorder(to: path, in: insetRect)
         case .singleItem:
@@ -148,5 +165,12 @@ private extension TableCellStyleSeparatorView.DrawingMetrics.SectionPosition {
     private func addTableCellBottomBorder(to path: UIBezierPath, in rect: CGRect, leftInset: CGFloat = 0) {
         path.move(to: CGPoint(x: rect.minX + leftInset, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+    }
+}
+
+private extension IndexPath {
+    func representsItem(before indexPath: IndexPath?) -> Bool {
+        guard let indexPath = indexPath else { return false }
+        return item == indexPath.item - 1 && section == indexPath.section
     }
 }
