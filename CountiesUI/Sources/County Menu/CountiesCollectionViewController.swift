@@ -26,7 +26,7 @@ final class CountiesCollectionViewController: UIViewController {
     var delegate: CountiesCollectionViewControllerDelegate?
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CountyCell.self, forCellWithReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier)
         collectionView.register(SectionHeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CountiesCollectionViewController.regionHeaderIdentifier)
@@ -41,8 +41,8 @@ final class CountiesCollectionViewController: UIViewController {
         #endif
         return collectionView
     }()
-    private lazy var flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
+    private lazy var collectionViewLayout: CountiesCollectionViewLayout = {
+        let flowLayout = CountiesCollectionViewLayout()
         flowLayout.minimumInteritemSpacing = cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
         return flowLayout
     }()
@@ -52,7 +52,6 @@ final class CountiesCollectionViewController: UIViewController {
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier, for: indexPath) as! CountyCell
             countyCell.county = county
             countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
-            countyCell.sectionPosition = self.sectionPosition(forCellAt: indexPath, in: collectionView)
             return countyCell
         }
         dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
@@ -95,12 +94,18 @@ final class CountiesCollectionViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        flowLayout.invalidateLayout()
+        collectionViewLayout.invalidateLayout()
+    }
+    
+    override func viewLayoutMarginsDidChange() {
+        super.viewLayoutMarginsDidChange()
+        collectionViewLayout.style = layoutStyleForTraitCollection(traitCollection)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         configureSectionHeaders()
+        collectionViewLayout.style = layoutStyleForTraitCollection(traitCollection)
         guard let previousTraitCollection = previousTraitCollection else { return }
         if cellStyleForTraitCollection(traitCollection) != cellStyleForTraitCollection(previousTraitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
@@ -111,18 +116,8 @@ final class CountiesCollectionViewController: UIViewController {
         return traitCollection.horizontalSizeClass == .regular ? .grid : .table
     }
     
-    private func sectionPosition(forCellAt indexPath: IndexPath, in collectionView: UICollectionView) -> CountyCell.SectionPosition {
-        guard collectionView.numberOfItems(inSection: indexPath.section) != 1 else {
-            return .singleItem
-        }
-        switch indexPath.item {
-        case 0:
-            return .first
-        case collectionView.numberOfItems(inSection: indexPath.section) - 1:
-            return .last
-        default:
-            return .middle
-        }
+    private func layoutStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountiesCollectionViewLayout.Style {
+        return traitCollection.horizontalSizeClass == .regular ? .grid : .table(leadingSeparatorInset: view.directionalLayoutMargins.leading + CountyCell.tableCellStyleNameLabelLeadingPadding)
     }
     
     @objc private func reloadData() {
@@ -141,11 +136,11 @@ final class CountiesCollectionViewController: UIViewController {
     private func configureSectionHeaders() {
         #if os(iOS)
         let isRegularWidth = traitCollection.horizontalSizeClass == .regular
-        flowLayout.headerReferenceSize = CGSize(width: 20, height: isRegularWidth ? 40 : 32)
-        flowLayout.sectionHeadersPinToVisibleBounds = isRegularWidth
+        collectionViewLayout.headerReferenceSize = CGSize(width: 20, height: isRegularWidth ? 40 : 32)
+        collectionViewLayout.sectionHeadersPinToVisibleBounds = isRegularWidth
         #elseif os(tvOS)
-        flowLayout.headerReferenceSize = CGSize(width: 20, height: 100)
-        flowLayout.sectionHeadersPinToVisibleBounds = false
+        collectionViewLayout.headerReferenceSize = CGSize(width: 20, height: 100)
+        collectionViewLayout.sectionHeadersPinToVisibleBounds = false
         #endif
     }
 }
