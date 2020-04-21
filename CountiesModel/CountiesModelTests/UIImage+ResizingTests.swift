@@ -10,6 +10,8 @@ import XCTest
 @testable import CountiesModel
 
 final class UIImageResizingTests: XCTestCase {
+    private static let imageScale: CGFloat = 2
+    
     private var sourceImage: UIImage!
     private var resizedImage: UIImage!
     
@@ -21,7 +23,7 @@ final class UIImageResizingTests: XCTestCase {
     
     private func givenSourceImage(ofSize size: CGSize) {
         let rect = CGRect(origin: .zero, size: size)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIImageResizingTests.imageScale)
         UIColor.black.setFill()
         UIRectFill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -30,7 +32,9 @@ final class UIImageResizingTests: XCTestCase {
     }
     
     private func whenTheSourceImage(isResizedTo size: CGSize) {
-        resizedImage = sourceImage.resized(toFit: size)
+        let rendererFormat = UIGraphicsImageRendererFormat()
+        rendererFormat.scale = UIImageResizingTests.imageScale
+        resizedImage = sourceImage.resized(toFit: size, rendererFormat: rendererFormat)
     }
 }
 
@@ -47,7 +51,7 @@ extension UIImageResizingTests {
         givenSourceImage(ofSize: CGSize(width: 300, height: 200))
         whenTheSourceImage(isResizedTo: CGSize(width: 200, height: 100))
         XCTAssertEqual(resizedImage.size.width, 200)
-        XCTAssertEqual(resizedImage.size.height, 133.333, accuracy: 0.001)
+        XCTAssertEqual(resizedImage.size.height, 133.5)
     }
     
     func testItResizesALandscapeImageToAPortraitSizeAsExpected() {
@@ -71,7 +75,7 @@ extension UIImageResizingTests {
         givenSourceImage(ofSize: CGSize(width: 200, height: 300))
         whenTheSourceImage(isResizedTo: CGSize(width: 175, height: 100))
         XCTAssertEqual(resizedImage.size.width, 175)
-        XCTAssertEqual(resizedImage.size.height, 262.666, accuracy: 0.001)
+        XCTAssertEqual(resizedImage.size.height, 262.5)
     }
     
     func testItResizesAPortraitImageToAPortraitSizeAsExpected() {
