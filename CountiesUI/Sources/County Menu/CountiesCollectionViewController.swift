@@ -172,6 +172,14 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: UICollectionViewDelegate
 extension CountiesCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        collectionViewLayout.indexPathForHighlightedItem = indexPath
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        collectionViewLayout.indexPathForHighlightedItem = nil
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.countiesCollectionViewController(self, didSelect: dataSource.itemIdentifier(for: indexPath)!)
         collectionView.deselectItem(at: indexPath, animated: false)
