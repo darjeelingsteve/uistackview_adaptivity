@@ -45,6 +45,7 @@
 		48DDF06C243DEEEB00B2E122 /* Country+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */; };
 		48DDF06D243DF07900B2E122 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779004243CE2ED008FFD48 /* Country.swift */; };
 		48DDF06E243DF07A00B2E122 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48779004243CE2ED008FFD48 /* Country.swift */; };
+		48DF294A2450A95300633C15 /* CountyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF29492450A95300633C15 /* CountyTests.swift */; };
 		48E36B442448891700913F4B /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B432448891700913F4B /* UIImage+Resizing.swift */; };
 		48E36B452448891700913F4B /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B432448891700913F4B /* UIImage+Resizing.swift */; };
 		48E36B472448893700913F4B /* UIImage+ResizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B462448893700913F4B /* UIImage+ResizingTests.swift */; };
@@ -90,6 +91,7 @@
 		48779008243CE56B008FFD48 /* TestRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestRegions.json; sourceTree = "<group>"; };
 		48DDF065243DE4EE00B2E122 /* United Kingdom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "United Kingdom.json"; sourceTree = "<group>"; };
 		48DDF069243DEEEB00B2E122 /* Country+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+NSUserActivity.swift"; sourceTree = "<group>"; };
+		48DF29492450A95300633C15 /* CountyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyTests.swift; sourceTree = "<group>"; };
 		48E36B432448891700913F4B /* UIImage+Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizing.swift"; sourceTree = "<group>"; };
 		48E36B462448893700913F4B /* UIImage+ResizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ResizingTests.swift"; sourceTree = "<group>"; };
 		48E36B4824488AC600913F4B /* Thumbnails.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Thumbnails.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				48779006243CE540008FFD48 /* CountryTests.swift */,
+				48DF29492450A95300633C15 /* CountyTests.swift */,
 				481BAB272430D727009CC8A6 /* CountyHistoryTests.swift */,
 				482BC96223EB24F00053E6F6 /* FavouritesControllerTests.swift */,
 				48E36B462448893700913F4B /* UIImage+ResizingTests.swift */,
@@ -479,6 +482,7 @@
 				48E36B472448893700913F4B /* UIImage+ResizingTests.swift in Sources */,
 				481BAB282430D727009CC8A6 /* CountyHistoryTests.swift in Sources */,
 				482BC96323EB24F00053E6F6 /* FavouritesControllerTests.swift in Sources */,
+				48DF294A2450A95300633C15 /* CountyTests.swift in Sources */,
 				48779007243CE540008FFD48 /* CountryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

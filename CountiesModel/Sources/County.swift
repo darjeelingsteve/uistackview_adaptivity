@@ -39,9 +39,9 @@ extension County: Comparable {
 
 extension County {
     public var populationDescription: String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        return String(format: NSLocalizedString("Population: %@", comment: "County population label text"), numberFormatter.string(from: NSNumber(value: population.total))!)
+        let populationTotalFormatter = NumberFormatter()
+        populationTotalFormatter.numberStyle = .decimal
+        return String(format: NSLocalizedString("Population: %@ (%@)", comment: "County population label text"), populationTotalFormatter.string(from: NSNumber(value: population.total))!, NumberFormatter().string(from: NSNumber(value: population.year))!)
     }
     
     public var flagImage: UIImage? {
