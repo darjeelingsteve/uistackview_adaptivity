@@ -57,10 +57,10 @@
                         <group width="1" alignment="left" layout="vertical" radius="0.0" id="MNb-d7-YEG">
                             <items>
                                 <imageView alignment="center" id="SrD-5L-TZu"/>
-                                <label alignment="center" text="Label" minimumScaleFactor="0.69999999999999996" id="rTg-g4-xgL">
+                                <label alignment="center" text="Label" textAlignment="center" minimumScaleFactor="0.69999999999999996" id="rTg-g4-xgL">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label alignment="center" text="Label" minimumScaleFactor="0.69999999999999996" id="tpm-k4-8Ik"/>
+                                <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.69999999999999996" id="tpm-k4-8Ik"/>
                             </items>
                         </group>
                     </items>
@@ -71,7 +71,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="544" y="404"/>
+            <point key="canvasLocation" x="330" y="31"/>
         </scene>
     </scenes>
 </document>
