@@ -223,7 +223,7 @@ private extension CountyCell.DisplayStyle {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
         switch self {
         case .table:
-            return CGSize(width: collectionView.bounds.width, height: 44)
+            return CGSize(width: collectionView.bounds.width, height: tableCellHeight(for: collectionView.traitCollection.preferredContentSizeCategory))
         case .grid:
             let availableWidth = collectionView.bounds.width - collectionView.layoutMargins.left - collectionView.layoutMargins.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing
@@ -238,6 +238,31 @@ private extension CountyCell.DisplayStyle {
             
             let itemWidth = floor((availableWidth - totalSpacingBetweenAdjacentItems) / CGFloat(numberOfItemsPerRow))
             return CGSize(width: itemWidth, height: floor(itemWidth / 1.3))
+        }
+    }
+    
+    private func tableCellHeight(for contentSizeCategory: UIContentSizeCategory) -> CGFloat {
+        switch contentSizeCategory {
+        case .extraSmall, .small, .medium, .large, .unspecified:
+            return 44
+        case .extraLarge:
+            return 48
+        case .extraExtraLarge:
+            return 52
+        case .extraExtraExtraLarge:
+            return 58
+        case .accessibilityMedium:
+            return 69
+        case .accessibilityLarge:
+            return 81
+        case .accessibilityExtraLarge:
+            return 97
+        case .accessibilityExtraExtraLarge:
+            return 114
+        case .accessibilityExtraExtraExtraLarge:
+            return 127
+        default:
+            return tableCellHeight(for: .unspecified)
         }
     }
     
