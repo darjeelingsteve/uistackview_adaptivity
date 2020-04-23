@@ -34,6 +34,8 @@
 		482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
 		485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
 		485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
+		48DF294C24521ABC00633C15 /* TableStyleLayoutMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294B24521ABC00633C15 /* TableStyleLayoutMetrics.swift */; };
+		48DF294E24521B8300633C15 /* TableStyleLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294D24521B8300633C15 /* TableStyleLayoutMetricsTests.swift */; };
 		48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
 		48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
 		48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
@@ -101,6 +103,8 @@
 		482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewController.swift; sourceTree = "<group>"; };
 		482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesViewController.swift; sourceTree = "<group>"; };
 		485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderSupplementaryView.swift; sourceTree = "<group>"; };
+		48DF294B24521ABC00633C15 /* TableStyleLayoutMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStyleLayoutMetrics.swift; sourceTree = "<group>"; };
+		48DF294D24521B8300633C15 /* TableStyleLayoutMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStyleLayoutMetricsTests.swift; sourceTree = "<group>"; };
 		48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellStyleSeparatorView.swift; sourceTree = "<group>"; };
 		48E36B55244E1E7200913F4B /* CountiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +256,7 @@
 				482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */,
 				485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */,
 				48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */,
+				48DF294B24521ABC00633C15 /* TableStyleLayoutMetrics.swift */,
 			);
 			path = "County Menu";
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				48E36B64244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift */,
+				48DF294D24521B8300633C15 /* TableStyleLayoutMetricsTests.swift */,
 				48E36B60244E1EA900913F4B /* Info.plist */,
 			);
 			path = CountiesUITests;
@@ -480,6 +486,7 @@
 				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
 				482BC9BF23EB427C0053E6F6 /* Bundle+Extensions.swift in Sources */,
 				4800E58C23EC0A290059ABA8 /* PlatformHelpers.swift in Sources */,
+				48DF294C24521ABC00633C15 /* TableStyleLayoutMetrics.swift in Sources */,
 				482BC9DD23EB57FC0053E6F6 /* CountiesCollectionViewController.swift in Sources */,
 				482BC9D923EB57640053E6F6 /* EmptyCountiesNoticeView.swift in Sources */,
 				482BC9DB23EB57C30053E6F6 /* CountyCell.swift in Sources */,
@@ -497,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DF294E24521B8300633C15 /* TableStyleLayoutMetricsTests.swift in Sources */,
 				48E36B65244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
