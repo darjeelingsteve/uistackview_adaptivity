@@ -19,6 +19,32 @@ struct TableStyleLayoutMetrics {
         self.contentSizeCategory = contentSizeCategory
     }
     
+    /// The height to use for table style cells.
+    var cellHeight: CGFloat {
+        switch contentSizeCategory {
+        case .extraSmall, .small, .medium, .large, .unspecified:
+            return 44
+        case .extraLarge:
+            return 48
+        case .extraExtraLarge:
+            return 52
+        case .extraExtraExtraLarge:
+            return 58
+        case .accessibilityMedium:
+            return 69
+        case .accessibilityLarge:
+            return 81
+        case .accessibilityExtraLarge:
+            return 97
+        case .accessibilityExtraExtraLarge:
+            return 114
+        case .accessibilityExtraExtraExtraLarge:
+            return 127
+        default:
+            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).cellHeight
+        }
+    }
+    
     /// The font to use for section headers.
     var sectionHeaderFont: UIFont {
         switch contentSizeCategory {
