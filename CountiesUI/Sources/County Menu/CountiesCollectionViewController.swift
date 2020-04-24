@@ -150,7 +150,11 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch layoutStyleForTraitCollection(traitCollection) {
         case .table:
+            #if os(iOS)
             return CGSize(width: collectionView.bounds.width, height: TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).sectionHeaderHeight)
+            #else
+            fatalError("Table style only for use on iOS")
+            #endif
         case .grid:
             return CGSize(width: collectionView.bounds.width, height: 40)
         }
@@ -159,9 +163,13 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch layoutStyleForTraitCollection(traitCollection) {
         case .table:
+            #if os(iOS)
             let isLastSection = section == collectionView.numberOfSections - 1
             let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory)
             return UIEdgeInsets(top: 0, left: 0, bottom: layoutMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: isLastSection), right: 0)
+            #else
+            fatalError("Table style only for use on iOS")
+            #endif
         case .grid:
             return UIEdgeInsets(top: 8, left: collectionView.layoutMargins.left, bottom: 24, right: collectionView.layoutMargins.right)
         }
@@ -229,7 +237,11 @@ private extension CountiesCollectionViewLayout.Style {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
         switch self {
         case .table:
+            #if os(iOS)
             return CGSize(width: collectionView.bounds.width, height: TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).cellHeight)
+            #else
+            fatalError("Table style only for use on iOS")
+            #endif
         case .grid:
             let availableWidth = collectionView.bounds.width - collectionView.layoutMargins.left - collectionView.layoutMargins.right
             let interitemSpacing = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing

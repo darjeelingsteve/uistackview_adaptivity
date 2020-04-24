@@ -57,8 +57,10 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         let isRegularWidth = traitCollection.horizontalSizeClass == .regular
         titleCentreYConstraint.isActive = isRegularWidth
         titleLabelBottomConstraint.isActive = !isRegularWidth
+        #if os(iOS)
         let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
         titleLabelBottomConstraint.constant = -layoutMetrics.sectionHeaderLabelBottomPadding
+        #endif
         super.updateConstraints()
     }
     
