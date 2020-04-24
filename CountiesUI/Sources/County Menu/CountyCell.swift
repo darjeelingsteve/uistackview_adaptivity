@@ -62,6 +62,7 @@ class CountyCell: UICollectionViewCell {
         chevronImageView.tintColor = .placeholderText
         chevronImageView.tintAdjustmentMode = .normal
         chevronImageView.setContentHuggingPriority(.required, for: .horizontal)
+        chevronImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
         return chevronImageView
     }()
     
