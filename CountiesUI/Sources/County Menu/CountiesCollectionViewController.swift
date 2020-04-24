@@ -43,7 +43,7 @@ final class CountiesCollectionViewController: UIViewController {
     }()
     private lazy var collectionViewLayout: CountiesCollectionViewLayout = {
         let flowLayout = CountiesCollectionViewLayout()
-        flowLayout.minimumInteritemSpacing = cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
+        flowLayout.minimumInteritemSpacing = layoutStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
         return flowLayout
     }()
     private lazy var dataSource: UICollectionViewDiffableDataSource<CollectionSection, County> = {
@@ -51,7 +51,7 @@ final class CountiesCollectionViewController: UIViewController {
             guard let self = self else { return nil }
             let countyCell = collectionView.dequeueReusableCell(withReuseIdentifier: CountiesCollectionViewController.countyCellIdentifier, for: indexPath) as! CountyCell
             countyCell.county = county
-            countyCell.displayStyle = self.cellStyleForTraitCollection(self.traitCollection)
+            countyCell.displayStyle = self.traitCollection.horizontalSizeClass == .regular ? .grid : .table
             return countyCell
         }
         dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
@@ -107,13 +107,9 @@ final class CountiesCollectionViewController: UIViewController {
         configureSectionHeaders()
         collectionViewLayout.style = layoutStyleForTraitCollection(traitCollection)
         guard let previousTraitCollection = previousTraitCollection else { return }
-        if cellStyleForTraitCollection(traitCollection) != cellStyleForTraitCollection(previousTraitCollection) {
+        if layoutStyleForTraitCollection(traitCollection) != layoutStyleForTraitCollection(previousTraitCollection) {
             collectionView.reloadData() // Reload cells to adopt the new style
         }
-    }
-    
-    private func cellStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountyCell.DisplayStyle {
-        return traitCollection.horizontalSizeClass == .regular ? .grid : .table
     }
     
     private func layoutStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountiesCollectionViewLayout.Style {
@@ -148,11 +144,11 @@ final class CountiesCollectionViewController: UIViewController {
 // MARK: UICollectionViewDelegateFlowLayout
 extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return cellStyleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
+        return layoutStyleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch cellStyleForTraitCollection(traitCollection) {
+        switch layoutStyleForTraitCollection(traitCollection) {
         case .table:
             return CGSize(width: collectionView.bounds.width, height: TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).sectionHeaderHeight)
         case .grid:
@@ -161,7 +157,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        switch cellStyleForTraitCollection(traitCollection) {
+        switch layoutStyleForTraitCollection(traitCollection) {
         case .table:
             let isLastSection = section == collectionView.numberOfSections - 1
             let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory)
@@ -172,11 +168,11 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellStyleForTraitCollection(traitCollection).collectionViewLineSpacing
+        return layoutStyleForTraitCollection(traitCollection).collectionViewLineSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return cellStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
+        return layoutStyleForTraitCollection(traitCollection).collectionViewInteritemSpacing
     }
 }
 
@@ -228,8 +224,8 @@ protocol CountiesCollectionViewControllerDelegate: AnyObject {
     func countiesCollectionViewController(_ countiesCollectionViewController: CountiesCollectionViewController, didSelect county: County)
 }
 
-// MARK: - CountyCell.DisplayStyle extension to provide collection view layout information based on a display style.
-private extension CountyCell.DisplayStyle {
+// MARK: - CountiesCollectionViewLayout.DisplayStyle extension to provide collection view layout information based on the layout style.
+private extension CountiesCollectionViewLayout.Style {
     func itemSizeInCollectionView(_ collectionView: UICollectionView) -> CGSize {
         switch self {
         case .table:
