@@ -156,7 +156,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
             fatalError("Table style only for use on iOS")
             #endif
         case .grid:
-            return CGSize(width: collectionView.bounds.width, height: 40)
+            return CGSize(width: collectionView.bounds.width, height: platformValue(foriOS: 40, tvOS: 80))
         }
     }
     
