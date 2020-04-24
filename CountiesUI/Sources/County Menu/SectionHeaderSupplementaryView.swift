@@ -24,6 +24,14 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         return titleLabel
     }()
     
+    private lazy var titleLabelBottomConstraint: NSLayoutConstraint = {
+        return titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+    }()
+    
+    private lazy var titleCentreYConstraint: NSLayoutConstraint = {
+        return titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonSetup()
@@ -37,14 +45,20 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         configureTitleLabel()
+        setNeedsUpdateConstraints()
     }
     
     override func updateConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor)
         ])
+        
+        let isRegularWidth = traitCollection.horizontalSizeClass == .regular
+        titleCentreYConstraint.isActive = isRegularWidth
+        titleLabelBottomConstraint.isActive = !isRegularWidth
+        let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
+        titleLabelBottomConstraint.constant = -layoutMetrics.sectionHeaderLabelBottomPadding
         super.updateConstraints()
     }
     
@@ -61,7 +75,7 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         #if os(iOS)
         let isRegularWidth = traitCollection.horizontalSizeClass == .regular
         titleLabel.text = isRegularWidth ? title : title?.uppercased()
-        titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : .systemFont(ofSize: 13, weight: .regular)
+        titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory).sectionHeaderFont
         titleLabel.textColor = UIColor(dynamicProvider: { (traitCollection) -> UIColor in
             guard traitCollection.horizontalSizeClass == .compact else {
                 return .label

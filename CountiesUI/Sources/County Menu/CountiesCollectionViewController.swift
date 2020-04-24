@@ -151,11 +151,21 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
         return cellStyleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch cellStyleForTraitCollection(traitCollection) {
+        case .table:
+            return CGSize(width: collectionView.bounds.width, height: TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).sectionHeaderHeight)
+        case .grid:
+            return CGSize(width: collectionView.bounds.width, height: 40)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch cellStyleForTraitCollection(traitCollection) {
         case .table:
             let isLastSection = section == collectionView.numberOfSections - 1
-            return UIEdgeInsets(top: 0, left: 0, bottom: isLastSection ? 38 : 28, right: 0)
+            let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory)
+            return UIEdgeInsets(top: 0, left: 0, bottom: layoutMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: isLastSection), right: 0)
         case .grid:
             return UIEdgeInsets(top: 8, left: collectionView.layoutMargins.left, bottom: 24, right: collectionView.layoutMargins.right)
         }
@@ -262,7 +272,7 @@ private extension CountyCell.DisplayStyle {
         case .accessibilityExtraExtraExtraLarge:
             return 127
         default:
-            return tableCellHeight(for: .unspecified)
+            return tableCellHeight(for: .large)
         }
     }
     
