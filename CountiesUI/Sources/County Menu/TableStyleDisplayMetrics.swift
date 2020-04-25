@@ -1,5 +1,5 @@
 //
-//  TableStyleLayoutMetrics.swift
+//  TableStyleDisplayMetrics.swift
 //  CountiesUI iOS
 //
 //  Created by Stephen Anthony on 23/04/2020.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-/// A struct representing the various layout metrics used when laying out a
+/// A struct representing the various display metrics used when laying out a
 /// collection view in a grouped table style for a given content size category.
-struct TableStyleLayoutMetrics {
+struct TableStyleDisplayMetrics {
     private static let defaultContentSizeCategory: UIContentSizeCategory = .large
     
     private let contentSizeCategory: UIContentSizeCategory
@@ -43,7 +43,7 @@ struct TableStyleLayoutMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).cellHeight
+            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).cellHeight
         }
     }
     
@@ -73,7 +73,7 @@ struct TableStyleLayoutMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).sectionHeaderFont
+            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderFont
         }
     }
     
@@ -113,7 +113,7 @@ struct TableStyleLayoutMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).sectionHeaderHeight
+            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderHeight
         }
     }
     
@@ -140,7 +140,7 @@ struct TableStyleLayoutMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).sectionHeaderLabelBottomPadding
+            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderLabelBottomPadding
         }
     }
     
@@ -162,7 +162,7 @@ struct TableStyleLayoutMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
+            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
         }
     }
     

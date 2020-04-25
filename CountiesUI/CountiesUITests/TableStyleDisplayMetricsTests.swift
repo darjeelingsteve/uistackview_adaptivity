@@ -1,5 +1,5 @@
 //
-//  TableStyleLayoutMetricsTests.swift
+//  TableStyleDisplayMetricsTests.swift
 //  CountiesUITests
 //
 //  Created by Stephen Anthony on 23/04/2020.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import CountiesUI
 
-final class TableStyleLayoutMetricsTests: XCTestCase {
-    private var metrics: TableStyleLayoutMetrics!
+final class TableStyleDisplayMetricsTests: XCTestCase {
+    private var metrics: TableStyleDisplayMetrics!
     
     override func tearDown() {
         metrics = nil
@@ -18,7 +18,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheExtraSmallContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .extraSmall)
+        givenDisplayMetrics(forContentSizeCategory: .extraSmall)
         XCTAssertEqual(metrics.cellHeight, 44)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
@@ -29,7 +29,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheSmallContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .small)
+        givenDisplayMetrics(forContentSizeCategory: .small)
         XCTAssertEqual(metrics.cellHeight, 44)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
@@ -40,7 +40,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheMediumContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .medium)
+        givenDisplayMetrics(forContentSizeCategory: .medium)
         XCTAssertEqual(metrics.cellHeight, 44)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
@@ -51,7 +51,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .large)
+        givenDisplayMetrics(forContentSizeCategory: .large)
         XCTAssertEqual(metrics.cellHeight, 44)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 13, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 38)
@@ -62,7 +62,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .extraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .extraLarge)
         XCTAssertEqual(metrics.cellHeight, 48)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 15, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 44)
@@ -73,7 +73,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheExtraExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .extraExtraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .extraExtraLarge)
         XCTAssertEqual(metrics.cellHeight, 52)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 17, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 50)
@@ -84,7 +84,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheExtraExtraExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .extraExtraExtraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .extraExtraExtraLarge)
         XCTAssertEqual(metrics.cellHeight, 58)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 19, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 56)
@@ -95,7 +95,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheAccessibilityMediumContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .accessibilityMedium)
+        givenDisplayMetrics(forContentSizeCategory: .accessibilityMedium)
         XCTAssertEqual(metrics.cellHeight, 69)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 23, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 72)
@@ -106,7 +106,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheAccessibilityLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .accessibilityLarge)
+        givenDisplayMetrics(forContentSizeCategory: .accessibilityLarge)
         XCTAssertEqual(metrics.cellHeight, 81)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 27, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 84)
@@ -117,7 +117,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheAccessibilityExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .accessibilityExtraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .accessibilityExtraLarge)
         XCTAssertEqual(metrics.cellHeight, 97)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 33, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 105)
@@ -128,7 +128,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheAccessibilityExtraExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .accessibilityExtraExtraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .accessibilityExtraExtraLarge)
         XCTAssertEqual(metrics.cellHeight, 114)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 38, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 124)
@@ -139,7 +139,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheExpectedMetricsForTheAccessibilityExtraExtraExtraLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .accessibilityExtraExtraExtraLarge)
+        givenDisplayMetrics(forContentSizeCategory: .accessibilityExtraExtraExtraLarge)
         XCTAssertEqual(metrics.cellHeight, 127)
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 44, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 142)
@@ -150,8 +150,8 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheSameMetricsForTheUnsepcifiedContentSizeCategoryAsForTheLargeContentSizeCategory() {
-        givenLayoutMetrics(forContentSizeCategory: .unspecified)
-        let largeMetrics = TableStyleLayoutMetrics(contentSizeCategory: .large)
+        givenDisplayMetrics(forContentSizeCategory: .unspecified)
+        let largeMetrics = TableStyleDisplayMetrics(contentSizeCategory: .large)
         XCTAssertEqual(metrics.cellHeight, largeMetrics.cellHeight)
         XCTAssertEqual(metrics.sectionHeaderFont, largeMetrics.sectionHeaderFont)
         XCTAssertEqual(metrics.sectionHeaderHeight, largeMetrics.sectionHeaderHeight)
@@ -162,21 +162,21 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
     }
     
     func testItReturnsTheCorrectHeaderTextColourInLightInterfaceStyle() {
-        givenLayoutMetrics(forContentSizeCategory: .large)
+        givenDisplayMetrics(forContentSizeCategory: .large)
         performTest(withUserInterfaceStyle: .light) {
             XCTAssertEqual(metrics.sectionHeaderTextColour.cgColor, UIColor(red: 0.43, green: 0.43, blue: 0.45, alpha: 1).cgColor)
         }
     }
     
     func testItReturnsTheCorrectHeaderTextColourInDarkInterfaceStyle() {
-        givenLayoutMetrics(forContentSizeCategory: .large)
+        givenDisplayMetrics(forContentSizeCategory: .large)
         performTest(withUserInterfaceStyle: .dark) {
             XCTAssertEqual(metrics.sectionHeaderTextColour.cgColor, UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1).cgColor)
         }
     }
     
-    private func givenLayoutMetrics(forContentSizeCategory contentSizeCategory: UIContentSizeCategory) {
-        metrics = TableStyleLayoutMetrics(contentSizeCategory: contentSizeCategory)
+    private func givenDisplayMetrics(forContentSizeCategory contentSizeCategory: UIContentSizeCategory) {
+        metrics = TableStyleDisplayMetrics(contentSizeCategory: contentSizeCategory)
     }
     
     private func performTest(withUserInterfaceStyle userInterfaceStyle: UIUserInterfaceStyle, tests: () -> Void) {

@@ -58,8 +58,8 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
         titleCentreYConstraint.isActive = isRegularWidth
         titleLabelBottomConstraint.isActive = !isRegularWidth
         #if os(iOS)
-        let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
-        titleLabelBottomConstraint.constant = -layoutMetrics.sectionHeaderLabelBottomPadding
+        let tableMetrics = TableStyleDisplayMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
+        titleLabelBottomConstraint.constant = -tableMetrics.sectionHeaderLabelBottomPadding
         #endif
         super.updateConstraints()
     }
@@ -76,7 +76,7 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
     private func configureTitleLabel() {
         #if os(iOS)
         let isRegularWidth = traitCollection.horizontalSizeClass == .regular
-        let tableMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
+        let tableMetrics = TableStyleDisplayMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
         titleLabel.text = isRegularWidth ? title : title?.uppercased()
         titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : tableMetrics.sectionHeaderFont
         titleLabel.textColor = isRegularWidth ? .label : tableMetrics.sectionHeaderTextColour
