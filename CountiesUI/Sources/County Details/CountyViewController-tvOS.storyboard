@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="15702" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Adt-3b-u6a">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Adt-3b-u6a">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="TVUIKit controls" minToolsVersion="10.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,30 +20,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-Hq-cit">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWE-KS-HYq" customClass="GradientView" customModule="CountiesUI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColour">
+                                        <color key="value" white="0.0" alpha="0.5998234160958904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-Kb-v6W" userLabel="Content Container View">
-                                <rect key="frame" x="90" y="246" width="1740" height="588.5"/>
+                                <rect key="frame" x="90" y="857.5" width="1740" height="162.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-Hq-cit">
-                                        <rect key="frame" x="710" y="0.0" width="320" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="AGA-Ap-kYg"/>
-                                            <constraint firstAttribute="height" constant="200" id="qUx-I1-uB6"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-ry-v40">
-                                        <rect key="frame" x="780" y="244" width="180" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="91"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-qi-YYa">
-                                        <rect key="frame" x="801.5" y="337.5" width="137" height="69"/>
+                                        <rect key="frame" x="0.0" y="93.5" width="137" height="69"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tvCaptionButtonView contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" contentImage="heart" catalog="system" title="Favourite" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-nX-GJN">
-                                        <rect key="frame" x="792" y="466.5" width="156" height="122"/>
+                                    <tvCaptionButtonView contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" contentImage="heart" catalog="system" title="Favourite" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-nX-GJN">
+                                        <rect key="frame" x="1584" y="40.5" width="156" height="122"/>
                                         <connections>
                                             <action selector="toggleFavourite:" destination="Adt-3b-u6a" eventType="primaryActionTriggered" id="bET-72-dKJ"/>
                                         </connections>
@@ -51,24 +56,30 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="IvL-ry-v40" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="0YZ-81-J2L"/>
-                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="2Pg-4I-YSz"/>
-                                    <constraint firstItem="zyk-Hq-cit" firstAttribute="top" secondItem="aGb-Kb-v6W" secondAttribute="top" id="75W-Qh-0SE"/>
+                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="leading" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="2Pg-4I-YSz"/>
                                     <constraint firstAttribute="bottom" secondItem="Fmc-nX-GJN" secondAttribute="bottom" id="8nh-rP-xhb"/>
-                                    <constraint firstItem="zyk-Hq-cit" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="AdG-8V-Gfz"/>
-                                    <constraint firstItem="1uj-qi-YYa" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="Hh9-B1-B9a"/>
-                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="centerX" secondItem="aGb-Kb-v6W" secondAttribute="centerX" id="Pjk-cH-wsj"/>
-                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="top" secondItem="1uj-qi-YYa" secondAttribute="bottom" constant="60" id="hdH-eT-XvF"/>
-                                    <constraint firstItem="IvL-ry-v40" firstAttribute="top" secondItem="zyk-Hq-cit" secondAttribute="bottom" constant="44" id="jvA-cU-DV8"/>
-                                    <constraint firstItem="IvL-ry-v40" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="wUq-lR-i8a"/>
+                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1uj-qi-YYa" secondAttribute="trailing" constant="8" symbolic="YES" id="F1b-eO-f73"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fmc-nX-GJN" secondAttribute="trailing" id="FMP-aU-xBd"/>
+                                    <constraint firstItem="Fmc-nX-GJN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IvL-ry-v40" secondAttribute="trailing" constant="8" symbolic="YES" id="Wg0-yW-Bgm"/>
+                                    <constraint firstItem="IvL-ry-v40" firstAttribute="top" secondItem="aGb-Kb-v6W" secondAttribute="top" id="cgH-N8-iYH"/>
+                                    <constraint firstItem="IvL-ry-v40" firstAttribute="leading" secondItem="aGb-Kb-v6W" secondAttribute="leading" id="wUq-lR-i8a"/>
                                     <constraint firstItem="1uj-qi-YYa" firstAttribute="firstBaseline" secondItem="IvL-ry-v40" secondAttribute="baseline" constant="76" symbolType="layoutAnchor" id="zIh-pZ-nqc"/>
+                                    <constraint firstAttribute="bottom" secondItem="1uj-qi-YYa" secondAttribute="bottom" id="zVO-zh-k0B"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cWE-KS-HYq" secondAttribute="bottom" id="15E-gO-Zqk"/>
+                            <constraint firstItem="3P9-7o-7Zn" firstAttribute="bottom" secondItem="aGb-Kb-v6W" secondAttribute="bottom" id="1fe-Dn-XNQ"/>
                             <constraint firstItem="aGb-Kb-v6W" firstAttribute="leading" secondItem="3P9-7o-7Zn" secondAttribute="leading" id="CFS-GZ-nS9"/>
-                            <constraint firstItem="aGb-Kb-v6W" firstAttribute="centerY" secondItem="3P9-7o-7Zn" secondAttribute="centerY" id="O7E-Pn-Sz1"/>
+                            <constraint firstItem="cWE-KS-HYq" firstAttribute="leading" secondItem="5TB-bl-FKd" secondAttribute="leading" id="KhZ-iQ-c2s"/>
+                            <constraint firstItem="zyk-Hq-cit" firstAttribute="top" secondItem="5TB-bl-FKd" secondAttribute="top" id="RXE-pg-HjP"/>
+                            <constraint firstAttribute="trailing" secondItem="zyk-Hq-cit" secondAttribute="trailing" id="TfD-zy-ChL"/>
                             <constraint firstItem="aGb-Kb-v6W" firstAttribute="centerX" secondItem="3P9-7o-7Zn" secondAttribute="centerX" id="UNV-Xc-p9z"/>
+                            <constraint firstAttribute="bottom" secondItem="zyk-Hq-cit" secondAttribute="bottom" id="Uh6-2v-w8g"/>
+                            <constraint firstItem="zyk-Hq-cit" firstAttribute="leading" secondItem="5TB-bl-FKd" secondAttribute="leading" id="aHQ-Ii-RKf"/>
+                            <constraint firstAttribute="trailing" secondItem="cWE-KS-HYq" secondAttribute="trailing" id="f9u-F2-tnc"/>
+                            <constraint firstItem="cWE-KS-HYq" firstAttribute="top" secondItem="5TB-bl-FKd" secondAttribute="top" id="hga-Kk-doc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3P9-7o-7Zn"/>
                     </view>
@@ -85,6 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="32" height="27"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
     </resources>
 </document>
