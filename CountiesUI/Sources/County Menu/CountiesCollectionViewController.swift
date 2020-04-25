@@ -116,9 +116,13 @@ final class CountiesCollectionViewController: UIViewController {
         if traitCollection.horizontalSizeClass == .regular {
             return .grid
         }
+        #if os(iOS)
         let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
         let leadingSeparatorInset = layoutMetrics.leadingSeparatorInset(forLeadingLayoutMargin: view.directionalLayoutMargins.leading, cellContentInset: CountyCell.tableCellStyleNameLabelLeadingPadding)
         return .table(leadingSeparatorInset: leadingSeparatorInset)
+        #else
+        fatalError("Table style only for use on iOS")
+        #endif
     }
     
     @objc private func reloadData() {
