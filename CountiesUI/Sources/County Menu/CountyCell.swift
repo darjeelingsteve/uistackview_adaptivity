@@ -128,9 +128,11 @@ class CountyCell: UICollectionViewCell {
         contentView.addSubview(flagImageView)
         flagImageView.addSubview(selectionFlagOverlayView)
         configureSubviewsForCurrentDisplayStyle()
+        #if os(iOS)
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = .separator
         selectedBackgroundView?.layer.cornerCurve = .continuous
+        #endif
         clipsToBounds = false
         contentView.clipsToBounds = false
         contentView.preservesSuperviewLayoutMargins = true
