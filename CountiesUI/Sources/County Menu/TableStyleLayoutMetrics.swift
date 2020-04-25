@@ -77,6 +77,16 @@ struct TableStyleLayoutMetrics {
         }
     }
     
+    /// The font to use for section headers.
+    var sectionHeaderTextColour: UIColor {
+        return UIColor(dynamicProvider: { (traitCollection) -> UIColor in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(red: 0.43, green: 0.43, blue: 0.45, alpha: 1)
+            }
+            return UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1)
+        })
+    }
+    
     /// The height to use for section headers.
     var sectionHeaderHeight: CGFloat {
         switch contentSizeCategory {

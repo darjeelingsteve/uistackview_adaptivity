@@ -161,7 +161,26 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), largeMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: true))
     }
     
+    func testItReturnsTheCorrectHeaderTextColourInLightInterfaceStyle() {
+        givenLayoutMetrics(forContentSizeCategory: .large)
+        performTest(withUserInterfaceStyle: .light) {
+            XCTAssertEqual(metrics.sectionHeaderTextColour.cgColor, UIColor(red: 0.43, green: 0.43, blue: 0.45, alpha: 1).cgColor)
+        }
+    }
+    
+    func testItReturnsTheCorrectHeaderTextColourInDarkInterfaceStyle() {
+        givenLayoutMetrics(forContentSizeCategory: .large)
+        performTest(withUserInterfaceStyle: .dark) {
+            XCTAssertEqual(metrics.sectionHeaderTextColour.cgColor, UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1).cgColor)
+        }
+    }
+    
     private func givenLayoutMetrics(forContentSizeCategory contentSizeCategory: UIContentSizeCategory) {
         metrics = TableStyleLayoutMetrics(contentSizeCategory: contentSizeCategory)
+    }
+    
+    private func performTest(withUserInterfaceStyle userInterfaceStyle: UIUserInterfaceStyle, tests: () -> Void) {
+        let traitCollection = UITraitCollection(userInterfaceStyle: userInterfaceStyle)
+        traitCollection.performAsCurrent(tests)
     }
 }

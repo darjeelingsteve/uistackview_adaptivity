@@ -76,17 +76,10 @@ class SectionHeaderSupplementaryView: UICollectionReusableView {
     private func configureTitleLabel() {
         #if os(iOS)
         let isRegularWidth = traitCollection.horizontalSizeClass == .regular
+        let tableMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
         titleLabel.text = isRegularWidth ? title : title?.uppercased()
-        titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory).sectionHeaderFont
-        titleLabel.textColor = UIColor(dynamicProvider: { (traitCollection) -> UIColor in
-            guard traitCollection.horizontalSizeClass == .compact else {
-                return .label
-            }
-            if traitCollection.userInterfaceStyle == .light {
-                return UIColor(red: 0.43, green: 0.43, blue: 0.45, alpha: 1)
-            }
-            return UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1)
-        })
+        titleLabel.font = isRegularWidth ? .systemFont(ofSize: 22, weight: .bold) : tableMetrics.sectionHeaderFont
+        titleLabel.textColor = isRegularWidth ? .label : tableMetrics.sectionHeaderTextColour
         #elseif os(tvOS)
         titleLabel.text = title
         titleLabel.font = .systemFont(ofSize: 40, weight: .bold)
