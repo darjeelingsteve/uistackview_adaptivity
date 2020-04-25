@@ -113,7 +113,12 @@ final class CountiesCollectionViewController: UIViewController {
     }
     
     private func layoutStyleForTraitCollection(_ traitCollection: UITraitCollection) -> CountiesCollectionViewLayout.Style {
-        return traitCollection.horizontalSizeClass == .regular ? .grid : .table(leadingSeparatorInset: view.directionalLayoutMargins.leading + CountyCell.tableCellStyleNameLabelLeadingPadding)
+        if traitCollection.horizontalSizeClass == .regular {
+            return .grid
+        }
+        let layoutMetrics = TableStyleLayoutMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
+        let leadingSeparatorInset = layoutMetrics.leadingSeparatorInset(forLeadingLayoutMargin: view.directionalLayoutMargins.leading, cellContentInset: CountyCell.tableCellStyleNameLabelLeadingPadding)
+        return .table(leadingSeparatorInset: leadingSeparatorInset)
     }
     
     @objc private func reloadData() {

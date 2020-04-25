@@ -22,7 +22,7 @@ struct TableStyleLayoutMetrics {
     /// The height to use for table style cells.
     var cellHeight: CGFloat {
         switch contentSizeCategory {
-        case .extraSmall, .small, .medium, .large, .unspecified:
+        case .extraSmall, .small, .medium, .large:
             return 44
         case .extraLarge:
             return 48
@@ -40,6 +40,8 @@ struct TableStyleLayoutMetrics {
             return 114
         case .accessibilityExtraExtraExtraLarge:
             return 127
+        case .unspecified:
+            fallthrough
         default:
             return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).cellHeight
         }
@@ -129,6 +131,28 @@ struct TableStyleLayoutMetrics {
             fallthrough
         default:
             return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).sectionHeaderLabelBottomPadding
+        }
+    }
+    
+    /// The cell separator inset to apply to separators used to divide cells.
+    /// - Parameters:
+    ///   - leadingLayoutMargin: The leading layout margin of the collection
+    ///   view.
+    ///   - cellContentInset: The leading inset from the layout margin leading
+    ///   inset where the separator should begin from in non-accessibility
+    ///   content size categories.
+    /// - Returns: The inset from the leading edge of the cell where the
+    /// separator should begin.
+    func leadingSeparatorInset(forLeadingLayoutMargin leadingLayoutMargin: CGFloat, cellContentInset: CGFloat) -> CGFloat {
+        switch contentSizeCategory {
+        case .extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge:
+            return leadingLayoutMargin + cellContentInset
+        case .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge:
+            return leadingLayoutMargin
+        case .unspecified:
+            fallthrough
+        default:
+            return TableStyleLayoutMetrics(contentSizeCategory: TableStyleLayoutMetrics.defaultContentSizeCategory).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
         }
     }
     

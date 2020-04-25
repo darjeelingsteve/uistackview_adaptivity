@@ -23,6 +23,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 6)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -33,6 +34,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 6)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -43,6 +45,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 32)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 6)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -53,6 +56,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 13, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 38)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 7)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -63,6 +67,9 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 15, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 44)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 8)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
+        XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
+        XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
     
     func testItReturnsTheExpectedMetricsForTheExtraExtraLargeContentSizeCategory() {
@@ -71,6 +78,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 17, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 50)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 8)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -81,6 +89,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 19, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 56)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 9)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 15)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -91,6 +100,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 23, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 72)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 11)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 10)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -101,6 +111,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 27, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 84)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 11)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 10)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -111,6 +122,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 33, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 105)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 14)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 10)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -121,6 +133,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 38, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 124)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 17)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 10)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -131,6 +144,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, .systemFont(ofSize: 44, weight: .regular))
         XCTAssertEqual(metrics.sectionHeaderHeight, 142)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, 18)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), 10)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), 18)
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), 38)
     }
@@ -142,6 +156,7 @@ final class TableStyleLayoutMetricsTests: XCTestCase {
         XCTAssertEqual(metrics.sectionHeaderFont, largeMetrics.sectionHeaderFont)
         XCTAssertEqual(metrics.sectionHeaderHeight, largeMetrics.sectionHeaderHeight)
         XCTAssertEqual(metrics.sectionHeaderLabelBottomPadding, largeMetrics.sectionHeaderLabelBottomPadding)
+        XCTAssertEqual(metrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5), largeMetrics.leadingSeparatorInset(forLeadingLayoutMargin: 10, cellContentInset: 5))
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: false), largeMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: false))
         XCTAssertEqual(metrics.sectionBottomPadding(forSectionThatIsTheLastSection: true), largeMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: true))
     }
