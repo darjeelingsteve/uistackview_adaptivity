@@ -36,6 +36,8 @@
 		485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
 		48DF294C24521ABC00633C15 /* TableStyleLayoutMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294B24521ABC00633C15 /* TableStyleLayoutMetrics.swift */; };
 		48DF294E24521B8300633C15 /* TableStyleLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294D24521B8300633C15 /* TableStyleLayoutMetricsTests.swift */; };
+		48DF29512454566800633C15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294F245455B200633C15 /* GradientView.swift */; };
+		48DF29522454566800633C15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294F245455B200633C15 /* GradientView.swift */; };
 		48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
 		48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
 		48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
@@ -105,6 +107,7 @@
 		485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		48DF294B24521ABC00633C15 /* TableStyleLayoutMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStyleLayoutMetrics.swift; sourceTree = "<group>"; };
 		48DF294D24521B8300633C15 /* TableStyleLayoutMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableStyleLayoutMetricsTests.swift; sourceTree = "<group>"; };
+		48DF294F245455B200633C15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountiesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellStyleSeparatorView.swift; sourceTree = "<group>"; };
 		48E36B55244E1E7200913F4B /* CountiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +228,7 @@
 				482BC9B623EB40450053E6F6 /* CountyViewController.swift */,
 				482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */,
 				4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */,
+				48DF294F245455B200633C15 /* GradientView.swift */,
 				482BC9C123EB50420053E6F6 /* UIStoryboard+CountyViewController.swift */,
 			);
 			path = "County Details";
@@ -462,6 +466,7 @@
 			files = (
 				48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */,
 				4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */,
+				48DF29522454566800633C15 /* GradientView.swift in Sources */,
 				485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */,
 				4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */,
@@ -481,6 +486,7 @@
 				485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
 				482BC9C223EB50420053E6F6 /* UIStoryboard+CountyViewController.swift in Sources */,
 				48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */,
+				48DF29512454566800633C15 /* GradientView.swift in Sources */,
 				482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */,
 				48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */,
 				482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */,
