@@ -22,8 +22,6 @@
 		482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC99323EB2A840053E6F6 /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; };
 		482BC99423EB2A840053E6F6 /* CountiesUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		482BC99623EB2A8A0053E6F6 /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */; };
-		482BC99723EB2A8A0053E6F6 /* CountiesUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99523EB2A8A0053E6F6 /* CountiesUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC9D623EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
@@ -95,7 +93,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				482BC99723EB2A8A0053E6F6 /* CountiesUI.framework in Embed Frameworks */,
 				482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -192,7 +189,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				482BC99623EB2A8A0053E6F6 /* CountiesUI.framework in Frameworks */,
 				482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

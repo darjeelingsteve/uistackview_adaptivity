@@ -20,7 +20,6 @@
 		4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */; };
 		482BC97323EB27DB0053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC97123EB27DB0053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
-		482BC98723EB28630053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC98523EB28630053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; };
 		482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
 		482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BB23EB41C50053E6F6 /* PillButton.swift */; };
@@ -65,9 +64,6 @@
 		482BC97123EB27DB0053E6F6 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
 		482BC97223EB27DB0053E6F6 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		482BC97A23EB27F30053E6F6 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		482BC98323EB28630053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		482BC98523EB28630053E6F6 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
-		482BC98623EB28630053E6F6 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountyViewController.storyboard; sourceTree = "<group>"; };
 		482BC9B623EB40450053E6F6 /* CountyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyViewController.swift; sourceTree = "<group>"; };
 		482BC9BB23EB41C50053E6F6 /* PillButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
@@ -105,13 +101,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		482BC98023EB28630053E6F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48E36B52244E1E7200913F4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,7 +127,6 @@
 				482BC98B23EB29070053E6F6 /* Sources */,
 				482BC97023EB27DB0053E6F6 /* CountiesUI iOS */,
 				4800E59323EC0E000059ABA8 /* CountiesUI tvOS */,
-				482BC98423EB28630053E6F6 /* CountiesUI watchOS */,
 				48E36B56244E1E7200913F4B /* CountiesUITests */,
 				482BC96F23EB27DB0053E6F6 /* Products */,
 				482BC97923EB27F30053E6F6 /* Frameworks */,
@@ -149,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */,
-				482BC98323EB28630053E6F6 /* CountiesUI.framework */,
 				4800E59223EC0E000059ABA8 /* CountiesUI.framework */,
 				48E36B55244E1E7200913F4B /* CountiesUITests.xctest */,
 			);
@@ -172,15 +159,6 @@
 				482BC97A23EB27F30053E6F6 /* CountiesModel.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		482BC98423EB28630053E6F6 /* CountiesUI watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				482BC98523EB28630053E6F6 /* CountiesUI.h */,
-				482BC98623EB28630053E6F6 /* Info-watchOS.plist */,
-			);
-			path = "CountiesUI watchOS";
 			sourceTree = "<group>";
 		};
 		482BC98B23EB29070053E6F6 /* Sources */ = {
@@ -267,14 +245,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		482BC97E23EB28630053E6F6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				482BC98723EB28630053E6F6 /* CountiesUI.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -314,24 +284,6 @@
 			productReference = 482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		482BC98223EB28630053E6F6 /* CountiesUI watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 482BC98823EB28630053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI watchOS" */;
-			buildPhases = (
-				482BC97E23EB28630053E6F6 /* Headers */,
-				482BC97F23EB28630053E6F6 /* Sources */,
-				482BC98023EB28630053E6F6 /* Frameworks */,
-				482BC98123EB28630053E6F6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CountiesUI watchOS";
-			productName = "CountiesUI watchOS";
-			productReference = 482BC98323EB28630053E6F6 /* CountiesUI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		48E36B54244E1E7200913F4B /* CountiesUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48E36B5D244E1E7200913F4B /* Build configuration list for PBXNativeTarget "CountiesUITests" */;
@@ -367,10 +319,6 @@
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
 					};
-					482BC98223EB28630053E6F6 = {
-						CreatedOnToolsVersion = 11.3;
-						LastSwiftMigration = 1130;
-					};
 					48E36B54244E1E7200913F4B = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -391,7 +339,6 @@
 			targets = (
 				482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */,
 				4800E59123EC0E000059ABA8 /* CountiesUI tvOS */,
-				482BC98223EB28630053E6F6 /* CountiesUI watchOS */,
 				48E36B54244E1E7200913F4B /* CountiesUITests */,
 			);
 		};
@@ -411,13 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		482BC98123EB28630053E6F6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,13 +407,6 @@
 				482BC9DD23EB57FC0053E6F6 /* CountiesCollectionViewController.swift in Sources */,
 				482BC9D923EB57640053E6F6 /* EmptyCountiesNoticeView.swift in Sources */,
 				482BC9DB23EB57C30053E6F6 /* CountyCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		482BC97F23EB28630053E6F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,65 +658,6 @@
 			};
 			name = Release;
 		};
-		482BC98923EB28630053E6F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI watchOS/Info-watchOS.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-watchOS";
-				PRODUCT_NAME = CountiesUI;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		482BC98A23EB28630053E6F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI watchOS/Info-watchOS.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-watchOS";
-				PRODUCT_NAME = CountiesUI;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
 		48E36B5E244E1E7200913F4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -846,15 +720,6 @@
 			buildConfigurations = (
 				482BC97723EB27DB0053E6F6 /* Debug */,
 				482BC97823EB27DB0053E6F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		482BC98823EB28630053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				482BC98923EB28630053E6F6 /* Debug */,
-				482BC98A23EB28630053E6F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
