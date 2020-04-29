@@ -13,15 +13,15 @@ import UIKit
 struct TableStyleDisplayMetrics {
     private static let defaultContentSizeCategory: UIContentSizeCategory = .large
     
-    private let contentSizeCategory: UIContentSizeCategory
+    private let traitCollection: UITraitCollection
     
-    init(contentSizeCategory: UIContentSizeCategory) {
-        self.contentSizeCategory = contentSizeCategory
+    init(traitCollection: UITraitCollection) {
+        self.traitCollection = traitCollection
     }
     
     /// The height to use for table style cells.
     var cellHeight: CGFloat {
-        switch contentSizeCategory {
+        switch traitCollection.preferredContentSizeCategory {
         case .extraSmall, .small, .medium, .large:
             return 44
         case .extraLarge:
@@ -43,13 +43,13 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).cellHeight
+            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).cellHeight
         }
     }
     
     /// The font to use for section headers.
     var sectionHeaderFont: UIFont {
-        switch contentSizeCategory {
+        switch traitCollection.preferredContentSizeCategory {
         case .extraSmall, .small, .medium:
             return .systemFont(ofSize: 12, weight: .regular)
         case .large:
@@ -73,7 +73,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderFont
+            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderFont
         }
     }
     
@@ -89,7 +89,7 @@ struct TableStyleDisplayMetrics {
     
     /// The height to use for section headers.
     var sectionHeaderHeight: CGFloat {
-        switch contentSizeCategory {
+        switch traitCollection.preferredContentSizeCategory {
         case .extraSmall, .small, .medium:
             return 32
         case .large:
@@ -113,14 +113,14 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderHeight
+            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderHeight
         }
     }
     
     /// The padding to apply between the bottom of the section header title
     /// label and the bottom of the section header view.
     var sectionHeaderLabelBottomPadding: CGFloat {
-        switch contentSizeCategory {
+        switch traitCollection.preferredContentSizeCategory {
         case .extraSmall, .small, .medium:
             return 6
         case .large:
@@ -140,7 +140,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).sectionHeaderLabelBottomPadding
+            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderLabelBottomPadding
         }
     }
     
@@ -154,7 +154,7 @@ struct TableStyleDisplayMetrics {
     /// - Returns: The inset from the leading edge of the cell where the
     /// separator should begin.
     func leadingSeparatorInset(forLeadingLayoutMargin leadingLayoutMargin: CGFloat, cellContentInset: CGFloat) -> CGFloat {
-        switch contentSizeCategory {
+        switch traitCollection.preferredContentSizeCategory {
         case .extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge, .extraExtraExtraLarge:
             return leadingLayoutMargin + cellContentInset
         case .accessibilityMedium, .accessibilityLarge, .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge:
@@ -162,7 +162,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(contentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
+            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
         }
     }
     

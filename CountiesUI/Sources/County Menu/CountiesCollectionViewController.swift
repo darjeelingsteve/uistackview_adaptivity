@@ -117,7 +117,7 @@ final class CountiesCollectionViewController: UIViewController {
             return .grid
         }
         #if os(iOS)
-        let tableMetrics = TableStyleDisplayMetrics(contentSizeCategory: traitCollection.preferredContentSizeCategory)
+        let tableMetrics = TableStyleDisplayMetrics(traitCollection: traitCollection)
         let leadingSeparatorInset = tableMetrics.leadingSeparatorInset(forLeadingLayoutMargin: view.directionalLayoutMargins.leading, cellContentInset: CountyCell.tableCellStyleNameLabelLeadingPadding)
         return .table(leadingSeparatorInset: leadingSeparatorInset)
         #else
@@ -160,7 +160,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
         switch layoutStyleForTraitCollection(traitCollection) {
         case .table:
             #if os(iOS)
-            return CGSize(width: collectionView.bounds.width, height: TableStyleDisplayMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).sectionHeaderHeight)
+            return CGSize(width: collectionView.bounds.width, height: TableStyleDisplayMetrics(traitCollection: collectionView.traitCollection).sectionHeaderHeight)
             #else
             fatalError("Table style only for use on iOS")
             #endif
@@ -174,7 +174,7 @@ extension CountiesCollectionViewController: UICollectionViewDelegateFlowLayout {
         case .table:
             #if os(iOS)
             let isLastSection = section == collectionView.numberOfSections - 1
-            let tableMetrics = TableStyleDisplayMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory)
+            let tableMetrics = TableStyleDisplayMetrics(traitCollection: collectionView.traitCollection)
             return UIEdgeInsets(top: 0, left: 0, bottom: tableMetrics.sectionBottomPadding(forSectionThatIsTheLastSection: isLastSection), right: 0)
             #else
             fatalError("Table style only for use on iOS")
@@ -247,7 +247,7 @@ private extension CountiesCollectionViewLayout.Style {
         switch self {
         case .table:
             #if os(iOS)
-            return CGSize(width: collectionView.bounds.width, height: TableStyleDisplayMetrics(contentSizeCategory: collectionView.traitCollection.preferredContentSizeCategory).cellHeight)
+            return CGSize(width: collectionView.bounds.width, height: TableStyleDisplayMetrics(traitCollection: collectionView.traitCollection).cellHeight)
             #else
             fatalError("Table style only for use on iOS")
             #endif
