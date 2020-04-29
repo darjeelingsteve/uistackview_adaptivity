@@ -40,7 +40,6 @@
 		B63121081C60D69F0063E975 /* Counties Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B63121071C60D69F0063E975 /* Counties Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210C1C60D69F0063E975 /* InterfaceController.swift */; };
 		B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */; };
-		B63121111C60D69F0063E975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63121101C60D69F0063E975 /* Assets.xcassets */; };
 		B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */; };
 		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
 		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
@@ -162,7 +161,6 @@
 		B63121071C60D69F0063E975 /* Counties Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Counties Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B631210C1C60D69F0063E975 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		B63121101C60D69F0063E975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B63121121C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63121201C60D6D80063E975 /* CountyRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyRowController.swift; sourceTree = "<group>"; };
 		B63121231C60DC870063E975 /* CountyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyInterfaceController.swift; sourceTree = "<group>"; };
@@ -309,7 +307,6 @@
 				B63121231C60DC870063E975 /* CountyInterfaceController.swift */,
 				B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */,
 				485F2E162444B06C00E67148 /* RegionNameRowController.swift */,
-				B63121101C60D69F0063E975 /* Assets.xcassets */,
 				B63121121C60D69F0063E975 /* Info.plist */,
 			);
 			path = "Counties Extension";
@@ -482,7 +479,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B63121111C60D69F0063E975 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
