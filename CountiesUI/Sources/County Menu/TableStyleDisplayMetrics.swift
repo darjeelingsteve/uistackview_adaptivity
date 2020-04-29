@@ -11,8 +11,6 @@ import UIKit
 /// A struct representing the various display metrics used when laying out a
 /// collection view in a grouped table style for a given content size category.
 struct TableStyleDisplayMetrics {
-    private static let defaultContentSizeCategory: UIContentSizeCategory = .large
-    
     private let traitCollection: UITraitCollection
     
     init(traitCollection: UITraitCollection) {
@@ -21,29 +19,15 @@ struct TableStyleDisplayMetrics {
     
     /// The height to use for table style cells.
     var cellHeight: CGFloat {
-        switch traitCollection.preferredContentSizeCategory {
-        case .extraSmall, .small, .medium, .large:
-            return 44
-        case .extraLarge:
-            return 48
-        case .extraExtraLarge:
-            return 52
-        case .extraExtraExtraLarge:
-            return 58
-        case .accessibilityMedium:
-            return 69
-        case .accessibilityLarge:
-            return 81
-        case .accessibilityExtraLarge:
-            return 97
-        case .accessibilityExtraExtraLarge:
-            return 114
-        case .accessibilityExtraExtraExtraLarge:
-            return 127
-        case .unspecified:
+        switch traitCollection.userInterfaceIdiom {
+        case .pad:
+            return iPadCellHeight
+        case .phone:
+            return iPhoneCellHeight
+        case .tv, .carPlay, .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).cellHeight
+            fatalError("Unsupported user interface idiom")
         }
     }
     
@@ -73,7 +57,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderFont
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).sectionHeaderFont
         }
     }
     
@@ -113,7 +97,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderHeight
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).sectionHeaderHeight
         }
     }
     
@@ -140,7 +124,59 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).sectionHeaderLabelBottomPadding
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).sectionHeaderLabelBottomPadding
+        }
+    }
+    
+    /// The height to use for table style cells on iPhone.
+    private var iPhoneCellHeight: CGFloat {
+        switch traitCollection.preferredContentSizeCategory {
+        case .extraSmall, .small, .medium, .large:
+            return 44
+        case .extraLarge:
+            return 48
+        case .extraExtraLarge:
+            return 52
+        case .extraExtraExtraLarge:
+            return 58
+        case .accessibilityMedium:
+            return 69
+        case .accessibilityLarge:
+            return 81
+        case .accessibilityExtraLarge:
+            return 97
+        case .accessibilityExtraExtraLarge:
+            return 114
+        case .accessibilityExtraExtraExtraLarge:
+            return 127
+        case .unspecified:
+            fallthrough
+        default:
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).cellHeight
+        }
+    }
+    
+    /// The height to use for table style cells on iPad.
+    private var iPadCellHeight: CGFloat {
+        switch traitCollection.preferredContentSizeCategory {
+        case .extraSmall, .small, .medium, .large, .extraLarge, .extraExtraLarge:
+            return 52
+        case .extraExtraExtraLarge:
+            return 58
+        case .accessibilityMedium:
+            return 69
+        case .accessibilityLarge:
+            return 81
+        case .accessibilityExtraLarge:
+            return 97
+        case .accessibilityExtraExtraLarge:
+            return 114
+        case .accessibilityExtraExtraExtraLarge:
+            return 127
+        case .unspecified:
+            fallthrough
+        default:
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).cellHeight
         }
     }
     
@@ -162,7 +198,7 @@ struct TableStyleDisplayMetrics {
         case .unspecified:
             fallthrough
         default:
-            return TableStyleDisplayMetrics(traitCollection: UITraitCollection(preferredContentSizeCategory: TableStyleDisplayMetrics.defaultContentSizeCategory)).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
+            return TableStyleDisplayMetrics(traitCollection: traitsWithDefaultContentSizeCategory()).leadingSeparatorInset(forLeadingLayoutMargin: leadingLayoutMargin, cellContentInset: cellContentInset)
         }
     }
     
@@ -172,5 +208,11 @@ struct TableStyleDisplayMetrics {
     /// - Returns: The height to use for the section's bottom padding.
     func sectionBottomPadding(forSectionThatIsTheLastSection sectionIsLastSection: Bool) -> CGFloat {
         return sectionIsLastSection ? 38 : 18
+    }
+    
+    private func traitsWithDefaultContentSizeCategory() -> UITraitCollection {
+        let contentSizeCategoryTraitCollection = UITraitCollection(preferredContentSizeCategory: .large)
+        let userInterfaceIdiomTraitCollection = UITraitCollection(userInterfaceIdiom: traitCollection.userInterfaceIdiom)
+        return UITraitCollection(traitsFrom: [contentSizeCategoryTraitCollection, userInterfaceIdiomTraitCollection])
     }
 }
