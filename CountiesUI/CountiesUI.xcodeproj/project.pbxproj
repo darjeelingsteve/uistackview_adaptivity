@@ -17,11 +17,9 @@
 		4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */; };
 		4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
 		4800E5CF23EC12A60059ABA8 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */; };
-		4800E5D023EC12A60059ABA8 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */; };
 		482BC97323EB27DB0053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC97123EB27DB0053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
-		482BC97C23EB27F30053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC98723EB28630053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC98523EB28630053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; };
 		482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
@@ -55,31 +53,6 @@
 			remoteInfo = "CountiesUI iOS";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4800E5D123EC12A60059ABA8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4800E5D023EC12A60059ABA8 /* CountiesModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		482BC97D23EB27F30053E6F6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				482BC97C23EB27F30053E6F6 /* CountiesModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformHelpers.swift; sourceTree = "<group>"; };
@@ -313,7 +286,6 @@
 				4800E58E23EC0E000059ABA8 /* Sources */,
 				4800E58F23EC0E000059ABA8 /* Frameworks */,
 				4800E59023EC0E000059ABA8 /* Resources */,
-				4800E5D123EC12A60059ABA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,7 +304,6 @@
 				482BC96A23EB27DB0053E6F6 /* Sources */,
 				482BC96B23EB27DB0053E6F6 /* Frameworks */,
 				482BC96C23EB27DB0053E6F6 /* Resources */,
-				482BC97D23EB27F30053E6F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
