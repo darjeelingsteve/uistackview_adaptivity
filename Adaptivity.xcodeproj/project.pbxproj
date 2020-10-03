@@ -23,6 +23,16 @@
 		482BC9D623EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
+		488CD3CA2528B1C000C368B4 /* Counties (watchOS) WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488CD3C92528B1C000C368B4 /* Counties (watchOS) WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488CD3CF2528B1C000C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3CE2528B1C000C368B4 /* Assets.xcassets */; };
+		488CD3D62528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488CD3DB2528B1C100C368B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DA2528B1C100C368B4 /* ContentView.swift */; };
+		488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */; };
+		488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DE2528B1C100C368B4 /* ComplicationController.swift */; };
+		488CD3E12528B1C100C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E02528B1C100C368B4 /* Assets.xcassets */; };
+		488CD3E42528B1C100C368B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */; };
+		488CD3F52528B24100C368B4 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; };
+		488CD3F62528B24100C368B4 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
 		48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB31C2063D70078391A /* Assets.xcassets */; };
@@ -32,6 +42,23 @@
 		B631212A1C60F0190063E975 /* HandoffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121291C60F0190063E975 /* HandoffController.swift */; };
 		B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631212B1C60F51B0063E975 /* UserActivityHandling.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488CD3CB2528B1C000C368B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488CD3C82528B1C000C368B4;
+			remoteInfo = "Counties (watchOS) WatchKit App";
+		};
+		488CD3D72528B1C100C368B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488CD3D42528B1C100C368B4;
+			remoteInfo = "Counties (watchOS) WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4800E5DD23EC28C60059ABA8 /* Embed Frameworks */ = {
@@ -54,6 +81,39 @@
 			files = (
 				482BC99423EB2A840053E6F6 /* CountiesUI.framework in Embed Frameworks */,
 				482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3E92528B1C100C368B4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				488CD3D62528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3ED2528B1C100C368B4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				488CD3CA2528B1C000C368B4 /* Counties (watchOS) WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3F72528B24100C368B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				488CD3F62528B24100C368B4 /* CountiesModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +148,18 @@
 		482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SpotlightController+UserActivityHandling.swift"; path = "Spotlight/SpotlightController+UserActivityHandling.swift"; sourceTree = "<group>"; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
+		488CD3C62528B1BF00C368B4 /* Counties (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CD3C92528B1C000C368B4 /* Counties (watchOS) WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS) WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CD3CE2528B1C000C368B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488CD3D02528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Counties (watchOS) WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CD3DA2528B1C100C368B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivityApp.swift; sourceTree = "<group>"; };
+		488CD3DE2528B1C100C368B4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		488CD3E02528B1C100C368B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		488CD3E52528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488CD3F42528B24100C368B4 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +181,14 @@
 				4800E5DF23EC32940059ABA8 /* TVUIKit.framework in Frameworks */,
 				4800E5DB23EC28C60059ABA8 /* CountiesUI.framework in Frameworks */,
 				4800E5D923EC28C60059ABA8 /* CountiesModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3D22528B1C100C368B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488CD3F52528B24100C368B4 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +220,7 @@
 		482BC94623EB20A40053E6F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				488CD3F42528B24100C368B4 /* CountiesModel.framework */,
 				4800E5DE23EC32940059ABA8 /* TVUIKit.framework */,
 				4800E5D723EC28C60059ABA8 /* CountiesModel.framework */,
 				4800E5D823EC28C60059ABA8 /* CountiesUI.framework */,
@@ -151,11 +232,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		488CD3CD2528B1C000C368B4 /* Counties (watchOS) WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				488CD3CE2528B1C000C368B4 /* Assets.xcassets */,
+				488CD3D02528B1C100C368B4 /* Info.plist */,
+			);
+			path = "Counties (watchOS) WatchKit App";
+			sourceTree = "<group>";
+		};
+		488CD3D92528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				488CD3DA2528B1C100C368B4 /* ContentView.swift */,
+				488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */,
+				488CD3DE2528B1C100C368B4 /* ComplicationController.swift */,
+				488CD3E02528B1C100C368B4 /* Assets.xcassets */,
+				488CD3E52528B1C100C368B4 /* Info.plist */,
+				488CD3E22528B1C100C368B4 /* Preview Content */,
+			);
+			path = "Counties (watchOS) WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		488CD3E22528B1C100C368B4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		48ABDFA01C2063D70078391A = {
 			isa = PBXGroup;
 			children = (
 				48ABDFAB1C2063D70078391A /* Counties */,
 				4800E59F23EC10200059ABA8 /* Counties (tvOS) */,
+				488CD3CD2528B1C000C368B4 /* Counties (watchOS) WatchKit App */,
+				488CD3D92528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
 				482BC94623EB20A40053E6F6 /* Frameworks */,
 			);
@@ -166,6 +279,9 @@
 			children = (
 				48ABDFA91C2063D70078391A /* Counties.app */,
 				4800E59E23EC10200059ABA8 /* Counties.app */,
+				488CD3C62528B1BF00C368B4 /* Counties (watchOS).app */,
+				488CD3C92528B1C000C368B4 /* Counties (watchOS) WatchKit App.app */,
+				488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +352,58 @@
 			productReference = 4800E59E23EC10200059ABA8 /* Counties.app */;
 			productType = "com.apple.product-type.application";
 		};
+		488CD3C52528B1BF00C368B4 /* Counties (watchOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488CD3EE2528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */;
+			buildPhases = (
+				488CD3C42528B1BF00C368B4 /* Resources */,
+				488CD3ED2528B1C100C368B4 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488CD3CC2528B1C000C368B4 /* PBXTargetDependency */,
+			);
+			name = "Counties (watchOS)";
+			productName = "Counties (watchOS)";
+			productReference = 488CD3C62528B1BF00C368B4 /* Counties (watchOS).app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		488CD3C82528B1C000C368B4 /* Counties (watchOS) WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488CD3EA2528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS) WatchKit App" */;
+			buildPhases = (
+				488CD3C72528B1C000C368B4 /* Resources */,
+				488CD3E92528B1C100C368B4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488CD3D82528B1C100C368B4 /* PBXTargetDependency */,
+			);
+			name = "Counties (watchOS) WatchKit App";
+			productName = "Counties (watchOS) WatchKit App";
+			productReference = 488CD3C92528B1C000C368B4 /* Counties (watchOS) WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		488CD3D42528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488CD3E62528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS) WatchKit Extension" */;
+			buildPhases = (
+				488CD3D12528B1C100C368B4 /* Sources */,
+				488CD3D22528B1C100C368B4 /* Frameworks */,
+				488CD3D32528B1C100C368B4 /* Resources */,
+				488CD3F72528B24100C368B4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Counties (watchOS) WatchKit Extension";
+			productName = "Counties (watchOS) WatchKit Extension";
+			productReference = 488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		48ABDFA81C2063D70078391A /* Counties */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48ABDFBB1C2063D70078391A /* Build configuration list for PBXNativeTarget "Counties" */;
@@ -261,12 +429,24 @@
 		48ABDFA11C2063D70078391A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Darjeeling Apps";
 				TargetAttributes = {
 					4800E59D23EC10200059ABA8 = {
 						CreatedOnToolsVersion = 11.3;
+						ProvisioningStyle = Automatic;
+					};
+					488CD3C52528B1BF00C368B4 = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
+					};
+					488CD3C82528B1C000C368B4 = {
+						CreatedOnToolsVersion = 12.0;
+						ProvisioningStyle = Automatic;
+					};
+					488CD3D42528B1C100C368B4 = {
+						CreatedOnToolsVersion = 12.0;
 						ProvisioningStyle = Automatic;
 					};
 					48ABDFA81C2063D70078391A = {
@@ -290,6 +470,9 @@
 			targets = (
 				48ABDFA81C2063D70078391A /* Counties */,
 				4800E59D23EC10200059ABA8 /* Counties (tvOS) */,
+				488CD3C52528B1BF00C368B4 /* Counties (watchOS) */,
+				488CD3C82528B1C000C368B4 /* Counties (watchOS) WatchKit App */,
+				488CD3D42528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +485,30 @@
 				4800E5AD23EC10220059ABA8 /* LaunchScreen.storyboard in Resources */,
 				4800E5AA23EC10220059ABA8 /* Assets.xcassets in Resources */,
 				4800E5A823EC10200059ABA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3C42528B1BF00C368B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3C72528B1C000C368B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488CD3CF2528B1C000C368B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488CD3D32528B1C100C368B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488CD3E42528B1C100C368B4 /* Preview Assets.xcassets in Resources */,
+				488CD3E12528B1C100C368B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +533,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		488CD3D12528B1C100C368B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */,
+				488CD3DB2528B1C100C368B4 /* ContentView.swift in Sources */,
+				488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48ABDFA51C2063D70078391A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +559,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		488CD3CC2528B1C000C368B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488CD3C82528B1C000C368B4 /* Counties (watchOS) WatchKit App */;
+			targetProxy = 488CD3CB2528B1C000C368B4 /* PBXContainerItemProxy */;
+		};
+		488CD3D82528B1C100C368B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488CD3D42528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */;
+			targetProxy = 488CD3D72528B1C100C368B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4800E5A623EC10200059ABA8 /* Main.storyboard */ = {
@@ -428,6 +658,160 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+		488CD3E72528B1C100C368B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Counties (watchOS) WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Counties (watchOS) WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		488CD3E82528B1C100C368B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Counties (watchOS) WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Counties (watchOS) WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		488CD3EB2528B1C100C368B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Counties__watchOS__WatchKit_Extension;
+				INFOPLIST_FILE = "Counties (watchOS) WatchKit App/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		488CD3EC2528B1C100C368B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Counties__watchOS__WatchKit_Extension;
+				INFOPLIST_FILE = "Counties (watchOS) WatchKit App/Info.plist";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		488CD3EF2528B1C100C368B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		488CD3F02528B1C100C368B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.Counties--watchOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -579,6 +963,33 @@
 			buildConfigurations = (
 				4800E5AF23EC10220059ABA8 /* Debug */,
 				4800E5B023EC10220059ABA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488CD3E62528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS) WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488CD3E72528B1C100C368B4 /* Debug */,
+				488CD3E82528B1C100C368B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488CD3EA2528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS) WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488CD3EB2528B1C100C368B4 /* Debug */,
+				488CD3EC2528B1C100C368B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488CD3EE2528B1C100C368B4 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488CD3EF2528B1C100C368B4 /* Debug */,
+				488CD3F02528B1C100C368B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
