@@ -26,7 +26,6 @@
 		488CD3CA2528B1C000C368B4 /* Counties (watchOS) WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 488CD3C92528B1C000C368B4 /* Counties (watchOS) WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488CD3CF2528B1C000C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3CE2528B1C000C368B4 /* Assets.xcassets */; };
 		488CD3D62528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		488CD3DB2528B1C100C368B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DA2528B1C100C368B4 /* ContentView.swift */; };
 		488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */; };
 		488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DE2528B1C100C368B4 /* ComplicationController.swift */; };
 		488CD3E12528B1C100C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E02528B1C100C368B4 /* Assets.xcassets */; };
@@ -155,7 +154,6 @@
 		488CD3CE2528B1C000C368B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488CD3D02528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488CD3D52528B1C100C368B4 /* Counties (watchOS) WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Counties (watchOS) WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		488CD3DA2528B1C100C368B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivityApp.swift; sourceTree = "<group>"; };
 		488CD3DE2528B1C100C368B4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		488CD3E02528B1C100C368B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 		488CD3D92528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				488CD3DA2528B1C100C368B4 /* ContentView.swift */,
 				488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */,
 				488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */,
 				488CD3DE2528B1C100C368B4 /* ComplicationController.swift */,
@@ -545,7 +542,6 @@
 			files = (
 				488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */,
 				488CD3FF2528B33800C368B4 /* CountyDetailsView.swift in Sources */,
-				488CD3DB2528B1C100C368B4 /* ContentView.swift in Sources */,
 				488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */,
 				488CD4052528B83700C368B4 /* RegionsListView.swift in Sources */,
 			);
