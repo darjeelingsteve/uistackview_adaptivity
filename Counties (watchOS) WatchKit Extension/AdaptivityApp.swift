@@ -7,13 +7,14 @@
 //
 
 import SwiftUI
+import CountiesModel
 
 @main
 struct AdaptivityApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                RegionsListView(regions: Country.unitedKingdom.regions)
             }
         }
     }
