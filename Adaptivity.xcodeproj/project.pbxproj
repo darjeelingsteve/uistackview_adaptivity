@@ -33,6 +33,7 @@
 		488CD3E42528B1C100C368B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */; };
 		488CD3F52528B24100C368B4 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; };
 		488CD3F62528B24100C368B4 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		488CD3FF2528B33800C368B4 /* CountyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
 		48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB31C2063D70078391A /* Assets.xcassets */; };
@@ -160,6 +161,7 @@
 		488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		488CD3E52528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488CD3F42528B24100C368B4 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyDetailsView.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				488CD3DA2528B1C100C368B4 /* ContentView.swift */,
 				488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */,
+				488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */,
 				488CD3DE2528B1C100C368B4 /* ComplicationController.swift */,
 				488CD3E02528B1C100C368B4 /* Assets.xcassets */,
 				488CD3E52528B1C100C368B4 /* Info.plist */,
@@ -538,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */,
+				488CD3FF2528B33800C368B4 /* CountyDetailsView.swift in Sources */,
 				488CD3DB2528B1C100C368B4 /* ContentView.swift in Sources */,
 				488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */,
 			);
