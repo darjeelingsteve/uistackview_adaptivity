@@ -26,7 +26,11 @@ struct CountyDetailsView: View {
                 Text(county.populationDescription)
                     .multilineTextAlignment(.center)
             }
-        }.navigationTitle(county.name)
+        }
+        .navigationTitle(county.name)
+        .userActivity(county.userActivity.activityType, { activity in
+            activity.userInfo = county.userActivity.userInfo
+        })
     }
 }
 
