@@ -30,7 +30,7 @@ public struct Country: Codable {
 }
 
 /// Represents an individual region within a country.
-public struct Region: Codable {
+public struct Region: Codable, Hashable {
     
     /// The name of the regions.
     public let name: String
