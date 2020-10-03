@@ -18,49 +18,20 @@
 		4800E5DF23EC32940059ABA8 /* TVUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5DE23EC32940059ABA8 /* TVUIKit.framework */; };
 		482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; };
 		482BC94923EB20A40053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94723EB20A40053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; };
-		482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC94B23EB20C70053E6F6 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC99323EB2A840053E6F6 /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; };
 		482BC99423EB2A840053E6F6 /* CountiesUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC99223EB2A840053E6F6 /* CountiesUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		482BC9D623EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */; };
 		482CDE061DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */; };
 		483523AF1C885F42003DA4D7 /* ApplicationShortcutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */; };
-		485F2E172444B06C00E67148 /* RegionNameRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E162444B06C00E67148 /* RegionNameRowController.swift */; };
-		485F2E192444BB9900E67148 /* CountiesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E182444BB9900E67148 /* CountiesTableSection.swift */; };
 		48ABDFAD1C2063D70078391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABDFAC1C2063D70078391A /* AppDelegate.swift */; };
 		48ABDFB21C2063D70078391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB01C2063D70078391A /* Main.storyboard */; };
 		48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB31C2063D70078391A /* Assets.xcassets */; };
 		48ABDFB71C2063D70078391A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48ABDFB51C2063D70078391A /* LaunchScreen.storyboard */; };
 		48C7177223AA791C005D80C6 /* MasterSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */; };
 		48C7177A23AAAB8D005D80C6 /* CountySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C7177923AAAB8D005D80C6 /* CountySceneDelegate.swift */; };
-		B63120FF1C60D69F0063E975 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63120FD1C60D69F0063E975 /* Interface.storyboard */; };
-		B63121011C60D69F0063E975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63121001C60D69F0063E975 /* Assets.xcassets */; };
-		B63121081C60D69F0063E975 /* Counties Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B63121071C60D69F0063E975 /* Counties Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210C1C60D69F0063E975 /* InterfaceController.swift */; };
-		B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */; };
-		B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */; };
-		B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121201C60D6D80063E975 /* CountyRowController.swift */; };
-		B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121231C60DC870063E975 /* CountyInterfaceController.swift */; };
 		B631212A1C60F0190063E975 /* HandoffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63121291C60F0190063E975 /* HandoffController.swift */; };
 		B631212C1C60F51B0063E975 /* UserActivityHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631212B1C60F51B0063E975 /* UserActivityHandling.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B63121091C60D69F0063E975 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B63121061C60D69F0063E975;
-			remoteInfo = "Counties Extension";
-		};
-		B63121131C60D69F0063E975 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48ABDFA11C2063D70078391A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B63120FA1C60D69F0063E975;
-			remoteInfo = Counties;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4800E5DD23EC28C60059ABA8 /* Embed Frameworks */ = {
@@ -87,35 +58,12 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		482BC94E23EB20C70053E6F6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				482BC94D23EB20C70053E6F6 /* CountiesModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B631211B1C60D69F0063E975 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				B63121081C60D69F0063E975 /* Counties Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B631211D1C60D69F0063E975 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				B63121151C60D69F0063E975 /* Counties (watchOS).app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +88,6 @@
 		482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SpotlightController+UserActivityHandling.swift"; path = "Spotlight/SpotlightController+UserActivityHandling.swift"; sourceTree = "<group>"; };
 		482CDE051DD121D500ACB70B /* SpotlightQueryContinuationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotlightQueryContinuationHandler.swift; path = Spotlight/SpotlightQueryContinuationHandler.swift; sourceTree = "<group>"; };
 		483523AE1C885F42003DA4D7 /* ApplicationShortcutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationShortcutHandler.swift; sourceTree = "<group>"; };
-		485F2E162444B06C00E67148 /* RegionNameRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionNameRowController.swift; sourceTree = "<group>"; };
-		485F2E182444BB9900E67148 /* CountiesTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountiesTableSection.swift; sourceTree = "<group>"; };
 		4893663623D7342900BD781D /* Counties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Counties.entitlements; path = Counties/Counties.entitlements; sourceTree = SOURCE_ROOT; };
 		48ABDFA91C2063D70078391A /* Counties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48ABDFAC1C2063D70078391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,16 +97,6 @@
 		48ABDFB81C2063D70078391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48C7177123AA791C005D80C6 /* MasterSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MasterSceneDelegate.swift; path = "Scene Delegates/MasterSceneDelegate.swift"; sourceTree = "<group>"; };
 		48C7177923AAAB8D005D80C6 /* CountySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountySceneDelegate.swift; path = "Scene Delegates/CountySceneDelegate.swift"; sourceTree = "<group>"; };
-		B63120FB1C60D69F0063E975 /* Counties (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counties (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B63120FE1C60D69F0063E975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		B63121001C60D69F0063E975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B63121021C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B63121071C60D69F0063E975 /* Counties Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Counties Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B631210C1C60D69F0063E975 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		B63121121C60D69F0063E975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B63121201C60D6D80063E975 /* CountyRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyRowController.swift; sourceTree = "<group>"; };
-		B63121231C60DC870063E975 /* CountyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountyInterfaceController.swift; sourceTree = "<group>"; };
 		B63121291C60F0190063E975 /* HandoffController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandoffController.swift; path = Handoff/HandoffController.swift; sourceTree = "<group>"; };
 		B631212B1C60F51B0063E975 /* UserActivityHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityHandling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,14 +118,6 @@
 			files = (
 				482BC99323EB2A840053E6F6 /* CountiesUI.framework in Frameworks */,
 				482BC94823EB20A40053E6F6 /* CountiesModel.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B63121041C60D69F0063E975 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				482BC94C23EB20C70053E6F6 /* CountiesModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +156,6 @@
 			children = (
 				48ABDFAB1C2063D70078391A /* Counties */,
 				4800E59F23EC10200059ABA8 /* Counties (tvOS) */,
-				B63120FC1C60D69F0063E975 /* Counties (watchOS) */,
-				B631210B1C60D69F0063E975 /* Counties Extension */,
 				48ABDFAA1C2063D70078391A /* Products */,
 				482BC94623EB20A40053E6F6 /* Frameworks */,
 			);
@@ -239,8 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				48ABDFA91C2063D70078391A /* Counties.app */,
-				B63120FB1C60D69F0063E975 /* Counties (watchOS).app */,
-				B63121071C60D69F0063E975 /* Counties Extension.appex */,
 				4800E59E23EC10200059ABA8 /* Counties.app */,
 			);
 			name = Products;
@@ -281,31 +205,6 @@
 				482BC9D523EB567E0053E6F6 /* SpotlightController+UserActivityHandling.swift */,
 			);
 			name = Spotlight;
-			sourceTree = "<group>";
-		};
-		B63120FC1C60D69F0063E975 /* Counties (watchOS) */ = {
-			isa = PBXGroup;
-			children = (
-				B63120FD1C60D69F0063E975 /* Interface.storyboard */,
-				B63121001C60D69F0063E975 /* Assets.xcassets */,
-				B63121021C60D69F0063E975 /* Info.plist */,
-			);
-			name = "Counties (watchOS)";
-			path = Counties;
-			sourceTree = "<group>";
-		};
-		B631210B1C60D69F0063E975 /* Counties Extension */ = {
-			isa = PBXGroup;
-			children = (
-				B631210C1C60D69F0063E975 /* InterfaceController.swift */,
-				485F2E182444BB9900E67148 /* CountiesTableSection.swift */,
-				B63121201C60D6D80063E975 /* CountyRowController.swift */,
-				B63121231C60DC870063E975 /* CountyInterfaceController.swift */,
-				B631210E1C60D69F0063E975 /* ExtensionDelegate.swift */,
-				485F2E162444B06C00E67148 /* RegionNameRowController.swift */,
-				B63121121C60D69F0063E975 /* Info.plist */,
-			);
-			path = "Counties Extension";
 			sourceTree = "<group>";
 		};
 		B63121251C60ED6C0063E975 /* Handoff */ = {
@@ -350,47 +249,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B63121141C60D69F0063E975 /* PBXTargetDependency */,
 			);
 			name = Counties;
 			productName = Adaptivity;
 			productReference = 48ABDFA91C2063D70078391A /* Counties.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B63120FA1C60D69F0063E975 /* Counties (watchOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */;
-			buildPhases = (
-				B63120F91C60D69F0063E975 /* Resources */,
-				B631211B1C60D69F0063E975 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B631210A1C60D69F0063E975 /* PBXTargetDependency */,
-			);
-			name = "Counties (watchOS)";
-			productName = Counties;
-			productReference = B63120FB1C60D69F0063E975 /* Counties (watchOS).app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		B63121061C60D69F0063E975 /* Counties Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B631211A1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties Extension" */;
-			buildPhases = (
-				B63121031C60D69F0063E975 /* Sources */,
-				B63121041C60D69F0063E975 /* Frameworks */,
-				B63121051C60D69F0063E975 /* Resources */,
-				482BC94E23EB20C70053E6F6 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Counties Extension";
-			productName = "Counties Extension";
-			productReference = B63121071C60D69F0063E975 /* Counties Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -410,14 +273,6 @@
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 1110;
 					};
-					B63120FA1C60D69F0063E975 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0810;
-					};
-					B63121061C60D69F0063E975 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 1110;
-					};
 				};
 			};
 			buildConfigurationList = 48ABDFA41C2063D70078391A /* Build configuration list for PBXProject "Adaptivity" */;
@@ -434,8 +289,6 @@
 			projectRoot = "";
 			targets = (
 				48ABDFA81C2063D70078391A /* Counties */,
-				B63120FA1C60D69F0063E975 /* Counties (watchOS) */,
-				B63121061C60D69F0063E975 /* Counties Extension */,
 				4800E59D23EC10200059ABA8 /* Counties (tvOS) */,
 			);
 		};
@@ -459,22 +312,6 @@
 				48ABDFB71C2063D70078391A /* LaunchScreen.storyboard in Resources */,
 				48ABDFB41C2063D70078391A /* Assets.xcassets in Resources */,
 				48ABDFB21C2063D70078391A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B63120F91C60D69F0063E975 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B63121011C60D69F0063E975 /* Assets.xcassets in Resources */,
-				B63120FF1C60D69F0063E975 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B63121051C60D69F0063E975 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,33 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B63121031C60D69F0063E975 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				485F2E192444BB9900E67148 /* CountiesTableSection.swift in Sources */,
-				B63121241C60DC870063E975 /* CountyInterfaceController.swift in Sources */,
-				B631210F1C60D69F0063E975 /* ExtensionDelegate.swift in Sources */,
-				485F2E172444B06C00E67148 /* RegionNameRowController.swift in Sources */,
-				B63121211C60D6D80063E975 /* CountyRowController.swift in Sources */,
-				B631210D1C60D69F0063E975 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B631210A1C60D69F0063E975 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B63121061C60D69F0063E975 /* Counties Extension */;
-			targetProxy = B63121091C60D69F0063E975 /* PBXContainerItemProxy */;
-		};
-		B63121141C60D69F0063E975 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B63120FA1C60D69F0063E975 /* Counties (watchOS) */;
-			targetProxy = B63121131C60D69F0063E975 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4800E5A623EC10200059ABA8 /* Main.storyboard */ = {
@@ -563,14 +374,6 @@
 				48ABDFB61C2063D70078391A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B63120FD1C60D69F0063E975 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B63120FE1C60D69F0063E975 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -768,76 +571,6 @@
 			};
 			name = Release;
 		};
-		B63121161C60D69F0063E975 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = Counties_Extension;
-				INFOPLIST_FILE = Counties/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		B63121171C60D69F0063E975 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = Counties_Extension;
-				INFOPLIST_FILE = Counties/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		B63121181C60D69F0063E975 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Counties Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		B63121191C60D69F0063E975 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Counties Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.Adaptivity.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -864,24 +597,6 @@
 			buildConfigurations = (
 				48ABDFBC1C2063D70078391A /* Debug */,
 				48ABDFBD1C2063D70078391A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B631211A1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B63121181C60D69F0063E975 /* Debug */,
-				B63121191C60D69F0063E975 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B631211C1C60D69F0063E975 /* Build configuration list for PBXNativeTarget "Counties (watchOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B63121161C60D69F0063E975 /* Debug */,
-				B63121171C60D69F0063E975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
