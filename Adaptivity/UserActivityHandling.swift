@@ -21,7 +21,7 @@ enum UserActivityHandlingResult {
 /**
  The protocol to conform to for classes that handle user activities.
  */
-protocol UserActivityHandling: class {
+protocol UserActivityHandling: AnyObject {
     /// The activity type handled by the activity handler.
     var handledActivityType: String {get}
     
