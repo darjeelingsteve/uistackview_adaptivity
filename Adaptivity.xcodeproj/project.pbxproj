@@ -26,7 +26,6 @@
 		488CD3CF2528B1C000C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3CE2528B1C000C368B4 /* Assets.xcassets */; };
 		488CD3DD2528B1C100C368B4 /* AdaptivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */; };
 		488CD3DF2528B1C100C368B4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CD3DE2528B1C100C368B4 /* ComplicationController.swift */; };
-		488CD3E12528B1C100C368B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E02528B1C100C368B4 /* Assets.xcassets */; };
 		488CD3E42528B1C100C368B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */; };
 		488CD3F52528B24100C368B4 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; };
 		488CD3F62528B24100C368B4 /* CountiesModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 488CD3F42528B24100C368B4 /* CountiesModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -125,9 +124,7 @@
 		488CD3D02528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivityApp.swift; sourceTree = "<group>"; };
 		488CD3DE2528B1C100C368B4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		488CD3E02528B1C100C368B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488CD3E32528B1C100C368B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		488CD3E52528B1C100C368B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488CD3F42528B24100C368B4 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyDetailsView.swift; sourceTree = "<group>"; };
 		488CD4042528B83700C368B4 /* RegionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsListView.swift; sourceTree = "<group>"; };
@@ -203,27 +200,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		488CD3CD2528B1C000C368B4 /* Counties (watchOS) WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				488CD3CE2528B1C000C368B4 /* Assets.xcassets */,
-				488CD3D02528B1C100C368B4 /* Info.plist */,
-			);
-			path = "Counties (watchOS) WatchKit App";
-			sourceTree = "<group>";
-		};
-		488CD3D92528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */ = {
+		488CD3CD2528B1C000C368B4 /* Counties (watchOS) */ = {
 			isa = PBXGroup;
 			children = (
 				488CD3DC2528B1C100C368B4 /* AdaptivityApp.swift */,
 				488CD3FE2528B33800C368B4 /* CountyDetailsView.swift */,
 				488CD3DE2528B1C100C368B4 /* ComplicationController.swift */,
 				488CD4042528B83700C368B4 /* RegionsListView.swift */,
-				488CD3E02528B1C100C368B4 /* Assets.xcassets */,
-				488CD3E52528B1C100C368B4 /* Info.plist */,
 				488CD3E22528B1C100C368B4 /* Preview Content */,
+				488CD3CE2528B1C000C368B4 /* Assets.xcassets */,
+				488CD3D02528B1C100C368B4 /* Info.plist */,
 			);
-			path = "Counties (watchOS) WatchKit Extension";
+			path = "Counties (watchOS)";
 			sourceTree = "<group>";
 		};
 		488CD3E22528B1C100C368B4 /* Preview Content */ = {
@@ -239,8 +227,7 @@
 			children = (
 				48ABDFAB1C2063D70078391A /* Counties */,
 				4800E59F23EC10200059ABA8 /* Counties (tvOS) */,
-				488CD3CD2528B1C000C368B4 /* Counties (watchOS) WatchKit App */,
-				488CD3D92528B1C100C368B4 /* Counties (watchOS) WatchKit Extension */,
+				488CD3CD2528B1C000C368B4 /* Counties (watchOS) */,
 				48ABDFAA1C2063D70078391A /* Products */,
 				482BC94623EB20A40053E6F6 /* Frameworks */,
 			);
@@ -421,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				488CD3E42528B1C100C368B4 /* Preview Assets.xcassets in Resources */,
-				488CD3E12528B1C100C368B4 /* Assets.xcassets in Resources */,
 				488CD3CF2528B1C000C368B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +578,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Counties (watchOS) WatchKit App/Info.plist";
+				INFOPLIST_FILE = "Counties (watchOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
@@ -625,7 +611,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Counties (watchOS) WatchKit App/Info.plist";
+				INFOPLIST_FILE = "Counties (watchOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
