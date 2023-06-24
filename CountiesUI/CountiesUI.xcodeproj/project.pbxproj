@@ -3,42 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4800E58C23EC0A290059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
-		4800E59623EC0E000059ABA8 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4800E59423EC0E000059ABA8 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4800E5B223EC112C0059ABA8 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
-		4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */; };
-		4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
-		4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DA23EB57C30053E6F6 /* CountyCell.swift */; };
-		4800E5B623EC11420059ABA8 /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */; };
-		4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */; };
-		4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */; };
-		4800E5CF23EC12A60059ABA8 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */; };
-		4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */; };
 		482BC97323EB27DB0053E6F6 /* CountiesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BC97123EB27DB0053E6F6 /* CountiesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		482BC97B23EB27F30053E6F6 /* CountiesModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC97A23EB27F30053E6F6 /* CountiesModel.framework */; };
-		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; };
+		482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482BC9B523EB40450053E6F6 /* CountyViewController.storyboard */; platformFilter = ios; };
 		482BC9B823EB40450053E6F6 /* CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9B623EB40450053E6F6 /* CountyViewController.swift */; };
-		482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BB23EB41C50053E6F6 /* PillButton.swift */; };
+		482BC9BC23EB41C50053E6F6 /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BB23EB41C50053E6F6 /* PillButton.swift */; platformFilter = ios; };
 		482BC9BF23EB427C0053E6F6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9BE23EB427C0053E6F6 /* Bundle+Extensions.swift */; };
-		482BC9C223EB50420053E6F6 /* UIStoryboard+CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9C123EB50420053E6F6 /* UIStoryboard+CountyViewController.swift */; };
+		482BC9C223EB50420053E6F6 /* UIStoryboard+CountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9C123EB50420053E6F6 /* UIStoryboard+CountyViewController.swift */; platformFilter = ios; };
 		482BC9D923EB57640053E6F6 /* EmptyCountiesNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9D823EB57640053E6F6 /* EmptyCountiesNoticeView.swift */; };
 		482BC9DB23EB57C30053E6F6 /* CountyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DA23EB57C30053E6F6 /* CountyCell.swift */; };
 		482BC9DD23EB57FC0053E6F6 /* CountiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DC23EB57FC0053E6F6 /* CountiesCollectionViewController.swift */; };
 		482BC9DF23EB58110053E6F6 /* CountiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BC9DE23EB58110053E6F6 /* CountiesViewController.swift */; };
 		485F2E1B24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
-		485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485F2E1A24473E0700E67148 /* SectionHeaderSupplementaryView.swift */; };
-		48DF294C24521ABC00633C15 /* TableStyleDisplayMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294B24521ABC00633C15 /* TableStyleDisplayMetrics.swift */; };
+		486F209B2A46E31D00FBEB5E /* CountyViewController-tvOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */; platformFilters = (tvos, ); };
+		48DF294C24521ABC00633C15 /* TableStyleDisplayMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294B24521ABC00633C15 /* TableStyleDisplayMetrics.swift */; platformFilter = ios; };
 		48DF294E24521B8300633C15 /* TableStyleDisplayMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294D24521B8300633C15 /* TableStyleDisplayMetricsTests.swift */; };
 		48DF29512454566800633C15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294F245455B200633C15 /* GradientView.swift */; };
-		48DF29522454566800633C15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF294F245455B200633C15 /* GradientView.swift */; };
 		48E36B4C244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
-		48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4B244E1C1700913F4B /* CountiesCollectionViewLayout.swift */; };
 		48E36B4F244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
-		48E36B50244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B4E244E1C6500913F4B /* TableCellStyleSeparatorView.swift */; };
 		48E36B5A244E1E7200913F4B /* CountiesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */; platformFilter = ios; };
 		48E36B65244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E36B64244E1EC000913F4B /* CountiesCollectionViewLayoutTests.swift */; };
 /* End PBXBuildFile section */
@@ -55,9 +42,6 @@
 
 /* Begin PBXFileReference section */
 		4800E58B23EC0A290059ABA8 /* PlatformHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformHelpers.swift; sourceTree = "<group>"; };
-		4800E59223EC0E000059ABA8 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4800E59423EC0E000059ABA8 /* CountiesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountiesUI.h; sourceTree = "<group>"; };
-		4800E59523EC0E000059ABA8 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		4800E5CE23EC12A60059ABA8 /* CountiesModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CountiesModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4800E5D523EC27840059ABA8 /* CountyViewController-tvOS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "CountyViewController-tvOS.storyboard"; sourceTree = "<group>"; };
 		482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountiesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,14 +69,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4800E58F23EC0E000059ABA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4800E5CF23EC12A60059ABA8 /* CountiesModel.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		482BC96B23EB27DB0053E6F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,21 +88,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4800E59323EC0E000059ABA8 /* CountiesUI tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				4800E59423EC0E000059ABA8 /* CountiesUI.h */,
-				4800E59523EC0E000059ABA8 /* Info-tvOS.plist */,
-			);
-			path = "CountiesUI tvOS";
-			sourceTree = "<group>";
-		};
 		482BC96423EB27DB0053E6F6 = {
 			isa = PBXGroup;
 			children = (
 				482BC98B23EB29070053E6F6 /* Sources */,
-				482BC97023EB27DB0053E6F6 /* CountiesUI iOS */,
-				4800E59323EC0E000059ABA8 /* CountiesUI tvOS */,
+				482BC97123EB27DB0053E6F6 /* CountiesUI.h */,
+				482BC97223EB27DB0053E6F6 /* Info-iOS.plist */,
 				48E36B56244E1E7200913F4B /* CountiesUITests */,
 				482BC96F23EB27DB0053E6F6 /* Products */,
 				482BC97923EB27F30053E6F6 /* Frameworks */,
@@ -137,19 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */,
-				4800E59223EC0E000059ABA8 /* CountiesUI.framework */,
 				48E36B55244E1E7200913F4B /* CountiesUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		482BC97023EB27DB0053E6F6 /* CountiesUI iOS */ = {
-			isa = PBXGroup;
-			children = (
-				482BC97123EB27DB0053E6F6 /* CountiesUI.h */,
-				482BC97223EB27DB0053E6F6 /* Info-iOS.plist */,
-			);
-			path = "CountiesUI iOS";
 			sourceTree = "<group>";
 		};
 		482BC97923EB27F30053E6F6 /* Frameworks */ = {
@@ -229,14 +186,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4800E58D23EC0E000059ABA8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4800E59623EC0E000059ABA8 /* CountiesUI.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		482BC96923EB27DB0053E6F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,27 +197,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4800E59123EC0E000059ABA8 /* CountiesUI tvOS */ = {
+		482BC96D23EB27DB0053E6F6 /* CountiesUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4800E59723EC0E000059ABA8 /* Build configuration list for PBXNativeTarget "CountiesUI tvOS" */;
-			buildPhases = (
-				4800E58D23EC0E000059ABA8 /* Headers */,
-				4800E58E23EC0E000059ABA8 /* Sources */,
-				4800E58F23EC0E000059ABA8 /* Frameworks */,
-				4800E59023EC0E000059ABA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CountiesUI tvOS";
-			productName = "CountiesUI tvOS";
-			productReference = 4800E59223EC0E000059ABA8 /* CountiesUI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 482BC97623EB27DB0053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI iOS" */;
+			buildConfigurationList = 482BC97623EB27DB0053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI" */;
 			buildPhases = (
 				482BC96923EB27DB0053E6F6 /* Headers */,
 				482BC96A23EB27DB0053E6F6 /* Sources */,
@@ -279,7 +210,7 @@
 			);
 			dependencies = (
 			);
-			name = "CountiesUI iOS";
+			name = CountiesUI;
 			productName = CountiesUI;
 			productReference = 482BC96E23EB27DB0053E6F6 /* CountiesUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -308,13 +239,11 @@
 		482BC96523EB27DB0053E6F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Darjeeling Apps";
 				TargetAttributes = {
-					4800E59123EC0E000059ABA8 = {
-						CreatedOnToolsVersion = 11.3;
-					};
 					482BC96D23EB27DB0053E6F6 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -337,26 +266,18 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */,
-				4800E59123EC0E000059ABA8 /* CountiesUI tvOS */,
+				482BC96D23EB27DB0053E6F6 /* CountiesUI */,
 				48E36B54244E1E7200913F4B /* CountiesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4800E59023EC0E000059ABA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4800E5D623EC27840059ABA8 /* CountyViewController-tvOS.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		482BC96C23EB27DB0053E6F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486F209B2A46E31D00FBEB5E /* CountyViewController-tvOS.storyboard in Resources */,
 				482BC9B723EB40450053E6F6 /* CountyViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,24 +292,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4800E58E23EC0E000059ABA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				48E36B4D244E1C1700913F4B /* CountiesCollectionViewLayout.swift in Sources */,
-				4800E5B323EC113B0059ABA8 /* CountiesCollectionViewController.swift in Sources */,
-				48DF29522454566800633C15 /* GradientView.swift in Sources */,
-				485F2E1C24473E0700E67148 /* SectionHeaderSupplementaryView.swift in Sources */,
-				4800E5B823EC114C0059ABA8 /* PlatformHelpers.swift in Sources */,
-				4800E5B523EC113F0059ABA8 /* CountyCell.swift in Sources */,
-				48E36B50244E1C6500913F4B /* TableCellStyleSeparatorView.swift in Sources */,
-				4800E5B423EC113D0059ABA8 /* CountiesViewController.swift in Sources */,
-				4800E5B723EC11490059ABA8 /* Bundle+Extensions.swift in Sources */,
-				4800E5B223EC112C0059ABA8 /* CountyViewController.swift in Sources */,
-				4800E5B623EC11420059ABA8 /* EmptyCountiesNoticeView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		482BC96A23EB27DB0053E6F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,64 +328,12 @@
 		48E36B5C244E1E7200913F4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = 482BC96D23EB27DB0053E6F6 /* CountiesUI iOS */;
+			target = 482BC96D23EB27DB0053E6F6 /* CountiesUI */;
 			targetProxy = 48E36B5B244E1E7200913F4B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4800E59823EC0E000059ABA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI tvOS/Info-tvOS.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-tvOS";
-				PRODUCT_NAME = CountiesUI;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-			};
-			name = Debug;
-		};
-		4800E59923EC0E000059ABA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI tvOS/Info-tvOS.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-tvOS";
-				PRODUCT_NAME = CountiesUI;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-			};
-			name = Release;
-		};
 		482BC97423EB27DB0053E6F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -608,55 +459,67 @@
 		482BC97723EB27DB0053E6F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI iOS/Info-iOS.plist";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-iOS";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesUI;
 				PRODUCT_NAME = CountiesUI;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 13.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Debug;
 		};
 		482BC97823EB27DB0053E6F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CountiesUI iOS/Info-iOS.plist";
+				ENABLE_MODULE_VERIFIER = YES;
+				INFOPLIST_FILE = "Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.darjeeling.CountiesUI-iOS";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darjeeling.CountiesUI;
 				PRODUCT_NAME = CountiesUI;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 13.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Release;
 		};
@@ -665,7 +528,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CountiesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +546,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CountiesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -699,15 +562,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4800E59723EC0E000059ABA8 /* Build configuration list for PBXNativeTarget "CountiesUI tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4800E59823EC0E000059ABA8 /* Debug */,
-				4800E59923EC0E000059ABA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		482BC96823EB27DB0053E6F6 /* Build configuration list for PBXProject "CountiesUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -717,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		482BC97623EB27DB0053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI iOS" */ = {
+		482BC97623EB27DB0053E6F6 /* Build configuration list for PBXNativeTarget "CountiesUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				482BC97723EB27DB0053E6F6 /* Debug */,

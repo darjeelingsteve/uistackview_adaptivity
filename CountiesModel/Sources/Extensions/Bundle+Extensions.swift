@@ -12,12 +12,6 @@ extension Bundle {
     
     /// The `Bundle` of the `CountiesModel` framework.
     static var countiesModelBundle: Bundle {
-        #if os(iOS)
-        return Bundle(identifier: "com.darjeeling.CountiesModel-iOS")!
-        #elseif os(tvOS)
-        return Bundle(identifier: "com.darjeeling.CountiesModel-tvOS")!
-        #elseif os(watchOS)
-        return Bundle(identifier: "com.darjeeling.CountiesModel-watchOS")!
-        #endif
+        return Bundle(identifier: "com.darjeeling.CountiesModel")!
     }
 }

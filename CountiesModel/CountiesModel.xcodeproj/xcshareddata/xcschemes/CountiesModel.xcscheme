@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1430"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "482BC92423EB1E7D0053E6F6"
                BuildableName = "CountiesModel.framework"
-               BlueprintName = "CountiesModel iOS"
+               BlueprintName = "CountiesModel"
                ReferencedContainer = "container:CountiesModel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -62,7 +62,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "482BC92423EB1E7D0053E6F6"
             BuildableName = "CountiesModel.framework"
-            BlueprintName = "CountiesModel iOS"
+            BlueprintName = "CountiesModel"
             ReferencedContainer = "container:CountiesModel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

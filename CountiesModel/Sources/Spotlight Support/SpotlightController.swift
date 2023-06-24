@@ -24,7 +24,7 @@ public class SpotlightController {
         
         DispatchQueue.global(qos: .utility).async {
             let searchableItems = regions.map({ $0.counties }).reduce([], +).map { (county) -> CSSearchableItem in
-                let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
+                let attributeSet = CSSearchableItemAttributeSet(contentType: .data)
                 attributeSet.title = county.name
                 attributeSet.contentDescription = county.populationDescription
                 attributeSet.latitude = county.location.latitude as NSNumber?
